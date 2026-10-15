@@ -8,54 +8,73 @@ export const PLAYER={hp:100,speed:125,pickup:48,invincible:.4,radius:14};  // 12
 const DESPAWN=1100;
 // Difficulty knobs on top of the per-stage tables (raised after "체감 난이도가 쉬운거 같아").
 export const TUNING={mobHp:1.25,hpGrowth:.8,mobDamage:1.3,spawnRate:1.15,mobMax:1.15,bossHp:1.25};
-const SHOT_EXTRA=120;
+const SHOT_EXTRA=80;
 const WEAK={taken:1.2,dealt:.7};   // Threaten: a threatened monster takes +20% damage and hits 30% softer
 
 // Weapons are client skills. base = level 1, ups[i] = what level i+2 adds. range = how close a monster
 // must be before the weapon fires; projectiles fly SHOT_EXTRA further so moving targets still get hit.
+// Reach stays on screen ("너무 사거리가 긴 스킬들을 조정"): about 260px at most (the frame is ~500px tall),
+// archers up to ~320px.
 export const WEAPONS={
-  '0001000':{name:'달팽이 세마리',kind:'shell',desc:'가장 가까운 적에게 달팽이 껍질을 던집니다.',
-    base:{damage:10,cooldown:1,count:1,pierce:1,speed:420,range:240},
+  '0001000':{name:'달팽이 세마리',cls:'초보자',kind:'shell',desc:'가장 가까운 적에게 달팽이 껍질을 던집니다.',
+    base:{damage:10,cooldown:1,count:1,pierce:1,speed:420,range:220},
     ups:[{count:1},{damage:6},{damage:4},{count:1},{damage:6,cooldown:-.15},{count:1},{damage:6,pierce:1}]},
-  '2001004':{name:'에너지 볼트',kind:'bolt',desc:'적을 끝까지 쫓아가는 마법 구체를 쏩니다.',
-    base:{damage:16,cooldown:1.2,count:1,pierce:1,speed:360,range:300},
+  '2001004':{name:'에너지 볼트',cls:'마법사',kind:'bolt',desc:'적을 끝까지 쫓아가는 마법 구체를 쏩니다.',
+    base:{damage:16,cooldown:1.2,count:1,pierce:1,speed:360,range:260},
     ups:[{damage:6},{count:1},{cooldown:-.2},{damage:8},{count:1},{damage:10},{count:1,cooldown:-.15}]},
-  '4001344':{name:'럭키 세븐',kind:'star',desc:'가까운 적들에게 표창을 날립니다.',
-    base:{damage:12,cooldown:1.1,count:2,pierce:1,speed:560,range:260},
+  '4001344':{name:'럭키 세븐',cls:'도적',kind:'star',desc:'가까운 적들에게 표창을 날립니다.',
+    base:{damage:12,cooldown:1.1,count:2,pierce:1,speed:560,range:240},
     ups:[{damage:5},{count:1},{pierce:1},{damage:6},{count:1},{cooldown:-.25},{damage:6,count:1}]},
-  '3001004':{name:'에로우 블로우',kind:'arrow',desc:'가까운 적 쪽으로 적을 꿰뚫는 화살을 쏩니다.',
-    base:{damage:16,cooldown:1.5,count:1,pierce:2,speed:650,range:320},
+  '3001004':{name:'에로우 블로우',cls:'궁수',kind:'arrow',desc:'가까운 적 쪽으로 적을 꿰뚫는 화살을 쏩니다.',
+    base:{damage:16,cooldown:1.5,count:1,pierce:2,speed:650,range:280},
     ups:[{pierce:1},{damage:6},{count:1},{cooldown:-.1},{damage:6},{count:1},{pierce:1,damage:4}]},
-  '1001004':{name:'파워 스트라이크',kind:'strike',desc:'바라보는 방향의 적들을 크게 벱니다.',
+  '1001004':{name:'파워 스트라이크',cls:'전사',kind:'strike',desc:'바라보는 방향의 적들을 크게 벱니다.',
     base:{damage:26,cooldown:1.4,count:1,area:1},
     ups:[{damage:16},{count:1},{area:.15},{damage:18},{cooldown:-.25},{area:.15},{damage:35}]},
-  '1001005':{name:'슬래시 블러스트',kind:'blast',desc:'주변의 모든 적을 베어 냅니다.',
+  '1001005':{name:'슬래시 블러스트',cls:'전사',kind:'blast',desc:'주변의 모든 적을 베어 냅니다.',
     base:{damage:18,cooldown:2.2,area:1,radius:120},
     ups:[{area:.15},{damage:8},{cooldown:-.3},{area:.15},{damage:10},{cooldown:-.3},{area:.2,damage:14}]},
-  '2001005':{name:'매직 클로',kind:'claw',desc:'주변의 무작위 적을 마법 발톱으로 두 번 할큅니다.',
-    base:{damage:14,cooldown:1.8,count:1,range:280},
+  '2001005':{name:'매직 클로',cls:'마법사',kind:'claw',desc:'주변의 무작위 적을 마법 발톱으로 두 번 할큅니다.',
+    base:{damage:14,cooldown:1.8,count:1,range:250},
     ups:[{count:1},{damage:6},{count:1},{cooldown:-.3},{damage:8},{count:1},{damage:12,count:1}]},
-  '4001334':{name:'더블 스탭',kind:'stab',desc:'가장 가까운 적을 재빠르게 두 번 찌릅니다.',
+  '4001334':{name:'더블 스탭',cls:'도적',kind:'stab',desc:'가장 가까운 적을 재빠르게 두 번 찌릅니다.',
     base:{damage:15,cooldown:.9,count:1,area:1,range:150},
     ups:[{damage:12},{area:.2},{count:1},{cooldown:-.2},{damage:14},{count:1},{damage:25,cooldown:-.15}]},
   // Pirate 1st job: Double Fire (gun) and Somersault Kick (knuckle).
-  '5001003':{name:'더블 파이어',kind:'arrow',desc:'가까운 적 쪽으로 총알을 두 발씩 쏩니다.',
-    base:{damage:11,cooldown:1,count:2,pierce:1,speed:700,range:300,spread:.05,interval:.08},
+  '5001003':{name:'더블 파이어',cls:'해적',kind:'arrow',desc:'가까운 적 쪽으로 총알을 두 발씩 쏩니다.',
+    base:{damage:11,cooldown:1,count:2,pierce:1,speed:700,range:260,spread:.05,interval:.08},
     ups:[{damage:5},{count:1},{cooldown:-.15},{damage:6},{pierce:1},{count:1},{damage:8}]},
-  '5001002':{name:'써머솔트 킥',kind:'blast',desc:'공중제비를 돌며 주변의 적 여러 마리를 걷어찹니다.',
+  '5001002':{name:'써머솔트 킥',cls:'해적',kind:'blast',desc:'공중제비를 돌며 주변의 적 여러 마리를 걷어찹니다.',
     base:{damage:24,cooldown:1.4,area:1,radius:130,targets:6},
     ups:[{damage:9},{targets:2},{cooldown:-.2},{area:.15},{damage:11},{targets:3},{damage:16,cooldown:-.15}]},
   // Aran 1st job (KMS 1.2.95): Double Swing, a polearm swing that hits twice.
-  '21000002':{name:'더블 스윙',kind:'strike',desc:'폴암을 두 번 휘둘러 바라보는 방향의 적들을 벱니다.',
+  '21000002':{name:'더블 스윙',cls:'아란',kind:'strike',desc:'폴암을 두 번 휘둘러 바라보는 방향의 적들을 벱니다.',
     base:{damage:14,cooldown:1.3,count:1,area:1,hits:2},
     ups:[{damage:6},{count:1},{area:.15},{damage:7},{cooldown:-.2},{area:.15},{damage:10}]},
   // Evan 1st job (KMS 1.2.95): Magic Missile. The dragon Mir casts Evan's skills and grows with each job (drawn by app).
-  '22001001':{name:'매직 미사일',kind:'nova',desc:'미르가 가까운 적들에게 마법 탄을 두 번씩 쏩니다.',
-    base:{damage:10,cooldown:1.1,count:1,targets:6,radius:260,hits:2},
+  '22001001':{name:'매직 미사일',cls:'에반',kind:'nova',desc:'미르가 가까운 적들에게 마법 탄을 두 번씩 쏩니다.',
+    base:{damage:10,cooldown:1.1,count:1,targets:6,radius:230,hits:2},
     ups:[{damage:4},{count:1},{cooldown:-.15},{damage:4},{count:1},{damage:5},{count:1,damage:4}]},
+  // Cygnus Knights' own 1st-job skills (same rules as the Explorer skills they mirror, their own visuals).
+  '11001002':{name:'파워 스트라이크',cls:'소울마스터',kind:'strike',desc:'바라보는 방향의 적들을 크게 벱니다.',
+    base:{damage:26,cooldown:1.4,count:1,area:1},
+    ups:[{damage:16},{count:1},{area:.15},{damage:18},{cooldown:-.25},{area:.15},{damage:35}]},
+  '12001003':{name:'매직 클로',cls:'플레임위자드',kind:'claw',desc:'주변의 무작위 적을 마법 발톱으로 두 번 할큅니다.',
+    base:{damage:14,cooldown:1.8,count:1,range:250},
+    ups:[{count:1},{damage:6},{count:1},{cooldown:-.3},{damage:8},{count:1},{damage:12,count:1}]},
+  '14001004':{name:'럭키 세븐',cls:'나이트워커',kind:'star',desc:'가까운 적들에게 표창을 날립니다.',
+    base:{damage:12,cooldown:1.1,count:2,pierce:1,speed:560,range:240},
+    ups:[{damage:5},{count:1},{pierce:1},{damage:6},{count:1},{cooldown:-.25},{damage:6,count:1}]},
+  '15001002':{name:'써머솔트 킥',cls:'스트라이커',kind:'blast',desc:'공중제비를 돌며 주변의 적 여러 마리를 걷어찹니다.',
+    base:{damage:24,cooldown:1.4,area:1,radius:130,targets:6},
+    ups:[{damage:9},{targets:2},{cooldown:-.2},{area:.15},{damage:11},{targets:3},{damage:16,cooldown:-.15}]},
+  // Dual Blade 1st job (KMS 1.2.95): Triple Stab with both blades.
+  '4301001':{name:'트리플 스탭',cls:'듀얼블레이드',kind:'stab',desc:'가장 가까운 적을 양손의 칼로 세 번 찌릅니다.',
+    base:{damage:11,cooldown:1,count:1,area:1,range:150,hits:3},
+    ups:[{damage:8},{area:.2},{count:1},{cooldown:-.2},{damage:9},{count:1},{damage:16,cooldown:-.15}]},
   // Wind Archer 1st job (Cygnus Knights): Double Shot.
-  '13001003':{name:'더블 샷',kind:'arrow',desc:'가까운 적 쪽으로 적을 꿰뚫는 화살을 두 발씩 쏩니다.',
-    base:{damage:11,cooldown:1.3,count:2,pierce:2,speed:750,range:340,spread:.06,interval:.07},
+  '13001003':{name:'더블 샷',cls:'윈드브레이커',kind:'arrow',desc:'가까운 적 쪽으로 적을 꿰뚫는 화살을 두 발씩 쏩니다.',
+    base:{damage:11,cooldown:1.3,count:2,pierce:2,speed:750,range:280,spread:.06,interval:.07},
     ups:[{damage:4},{pierce:1},{cooldown:-.15},{damage:4},{count:1},{pierce:1},{damage:5}]},
 };
 export const START_WEAPON='0001000';
@@ -84,145 +103,151 @@ export const JOBS={
   // Page: Threaten (threatened monsters take more damage and hit softer), Charge Blow (stuns all around), Sanctuary.
   // Warriors have no 2nd-job attack skill in the client, so the 2nd job adds Final Attack / Threaten to Power Strike.
   '1001004':[
-    {id:'fighter',job:'파이터',tiers:[
+    {id:'fighter',job:'파이터',names:['파이터','크루세이더','히어로'],tiers:[
       {skill:'1100002',kind:'strike',mult:1.06,set:{follow:.6,look:'1001004'},desc:'파워 스트라이크 뒤에 60% 확률로 한 번 더 벱니다.'},
-      {skill:'1111008',kind:'nova',mult:1.69,set:{count:4,targets:6,radius:210,stun:1.5},desc:'큰 소리를 질러 주변 적 최대 6마리에게 피해를 주고 1.5초 동안 기절시킵니다.'},
+      {skill:'1111008',kind:'nova',mult:2.22,set:{count:4,targets:6,radius:190,stun:1.5},desc:'큰 소리를 질러 주변 적 최대 6마리에게 피해를 주고 1.5초 동안 기절시킵니다.'},
       {skill:'1121008',kind:'strike',mult:2.3,set:{count:2,hits:2},desc:'앞뒤의 적들을 크게 두 번씩 벱니다.'},
     ]},
-    {id:'page',job:'페이지',tiers:[
+    {id:'page',job:'페이지',names:['페이지','나이트','팔라딘'],tiers:[
       {skill:'1201006',kind:'strike',mult:1.56,set:{weaken:4,look:'1001004'},desc:'벤 적을 4초 동안 위협합니다. 위협당한 적은 받는 피해 +20%, 주는 피해 -30%.'},
       {skill:'1211002',kind:'blast',mult:1.51,set:{radius:150,stun:1},desc:'속성을 담은 일격으로 주변의 적 모두를 공격하고 1초 동안 기절시킵니다.'},
-      {skill:'1221011',kind:'blast',mult:1.77,set:{radius:220,cooldown:b=>b.cooldown*3},desc:'커다란 망치로 땅을 내리쳐 넓은 범위의 적 모두를 공격합니다.'},
+      {skill:'1221011',kind:'blast',mult:2.6,set:{radius:190,cooldown:b=>b.cooldown*3},desc:'커다란 망치로 땅을 내리쳐 넓은 범위의 적 모두를 공격합니다.'},
     ]},
   ],
   // Double Fire → Gunslinger: Throwing Bomb (bursts on impact), Homing (bullets chase), Battleship Cannon.
   '5001003':[
-    {id:'gunslinger',job:'건슬링거',tiers:[
-      {skill:'5201002',kind:'arrow',mult:0.96,set:{count:b=>b.count-1,spread:.3,splash:90,targets:b=>b.pierce+3,speed:480,pierce:1},desc:'맞은 자리에서 터지는 폭탄을 던져 주변의 적들에게 피해를 줍니다.'},
-      {skill:'5211006',kind:'bolt',mult:4.47,set:{count:b=>b.count+1,speed:520,pierce:1},desc:'적을 끝까지 쫓아가는 유도탄을 쏩니다.'},
-      {skill:'5221007',kind:'arrow',mult:2.13,set:{count:4,spread:.09,interval:.1,pierce:b=>b.pierce+2,speed:800,range:360},desc:'배틀쉽의 대포를 네 발 쏩니다. 포탄은 적을 꿰뚫습니다.'},
+    {id:'gunslinger',job:'건슬링거',names:['건슬링거','발키리','캡틴'],tiers:[
+      {skill:'5201002',kind:'arrow',mult:0.93,set:{count:b=>b.count-1,spread:.3,splash:90,targets:b=>b.pierce+3,speed:480,pierce:1},desc:'맞은 자리에서 터지는 폭탄을 던져 주변의 적들에게 피해를 줍니다.'},
+      {skill:'5211006',kind:'bolt',mult:4.55,set:{count:b=>b.count+1,speed:520,pierce:1},desc:'적을 끝까지 쫓아가는 유도탄을 쏩니다.'},
+      {skill:'5221007',kind:'arrow',mult:2.2,set:{count:4,spread:.09,interval:.1,pierce:b=>b.pierce+2,speed:800,range:280},desc:'배틀쉽의 대포를 네 발 쏩니다. 포탄은 적을 꿰뚫습니다.'},
     ]},
   ],
   // Somersault Kick → Brawler: Backspin Blow (stuns), Shockwave (a wider ring), Dragon Strike (a burning line).
   '5001002':[
-    {id:'brawler',job:'인파이터',tiers:[
+    {id:'brawler',job:'인파이터',names:['인파이터','버커니어','바이퍼'],tiers:[
       {skill:'5101002',kind:'blast',mult:1.96,set:{stun:1},desc:'몸을 회전시키며 주변의 적들을 쳐서 1초 동안 기절시킵니다.'},
       {skill:'5111006',kind:'blast',mult:1.53,set:{radius:b=>b.radius*1.3,targets:b=>b.targets+2},desc:'땅을 내리쳐 충격파로 더 넓은 범위의 적들을 공격합니다.'},
-      {skill:'5121001',kind:'lance',mult:1.87,set:{count:1,width:120,pierce:8,range:240,beam:'fire'},desc:'용의 기운을 실어 앞에 있는 한 줄의 적들을 강하게 내려칩니다.'},
-    ]},
-    {id:'thunderbreaker',job:'스트라이커',tiers:[
-      {skill:'15101005',kind:'blast',mult:2.82,set:{targets:6},desc:'번개의 기운을 모아 주변의 적 최대 6마리를 강하게 칩니다.'},
-      {skill:'15111004',kind:'stab',mult:1.95,set:{count:2,hits:6,range:150},desc:'가까운 적 두 마리에게 주먹을 여섯 번씩 날립니다.'},
-      {skill:'15111007',kind:'arrow',mult:2.18,set:{count:1,pierce:5,speed:560,range:360},desc:'상어 모양의 번개를 날려 한 줄의 적 최대 5마리를 꿰뚫습니다.'},
+      {skill:'5121001',kind:'lance',mult:1.91,set:{count:1,width:120,pierce:8,range:240,beam:'fire'},desc:'용의 기운을 실어 앞에 있는 한 줄의 적들을 강하게 내려칩니다.'},
     ]},
   ],
   // Double Swing → Aran: Triple Swing, Combo Fenrir (a wolf that runs through a line), Combo Tempest (freezes, then shatters).
   '21000002':[
-    {id:'aran',job:'아란',tiers:[
+    {id:'aran',job:'아란',names:['아란','아란','아란'],tiers:[
       {skill:'21100001',kind:'strike',mult:1.18,set:{hits:3},desc:'폴암을 세 번 휘둘러 앞의 적들을 공격합니다.'},
-      {skill:'21110004',kind:'arrow',mult:2.22,set:{count:1,pierce:6,speed:620,range:360},desc:'늑대의 기운을 날려 한 줄의 적 최대 6마리를 꿰뚫습니다.'},
-      {skill:'21120006',kind:'blast',mult:2.35,set:{radius:260,targets:15,hits:2,freeze:1.5,cooldown:b=>b.cooldown*3},desc:'주변의 적 최대 15마리를 얼린 뒤 부숴 두 번 공격합니다.'},
+      {skill:'21110004',kind:'arrow',mult:2.54,set:{count:1,pierce:6,speed:620,range:280},desc:'늑대의 기운을 날려 한 줄의 적 최대 6마리를 꿰뚫습니다.'},
+      {skill:'21120006',kind:'blast',mult:2.94,set:{radius:200,targets:15,hits:2,freeze:1.5,cooldown:b=>b.cooldown*3},desc:'주변의 적 최대 15마리를 얼린 뒤 부숴 두 번 공격합니다.'},
     ]},
   ],
-  // Magic Missile → Evan: Mir's Fire Circle, Dragon Thrust (a charge through a line) and Blaze (bursting fire).
-  '22001001':[
-    {id:'evan',job:'에반',tiers:[
-      {skill:'22101000',kind:'blast',mult:4.24,set:{radius:150,targets:b=>b.count+3},desc:'미르가 불의 고리를 둘러 주변의 적들을 태웁니다.'},
-      {skill:'22141001',kind:'lance',mult:4.08,set:{count:1,width:110,pierce:6,range:280,beam:'rush'},desc:'미르가 앞으로 돌진해 한 줄의 적 최대 6마리를 공격합니다.'},
-      {skill:'22181001',kind:'arrow',mult:2.84,set:{count:2,spread:.25,splash:110,targets:6,speed:520,range:320,pierce:1},desc:'미르가 불꽃을 내뿜어 맞은 자리 주변의 적 최대 6마리를 태웁니다.'},
+  // Jobs with their own 1st job (not Explorer skills). Cygnus Knights end at the 3rd job, as in the client
+  // (their 4th-job images are empty), so their lines have two tiers.
+  '11001002':[
+    {id:'soulmaster',job:'소울마스터',names:['소울마스터','소울마스터'],tiers:[
+      {skill:'11101004',kind:'arrow',mult:1.66,set:{count:1,pierce:b=>b.count+1,speed:600,range:260},desc:'검기를 날려 한 줄의 적들을 꿰뚫습니다.'},
+      {skill:'11111006',kind:'blast',mult:1.33,set:{radius:170,targets:8},desc:'빛의 기운을 담은 일격으로 주변의 적 최대 8마리를 공격합니다.'},
     ]},
   ],
-  // Double Shot (Wind Archer, Cygnus Knights): Nymph's Breath, Arrow Rain, Magnum Shot.
+  '12001003':[
+    {id:'blazewizard',job:'플레임위자드',names:['플레임위자드','플레임위자드'],tiers:[
+      {skill:'12101002',kind:'bolt',mult:2.54,set:{count:b=>b.count+1,speed:420,pierce:1},desc:'적을 끝까지 쫓아가는 불화살을 쏩니다.'},
+      {skill:'12111003',kind:'meteor',mult:8.78,set:{targets:b=>b.count*2,cooldown:3},desc:'넓은 범위의 적들에게 운석을 떨어뜨립니다.'},
+    ]},
+  ],
   '13001003':[
-    {id:'windarcher',job:'윈드브레이커',tiers:[
-      {skill:'13101005',kind:'nova',mult:1.93,set:{targets:b=>b.count*b.pierce,count:b=>b.count*b.pierce,radius:240,hits:2},desc:'바람의 숨결로 주변의 적들을 두 번씩 공격합니다.'},
-      {skill:'13111000',kind:'rain',mult:2.32,set:{count:1,radius:120,waves:2,targets:b=>b.pierce+3},desc:'가까운 적이 있는 곳에 화살비를 두 번 쏟아붓습니다.'},
-      {skill:'13111006',kind:'arrow',mult:3.1,set:{pierce:6,speed:900,spread:.08},desc:'강력한 화살로 한 줄의 적 최대 6마리를 꿰뚫습니다.'},
+    {id:'windarcher',job:'윈드브레이커',names:['윈드브레이커','윈드브레이커'],tiers:[
+      {skill:'13101005',kind:'nova',mult:2.26,set:{targets:b=>b.count*b.pierce,count:b=>b.count*b.pierce,radius:210,hits:2},desc:'폭풍의 기운으로 주변의 적들을 두 번씩 공격합니다.'},
+      {skill:'13111000',kind:'rain',mult:2.28,set:{count:1,radius:120,waves:2,targets:b=>b.pierce+3},desc:'가까운 적이 있는 곳에 화살비를 두 번 쏟아붓습니다.'},
+    ]},
+  ],
+  '14001004':[
+    {id:'nightwalker',job:'나이트워커',names:['나이트워커','나이트워커'],tiers:[
+      {skill:'14101006',kind:'nova',mult:1.7,set:{targets:6,radius:210,hits:3,heal:1},desc:'어둠의 기운으로 주변 적들을 세 번씩 공격하고 HP를 1 흡수합니다.'},
+      {skill:'14111006',kind:'arrow',mult:4.4,set:{count:1,splash:100,targets:6,speed:420,pierce:1},desc:'독 폭탄을 던져 맞은 자리 주변의 적 최대 6마리에게 피해를 줍니다.'},
+    ]},
+  ],
+  '15001002':[
+    {id:'thunderbreaker',job:'스트라이커',names:['스트라이커','스트라이커'],tiers:[
+      {skill:'15101005',kind:'blast',mult:2.82,set:{targets:6},desc:'번개의 기운을 모아 주변의 적 최대 6마리를 강하게 칩니다.'},
+      {skill:'15111007',kind:'arrow',mult:1.52,set:{count:1,pierce:5,speed:560,range:280},desc:'상어 모양의 번개를 날려 한 줄의 적 최대 5마리를 꿰뚫습니다.'},
+    ]},
+  ],
+  // Dual Blade (KMS 1.2.95): Semi-Dualer's Triple Stab is its 1st job; Dualer → Slasher → Dual Blader.
+  '4301001':[
+    {id:'dualblade',job:'듀어러',names:['듀어러','슬래셔','듀얼블레이더'],tiers:[
+      {skill:'4311003',kind:'blast',mult:1.32,set:{radius:130,targets:b=>b.count+4,hits:2},desc:'칼날의 폭풍으로 주변의 적들을 두 번 벱니다.'},
+      {skill:'4331000',kind:'blast',mult:1.52,set:{radius:160,targets:b=>b.count+6,hits:2,cooldown:b=>b.cooldown*1.4},desc:'더 거센 칼날의 폭풍으로 넓은 범위의 적들을 두 번 벱니다.'},
+      {skill:'4341004',kind:'blast',mult:2.78,set:{radius:180,targets:10,cooldown:b=>b.cooldown*4},desc:'순식간에 주변을 습격해 넓은 범위의 적 최대 10마리를 공격합니다.'},
+    ]},
+  ],
+  // Evan (KMS 1.2.95) grows in ten stages; the 2nd/3rd/4th job are the stages reached at those jobs' levels
+  // (Lv30 Evan 3, Lv60 Evan 6, Lv120 Evan 9): Lightning Bolt, Dragon Thrust, Flame Wheel. Mir grows with them.
+  '22001001':[
+    {id:'evan',job:'에반',names:['에반','에반','에반'],tiers:[
+      {skill:'22111000',kind:'nova',mult:3.9,set:{targets:b=>b.count+1,hits:1},desc:'미르가 가까운 적들에게 번개를 떨어뜨립니다.'},
+      {skill:'22141001',kind:'lance',mult:3.69,set:{count:1,width:110,pierce:6,range:250,beam:'rush'},desc:'미르가 앞으로 돌진해 한 줄의 적 최대 6마리를 공격합니다.'},
+      {skill:'22171003',kind:'blast',mult:4.96,set:{radius:210,targets:8,cooldown:b=>b.cooldown*1.5},desc:'미르가 불의 바퀴를 굴려 주변의 적 최대 8마리를 태웁니다.'},
     ]},
   ],
   // Slash Blast → Spearman: Final Attack, Dragon Roar (a huge circle), Rush (a charge that shoves a whole line back).
   '1001005':[
-    {id:'spearman',job:'스피어맨',tiers:[
+    {id:'spearman',job:'스피어맨',names:['스피어맨','용기사','다크나이트'],tiers:[
       {skill:'1300002',kind:'blast',mult:1.08,set:{follow:.6,look:'1001005'},desc:'슬래시 블러스트 뒤에 60% 확률로 한 번 더 공격합니다.'},
-      {skill:'1311006',kind:'blast',mult:1.85,set:{radius:b=>b.radius*1.45,cooldown:b=>b.cooldown*1.8},desc:'거대한 용의 포효로 넓은 범위의 적 모두를 공격합니다.'},
-      {skill:'1321003',kind:'lance',mult:2.11,set:{count:1,width:130,pierce:15,range:260,push:110,beam:'rush'},desc:'앞으로 거칠게 돌격해 한 줄의 적 최대 15마리를 공격하고 밀어냅니다.'},
-    ]},
-    // Cygnus Knights (1st-3rd job in the client): the 4th tier is their strongest 3rd-job skill.
-    {id:'soulmaster',job:'소울마스터',tiers:[
-      {skill:'11101004',kind:'arrow',mult:1.34,set:{count:1,pierce:b=>Math.round(b.area**2*3),speed:600,range:300},desc:'검기를 날려 한 줄의 적들을 꿰뚫습니다.'},
-      {skill:'11111003',kind:'blast',mult:5.68,set:{targets:8,stun:1.5,look:'11001003'},desc:'주변의 적 최대 8마리를 베고 1.5초 동안 기절시킵니다.'},
-      {skill:'11111006',kind:'blast',mult:5.37,set:{radius:b=>b.radius*1.3,targets:10,cooldown:b=>b.cooldown*1.6},desc:'빛의 기운을 담은 일격으로 넓은 범위의 적 최대 10마리를 공격합니다.'},
+      {skill:'1311006',kind:'blast',mult:2.8,set:{radius:b=>b.radius*1.25,cooldown:b=>b.cooldown*1.8},desc:'거대한 용의 포효로 넓은 범위의 적 모두를 공격합니다.'},
+      {skill:'1321003',kind:'lance',mult:2.27,set:{count:1,width:130,pierce:15,range:260,push:110,beam:'rush'},desc:'앞으로 거칠게 돌격해 한 줄의 적 최대 15마리를 공격하고 밀어냅니다.'},
     ]},
   ],
   '2001004':[
-    {id:'icelightning',job:'위자드(썬,콜)',tiers:[
-      {skill:'2201005',kind:'nova',mult:1.7,set:{targets:6,radius:260},desc:'주변의 적 최대 6마리에게 번개를 내리칩니다.'},
-      {skill:'2211003',kind:'lance',mult:2.8,set:{count:2,width:70,pierce:2},desc:'가까운 적 쪽으로 두 마리까지 꿰뚫는 번개 창을 두 번 날립니다.'},
-      {skill:'2221006',kind:'chain',mult:4.5,set:{count:1,jumps:5,jump:170,cooldown:1.3},desc:'번개가 적 사이를 튀며 최대 6마리를 감전시킵니다.'},
+    {id:'icelightning',job:'위자드(썬,콜)',names:['위자드(썬,콜)','메이지(썬,콜)','아크메이지(썬,콜)'],tiers:[
+      {skill:'2201005',kind:'nova',mult:1.72,set:{targets:6,radius:220},desc:'주변의 적 최대 6마리에게 번개를 내리칩니다.'},
+      {skill:'2211003',kind:'lance',mult:2.62,set:{count:2,width:70,pierce:2},desc:'가까운 적 쪽으로 두 마리까지 꿰뚫는 번개 창을 두 번 날립니다.'},
+      {skill:'2221006',kind:'chain',mult:3.99,set:{count:1,jumps:5,jump:170,cooldown:1.3},desc:'번개가 적 사이를 튀며 최대 6마리를 감전시킵니다.'},
     ]},
-    {id:'firepoison',job:'위자드(불,독)',tiers:[
+    {id:'firepoison',job:'위자드(불,독)',names:['위자드(불,독)','메이지(불,독)','아크메이지(불,독)'],tiers:[
       {skill:'2101004',kind:'bolt',mult:1.7,set:{},desc:'적을 끝까지 쫓아가는 불화살을 쏩니다.'},
-      {skill:'2111002',kind:'blast',mult:2.8,set:{radius:165},desc:'주변을 폭발시켜 닿는 적 모두에게 피해를 줍니다.'},
-      {skill:'2121007',kind:'meteor',mult:5,set:{targets:12,cooldown:3},desc:'넓은 범위의 적 최대 12마리에게 운석을 떨어뜨립니다.'},
+      {skill:'2111002',kind:'blast',mult:2.14,set:{radius:165},desc:'주변을 폭발시켜 닿는 적 모두에게 피해를 줍니다.'},
+      {skill:'2121007',kind:'meteor',mult:8.5,set:{targets:12,cooldown:3},desc:'넓은 범위의 적 최대 12마리에게 운석을 떨어뜨립니다.'},
     ]},
   ],
   // Magic Claw. Ice freezes monsters in place (bosses are immune); Cleric heals the player on every cast.
   '2001005':[
-    {id:'ice',job:'위자드(썬,콜)',tiers:[
-      {skill:'2201004',kind:'claw',mult:1.8,set:{freeze:1},desc:'주변의 적을 냉기로 두 번 공격하고 1초 동안 얼립니다.'},
-      {skill:'2211002',kind:'blast',mult:4.5,set:{radius:165,freeze:1.5,cooldown:.9},desc:'주변의 적 모두에게 얼음 기둥을 솟구치게 해 1.5초 동안 얼립니다.'},
-      {skill:'2221007',kind:'meteor',mult:6.1,set:{targets:12,cooldown:3,freeze:2},desc:'넓은 범위의 적 최대 12마리에게 눈보라를 내려 2초 동안 얼립니다.'},
+    {id:'ice',job:'위자드(썬,콜)',names:['위자드(썬,콜)','메이지(썬,콜)','아크메이지(썬,콜)'],tiers:[
+      {skill:'2201004',kind:'claw',mult:1.76,set:{freeze:1},desc:'주변의 적을 냉기로 두 번 공격하고 1초 동안 얼립니다.'},
+      {skill:'2211002',kind:'blast',mult:3.8,set:{radius:165,freeze:1.5,cooldown:.9},desc:'주변의 적 모두에게 얼음 기둥을 솟구치게 해 1.5초 동안 얼립니다.'},
+      {skill:'2221007',kind:'meteor',mult:11.44,set:{targets:12,cooldown:3,freeze:2},desc:'넓은 범위의 적 최대 12마리에게 눈보라를 내려 2초 동안 얼립니다.'},
     ]},
-    {id:'cleric',job:'클레릭',tiers:[
-      {skill:'2301005',kind:'bolt',mult:1.87,set:{speed:420,pierce:1,heal:1,cooldown:.9},desc:'적을 쫓아가는 성스러운 화살을 쏘고 HP를 1 회복합니다.'},
-      {skill:'2311004',kind:'nova',mult:3.24,set:{targets:6,radius:260,heal:2,cooldown:.9},desc:'주변의 적 최대 6마리에게 빛을 내리고 HP를 2 회복합니다.'},
-      {skill:'2321008',kind:'meteor',mult:5.4,set:{targets:12,cooldown:3,heal:5},desc:'넓은 범위의 적 최대 12마리에게 성스러운 빛을 내리고 HP를 5 회복합니다.'},
-    ]},
-    {id:'blazewizard',job:'플레임위자드',tiers:[
-      {skill:'12101002',kind:'bolt',mult:2.38,set:{count:b=>b.count+1,speed:420,pierce:1},desc:'적을 끝까지 쫓아가는 불화살을 쏩니다.'},
-      {skill:'12111006',kind:'arrow',mult:1.32,set:{count:b=>Math.ceil(b.count/2),spread:.25,splash:90,targets:6,speed:520,range:300,pierce:1},desc:'불꽃 탄을 날려 맞은 자리 주변의 적 최대 6마리를 태웁니다.'},
-      {skill:'12111003',kind:'meteor',mult:4.55,set:{targets:15,cooldown:3},desc:'넓은 범위의 적 최대 15마리에게 운석을 떨어뜨립니다.'},
+    {id:'cleric',job:'클레릭',names:['클레릭','프리스트','비숍'],tiers:[
+      {skill:'2301005',kind:'bolt',mult:1.82,set:{speed:420,pierce:1,heal:1,cooldown:.9},desc:'적을 쫓아가는 성스러운 화살을 쏘고 HP를 1 회복합니다.'},
+      {skill:'2311004',kind:'nova',mult:3.81,set:{targets:6,radius:220,heal:2,cooldown:.9},desc:'주변의 적 최대 6마리에게 빛을 내리고 HP를 2 회복합니다.'},
+      {skill:'2321008',kind:'meteor',mult:12.23,set:{targets:12,cooldown:3,heal:5},desc:'넓은 범위의 적 최대 12마리에게 성스러운 빛을 내리고 HP를 5 회복합니다.'},
     ]},
   ],
   // Arrow Blow. Hunter blows up crowds (splash, area rain, a stream of arrows); Crossbowman shoots farther and
   // pierces whole lines.
   '3001004':[
-    {id:'hunter',job:'헌터',tiers:[
-      {skill:'3101005',kind:'arrow',mult:1.55,set:{splash:80,targets:b=>b.pierce,pierce:1},desc:'맞은 자리에서 터지는 화살을 쏴 주변 적에게도 피해를 줍니다.'},
-      {skill:'3111004',kind:'rain',mult:2.65,set:{count:1,radius:120,waves:3,targets:b=>Math.max(2,Math.round(b.count*b.pierce/3))},desc:'가까운 적이 있는 곳에 화살비를 세 번 쏟아붓습니다.'},
-      {skill:'3121004',kind:'arrow',mult:4.5,set:{count:b=>b.count*b.pierce,spread:.05,interval:.04,pierce:1,speed:900},desc:'폭풍처럼 화살을 쉬지 않고 쏘아 댑니다.'},
+    {id:'hunter',job:'헌터',names:['헌터','레인저','보우마스터'],tiers:[
+      {skill:'3101005',kind:'arrow',mult:1.51,set:{splash:80,targets:b=>b.pierce,pierce:1},desc:'맞은 자리에서 터지는 화살을 쏴 주변 적에게도 피해를 줍니다.'},
+      {skill:'3111004',kind:'rain',mult:2.55,set:{count:1,radius:120,waves:3,targets:b=>Math.max(2,Math.round(b.count*b.pierce/3))},desc:'가까운 적이 있는 곳에 화살비를 세 번 쏟아붓습니다.'},
+      {skill:'3121004',kind:'arrow',mult:4.18,set:{count:b=>b.count*b.pierce,spread:.05,interval:.04,pierce:1,speed:900},desc:'폭풍처럼 화살을 쉬지 않고 쏘아 댑니다.'},
     ]},
-    {id:'crossbow',job:'사수',tiers:[
-      {skill:'3201005',kind:'arrow',mult:1.4,set:{pierce:b=>b.pierce+1,range:400,speed:800},desc:'더 멀리 있는 적까지 쏘고, 더 많은 적을 꿰뚫습니다.'},
-      {skill:'3211004',kind:'rain',mult:2.55,set:{radius:140,waves:1,targets:b=>b.pierce,range:400},desc:'멀리 있는 적들 발밑에서 화살이 솟구쳐 주변을 한꺼번에 공격합니다.'},
-      {skill:'3221001',kind:'arrow',mult:4.5,set:{count:2,pierce:b=>Math.max(2,Math.round(b.count*b.pierce/2)),range:460,speed:1000,spread:.05,interval:.15},desc:'아주 멀리까지 적을 꿰뚫는 거대한 화살을 두 발 쏩니다.'},
+    {id:'crossbow',job:'사수',names:['사수','저격수','신궁'],tiers:[
+      {skill:'3201005',kind:'arrow',mult:1.27,set:{pierce:b=>b.pierce+1,range:300,speed:800},desc:'더 멀리 있는 적까지 쏘고, 더 많은 적을 꿰뚫습니다.'},
+      {skill:'3211004',kind:'rain',mult:2.55,set:{radius:140,waves:1,targets:b=>b.pierce,range:300},desc:'멀리 있는 적들 발밑에서 화살이 솟구쳐 주변을 한꺼번에 공격합니다.'},
+      {skill:'3221001',kind:'arrow',mult:3.87,set:{count:2,pierce:b=>Math.max(2,Math.round(b.count*b.pierce/2)),range:320,speed:1000,spread:.05,interval:.15},desc:'아주 멀리까지 적을 꿰뚫는 거대한 화살을 두 발 쏩니다.'},
     ]},
   ],
   // Lucky Seven → Assassin: critical hits (bigger numbers more often) and Drain heals. One line, as in the client.
   '4001344':[
-    {id:'assassin',job:'어쌔신',tiers:[
+    {id:'assassin',job:'어쌔신',names:['어쌔신','허밋','나이트로드'],tiers:[
       {skill:'4101005',kind:'star',mult:1.55,set:{crit:.2,heal:1},desc:'표창으로 HP를 흡수합니다(시전마다 HP 1). 치명타 확률 +20%.'},
       {skill:'4111005',kind:'arrow',mult:2.45,set:{crit:.3,spin:true,spread:.18,speed:620},desc:'거대한 표창이 회전하며 적을 꿰뚫습니다. 치명타 확률 +30%.'},
-      {skill:'4121007',kind:'star',mult:3.6,set:{crit:.4,count:b=>b.count+3,cooldown:b=>b.cooldown*1.5},desc:'표창을 세 갈래로 연달아 던집니다. 치명타 확률 +40%.'},
-    ]},
-    {id:'nightwalker',job:'나이트워커',tiers:[
-      {skill:'14101006',kind:'nova',mult:1.34,set:{targets:6,radius:240,hits:3,heal:1},desc:'어둠의 기운으로 주변 적들을 세 번씩 공격하고 HP를 1 흡수합니다.'},
-      {skill:'14111006',kind:'arrow',mult:4.22,set:{count:1,splash:100,targets:6,speed:420,pierce:1},desc:'독 폭탄을 던져 맞은 자리 주변의 적 최대 6마리에게 피해를 줍니다.'},
-      {skill:'14111005',kind:'star',mult:3.5,set:{count:b=>b.count+3,cooldown:b=>b.cooldown*1.2},desc:'표창을 세 갈래로 연달아 던집니다.'},
+      {skill:'4121007',kind:'star',mult:3.5,set:{crit:.4,count:b=>b.count+3,cooldown:b=>b.cooldown*1.5},desc:'표창을 세 갈래로 연달아 던집니다. 치명타 확률 +40%.'},
     ]},
   ],
   // Double Stab → Bandit: close-range flurries, and Steal: kills may drop an extra meso.
   '4001334':[
-    {id:'bandit',job:'시프',tiers:[
-      {skill:'4201005',kind:'stab',mult:1.4,set:{hits:6,cooldown:b=>b.cooldown*3.5,steal:.15},desc:'가까운 적을 여섯 번 연속으로 벱니다. 처치 시 15% 확률로 메소를 더 훔칩니다.'},
+    {id:'bandit',job:'시프',names:['시프','시프마스터','섀도어'],tiers:[
+      {skill:'4201005',kind:'stab',mult:1.37,set:{hits:6,cooldown:b=>b.cooldown*3.5,steal:.15},desc:'가까운 적을 여섯 번 연속으로 벱니다. 처치 시 15% 확률로 메소를 더 훔칩니다.'},
       {skill:'4211004',kind:'nova',mult:3.15,set:{targets:b=>b.count,radius:200,cooldown:b=>b.cooldown*1.5,steal:.2},desc:'동료 도적들이 나타나 주변 적들을 습격합니다. 처치 시 20% 확률로 메소를 더 훔칩니다.'},
       {skill:'4221007',kind:'stab',mult:3.9,set:{range:175,cooldown:b=>b.cooldown*1.8,steal:.25},desc:'부메랑처럼 돌진해 주변 적들을 두 번씩 벱니다. 처치 시 25% 확률로 메소를 더 훔칩니다.'},
-    ]},
-    // Dual Blade (KMS 1.2.95): Triple Stab, Bloody Storm (a whirl around the player), Sudden Raid (a huge burst).
-    {id:'dualblade',job:'듀얼블레이드',tiers:[
-      {skill:'4301001',kind:'stab',mult:1.12,set:{hits:3},desc:'가까운 적들을 양손의 칼로 세 번씩 찌릅니다.'},
-      {skill:'4331000',kind:'blast',mult:1.57,set:{radius:150,targets:b=>b.count+4,hits:2,cooldown:b=>b.cooldown*1.5},desc:'칼날의 폭풍으로 주변의 적들을 두 번 벱니다.'},
-      {skill:'4341004',kind:'blast',mult:1.9,set:{radius:240,targets:15,cooldown:b=>b.cooldown*3},desc:'순식간에 주변을 습격해 넓은 범위의 적 최대 15마리를 공격합니다.'},
     ]},
   ],
 };
@@ -488,7 +513,7 @@ export class Game{
       return true;
     }
     if(kind==='meteor'){    // Meteor: rocks fall on many monsters across a wide area
-      const pool=this.nearest(Infinity,s.range*1.4*area);if(!pool.length)return false;
+      const pool=this.nearest(Infinity,s.range*.85*area);if(!pool.length)return false;
       this.effects.push({kind:'skill',skill:fx,x:p.x,y:p.y,face:p.face,t:0,life:2.4,follow:true});
       for(let i=0;i<s.targets&&pool.length;i++){const m=pool.splice(Math.floor(this.random()*pool.length),1)[0];this.damageMob(m,s.damage,fx,{delay:.6+i*.05,...on});}
       return true;
@@ -749,8 +774,9 @@ export class Game{
     const out=[],limit=(this.stage.maxJob??4)-1;
     for(const [id,lv]of Object.entries(this.weapons)){
       const lines=JOBS[id],job=this.jobs[id],tier=job?.tier??0;
-      if(!lines||tier>=Math.min(limit,lines[0].tiers.length)||lv<ADV_LEVEL[tier])continue;
-      if(job)out.push({type:'advance',id,branch:job.branch,tier:tier+1});else lines.forEach((l,b)=>out.push({type:'advance',id,branch:b,tier:1}));
+      if(!lines||tier>=limit||lv<ADV_LEVEL[tier])continue;
+      if(job){if(tier<lines[job.branch].tiers.length)out.push({type:'advance',id,branch:job.branch,tier:tier+1});}
+      else lines.forEach((l,b)=>out.push({type:'advance',id,branch:b,tier:1}));
     }
     return out;
   }

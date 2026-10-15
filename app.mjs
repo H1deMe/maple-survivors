@@ -258,7 +258,7 @@ function draw(){
 
 // Evan's dragon Mir follows the hero while Magic Missile is equipped. It grows with the job (one client dragon image
 // per job) and plays the client action of each cast skill (its animation is the skill's visual).
-const MIR_STAGE=['2200','2211','2214','2218'],mir={x:0,y:0,act:null,at:0,seen:false};
+const MIR_STAGE=['2200','2211','2214','2217'],mir={x:0,y:0,act:null,at:0,seen:false};
 function drawMir(ox,oy){
   const p=game.player;if(!game.weapons['22001001']||!combat.dragon){mir.seen=false;return;}
   const stage=MIR_STAGE[game.jobs['22001001']?.tier??0],set=combat.dragon[stage]??combat.dragon['2200'];if(!set)return;
@@ -275,6 +275,8 @@ function drawMir(ox,oy){
 const slotName=id=>game.jobs[id]?combat.skills[game.skillOf(id)].name:WEAPONS[id].name;
 const slotIcon=id=>iconOf(WEAPONS[id]?game.skillOf(id):id);
 const JOB_NAME=['','2차','3차','4차'];
+// "3차 메이지(썬,콜)": the advancement and the client's job name at it.
+const jobLabel=(id,j)=>`${JOB_NAME[j.tier]} ${JOBS[id]?.[j.branch]?.names?.[j.tier-1]??''}`.trim();
 const iconOf=id=>combat.images[combat.skills[id]?.icon??combat.passiveIcons[id]?.icon]?.src;
 const passiveName=id=>PASSIVES[id].name;
 function ui(){
@@ -297,14 +299,14 @@ function renderLoadout(){
   const slot=(id,lv,cls='')=>id?`<div class="slot ${cls}${game.jobs[id]?' advanced':''}" title="${WEAPONS[id]?slotName(id):passiveName(id)} Lv.${lv}"><img src="${slotIcon(id)}" alt=""><em>${lv}</em></div>`:`<div class="slot ${cls} empty"></div>`;
   $('loadout-hud').innerHTML=`<div class="row">${Array.from({length:MAX_WEAPONS},(_,i)=>slot(w[i]?.[0],w[i]?.[1])).join('')}</div><div class="row">${Array.from({length:MAX_PASSIVES},(_,i)=>slot(ps[i]?.[0],ps[i]?.[1],'passive')).join('')}</div>`;
   $('skill-count').textContent=`${w.length} / ${MAX_WEAPONS}`;
-  $('skill-list').innerHTML=w.map(([id,lv])=>{const s=game.stats(id),j=game.jobs[id];return `<div class="skill"><img src="${slotIcon(id)}" alt=""><div><b>${slotName(id)}${j?` <i class="job-tag">${JOB_NAME[j.tier]}</i>`:''}</b><small>피해 ${s.damage}${s.targets?` · 최대 ${s.targets}마리`:s.count>1?` · ${s.count}발`:''} · ${s.cooldown.toFixed(2)}초</small></div><span>LV.<b>${lv}</b></span></div>`;}).join('');
+  $('skill-list').innerHTML=w.map(([id,lv])=>{const s=game.stats(id),j=game.jobs[id];return `<div class="skill"><img src="${slotIcon(id)}" alt=""><div><b>${slotName(id)}${j?` <i class="job-tag">${jobLabel(id,j)}</i>`:''}</b><small>피해 ${s.damage}${s.targets?` · 최대 ${s.targets}마리`:s.count>1?` · ${s.count}발`:''} · ${s.cooldown.toFixed(2)}초</small></div><span>LV.<b>${lv}</b></span></div>`;}).join('');
   $('passive-list').innerHTML=ps.map(([id,lv])=>`<div class="mini-skill"><span><img src="${iconOf(id)}" alt=""> ${passiveName(id)}</span><b>LV.${lv}</b></div>`).join('');
   $('portrait-stats').textContent=`공격력 +${Math.round(game.stat('might')*100)}% · 이동 ${Math.round(100+game.stat('speed')*100)}%`;
 }
 function choiceCard(c){
   if(c.type==='advance'){const line=JOBS[c.id][c.branch],t=line.tiers[c.tier-1],sk=combat.skills[t.skill];
-    return {icon:iconOf(t.skill),title:sk.name,text:`${slotName(c.id)} → ${sk.name}. ${t.desc}`,tag:`${JOB_NAME[c.tier]} 전직 · ${line.job}`,advance:true};}
-  if(c.type==='weapon'){const w=WEAPONS[c.id];return {icon:iconOf(c.id),title:w.name,text:c.level===1?w.desc:upgradeText(c.id,c.level),tag:c.level===1?'새 스킬':`Lv.${c.level-1} → ${c.level}${c.level===WEAPON_MAX?' (MAX)':''}`};}
+    return {icon:iconOf(t.skill),title:sk.name,text:`${slotName(c.id)} → ${sk.name}. ${t.desc}`,tag:`${JOB_NAME[c.tier]} 전직 · ${line.names?.[c.tier-1]??line.job}`,advance:true};}
+  if(c.type==='weapon'){const w=WEAPONS[c.id];return {icon:iconOf(c.id),title:w.name,text:c.level===1?w.desc:upgradeText(c.id,c.level),tag:c.level===1?`새 스킬 · ${w.cls}`:`Lv.${c.level-1} → ${c.level}${c.level===WEAPON_MAX?' (MAX)':''}`};}
   if(c.type==='passive'){const s=PASSIVES[c.id];return {icon:iconOf(c.id),title:s.name,text:s.text(s.per*c.level),tag:c.level===1?'새 패시브':`Lv.${c.level-1} → ${c.level}${c.level===PASSIVE_MAX?' (MAX)':''}`};}
   if(c.type==='heal')return {icon:combat.images[combat.potions['02000000']].src,title:'빨간 포션',text:'HP를 30 회복합니다.',tag:'회복'};
   return {icon:combat.images[combat.meso[3][0].img].src,title:'메소 주머니',text:'모든 스킬을 다 익혔어요. 다음 레벨을 노려 보세요.',tag:'보너스'};
