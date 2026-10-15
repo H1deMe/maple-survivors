@@ -1,0 +1,77 @@
+{
+  "version": "KMS 1.2.65 (\u002B KMS 1.2.95 skills)",
+  "sources": [
+    {
+      "file": "Character.wz",
+      "sha256": "8cda56dc604098d40e65d506e0fc71a013cc0c06be3fbd528ee4d94b2fb95fe3",
+      "version": 65,
+      "encryption": "EMS"
+    },
+    {
+      "file": "String.wz",
+      "sha256": "e1739ce85b36a3944493d71569bb158d97b83b9e93a83faeb6ff5dc59e7b3d12",
+      "version": 65,
+      "encryption": "EMS"
+    },
+    {
+      "file": "Map.wz",
+      "sha256": "2181d3de07442a669b10fa34bf7c15f73a6e24abfb1ed0470941905d60e3c39d",
+      "version": 65,
+      "encryption": "EMS"
+    },
+    {
+      "file": "Sound.wz",
+      "sha256": "14ab36cf903d67eb342615d2ac81218f3607d71b2148a8c4e88802586a3b0262",
+      "version": 65,
+      "encryption": "EMS"
+    },
+    {
+      "file": "Base.wz",
+      "sha256": "4407c16b158f6806e5c46ab39df08a30bcd205efdcb853f6a5c362b6d9abbba2",
+      "version": 65,
+      "encryption": "EMS"
+    },
+    {
+      "file": "KMS 1.2.95/Skill.wz",
+      "sha256": "cff00e3143ad24d21ea51a7b4f37abc9de4978c028501f44f550329da629cde9",
+      "version": 95,
+      "encryption": "IV 2E2B3301"
+    },
+    {
+      "file": "KMS 1.2.95/String.wz",
+      "sha256": "d93065d5201a7b340e06475c092acc60952ecf0556a5ef1f7a2a524a45cf3828",
+      "version": 95,
+      "encryption": "IV 2E2B3301"
+    },
+    {
+      "file": "KMS 1.2.95/Sound.wz",
+      "sha256": "515aa9e05de034b815a274c3a78243099edc90af70b666c1eab20e3e46ae52c4",
+      "version": 95,
+      "encryption": "IV 2E2B3301"
+    },
+    {
+      "file": "Skill.wz",
+      "sha256": "4b964e6f2fe87f6eb35668e93d5d5d7c77d4e007a3f733d5717676043b59998b",
+      "version": 65,
+      "encryption": "EMS"
+    },
+    {
+      "file": "Mob.wz",
+      "sha256": "1cf095cc555a65b4c355f8aee0d5a7ed24830a27a61c9b9d9228d283d6e71834",
+      "version": 65,
+      "encryption": "EMS"
+    },
+    {
+      "file": "Item.wz",
+      "sha256": "aebea70930bafeb7f77574bd9a952c1b7be17505fe5bb152af356fa115de45d0",
+      "version": 65,
+      "encryption": "EMS"
+    },
+    {
+      "file": "Effect.wz",
+      "sha256": "2b8325aeafc9be7c695a8b2a9000e3d11e9355d8ed5265bc1c63e0c776166077",
+      "version": 65,
+      "encryption": "EMS"
+    }
+  ]
+}

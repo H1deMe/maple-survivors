@@ -1,0 +1,2936 @@
+{
+  "version": 1,
+  "source": "Map.wz",
+  "sha256": "2181d3de07442a669b10fa34bf7c15f73a6e24abfb1ed0470941905d60e3c39d",
+  "maps": [
+    "100000000",
+    "104000000",
+    "101000000"
+  ],
+  "padding": 8,
+  "aliases": {
+    "tree-big": {
+      "group": "henesys",
+      "maxWidth": 300,
+      "maxHeight": 260,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/15",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0020.png",
+              "w": 290,
+              "h": 239,
+              "ox": 145,
+              "oy": 119,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "tree-apple": {
+      "group": "henesys",
+      "maxWidth": 120,
+      "maxHeight": 145,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/9",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0177.png",
+              "w": 60,
+              "h": 63,
+              "ox": 30,
+              "oy": 31,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "bush-big": {
+      "group": "henesys",
+      "maxWidth": 210,
+      "maxHeight": 120,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/13",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0008.png",
+              "w": 223,
+              "h": 128,
+              "ox": 111,
+              "oy": 60,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "bush-small": {
+      "group": "henesys",
+      "maxWidth": 86,
+      "maxHeight": 56,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/darkWood/nature/20",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0021.png",
+              "w": 149,
+              "h": 67,
+              "ox": 32,
+              "oy": 52,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "bush-berry": {
+      "group": "henesys",
+      "maxWidth": 136,
+      "maxHeight": 58,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0052.png",
+              "w": 131,
+              "h": 39,
+              "ox": 65,
+              "oy": 18,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "clover": {
+      "group": "henesys",
+      "maxWidth": 90,
+      "maxHeight": 56,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/10",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0038.png",
+              "w": 83,
+              "h": 59,
+              "ox": 41,
+              "oy": 30,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "flower-purple": {
+      "group": "henesys",
+      "maxWidth": 50,
+      "maxHeight": 56,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/3",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0053.png",
+              "w": 46,
+              "h": 44,
+              "ox": 23,
+              "oy": 22,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "flower-purple2": {
+      "group": "henesys",
+      "maxWidth": 56,
+      "maxHeight": 56,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/4",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0054.png",
+              "w": 43,
+              "h": 42,
+              "ox": 21,
+              "oy": 21,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "flower-orange": {
+      "group": "henesys",
+      "maxWidth": 50,
+      "maxHeight": 70,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/5",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0120.png",
+              "w": 47,
+              "h": 66,
+              "ox": 23,
+              "oy": 33,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "flower-orange2": {
+      "group": "henesys",
+      "maxWidth": 60,
+      "maxHeight": 60,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/6",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0119.png",
+              "w": 56,
+              "h": 52,
+              "ox": 28,
+              "oy": 26,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "sunflower": {
+      "group": "henesys",
+      "maxWidth": 56,
+      "maxHeight": 96,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/22",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0126.png",
+              "w": 40,
+              "h": 66,
+              "ox": 20,
+              "oy": 33,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "sunflower2": {
+      "group": "henesys",
+      "maxWidth": 64,
+      "maxHeight": 112,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/23",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0128.png",
+              "w": 63,
+              "h": 88,
+              "ox": 31,
+              "oy": 44,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "sunflower3": {
+      "group": "henesys",
+      "maxWidth": 52,
+      "maxHeight": 84,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/24",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0127.png",
+              "w": 50,
+              "h": 77,
+              "ox": 25,
+              "oy": 38,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "carrots": {
+      "group": "henesys",
+      "maxWidth": 96,
+      "maxHeight": 56,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/8",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0031.png",
+              "w": 73,
+              "h": 56,
+              "ox": 36,
+              "oy": 28,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "mush-red": {
+      "group": "henesys",
+      "maxWidth": 110,
+      "maxHeight": 116,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/25",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0027.png",
+              "w": 132,
+              "h": 183,
+              "ox": 66,
+              "oy": 91,
+              "delay": 3000
+            },
+            {
+              "src": "raw-0028.png",
+              "w": 132,
+              "h": 183,
+              "ox": 66,
+              "oy": 91,
+              "delay": 3000
+            }
+          ]
+        }
+      ]
+    },
+    "mush-cluster": {
+      "group": "henesys",
+      "maxWidth": 150,
+      "maxHeight": 76,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/17",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0176.png",
+              "w": 141,
+              "h": 62,
+              "ox": 70,
+              "oy": 31,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "mush-yellow": {
+      "group": "henesys",
+      "maxWidth": 64,
+      "maxHeight": 46,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/18",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0169.png",
+              "w": 39,
+              "h": 35,
+              "ox": 19,
+              "oy": 17,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "mush-white": {
+      "group": "henesys",
+      "maxWidth": 66,
+      "maxHeight": 70,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/26",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0171.png",
+              "w": 120,
+              "h": 157,
+              "ox": 60,
+              "oy": 78,
+              "delay": 2100
+            },
+            {
+              "src": "raw-0172.png",
+              "w": 120,
+              "h": 157,
+              "ox": 60,
+              "oy": 78,
+              "delay": 2100
+            }
+          ]
+        }
+      ]
+    },
+    "mush-small": {
+      "group": "henesys",
+      "maxWidth": 44,
+      "maxHeight": 38,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/18",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0169.png",
+              "w": 39,
+              "h": 35,
+              "ox": 19,
+              "oy": 17,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "mush-tiny": {
+      "group": "henesys",
+      "maxWidth": 126,
+      "maxHeight": 46,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/17",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0176.png",
+              "w": 141,
+              "h": 62,
+              "ox": 70,
+              "oy": 31,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "mush-orange": {
+      "group": "henesys",
+      "maxWidth": 96,
+      "maxHeight": 70,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/26",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0171.png",
+              "w": 120,
+              "h": 157,
+              "ox": 60,
+              "oy": 78,
+              "delay": 2100
+            },
+            {
+              "src": "raw-0172.png",
+              "w": 120,
+              "h": 157,
+              "ox": 60,
+              "oy": 78,
+              "delay": 2100
+            }
+          ]
+        }
+      ]
+    },
+    "house-ochre": {
+      "group": "henesys",
+      "maxWidth": 255,
+      "maxHeight": 215,
+      "parts": [
+        {
+          "source": "Obj/houseGS.img/house6/basic/0",
+          "x": 4734,
+          "y": 347,
+          "frames": [
+            {
+              "src": "raw-0007.png",
+              "w": 281,
+              "h": 157,
+              "ox": 140,
+              "oy": 78,
+              "delay": 100
+            }
+          ],
+          "z": 2
+        },
+        {
+          "source": "Obj/houseGS.img/house6/basic/1",
+          "x": 4743,
+          "y": 242,
+          "frames": [
+            {
+              "src": "raw-0005.png",
+              "w": 318,
+              "h": 175,
+              "ox": 159,
+              "oy": 87,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        },
+        {
+          "source": "Obj/houseGS.img/house6/deco/0",
+          "x": 4750,
+          "y": 241,
+          "frames": [
+            {
+              "src": "raw-0006.png",
+              "w": 304,
+              "h": 167,
+              "ox": 152,
+              "oy": 83,
+              "delay": 100
+            }
+          ],
+          "z": 4
+        },
+        {
+          "source": "Obj/door.img/grassySoil/door/0",
+          "x": 4740,
+          "y": 379,
+          "frames": [
+            {
+              "src": "raw-0116.png",
+              "w": 108,
+              "h": 94,
+              "ox": 54,
+              "oy": 47,
+              "delay": 100
+            }
+          ],
+          "z": 7
+        },
+        {
+          "source": "Obj/door.img/grassySoil/window/4",
+          "x": 4810,
+          "y": 370,
+          "frames": [
+            {
+              "src": "raw-0032.png",
+              "w": 50,
+              "h": 50,
+              "ox": 25,
+              "oy": 25,
+              "delay": 100
+            }
+          ],
+          "z": 7
+        }
+      ]
+    },
+    "house-mini": {
+      "group": "henesys",
+      "maxWidth": 205,
+      "maxHeight": 205,
+      "parts": [
+        {
+          "source": "Obj/houseGS.img/house17/basic/0",
+          "x": 3879,
+          "y": 378,
+          "frames": [
+            {
+              "src": "raw-0101.png",
+              "w": 223,
+              "h": 157,
+              "ox": 111,
+              "oy": 78,
+              "delay": 100
+            }
+          ],
+          "z": 2
+        },
+        {
+          "source": "Obj/houseGS.img/house17/basic/1",
+          "x": 3878,
+          "y": 283,
+          "frames": [
+            {
+              "src": "raw-0100.png",
+              "w": 343,
+              "h": 170,
+              "ox": 171,
+              "oy": 85,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        },
+        {
+          "source": "Obj/door.img/grassySoil/window/5",
+          "x": 3812,
+          "y": 381,
+          "frames": [
+            {
+              "src": "raw-0112.png",
+              "w": 50,
+              "h": 50,
+              "ox": 25,
+              "oy": 25,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        },
+        {
+          "source": "Obj/door.img/grassySoil/door/22",
+          "x": 3919,
+          "y": 398,
+          "frames": [
+            {
+              "src": "raw-0111.png",
+              "w": 151,
+              "h": 118,
+              "ox": 75,
+              "oy": 59,
+              "delay": 100
+            }
+          ],
+          "z": 4
+        },
+        {
+          "source": "Obj/house.img/grassySoil/chimney/2",
+          "x": 3795,
+          "y": 222,
+          "frames": [
+            {
+              "src": "raw-0113.png",
+              "w": 64,
+              "h": 99,
+              "ox": 32,
+              "oy": 49,
+              "delay": 100
+            }
+          ],
+          "z": 4
+        }
+      ]
+    },
+    "house-red": {
+      "group": "henesys",
+      "maxWidth": 205,
+      "maxHeight": 225,
+      "parts": [
+        {
+          "source": "Obj/houseGS.img/house10/basic/0",
+          "x": 6116,
+          "y": 333,
+          "frames": [
+            {
+              "src": "raw-0022.png",
+              "w": 189,
+              "h": 265,
+              "ox": 94,
+              "oy": 132,
+              "delay": 100
+            }
+          ],
+          "z": 4
+        },
+        {
+          "source": "Obj/houseGS.img/house10/basic/1",
+          "x": 6137,
+          "y": 184,
+          "frames": [
+            {
+              "src": "raw-0023.png",
+              "w": 264,
+              "h": 178,
+              "ox": 132,
+              "oy": 89,
+              "delay": 100
+            }
+          ],
+          "z": 5
+        },
+        {
+          "source": "Obj/houseGS.img/house9/deco/0",
+          "x": 6111,
+          "y": 318,
+          "frames": [
+            {
+              "src": "raw-0024.png",
+              "w": 209,
+              "h": 83,
+              "ox": 104,
+              "oy": 41,
+              "delay": 100
+            }
+          ],
+          "z": 5
+        },
+        {
+          "source": "Obj/door.img/grassySoil/window/14",
+          "x": 6082,
+          "y": 249,
+          "frames": [
+            {
+              "src": "raw-0025.png",
+              "w": 62,
+              "h": 54,
+              "ox": 31,
+              "oy": 27,
+              "delay": 100
+            }
+          ],
+          "z": 5
+        },
+        {
+          "source": "Obj/house.img/grassySoil/chimney/5",
+          "x": 6179,
+          "y": 213,
+          "frames": [
+            {
+              "src": "raw-0026.png",
+              "w": 99,
+              "h": 180,
+              "ox": 40,
+              "oy": 82,
+              "delay": 100
+            }
+          ],
+          "z": 6
+        },
+        {
+          "source": "Obj/door.img/grassySoil/door/0",
+          "x": 6116,
+          "y": 419,
+          "frames": [
+            {
+              "src": "raw-0116.png",
+              "w": 108,
+              "h": 94,
+              "ox": 54,
+              "oy": 47,
+              "delay": 100
+            }
+          ],
+          "z": 7
+        }
+      ]
+    },
+    "village-tower": {
+      "group": "henesys",
+      "maxWidth": 135,
+      "maxHeight": 200,
+      "parts": [
+        {
+          "source": "Obj/houseGS.img/house9/basic/0",
+          "x": 5772,
+          "y": 324,
+          "frames": [
+            {
+              "src": "raw-0002.png",
+              "w": 189,
+              "h": 265,
+              "ox": 94,
+              "oy": 132,
+              "delay": 100
+            }
+          ],
+          "z": 2
+        },
+        {
+          "source": "Obj/houseGS.img/house9/basic/1",
+          "x": 5791,
+          "y": 177,
+          "frames": [
+            {
+              "src": "raw-0004.png",
+              "w": 264,
+              "h": 182,
+              "ox": 132,
+              "oy": 91,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        },
+        {
+          "source": "Obj/houseGS.img/house9/deco/0",
+          "x": 5766,
+          "y": 311,
+          "frames": [
+            {
+              "src": "raw-0024.png",
+              "w": 209,
+              "h": 83,
+              "ox": 104,
+              "oy": 41,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        },
+        {
+          "source": "Obj/houseGS.img/house9/deco/1",
+          "x": 5792,
+          "y": 152,
+          "frames": [
+            {
+              "src": "raw-0003.png",
+              "w": 264,
+              "h": 130,
+              "ox": 132,
+              "oy": 65,
+              "delay": 100
+            }
+          ],
+          "z": 4
+        },
+        {
+          "source": "Obj/door.img/grassySoil/door/0",
+          "x": 5772,
+          "y": 410,
+          "frames": [
+            {
+              "src": "raw-0116.png",
+              "w": 108,
+              "h": 94,
+              "ox": 54,
+              "oy": 47,
+              "delay": 100
+            }
+          ],
+          "z": 8
+        }
+      ]
+    },
+    "house-village": {
+      "group": "henesys",
+      "maxWidth": 620,
+      "maxHeight": 350,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/artificiality/32",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0077.png",
+              "w": 774,
+              "h": 419,
+              "ox": 387,
+              "oy": 209,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "fountain": {
+      "group": "henesys",
+      "maxWidth": 175,
+      "maxHeight": 145,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/market/15",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0124.png",
+              "w": 247,
+              "h": 181,
+              "ox": 123,
+              "oy": 90,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "statue-mushroom": {
+      "group": "henesys",
+      "maxWidth": 100,
+      "maxHeight": 140,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/space/6",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0069.png",
+              "w": 156,
+              "h": 152,
+              "ox": 78,
+              "oy": 76,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "mailbox": {
+      "group": "henesys",
+      "maxWidth": 56,
+      "maxHeight": 80,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/artificiality/16",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0152.png",
+              "w": 48,
+              "h": 54,
+              "ox": 24,
+              "oy": 27,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "mailbox-heart": {
+      "group": "henesys",
+      "maxWidth": 60,
+      "maxHeight": 70,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/artificiality/16",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0152.png",
+              "w": 48,
+              "h": 54,
+              "ox": 24,
+              "oy": 27,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "pot-sunflower": {
+      "group": "henesys",
+      "maxWidth": 52,
+      "maxHeight": 96,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/22",
+          "x": 0,
+          "y": -45,
+          "frames": [
+            {
+              "src": "raw-0126.png",
+              "w": 40,
+              "h": 66,
+              "ox": 20,
+              "oy": 33,
+              "delay": 100
+            }
+          ]
+        },
+        {
+          "source": "Obj/acc1.img/grassySoil/market/38",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0142.png",
+              "w": 72,
+              "h": 45,
+              "ox": 36,
+              "oy": 22,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "pot-lily": {
+      "group": "henesys",
+      "maxWidth": 52,
+      "maxHeight": 96,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/3",
+          "x": 0,
+          "y": -32,
+          "frames": [
+            {
+              "src": "raw-0053.png",
+              "w": 46,
+              "h": 44,
+              "ox": 23,
+              "oy": 22,
+              "delay": 100
+            }
+          ]
+        },
+        {
+          "source": "Obj/acc1.img/grassySoil/market/38",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0142.png",
+              "w": 72,
+              "h": 45,
+              "ox": 36,
+              "oy": 22,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "fence": {
+      "group": "henesys",
+      "maxWidth": 176,
+      "maxHeight": 64,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/artificiality/3",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0000.png",
+              "w": 168,
+              "h": 57,
+              "ox": 84,
+              "oy": 29,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "fence-flower": {
+      "group": "henesys",
+      "maxWidth": 244,
+      "maxHeight": 65,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/midForest/artificiality/8",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0048.png",
+              "w": 211,
+              "h": 29,
+              "ox": 105,
+              "oy": 14,
+              "delay": 100
+            }
+          ]
+        },
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/10",
+          "x": -60,
+          "y": -8,
+          "frames": [
+            {
+              "src": "raw-0038.png",
+              "w": 83,
+              "h": 59,
+              "ox": 41,
+              "oy": 30,
+              "delay": 100
+            }
+          ]
+        },
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/10",
+          "x": 55,
+          "y": -8,
+          "frames": [
+            {
+              "src": "raw-0038.png",
+              "w": 83,
+              "h": 59,
+              "ox": 41,
+              "oy": 30,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "barrel": {
+      "group": "henesys",
+      "maxWidth": 58,
+      "maxHeight": 62,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/market/50",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0141.png",
+              "w": 56,
+              "h": 34,
+              "ox": 28,
+              "oy": 17,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "barrel-side": {
+      "group": "henesys",
+      "maxWidth": 72,
+      "maxHeight": 54,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/market/50",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0141.png",
+              "w": 56,
+              "h": 34,
+              "ox": 28,
+              "oy": 17,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "logs": {
+      "group": "henesys",
+      "maxWidth": 136,
+      "maxHeight": 64,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/artificiality/6",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0050.png",
+              "w": 132,
+              "h": 58,
+              "ox": 66,
+              "oy": 30,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "bench": {
+      "group": "henesys",
+      "maxWidth": 96,
+      "maxHeight": 58,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/artificiality/35",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0075.png",
+              "w": 87,
+              "h": 28,
+              "ox": 37,
+              "oy": 14,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "signpost": {
+      "group": "henesys",
+      "maxWidth": 84,
+      "maxHeight": 128,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/artificiality/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0049.png",
+              "w": 65,
+              "h": 116,
+              "ox": 32,
+              "oy": 58,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "board": {
+      "group": "henesys",
+      "maxWidth": 150,
+      "maxHeight": 126,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/market/4",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0019.png",
+              "w": 185,
+              "h": 184,
+              "ox": 92,
+              "oy": 92,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "sack": {
+      "group": "henesys",
+      "maxWidth": 54,
+      "maxHeight": 52,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/market/38",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0142.png",
+              "w": 72,
+              "h": 45,
+              "ox": 36,
+              "oy": 22,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "hay-stack": {
+      "group": "henesys",
+      "maxWidth": 210,
+      "maxHeight": 132,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/market/16",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0102.png",
+              "w": 207,
+              "h": 125,
+              "ox": 103,
+              "oy": 62,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "hay-bale": {
+      "group": "henesys",
+      "maxWidth": 116,
+      "maxHeight": 76,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/market/16",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0102.png",
+              "w": 207,
+              "h": 125,
+              "ox": 103,
+              "oy": 62,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "hay-small": {
+      "group": "henesys",
+      "maxWidth": 66,
+      "maxHeight": 48,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/market/16",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0102.png",
+              "w": 207,
+              "h": 125,
+              "ox": 103,
+              "oy": 62,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "wheat": {
+      "group": "henesys",
+      "maxWidth": 110,
+      "maxHeight": 120,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/market/20",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0001.png",
+              "w": 140,
+              "h": 114,
+              "ox": 70,
+              "oy": 57,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "cart": {
+      "group": "henesys",
+      "maxWidth": 180,
+      "maxHeight": 90,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/market/26",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0149.png",
+              "w": 176,
+              "h": 74,
+              "ox": 88,
+              "oy": 37,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "butterfly-pink": {
+      "group": "henesys",
+      "maxWidth": 40,
+      "maxHeight": 30,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/19",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0055.png",
+              "w": 33,
+              "h": 16,
+              "ox": 16,
+              "oy": 8,
+              "delay": 130
+            },
+            {
+              "src": "raw-0056.png",
+              "w": 25,
+              "h": 19,
+              "ox": 40,
+              "oy": -7,
+              "delay": 130
+            },
+            {
+              "src": "raw-0057.png",
+              "w": 14,
+              "h": 20,
+              "ox": 53,
+              "oy": 4,
+              "delay": 130
+            },
+            {
+              "src": "raw-0058.png",
+              "w": 34,
+              "h": 13,
+              "ox": 49,
+              "oy": 16,
+              "delay": 130
+            },
+            {
+              "src": "raw-0059.png",
+              "w": 26,
+              "h": 21,
+              "ox": 22,
+              "oy": 42,
+              "delay": 130
+            },
+            {
+              "src": "raw-0060.png",
+              "w": 25,
+              "h": 19,
+              "ox": 3,
+              "oy": 22,
+              "delay": 130
+            },
+            {
+              "src": "raw-0061.png",
+              "w": 14,
+              "h": 20,
+              "ox": -27,
+              "oy": 12,
+              "delay": 130
+            },
+            {
+              "src": "raw-0062.png",
+              "w": 25,
+              "h": 19,
+              "ox": -47,
+              "oy": 17,
+              "delay": 130
+            },
+            {
+              "src": "raw-0063.png",
+              "w": 33,
+              "h": 16,
+              "ox": -10,
+              "oy": -8,
+              "delay": 130
+            }
+          ]
+        }
+      ]
+    },
+    "butterfly-yellow": {
+      "group": "henesys",
+      "maxWidth": 40,
+      "maxHeight": 30,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/21",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0039.png",
+              "w": 33,
+              "h": 18,
+              "ox": 16,
+              "oy": 9,
+              "delay": 130
+            },
+            {
+              "src": "raw-0040.png",
+              "w": 26,
+              "h": 20,
+              "ox": -18,
+              "oy": -8,
+              "delay": 130
+            },
+            {
+              "src": "raw-0041.png",
+              "w": 16,
+              "h": 19,
+              "ox": -50,
+              "oy": -33,
+              "delay": 130
+            },
+            {
+              "src": "raw-0042.png",
+              "w": 33,
+              "h": 15,
+              "ox": -62,
+              "oy": -14,
+              "delay": 130
+            },
+            {
+              "src": "raw-0043.png",
+              "w": 26,
+              "h": 20,
+              "ox": -56,
+              "oy": 5,
+              "delay": 130
+            },
+            {
+              "src": "raw-0044.png",
+              "w": 34,
+              "h": 12,
+              "ox": -74,
+              "oy": 7,
+              "delay": 130
+            },
+            {
+              "src": "raw-0045.png",
+              "w": 33,
+              "h": 18,
+              "ox": -74,
+              "oy": -18,
+              "delay": 130
+            },
+            {
+              "src": "raw-0046.png",
+              "w": 16,
+              "h": 19,
+              "ox": -50,
+              "oy": -33,
+              "delay": 130
+            },
+            {
+              "src": "raw-0047.png",
+              "w": 26,
+              "h": 20,
+              "ox": -9,
+              "oy": -22,
+              "delay": 130
+            }
+          ]
+        }
+      ]
+    },
+    "butterfly-orange": {
+      "group": "henesys",
+      "maxWidth": 40,
+      "maxHeight": 30,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/nature/20",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0129.png",
+              "w": 38,
+              "h": 16,
+              "ox": 19,
+              "oy": 8,
+              "delay": 200
+            },
+            {
+              "src": "raw-0130.png",
+              "w": 30,
+              "h": 20,
+              "ox": 14,
+              "oy": 12,
+              "delay": 200
+            },
+            {
+              "src": "raw-0131.png",
+              "w": 17,
+              "h": 25,
+              "ox": 8,
+              "oy": 17,
+              "delay": 200
+            },
+            {
+              "src": "raw-0132.png",
+              "w": 7,
+              "h": 27,
+              "ox": 2,
+              "oy": 19,
+              "delay": 200
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-house": {
+      "group": "lith",
+      "maxWidth": 300,
+      "maxHeight": 250,
+      "parts": [
+        {
+          "source": "Obj/houseVPT.img/house2/basic/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0196.png",
+              "w": 507,
+              "h": 378,
+              "ox": 253,
+              "oy": 189,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-cottage": {
+      "group": "lith",
+      "maxWidth": 205,
+      "maxHeight": 165,
+      "parts": [
+        {
+          "source": "Obj/houseVPT.img/house7/basic/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0269.png",
+              "w": 425,
+              "h": 349,
+              "ox": 173,
+              "oy": 139,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-palm": {
+      "group": "lith",
+      "maxWidth": 195,
+      "maxHeight": 255,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/vicportTown/nature/2",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0182.png",
+              "w": 305,
+              "h": 378,
+              "ox": 152,
+              "oy": 189,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-palm-lean": {
+      "group": "lith",
+      "maxWidth": 195,
+      "maxHeight": 245,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/vicportTown/nature/4",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0211.png",
+              "w": 307,
+              "h": 334,
+              "ox": 153,
+              "oy": 167,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-crates": {
+      "group": "lith",
+      "maxWidth": 134,
+      "maxHeight": 112,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/market/50",
+          "x": -27,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0141.png",
+              "w": 56,
+              "h": 34,
+              "ox": 28,
+              "oy": 17,
+              "delay": 100
+            }
+          ]
+        },
+        {
+          "source": "Obj/acc1.img/grassySoil/market/50",
+          "x": 27,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0141.png",
+              "w": 56,
+              "h": 34,
+              "ox": 28,
+              "oy": 17,
+              "delay": 100
+            }
+          ]
+        },
+        {
+          "source": "Obj/acc1.img/grassySoil/market/50",
+          "x": 0,
+          "y": -34,
+          "frames": [
+            {
+              "src": "raw-0141.png",
+              "w": 56,
+              "h": 34,
+              "ox": 28,
+              "oy": 17,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-barrels": {
+      "group": "lith",
+      "maxWidth": 108,
+      "maxHeight": 80,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/portTown/artificiality/21",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0250.png",
+              "w": 243,
+              "h": 139,
+              "ox": 121,
+              "oy": 69,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-rope": {
+      "group": "lith",
+      "maxWidth": 72,
+      "maxHeight": 36,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/vicportTown/artificiality/4",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0297.png",
+              "w": 46,
+              "h": 45,
+              "ox": 23,
+              "oy": 22,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-bollard": {
+      "group": "lith",
+      "maxWidth": 34,
+      "maxHeight": 43,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/vicportTown/artificiality/13",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0206.png",
+              "w": 75,
+              "h": 143,
+              "ox": 37,
+              "oy": 71,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-fence": {
+      "group": "lith",
+      "maxWidth": 190,
+      "maxHeight": 110,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/portTown/artificiality/6",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0252.png",
+              "w": 350,
+              "h": 190,
+              "ox": 175,
+              "oy": 95,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-lamp": {
+      "group": "lith",
+      "maxWidth": 62,
+      "maxHeight": 146,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/grassySoil/space/21",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0068.png",
+              "w": 77,
+              "h": 153,
+              "ox": 38,
+              "oy": 76,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-arch": {
+      "group": "lith",
+      "maxWidth": 155,
+      "maxHeight": 205,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/vicportTown/artificiality/17",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0195.png",
+              "w": 243,
+              "h": 323,
+              "ox": 121,
+              "oy": 161,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-crane": {
+      "group": "lith",
+      "maxWidth": 250,
+      "maxHeight": 225,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/vicportTown/artificiality/6",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0191.png",
+              "w": 602,
+              "h": 498,
+              "ox": 301,
+              "oy": 249,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-hull": {
+      "group": "lith",
+      "maxWidth": 215,
+      "maxHeight": 103,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/vicportTown/artificiality/7",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0205.png",
+              "w": 515,
+              "h": 178,
+              "ox": 257,
+              "oy": 89,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-boat": {
+      "group": "lith",
+      "maxWidth": 340,
+      "maxHeight": 335,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/sandBeach/artificiality/20",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0298.png",
+              "w": 675,
+              "h": 669,
+              "ox": 337,
+              "oy": 334,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-stall": {
+      "group": "lith",
+      "maxWidth": 190,
+      "maxHeight": 154,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/portTown/artificiality/18",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0251.png",
+              "w": 396,
+              "h": 241,
+              "ox": 198,
+              "oy": 120,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-net": {
+      "group": "lith",
+      "maxWidth": 85,
+      "maxHeight": 100,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/portTown/artificiality/2",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0247.png",
+              "w": 53,
+              "h": 110,
+              "ox": 26,
+              "oy": 55,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-grass": {
+      "group": "lith",
+      "maxWidth": 81,
+      "maxHeight": 51,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/vicportTown/nature/14",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0183.png",
+              "w": 120,
+              "h": 34,
+              "ox": 60,
+              "oy": 17,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "harbor-rock": {
+      "group": "lith",
+      "maxWidth": 110,
+      "maxHeight": 58,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/vicportTown/artificiality/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0289.png",
+              "w": 539,
+              "h": 108,
+              "ox": 269,
+              "oy": 54,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-house-green": {
+      "group": "ellinia",
+      "maxWidth": 180,
+      "maxHeight": 290,
+      "parts": [
+        {
+          "source": "Obj/houseSW.img/house0/basic/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0332.png",
+              "w": 287,
+              "h": 588,
+              "ox": 143,
+              "oy": 294,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-house-blue": {
+      "group": "ellinia",
+      "maxWidth": 205,
+      "maxHeight": 310,
+      "parts": [
+        {
+          "source": "Obj/houseSW.img/house1/basic/0",
+          "x": -369,
+          "y": -1085,
+          "frames": [
+            {
+              "src": "raw-0333.png",
+              "w": 269,
+              "h": 605,
+              "ox": 143,
+              "oy": 294,
+              "delay": 100
+            }
+          ],
+          "z": 1
+        },
+        {
+          "source": "Obj/houseSW.img/house1/deco/0",
+          "x": -372,
+          "y": -929,
+          "frames": [
+            {
+              "src": "raw-0364.png",
+              "w": 244,
+              "h": 42,
+              "ox": 122,
+              "oy": 21,
+              "delay": 100
+            }
+          ],
+          "z": 2
+        },
+        {
+          "source": "Obj/houseSW.img/house1/deco/1",
+          "x": -307,
+          "y": -973,
+          "frames": [
+            {
+              "src": "raw-0389.png",
+              "w": 161,
+              "h": 56,
+              "ox": 80,
+              "oy": 28,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        }
+      ]
+    },
+    "ellinia-house-red": {
+      "group": "ellinia",
+      "maxWidth": 155,
+      "maxHeight": 255,
+      "parts": [
+        {
+          "source": "Obj/houseSW.img/house2/basic/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0334.png",
+              "w": 198,
+              "h": 455,
+              "ox": 99,
+              "oy": 227,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-house-narrow": {
+      "group": "ellinia",
+      "maxWidth": 155,
+      "maxHeight": 265,
+      "parts": [
+        {
+          "source": "Obj/houseSW.img/house3/basic/0",
+          "x": -98,
+          "y": -367,
+          "frames": [
+            {
+              "src": "raw-0335.png",
+              "w": 204,
+              "h": 442,
+              "ox": 102,
+              "oy": 221,
+              "delay": 100
+            }
+          ],
+          "z": 1
+        },
+        {
+          "source": "Obj/houseSW.img/house3/deco/0",
+          "x": -102,
+          "y": -366,
+          "frames": [
+            {
+              "src": "raw-0390.png",
+              "w": 187,
+              "h": 42,
+              "ox": 74,
+              "oy": -20,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        }
+      ]
+    },
+    "ellinia-house-round": {
+      "group": "ellinia",
+      "maxWidth": 225,
+      "maxHeight": 290,
+      "parts": [
+        {
+          "source": "Obj/houseSW.img/house7/basic/0",
+          "x": 244,
+          "y": -2981,
+          "frames": [
+            {
+              "src": "raw-0365.png",
+              "w": 292,
+              "h": 441,
+              "ox": 146,
+              "oy": 220,
+              "delay": 100
+            }
+          ],
+          "z": 1
+        },
+        {
+          "source": "Obj/houseSW.img/house5/deco/0",
+          "x": 245,
+          "y": -2864,
+          "frames": [
+            {
+              "src": "raw-0363.png",
+              "w": 244,
+              "h": 42,
+              "ox": 122,
+              "oy": 21,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        },
+        {
+          "source": "Obj/houseSW.img/house5/deco/1",
+          "x": 312,
+          "y": -2908,
+          "frames": [
+            {
+              "src": "raw-0388.png",
+              "w": 161,
+              "h": 56,
+              "ox": 80,
+              "oy": 28,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        }
+      ]
+    },
+    "ellinia-house-hall": {
+      "group": "ellinia",
+      "maxWidth": 265,
+      "maxHeight": 375,
+      "parts": [
+        {
+          "source": "Obj/houseSW.img/house6/basic/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0338.png",
+              "w": 481,
+              "h": 764,
+              "ox": 240,
+              "oy": 382,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-house-clock": {
+      "group": "ellinia",
+      "maxWidth": 190,
+      "maxHeight": 285,
+      "parts": [
+        {
+          "source": "Obj/houseSW.img/house8/basic/0",
+          "x": -165,
+          "y": -2101,
+          "frames": [
+            {
+              "src": "raw-0339.png",
+              "w": 287,
+              "h": 451,
+              "ox": 143,
+              "oy": 225,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        },
+        {
+          "source": "Obj/houseSW.img/house8/deco/0",
+          "x": -138,
+          "y": -2109,
+          "frames": [
+            {
+              "src": "raw-0366.png",
+              "w": 87,
+              "h": 40,
+              "ox": 43,
+              "oy": 20,
+              "delay": 200
+            },
+            {
+              "src": "raw-0367.png",
+              "w": 94,
+              "h": 36,
+              "ox": 47,
+              "oy": 18,
+              "delay": 200
+            },
+            {
+              "src": "raw-0368.png",
+              "w": 103,
+              "h": 35,
+              "ox": 51,
+              "oy": 17,
+              "delay": 200
+            },
+            {
+              "src": "raw-0369.png",
+              "w": 77,
+              "h": 26,
+              "ox": 38,
+              "oy": 13,
+              "delay": 200
+            },
+            {
+              "src": "raw-0370.png",
+              "w": 74,
+              "h": 32,
+              "ox": 37,
+              "oy": 16,
+              "delay": 200
+            },
+            {
+              "src": "raw-0371.png",
+              "w": 75,
+              "h": 32,
+              "ox": 37,
+              "oy": 16,
+              "delay": 200
+            }
+          ],
+          "z": 4
+        }
+      ]
+    },
+    "ellinia-tree": {
+      "group": "ellinia",
+      "maxWidth": 310,
+      "maxHeight": 425,
+      "parts": [
+        {
+          "source": "Back/shineWood.img/back/5",
+          "x": 0,
+          "y": -185,
+          "frames": [
+            {
+              "src": "raw-0303.png",
+              "w": 195,
+              "h": 392,
+              "ox": 97,
+              "oy": 196,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        },
+        {
+          "source": "Obj/acc2.img/shineWood/foot/19",
+          "x": 0,
+          "y": -350,
+          "frames": [
+            {
+              "src": "raw-0325.png",
+              "w": 304,
+              "h": 110,
+              "ox": 160,
+              "oy": 55,
+              "delay": 100
+            }
+          ],
+          "z": 1
+        },
+        {
+          "source": "Obj/acc2.img/shineWood/foot/0",
+          "x": -8,
+          "y": -5,
+          "frames": [
+            {
+              "src": "raw-0327.png",
+              "w": 206,
+              "h": 110,
+              "ox": 103,
+              "oy": 55,
+              "delay": 100
+            }
+          ],
+          "z": 2
+        }
+      ]
+    },
+    "ellinia-tree-twisted": {
+      "group": "ellinia",
+      "maxWidth": 310,
+      "maxHeight": 425,
+      "parts": [
+        {
+          "source": "Back/shineWood.img/back/7",
+          "x": 0,
+          "y": -185,
+          "frames": [
+            {
+              "src": "raw-0302.png",
+              "w": 180,
+              "h": 392,
+              "ox": 90,
+              "oy": 196,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        },
+        {
+          "source": "Obj/acc2.img/shineWood/foot/19",
+          "x": 0,
+          "y": -350,
+          "frames": [
+            {
+              "src": "raw-0325.png",
+              "w": 304,
+              "h": 110,
+              "ox": 160,
+              "oy": 55,
+              "delay": 100
+            }
+          ],
+          "z": 1
+        },
+        {
+          "source": "Obj/acc2.img/shineWood/foot/0",
+          "x": -8,
+          "y": -5,
+          "frames": [
+            {
+              "src": "raw-0327.png",
+              "w": 206,
+              "h": 110,
+              "ox": 103,
+              "oy": 55,
+              "delay": 100
+            }
+          ],
+          "z": 2
+        }
+      ]
+    },
+    "ellinia-mill": {
+      "group": "ellinia",
+      "maxWidth": 225,
+      "maxHeight": 295,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/artificiality/6",
+          "x": -294,
+          "y": -2016,
+          "frames": [
+            {
+              "src": "raw-0341.png",
+              "w": 51,
+              "h": 43,
+              "ox": 25,
+              "oy": 21,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        },
+        {
+          "source": "Obj/acc2.img/shineWood/artificiality/5",
+          "x": -295,
+          "y": -2415,
+          "frames": [
+            {
+              "src": "raw-0348.png",
+              "w": 26,
+              "h": 34,
+              "ox": 6,
+              "oy": 17,
+              "delay": 150
+            },
+            {
+              "src": "raw-0349.png",
+              "w": 24,
+              "h": 34,
+              "ox": 4,
+              "oy": 17,
+              "delay": 150
+            },
+            {
+              "src": "raw-0350.png",
+              "w": 25,
+              "h": 34,
+              "ox": 4,
+              "oy": 17,
+              "delay": 150
+            }
+          ],
+          "z": 2
+        },
+        {
+          "source": "Obj/acc2.img/shineWood/artificiality/10",
+          "x": -297,
+          "y": -2152,
+          "frames": [
+            {
+              "src": "raw-0342.png",
+              "w": 48,
+              "h": 254,
+              "ox": 24,
+              "oy": 127,
+              "delay": 100
+            }
+          ],
+          "z": 2
+        },
+        {
+          "source": "Obj/acc2.img/shineWood/artificiality/3",
+          "x": -352,
+          "y": -2378,
+          "frames": [
+            {
+              "src": "raw-0343.png",
+              "w": 240,
+              "h": 222,
+              "ox": 120,
+              "oy": 107,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        },
+        {
+          "source": "Obj/acc2.img/shineWood/artificiality/4",
+          "x": -349,
+          "y": -2380,
+          "frames": [
+            {
+              "src": "raw-0344.png",
+              "w": 162,
+              "h": 205,
+              "ox": 81,
+              "oy": 102,
+              "delay": 100
+            }
+          ],
+          "z": 4
+        },
+        {
+          "source": "Obj/acc2.img/shineWood/artificiality/2",
+          "x": -466,
+          "y": -2425,
+          "frames": [
+            {
+              "src": "raw-0345.png",
+              "w": 78,
+              "h": 164,
+              "ox": 39,
+              "oy": 82,
+              "delay": 150
+            },
+            {
+              "src": "raw-0346.png",
+              "w": 88,
+              "h": 184,
+              "ox": 44,
+              "oy": 92,
+              "delay": 150
+            },
+            {
+              "src": "raw-0347.png",
+              "w": 78,
+              "h": 164,
+              "ox": 39,
+              "oy": 82,
+              "delay": 150
+            }
+          ],
+          "z": 5
+        }
+      ]
+    },
+    "ellinia-bellflower": {
+      "group": "ellinia",
+      "maxWidth": 68,
+      "maxHeight": 150,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/darkWood/nature/26",
+          "x": 1400,
+          "y": 159,
+          "frames": [
+            {
+              "src": "raw-0381.png",
+              "w": 100,
+              "h": 218,
+              "ox": 54,
+              "oy": 56,
+              "delay": 100
+            }
+          ],
+          "z": 4
+        },
+        {
+          "source": "Obj/acc1.img/darkWood/nature/27",
+          "x": 1395,
+          "y": 161,
+          "frames": [
+            {
+              "src": "raw-0382.png",
+              "w": 101,
+              "h": 117,
+              "ox": 50,
+              "oy": 58,
+              "delay": 3000
+            },
+            {
+              "src": "raw-0383.png",
+              "w": 101,
+              "h": 117,
+              "ox": 50,
+              "oy": 58,
+              "delay": 3000
+            }
+          ],
+          "z": 5
+        }
+      ]
+    },
+    "ellinia-bluebud": {
+      "group": "ellinia",
+      "maxWidth": 42,
+      "maxHeight": 112,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/darkWood/nature/30",
+          "x": 1420,
+          "y": 230,
+          "frames": [
+            {
+              "src": "raw-0384.png",
+              "w": 46,
+              "h": 164,
+              "ox": 23,
+              "oy": 82,
+              "delay": 100
+            }
+          ],
+          "z": 1
+        },
+        {
+          "source": "Obj/acc1.img/darkWood/nature/31",
+          "x": 1420,
+          "y": 195,
+          "frames": [
+            {
+              "src": "raw-0385.png",
+              "w": 46,
+              "h": 93,
+              "ox": 23,
+              "oy": 46,
+              "delay": 3000
+            },
+            {
+              "src": "raw-0386.png",
+              "w": 46,
+              "h": 93,
+              "ox": 23,
+              "oy": 46,
+              "delay": 3000
+            }
+          ],
+          "z": 2
+        }
+      ]
+    },
+    "ellinia-ferns": {
+      "group": "ellinia",
+      "maxWidth": 185,
+      "maxHeight": 85,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/foot/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0327.png",
+              "w": 206,
+              "h": 110,
+              "ox": 103,
+              "oy": 55,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-leaves": {
+      "group": "ellinia",
+      "maxWidth": 92,
+      "maxHeight": 46,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/foot/2",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0360.png",
+              "w": 149,
+              "h": 63,
+              "ox": 74,
+              "oy": 31,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-shrub": {
+      "group": "ellinia",
+      "maxWidth": 106,
+      "maxHeight": 74,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/foot/5",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0354.png",
+              "w": 125,
+              "h": 87,
+              "ox": 62,
+              "oy": 43,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-sprout": {
+      "group": "ellinia",
+      "maxWidth": 48,
+      "maxHeight": 38,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/foot/3",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0362.png",
+              "w": 65,
+              "h": 52,
+              "ox": 32,
+              "oy": 26,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-vine": {
+      "group": "ellinia",
+      "maxWidth": 110,
+      "maxHeight": 65,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/foot/21",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0330.png",
+              "w": 142,
+              "h": 84,
+              "ox": 71,
+              "oy": 42,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-branch": {
+      "group": "ellinia",
+      "maxWidth": 145,
+      "maxHeight": 54,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/foot/6",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0326.png",
+              "w": 170,
+              "h": 62,
+              "ox": 85,
+              "oy": 31,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-branch-lean": {
+      "group": "ellinia",
+      "maxWidth": 145,
+      "maxHeight": 54,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/foot/20",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0329.png",
+              "w": 170,
+              "h": 62,
+              "ox": 85,
+              "oy": 31,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-bridge": {
+      "group": "ellinia",
+      "maxWidth": 330,
+      "maxHeight": 186,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/foot/23",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0378.png",
+              "w": 403,
+              "h": 227,
+              "ox": 201,
+              "oy": 113,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-bridge-up": {
+      "group": "ellinia",
+      "maxWidth": 320,
+      "maxHeight": 163,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/foot/24",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0379.png",
+              "w": 392,
+              "h": 199,
+              "ox": 196,
+              "oy": 99,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-walkway": {
+      "group": "ellinia",
+      "maxWidth": 260,
+      "maxHeight": 94,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/foot/19",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0325.png",
+              "w": 304,
+              "h": 110,
+              "ox": 160,
+              "oy": 55,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    },
+    "ellinia-railing": {
+      "group": "ellinia",
+      "maxWidth": 114,
+      "maxHeight": 75,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/shineWood/foot/14",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "raw-0391.png",
+              "w": 110,
+              "h": 85,
+              "ox": 55,
+              "oy": 42,
+              "delay": 100
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "textures": {
+    "henesys": {
+      "source": "Tile/woodMarble.img/bsc/1",
+      "x": 0,
+      "y": 0,
+      "frames": [
+        {
+          "src": "raw-0078.png",
+          "w": 90,
+          "h": 60,
+          "ox": 0,
+          "oy": 0,
+          "delay": 100
+        }
+      ]
+    },
+    "paving": {
+      "source": "Tile/whiteMarble.img/bsc/3",
+      "x": 0,
+      "y": 0,
+      "frames": [
+        {
+          "src": "raw-0226.png",
+          "w": 90,
+          "h": 60,
+          "ox": 0,
+          "oy": 0,
+          "delay": 100
+        }
+      ]
+    }
+  }
+}
