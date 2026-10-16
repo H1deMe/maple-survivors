@@ -1,0 +1,5294 @@
+{
+  "sources": [
+    {
+      "file": "Mob.wz",
+      "sha256": "1cf095cc555a65b4c355f8aee0d5a7ed24830a27a61c9b9d9228d283d6e71834",
+      "version": 65,
+      "encryption": "EMS"
+    },
+    {
+      "file": "Sound.wz",
+      "sha256": "14ab36cf903d67eb342615d2ac81218f3607d71b2148a8c4e88802586a3b0262",
+      "version": 65,
+      "encryption": "EMS"
+    },
+    {
+      "file": "String.wz",
+      "sha256": "e1739ce85b36a3944493d71569bb158d97b83b9e93a83faeb6ff5dc59e7b3d12",
+      "version": 65,
+      "encryption": "EMS"
+    }
+  ],
+  "images": [
+    {
+      "src": "assets/regions/mob-0000.png",
+      "origin": [
+        18,
+        50
+      ],
+      "w": 36,
+      "h": 36
+    },
+    {
+      "src": "assets/regions/mob-0001.png",
+      "origin": [
+        26,
+        57
+      ],
+      "w": 55,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0002.png",
+      "origin": [
+        27,
+        59
+      ],
+      "w": 56,
+      "h": 45
+    },
+    {
+      "src": "assets/regions/mob-0003.png",
+      "origin": [
+        29,
+        62
+      ],
+      "w": 59,
+      "h": 48
+    },
+    {
+      "src": "assets/regions/mob-0004.png",
+      "origin": [
+        18,
+        61
+      ],
+      "w": 36,
+      "h": 47
+    },
+    {
+      "src": "assets/regions/mob-0005.png",
+      "origin": [
+        18,
+        60
+      ],
+      "w": 36,
+      "h": 46
+    },
+    {
+      "src": "assets/regions/mob-0006.png",
+      "origin": [
+        18,
+        60
+      ],
+      "w": 36,
+      "h": 46
+    },
+    {
+      "src": "assets/regions/mob-0007.png",
+      "origin": [
+        18,
+        60
+      ],
+      "w": 36,
+      "h": 46
+    },
+    {
+      "src": "assets/regions/mob-0008.png",
+      "origin": [
+        18,
+        60
+      ],
+      "w": 36,
+      "h": 46
+    },
+    {
+      "src": "assets/regions/mob-0009.png",
+      "origin": [
+        18,
+        60
+      ],
+      "w": 36,
+      "h": 46
+    },
+    {
+      "src": "assets/regions/mob-0010.png",
+      "origin": [
+        18,
+        60
+      ],
+      "w": 36,
+      "h": 46
+    },
+    {
+      "src": "assets/regions/mob-0011.png",
+      "origin": [
+        22,
+        67
+      ],
+      "w": 43,
+      "h": 53
+    },
+    {
+      "src": "assets/regions/mob-0012.png",
+      "origin": [
+        24,
+        70
+      ],
+      "w": 47,
+      "h": 56
+    },
+    {
+      "src": "assets/regions/mob-0013.png",
+      "origin": [
+        26,
+        72
+      ],
+      "w": 49,
+      "h": 58
+    },
+    {
+      "src": "assets/regions/mob-0014.png",
+      "origin": [
+        18,
+        60
+      ],
+      "w": 36,
+      "h": 46
+    },
+    {
+      "src": "assets/regions/mob-0015.png",
+      "origin": [
+        18,
+        50
+      ],
+      "w": 36,
+      "h": 36
+    },
+    {
+      "src": "assets/regions/mob-0016.png",
+      "origin": [
+        18,
+        54
+      ],
+      "w": 36,
+      "h": 36
+    },
+    {
+      "src": "assets/regions/mob-0017.png",
+      "origin": [
+        18,
+        58
+      ],
+      "w": 36,
+      "h": 36
+    },
+    {
+      "src": "assets/regions/mob-0018.png",
+      "origin": [
+        18,
+        54
+      ],
+      "w": 36,
+      "h": 36
+    },
+    {
+      "src": "assets/regions/mob-0019.png",
+      "origin": [
+        23,
+        61
+      ],
+      "w": 51,
+      "h": 49
+    },
+    {
+      "src": "assets/regions/mob-0020.png",
+      "origin": [
+        18,
+        50
+      ],
+      "w": 36,
+      "h": 36
+    },
+    {
+      "src": "assets/regions/mob-0021.png",
+      "origin": [
+        18,
+        50
+      ],
+      "w": 36,
+      "h": 36
+    },
+    {
+      "src": "assets/regions/mob-0022.png",
+      "origin": [
+        18,
+        50
+      ],
+      "w": 36,
+      "h": 36
+    },
+    {
+      "src": "assets/regions/mob-0023.png",
+      "origin": [
+        18,
+        50
+      ],
+      "w": 36,
+      "h": 36
+    },
+    {
+      "src": "assets/regions/mob-0024.png",
+      "origin": [
+        30,
+        63
+      ],
+      "w": 61,
+      "h": 58
+    },
+    {
+      "src": "assets/regions/mob-0025.png",
+      "origin": [
+        40,
+        72
+      ],
+      "w": 80,
+      "h": 72
+    },
+    {
+      "src": "assets/regions/mob-0026.png",
+      "origin": [
+        46,
+        76
+      ],
+      "w": 89,
+      "h": 82
+    },
+    {
+      "src": "assets/regions/mob-0027.png",
+      "origin": [
+        18,
+        50
+      ],
+      "w": 36,
+      "h": 36
+    },
+    {
+      "src": "assets/regions/mob-0028.png",
+      "origin": [
+        39,
+        66
+      ],
+      "w": 78,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0029.png",
+      "origin": [
+        41,
+        70
+      ],
+      "w": 83,
+      "h": 56
+    },
+    {
+      "src": "assets/regions/mob-0030.png",
+      "origin": [
+        43,
+        70
+      ],
+      "w": 85,
+      "h": 56
+    },
+    {
+      "src": "assets/regions/mob-0031.png",
+      "origin": [
+        25,
+        62
+      ],
+      "w": 48,
+      "h": 55
+    },
+    {
+      "src": "assets/regions/mob-0032.png",
+      "origin": [
+        24,
+        62
+      ],
+      "w": 46,
+      "h": 54
+    },
+    {
+      "src": "assets/regions/mob-0033.png",
+      "origin": [
+        23,
+        62
+      ],
+      "w": 44,
+      "h": 53
+    },
+    {
+      "src": "assets/regions/mob-0034.png",
+      "origin": [
+        28,
+        62
+      ],
+      "w": 49,
+      "h": 53
+    },
+    {
+      "src": "assets/regions/mob-0035.png",
+      "origin": [
+        28,
+        62
+      ],
+      "w": 49,
+      "h": 53
+    },
+    {
+      "src": "assets/regions/mob-0036.png",
+      "origin": [
+        28,
+        62
+      ],
+      "w": 49,
+      "h": 53
+    },
+    {
+      "src": "assets/regions/mob-0037.png",
+      "origin": [
+        28,
+        62
+      ],
+      "w": 49,
+      "h": 53
+    },
+    {
+      "src": "assets/regions/mob-0038.png",
+      "origin": [
+        28,
+        62
+      ],
+      "w": 49,
+      "h": 53
+    },
+    {
+      "src": "assets/regions/mob-0039.png",
+      "origin": [
+        43,
+        29
+      ],
+      "w": 86,
+      "h": 29
+    },
+    {
+      "src": "assets/regions/mob-0040.png",
+      "origin": [
+        43,
+        29
+      ],
+      "w": 80,
+      "h": 29
+    },
+    {
+      "src": "assets/regions/mob-0041.png",
+      "origin": [
+        43,
+        29
+      ],
+      "w": 83,
+      "h": 29
+    },
+    {
+      "src": "assets/regions/mob-0042.png",
+      "origin": [
+        41,
+        29
+      ],
+      "w": 83,
+      "h": 29
+    },
+    {
+      "src": "assets/regions/mob-0043.png",
+      "origin": [
+        39,
+        29
+      ],
+      "w": 80,
+      "h": 29
+    },
+    {
+      "src": "assets/regions/mob-0044.png",
+      "origin": [
+        39,
+        47
+      ],
+      "w": 91,
+      "h": 47
+    },
+    {
+      "src": "assets/regions/mob-0045.png",
+      "origin": [
+        46,
+        39
+      ],
+      "w": 92,
+      "h": 39
+    },
+    {
+      "src": "assets/regions/mob-0046.png",
+      "origin": [
+        44,
+        41
+      ],
+      "w": 88,
+      "h": 41
+    },
+    {
+      "src": "assets/regions/mob-0047.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0048.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0049.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0050.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0051.png",
+      "origin": [
+        18,
+        43
+      ],
+      "w": 36,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0052.png",
+      "origin": [
+        18,
+        40
+      ],
+      "w": 38,
+      "h": 40
+    },
+    {
+      "src": "assets/regions/mob-0053.png",
+      "origin": [
+        18,
+        42
+      ],
+      "w": 40,
+      "h": 42
+    },
+    {
+      "src": "assets/regions/mob-0054.png",
+      "origin": [
+        18,
+        43
+      ],
+      "w": 36,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0055.png",
+      "origin": [
+        19,
+        47
+      ],
+      "w": 39,
+      "h": 47
+    },
+    {
+      "src": "assets/regions/mob-0056.png",
+      "origin": [
+        19,
+        47
+      ],
+      "w": 39,
+      "h": 47
+    },
+    {
+      "src": "assets/regions/mob-0057.png",
+      "origin": [
+        22,
+        41
+      ],
+      "w": 40,
+      "h": 41
+    },
+    {
+      "src": "assets/regions/mob-0058.png",
+      "origin": [
+        28,
+        37
+      ],
+      "w": 43,
+      "h": 37
+    },
+    {
+      "src": "assets/regions/mob-0059.png",
+      "origin": [
+        29,
+        35
+      ],
+      "w": 43,
+      "h": 35
+    },
+    {
+      "src": "assets/regions/mob-0060.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0061.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0062.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0063.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0064.png",
+      "origin": [
+        18,
+        43
+      ],
+      "w": 36,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0065.png",
+      "origin": [
+        18,
+        40
+      ],
+      "w": 38,
+      "h": 40
+    },
+    {
+      "src": "assets/regions/mob-0066.png",
+      "origin": [
+        18,
+        42
+      ],
+      "w": 40,
+      "h": 42
+    },
+    {
+      "src": "assets/regions/mob-0067.png",
+      "origin": [
+        18,
+        43
+      ],
+      "w": 36,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0068.png",
+      "origin": [
+        19,
+        47
+      ],
+      "w": 39,
+      "h": 47
+    },
+    {
+      "src": "assets/regions/mob-0069.png",
+      "origin": [
+        19,
+        47
+      ],
+      "w": 39,
+      "h": 47
+    },
+    {
+      "src": "assets/regions/mob-0070.png",
+      "origin": [
+        22,
+        41
+      ],
+      "w": 40,
+      "h": 41
+    },
+    {
+      "src": "assets/regions/mob-0071.png",
+      "origin": [
+        28,
+        37
+      ],
+      "w": 43,
+      "h": 37
+    },
+    {
+      "src": "assets/regions/mob-0072.png",
+      "origin": [
+        29,
+        35
+      ],
+      "w": 43,
+      "h": 35
+    },
+    {
+      "src": "assets/regions/mob-0073.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0074.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0075.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0076.png",
+      "origin": [
+        19,
+        43
+      ],
+      "w": 35,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0077.png",
+      "origin": [
+        18,
+        43
+      ],
+      "w": 36,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0078.png",
+      "origin": [
+        18,
+        40
+      ],
+      "w": 38,
+      "h": 40
+    },
+    {
+      "src": "assets/regions/mob-0079.png",
+      "origin": [
+        18,
+        42
+      ],
+      "w": 40,
+      "h": 42
+    },
+    {
+      "src": "assets/regions/mob-0080.png",
+      "origin": [
+        18,
+        43
+      ],
+      "w": 36,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0081.png",
+      "origin": [
+        19,
+        47
+      ],
+      "w": 39,
+      "h": 47
+    },
+    {
+      "src": "assets/regions/mob-0082.png",
+      "origin": [
+        19,
+        47
+      ],
+      "w": 39,
+      "h": 47
+    },
+    {
+      "src": "assets/regions/mob-0083.png",
+      "origin": [
+        22,
+        41
+      ],
+      "w": 40,
+      "h": 41
+    },
+    {
+      "src": "assets/regions/mob-0084.png",
+      "origin": [
+        28,
+        37
+      ],
+      "w": 43,
+      "h": 37
+    },
+    {
+      "src": "assets/regions/mob-0085.png",
+      "origin": [
+        29,
+        35
+      ],
+      "w": 43,
+      "h": 35
+    },
+    {
+      "src": "assets/regions/mob-0086.png",
+      "origin": [
+        20,
+        47
+      ],
+      "w": 41,
+      "h": 36
+    },
+    {
+      "src": "assets/regions/mob-0087.png",
+      "origin": [
+        20,
+        47
+      ],
+      "w": 40,
+      "h": 37
+    },
+    {
+      "src": "assets/regions/mob-0088.png",
+      "origin": [
+        20,
+        47
+      ],
+      "w": 38,
+      "h": 38
+    },
+    {
+      "src": "assets/regions/mob-0089.png",
+      "origin": [
+        20,
+        47
+      ],
+      "w": 40,
+      "h": 38
+    },
+    {
+      "src": "assets/regions/mob-0090.png",
+      "origin": [
+        20,
+        48
+      ],
+      "w": 38,
+      "h": 41
+    },
+    {
+      "src": "assets/regions/mob-0091.png",
+      "origin": [
+        20,
+        47
+      ],
+      "w": 41,
+      "h": 38
+    },
+    {
+      "src": "assets/regions/mob-0092.png",
+      "origin": [
+        20,
+        47
+      ],
+      "w": 40,
+      "h": 38
+    },
+    {
+      "src": "assets/regions/mob-0093.png",
+      "origin": [
+        23,
+        60
+      ],
+      "w": 44,
+      "h": 51
+    },
+    {
+      "src": "assets/regions/mob-0094.png",
+      "origin": [
+        23,
+        61
+      ],
+      "w": 44,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0095.png",
+      "origin": [
+        27,
+        61
+      ],
+      "w": 48,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0096.png",
+      "origin": [
+        29,
+        50
+      ],
+      "w": 50,
+      "h": 40
+    },
+    {
+      "src": "assets/regions/mob-0097.png",
+      "origin": [
+        31,
+        52
+      ],
+      "w": 53,
+      "h": 44
+    },
+    {
+      "src": "assets/regions/mob-0098.png",
+      "origin": [
+        31,
+        54
+      ],
+      "w": 54,
+      "h": 46
+    },
+    {
+      "src": "assets/regions/mob-0099.png",
+      "origin": [
+        32,
+        52
+      ],
+      "w": 56,
+      "h": 44
+    },
+    {
+      "src": "assets/regions/mob-0100.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0101.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0102.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0103.png",
+      "origin": [
+        27,
+        60
+      ],
+      "w": 57,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0104.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0105.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0106.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0107.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0108.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0109.png",
+      "origin": [
+        27,
+        60
+      ],
+      "w": 57,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0110.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0111.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0112.png",
+      "origin": [
+        26,
+        66
+      ],
+      "w": 54,
+      "h": 58
+    },
+    {
+      "src": "assets/regions/mob-0113.png",
+      "origin": [
+        25,
+        102
+      ],
+      "w": 59,
+      "h": 88
+    },
+    {
+      "src": "assets/regions/mob-0114.png",
+      "origin": [
+        27,
+        80
+      ],
+      "w": 53,
+      "h": 66
+    },
+    {
+      "src": "assets/regions/mob-0115.png",
+      "origin": [
+        25,
+        91
+      ],
+      "w": 52,
+      "h": 77
+    },
+    {
+      "src": "assets/regions/mob-0116.png",
+      "origin": [
+        29,
+        101
+      ],
+      "w": 58,
+      "h": 91
+    },
+    {
+      "src": "assets/regions/mob-0117.png",
+      "origin": [
+        30,
+        83
+      ],
+      "w": 56,
+      "h": 79
+    },
+    {
+      "src": "assets/regions/mob-0118.png",
+      "origin": [
+        33,
+        89
+      ],
+      "w": 60,
+      "h": 93
+    },
+    {
+      "src": "assets/regions/mob-0119.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0120.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0121.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0122.png",
+      "origin": [
+        37,
+        66
+      ],
+      "w": 65,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0123.png",
+      "origin": [
+        45,
+        67
+      ],
+      "w": 73,
+      "h": 61
+    },
+    {
+      "src": "assets/regions/mob-0124.png",
+      "origin": [
+        46,
+        68
+      ],
+      "w": 74,
+      "h": 63
+    },
+    {
+      "src": "assets/regions/mob-0125.png",
+      "origin": [
+        46,
+        68
+      ],
+      "w": 74,
+      "h": 63
+    },
+    {
+      "src": "assets/regions/mob-0126.png",
+      "origin": [
+        35,
+        66
+      ],
+      "w": 69,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0127.png",
+      "origin": [
+        38,
+        66
+      ],
+      "w": 69,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0128.png",
+      "origin": [
+        39,
+        66
+      ],
+      "w": 69,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0129.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0130.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0131.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0132.png",
+      "origin": [
+        27,
+        60
+      ],
+      "w": 57,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0133.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0134.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0135.png",
+      "origin": [
+        64,
+        82
+      ],
+      "w": 129,
+      "h": 83
+    },
+    {
+      "src": "assets/regions/mob-0136.png",
+      "origin": [
+        66,
+        74
+      ],
+      "w": 133,
+      "h": 75
+    },
+    {
+      "src": "assets/regions/mob-0137.png",
+      "origin": [
+        70,
+        81
+      ],
+      "w": 127,
+      "h": 82
+    },
+    {
+      "src": "assets/regions/mob-0138.png",
+      "origin": [
+        73,
+        75
+      ],
+      "w": 124,
+      "h": 76
+    },
+    {
+      "src": "assets/regions/mob-0139.png",
+      "origin": [
+        75,
+        81
+      ],
+      "w": 126,
+      "h": 82
+    },
+    {
+      "src": "assets/regions/mob-0140.png",
+      "origin": [
+        62,
+        96
+      ],
+      "w": 124,
+      "h": 97
+    },
+    {
+      "src": "assets/regions/mob-0141.png",
+      "origin": [
+        77,
+        80
+      ],
+      "w": 155,
+      "h": 81
+    },
+    {
+      "src": "assets/regions/mob-0142.png",
+      "origin": [
+        84,
+        65
+      ],
+      "w": 169,
+      "h": 67
+    },
+    {
+      "src": "assets/regions/mob-0143.png",
+      "origin": [
+        103,
+        65
+      ],
+      "w": 199,
+      "h": 69
+    },
+    {
+      "src": "assets/regions/mob-0144.png",
+      "origin": [
+        113,
+        65
+      ],
+      "w": 209,
+      "h": 68
+    },
+    {
+      "src": "assets/regions/mob-0145.png",
+      "origin": [
+        113,
+        65
+      ],
+      "w": 221,
+      "h": 67
+    },
+    {
+      "src": "assets/regions/mob-0146.png",
+      "origin": [
+        90,
+        65
+      ],
+      "w": 189,
+      "h": 67
+    },
+    {
+      "src": "assets/regions/mob-0147.png",
+      "origin": [
+        90,
+        65
+      ],
+      "w": 183,
+      "h": 67
+    },
+    {
+      "src": "assets/regions/mob-0148.png",
+      "origin": [
+        84,
+        65
+      ],
+      "w": 169,
+      "h": 67
+    },
+    {
+      "src": "assets/regions/mob-0149.png",
+      "origin": [
+        35,
+        74
+      ],
+      "w": 70,
+      "h": 58
+    },
+    {
+      "src": "assets/regions/mob-0150.png",
+      "origin": [
+        33,
+        79
+      ],
+      "w": 67,
+      "h": 63
+    },
+    {
+      "src": "assets/regions/mob-0151.png",
+      "origin": [
+        34,
+        75
+      ],
+      "w": 65,
+      "h": 60
+    },
+    {
+      "src": "assets/regions/mob-0152.png",
+      "origin": [
+        33,
+        76
+      ],
+      "w": 67,
+      "h": 60
+    },
+    {
+      "src": "assets/regions/mob-0153.png",
+      "origin": [
+        33,
+        76
+      ],
+      "w": 70,
+      "h": 60
+    },
+    {
+      "src": "assets/regions/mob-0154.png",
+      "origin": [
+        33,
+        76
+      ],
+      "w": 67,
+      "h": 60
+    },
+    {
+      "src": "assets/regions/mob-0155.png",
+      "origin": [
+        28,
+        98
+      ],
+      "w": 56,
+      "h": 83
+    },
+    {
+      "src": "assets/regions/mob-0156.png",
+      "origin": [
+        31,
+        98
+      ],
+      "w": 59,
+      "h": 83
+    },
+    {
+      "src": "assets/regions/mob-0157.png",
+      "origin": [
+        39,
+        98
+      ],
+      "w": 81,
+      "h": 85
+    },
+    {
+      "src": "assets/regions/mob-0158.png",
+      "origin": [
+        42,
+        78
+      ],
+      "w": 84,
+      "h": 65
+    },
+    {
+      "src": "assets/regions/mob-0159.png",
+      "origin": [
+        45,
+        82
+      ],
+      "w": 87,
+      "h": 72
+    },
+    {
+      "src": "assets/regions/mob-0160.png",
+      "origin": [
+        45,
+        85
+      ],
+      "w": 87,
+      "h": 76
+    },
+    {
+      "src": "assets/regions/mob-0161.png",
+      "origin": [
+        48,
+        85
+      ],
+      "w": 92,
+      "h": 77
+    },
+    {
+      "src": "assets/regions/mob-0162.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0163.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0164.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0165.png",
+      "origin": [
+        27,
+        60
+      ],
+      "w": 57,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0166.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0167.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0168.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0169.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0170.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0171.png",
+      "origin": [
+        27,
+        60
+      ],
+      "w": 57,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0172.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0173.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0174.png",
+      "origin": [
+        26,
+        66
+      ],
+      "w": 54,
+      "h": 58
+    },
+    {
+      "src": "assets/regions/mob-0175.png",
+      "origin": [
+        25,
+        102
+      ],
+      "w": 59,
+      "h": 88
+    },
+    {
+      "src": "assets/regions/mob-0176.png",
+      "origin": [
+        27,
+        80
+      ],
+      "w": 53,
+      "h": 66
+    },
+    {
+      "src": "assets/regions/mob-0177.png",
+      "origin": [
+        25,
+        91
+      ],
+      "w": 52,
+      "h": 77
+    },
+    {
+      "src": "assets/regions/mob-0178.png",
+      "origin": [
+        29,
+        101
+      ],
+      "w": 58,
+      "h": 91
+    },
+    {
+      "src": "assets/regions/mob-0179.png",
+      "origin": [
+        30,
+        83
+      ],
+      "w": 56,
+      "h": 79
+    },
+    {
+      "src": "assets/regions/mob-0180.png",
+      "origin": [
+        33,
+        89
+      ],
+      "w": 60,
+      "h": 93
+    },
+    {
+      "src": "assets/regions/mob-0181.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0182.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0183.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0184.png",
+      "origin": [
+        53,
+        67
+      ],
+      "w": 81,
+      "h": 53
+    },
+    {
+      "src": "assets/regions/mob-0185.png",
+      "origin": [
+        60,
+        79
+      ],
+      "w": 88,
+      "h": 73
+    },
+    {
+      "src": "assets/regions/mob-0186.png",
+      "origin": [
+        60,
+        79
+      ],
+      "w": 88,
+      "h": 73
+    },
+    {
+      "src": "assets/regions/mob-0187.png",
+      "origin": [
+        60,
+        79
+      ],
+      "w": 88,
+      "h": 73
+    },
+    {
+      "src": "assets/regions/mob-0188.png",
+      "origin": [
+        35,
+        66
+      ],
+      "w": 68,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0189.png",
+      "origin": [
+        38,
+        66
+      ],
+      "w": 68,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0190.png",
+      "origin": [
+        39,
+        66
+      ],
+      "w": 68,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0191.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0192.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0193.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0194.png",
+      "origin": [
+        27,
+        60
+      ],
+      "w": 57,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0195.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0196.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0197.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0198.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0199.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0200.png",
+      "origin": [
+        27,
+        60
+      ],
+      "w": 57,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0201.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0202.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0203.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0204.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0205.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0206.png",
+      "origin": [
+        27,
+        60
+      ],
+      "w": 57,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0207.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0208.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0209.png",
+      "origin": [
+        26,
+        66
+      ],
+      "w": 54,
+      "h": 58
+    },
+    {
+      "src": "assets/regions/mob-0210.png",
+      "origin": [
+        25,
+        102
+      ],
+      "w": 59,
+      "h": 88
+    },
+    {
+      "src": "assets/regions/mob-0211.png",
+      "origin": [
+        27,
+        80
+      ],
+      "w": 53,
+      "h": 66
+    },
+    {
+      "src": "assets/regions/mob-0212.png",
+      "origin": [
+        25,
+        91
+      ],
+      "w": 52,
+      "h": 77
+    },
+    {
+      "src": "assets/regions/mob-0213.png",
+      "origin": [
+        29,
+        101
+      ],
+      "w": 58,
+      "h": 91
+    },
+    {
+      "src": "assets/regions/mob-0214.png",
+      "origin": [
+        30,
+        83
+      ],
+      "w": 56,
+      "h": 79
+    },
+    {
+      "src": "assets/regions/mob-0215.png",
+      "origin": [
+        33,
+        89
+      ],
+      "w": 60,
+      "h": 93
+    },
+    {
+      "src": "assets/regions/mob-0216.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0217.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0218.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0219.png",
+      "origin": [
+        41,
+        66
+      ],
+      "w": 69,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0220.png",
+      "origin": [
+        41,
+        66
+      ],
+      "w": 69,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0221.png",
+      "origin": [
+        89,
+        107
+      ],
+      "w": 117,
+      "h": 108
+    },
+    {
+      "src": "assets/regions/mob-0222.png",
+      "origin": [
+        86,
+        101
+      ],
+      "w": 114,
+      "h": 103
+    },
+    {
+      "src": "assets/regions/mob-0223.png",
+      "origin": [
+        83,
+        99
+      ],
+      "w": 111,
+      "h": 92
+    },
+    {
+      "src": "assets/regions/mob-0224.png",
+      "origin": [
+        87,
+        105
+      ],
+      "w": 115,
+      "h": 103
+    },
+    {
+      "src": "assets/regions/mob-0225.png",
+      "origin": [
+        82,
+        98
+      ],
+      "w": 110,
+      "h": 96
+    },
+    {
+      "src": "assets/regions/mob-0226.png",
+      "origin": [
+        76,
+        92
+      ],
+      "w": 104,
+      "h": 79
+    },
+    {
+      "src": "assets/regions/mob-0227.png",
+      "origin": [
+        41,
+        66
+      ],
+      "w": 69,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0228.png",
+      "origin": [
+        40,
+        66
+      ],
+      "w": 73,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0229.png",
+      "origin": [
+        43,
+        66
+      ],
+      "w": 73,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0230.png",
+      "origin": [
+        44,
+        66
+      ],
+      "w": 73,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0231.png",
+      "origin": [
+        27,
+        66
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0232.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0233.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0234.png",
+      "origin": [
+        27,
+        60
+      ],
+      "w": 57,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0235.png",
+      "origin": [
+        27,
+        62
+      ],
+      "w": 56,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0236.png",
+      "origin": [
+        27,
+        64
+      ],
+      "w": 55,
+      "h": 52
+    },
+    {
+      "src": "assets/regions/mob-0237.png",
+      "origin": [
+        64,
+        82
+      ],
+      "w": 129,
+      "h": 83
+    },
+    {
+      "src": "assets/regions/mob-0238.png",
+      "origin": [
+        66,
+        74
+      ],
+      "w": 133,
+      "h": 75
+    },
+    {
+      "src": "assets/regions/mob-0239.png",
+      "origin": [
+        70,
+        81
+      ],
+      "w": 127,
+      "h": 82
+    },
+    {
+      "src": "assets/regions/mob-0240.png",
+      "origin": [
+        73,
+        75
+      ],
+      "w": 124,
+      "h": 76
+    },
+    {
+      "src": "assets/regions/mob-0241.png",
+      "origin": [
+        75,
+        81
+      ],
+      "w": 126,
+      "h": 82
+    },
+    {
+      "src": "assets/regions/mob-0242.png",
+      "origin": [
+        62,
+        96
+      ],
+      "w": 124,
+      "h": 97
+    },
+    {
+      "src": "assets/regions/mob-0243.png",
+      "origin": [
+        77,
+        80
+      ],
+      "w": 155,
+      "h": 81
+    },
+    {
+      "src": "assets/regions/mob-0244.png",
+      "origin": [
+        84,
+        65
+      ],
+      "w": 169,
+      "h": 67
+    },
+    {
+      "src": "assets/regions/mob-0245.png",
+      "origin": [
+        103,
+        65
+      ],
+      "w": 199,
+      "h": 69
+    },
+    {
+      "src": "assets/regions/mob-0246.png",
+      "origin": [
+        113,
+        65
+      ],
+      "w": 209,
+      "h": 68
+    },
+    {
+      "src": "assets/regions/mob-0247.png",
+      "origin": [
+        113,
+        65
+      ],
+      "w": 221,
+      "h": 67
+    },
+    {
+      "src": "assets/regions/mob-0248.png",
+      "origin": [
+        90,
+        65
+      ],
+      "w": 189,
+      "h": 67
+    },
+    {
+      "src": "assets/regions/mob-0249.png",
+      "origin": [
+        90,
+        65
+      ],
+      "w": 183,
+      "h": 67
+    },
+    {
+      "src": "assets/regions/mob-0250.png",
+      "origin": [
+        84,
+        65
+      ],
+      "w": 169,
+      "h": 67
+    },
+    {
+      "src": "assets/regions/mob-0251.png",
+      "origin": [
+        90,
+        156
+      ],
+      "w": 175,
+      "h": 156
+    },
+    {
+      "src": "assets/regions/mob-0252.png",
+      "origin": [
+        91,
+        157
+      ],
+      "w": 177,
+      "h": 157
+    },
+    {
+      "src": "assets/regions/mob-0253.png",
+      "origin": [
+        92,
+        158
+      ],
+      "w": 179,
+      "h": 158
+    },
+    {
+      "src": "assets/regions/mob-0254.png",
+      "origin": [
+        90,
+        158
+      ],
+      "w": 175,
+      "h": 158
+    },
+    {
+      "src": "assets/regions/mob-0255.png",
+      "origin": [
+        90,
+        154
+      ],
+      "w": 175,
+      "h": 154
+    },
+    {
+      "src": "assets/regions/mob-0256.png",
+      "origin": [
+        90,
+        158
+      ],
+      "w": 175,
+      "h": 158
+    },
+    {
+      "src": "assets/regions/mob-0257.png",
+      "origin": [
+        90,
+        154
+      ],
+      "w": 175,
+      "h": 154
+    },
+    {
+      "src": "assets/regions/mob-0258.png",
+      "origin": [
+        134,
+        172
+      ],
+      "w": 258,
+      "h": 172
+    },
+    {
+      "src": "assets/regions/mob-0259.png",
+      "origin": [
+        86,
+        178
+      ],
+      "w": 196,
+      "h": 178
+    },
+    {
+      "src": "assets/regions/mob-0260.png",
+      "origin": [
+        93,
+        169
+      ],
+      "w": 228,
+      "h": 169
+    },
+    {
+      "src": "assets/regions/mob-0261.png",
+      "origin": [
+        93,
+        160
+      ],
+      "w": 225,
+      "h": 160
+    },
+    {
+      "src": "assets/regions/mob-0262.png",
+      "origin": [
+        93,
+        146
+      ],
+      "w": 215,
+      "h": 146
+    },
+    {
+      "src": "assets/regions/mob-0263.png",
+      "origin": [
+        93,
+        133
+      ],
+      "w": 215,
+      "h": 133
+    },
+    {
+      "src": "assets/regions/mob-0264.png",
+      "origin": [
+        93,
+        74
+      ],
+      "w": 215,
+      "h": 74
+    },
+    {
+      "src": "assets/regions/mob-0265.png",
+      "origin": [
+        93,
+        74
+      ],
+      "w": 215,
+      "h": 74
+    },
+    {
+      "src": "assets/regions/mob-0266.png",
+      "origin": [
+        90,
+        151
+      ],
+      "w": 175,
+      "h": 151
+    },
+    {
+      "src": "assets/regions/mob-0267.png",
+      "origin": [
+        91,
+        151
+      ],
+      "w": 177,
+      "h": 151
+    },
+    {
+      "src": "assets/regions/mob-0268.png",
+      "origin": [
+        92,
+        155
+      ],
+      "w": 179,
+      "h": 155
+    },
+    {
+      "src": "assets/regions/mob-0269.png",
+      "origin": [
+        90,
+        153
+      ],
+      "w": 175,
+      "h": 153
+    },
+    {
+      "src": "assets/regions/mob-0270.png",
+      "origin": [
+        90,
+        149
+      ],
+      "w": 175,
+      "h": 149
+    },
+    {
+      "src": "assets/regions/mob-0271.png",
+      "origin": [
+        90,
+        153
+      ],
+      "w": 175,
+      "h": 153
+    },
+    {
+      "src": "assets/regions/mob-0272.png",
+      "origin": [
+        90,
+        149
+      ],
+      "w": 175,
+      "h": 149
+    },
+    {
+      "src": "assets/regions/mob-0273.png",
+      "origin": [
+        134,
+        172
+      ],
+      "w": 258,
+      "h": 172
+    },
+    {
+      "src": "assets/regions/mob-0274.png",
+      "origin": [
+        86,
+        152
+      ],
+      "w": 194,
+      "h": 152
+    },
+    {
+      "src": "assets/regions/mob-0275.png",
+      "origin": [
+        93,
+        152
+      ],
+      "w": 228,
+      "h": 152
+    },
+    {
+      "src": "assets/regions/mob-0276.png",
+      "origin": [
+        93,
+        148
+      ],
+      "w": 225,
+      "h": 148
+    },
+    {
+      "src": "assets/regions/mob-0277.png",
+      "origin": [
+        93,
+        136
+      ],
+      "w": 215,
+      "h": 136
+    },
+    {
+      "src": "assets/regions/mob-0278.png",
+      "origin": [
+        93,
+        133
+      ],
+      "w": 215,
+      "h": 133
+    },
+    {
+      "src": "assets/regions/mob-0279.png",
+      "origin": [
+        93,
+        74
+      ],
+      "w": 215,
+      "h": 74
+    },
+    {
+      "src": "assets/regions/mob-0280.png",
+      "origin": [
+        93,
+        74
+      ],
+      "w": 215,
+      "h": 74
+    },
+    {
+      "src": "assets/regions/mob-0281.png",
+      "origin": [
+        43,
+        29
+      ],
+      "w": 86,
+      "h": 29
+    },
+    {
+      "src": "assets/regions/mob-0282.png",
+      "origin": [
+        43,
+        29
+      ],
+      "w": 80,
+      "h": 29
+    },
+    {
+      "src": "assets/regions/mob-0283.png",
+      "origin": [
+        43,
+        29
+      ],
+      "w": 83,
+      "h": 29
+    },
+    {
+      "src": "assets/regions/mob-0284.png",
+      "origin": [
+        41,
+        29
+      ],
+      "w": 83,
+      "h": 29
+    },
+    {
+      "src": "assets/regions/mob-0285.png",
+      "origin": [
+        39,
+        29
+      ],
+      "w": 80,
+      "h": 29
+    },
+    {
+      "src": "assets/regions/mob-0286.png",
+      "origin": [
+        39,
+        47
+      ],
+      "w": 91,
+      "h": 47
+    },
+    {
+      "src": "assets/regions/mob-0287.png",
+      "origin": [
+        46,
+        39
+      ],
+      "w": 92,
+      "h": 39
+    },
+    {
+      "src": "assets/regions/mob-0288.png",
+      "origin": [
+        44,
+        41
+      ],
+      "w": 88,
+      "h": 41
+    },
+    {
+      "src": "assets/regions/mob-0289.png",
+      "origin": [
+        10,
+        36
+      ],
+      "w": 21,
+      "h": 22
+    },
+    {
+      "src": "assets/regions/mob-0290.png",
+      "origin": [
+        10,
+        35
+      ],
+      "w": 21,
+      "h": 20
+    },
+    {
+      "src": "assets/regions/mob-0291.png",
+      "origin": [
+        10,
+        36
+      ],
+      "w": 21,
+      "h": 22
+    },
+    {
+      "src": "assets/regions/mob-0292.png",
+      "origin": [
+        10,
+        35
+      ],
+      "w": 21,
+      "h": 20
+    },
+    {
+      "src": "assets/regions/mob-0293.png",
+      "origin": [
+        14,
+        40
+      ],
+      "w": 31,
+      "h": 30
+    },
+    {
+      "src": "assets/regions/mob-0294.png",
+      "origin": [
+        10,
+        36
+      ],
+      "w": 21,
+      "h": 22
+    },
+    {
+      "src": "assets/regions/mob-0295.png",
+      "origin": [
+        14,
+        36
+      ],
+      "w": 26,
+      "h": 23
+    },
+    {
+      "src": "assets/regions/mob-0296.png",
+      "origin": [
+        18,
+        38
+      ],
+      "w": 32,
+      "h": 26
+    },
+    {
+      "src": "assets/regions/mob-0297.png",
+      "origin": [
+        20,
+        46
+      ],
+      "w": 43,
+      "h": 43
+    },
+    {
+      "src": "assets/regions/mob-0298.png",
+      "origin": [
+        29,
+        53
+      ],
+      "w": 56,
+      "h": 53
+    },
+    {
+      "src": "assets/regions/mob-0299.png",
+      "origin": [
+        79,
+        91
+      ],
+      "w": 159,
+      "h": 91
+    },
+    {
+      "src": "assets/regions/mob-0300.png",
+      "origin": [
+        83,
+        91
+      ],
+      "w": 166,
+      "h": 91
+    },
+    {
+      "src": "assets/regions/mob-0301.png",
+      "origin": [
+        75,
+        100
+      ],
+      "w": 156,
+      "h": 91
+    },
+    {
+      "src": "assets/regions/mob-0302.png",
+      "origin": [
+        73,
+        102
+      ],
+      "w": 147,
+      "h": 97
+    },
+    {
+      "src": "assets/regions/mob-0303.png",
+      "origin": [
+        74,
+        94
+      ],
+      "w": 139,
+      "h": 94
+    },
+    {
+      "src": "assets/regions/mob-0304.png",
+      "origin": [
+        79,
+        98
+      ],
+      "w": 151,
+      "h": 94
+    },
+    {
+      "src": "assets/regions/mob-0305.png",
+      "origin": [
+        78,
+        89
+      ],
+      "w": 156,
+      "h": 89
+    },
+    {
+      "src": "assets/regions/mob-0306.png",
+      "origin": [
+        58,
+        101
+      ],
+      "w": 116,
+      "h": 101
+    },
+    {
+      "src": "assets/regions/mob-0307.png",
+      "origin": [
+        79,
+        91
+      ],
+      "w": 162,
+      "h": 93
+    },
+    {
+      "src": "assets/regions/mob-0308.png",
+      "origin": [
+        79,
+        80
+      ],
+      "w": 162,
+      "h": 82
+    },
+    {
+      "src": "assets/regions/mob-0309.png",
+      "origin": [
+        79,
+        80
+      ],
+      "w": 162,
+      "h": 82
+    },
+    {
+      "src": "assets/regions/mob-0310.png",
+      "origin": [
+        83,
+        84
+      ],
+      "w": 166,
+      "h": 86
+    },
+    {
+      "src": "assets/regions/mob-0311.png",
+      "origin": [
+        83,
+        84
+      ],
+      "w": 166,
+      "h": 86
+    },
+    {
+      "src": "assets/regions/mob-0312.png",
+      "origin": [
+        64,
+        86
+      ],
+      "w": 129,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0313.png",
+      "origin": [
+        93,
+        86
+      ],
+      "w": 158,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0314.png",
+      "origin": [
+        93,
+        86
+      ],
+      "w": 158,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0315.png",
+      "origin": [
+        96,
+        86
+      ],
+      "w": 161,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0316.png",
+      "origin": [
+        64,
+        86
+      ],
+      "w": 129,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0317.png",
+      "origin": [
+        66,
+        83
+      ],
+      "w": 133,
+      "h": 84
+    },
+    {
+      "src": "assets/regions/mob-0318.png",
+      "origin": [
+        70,
+        86
+      ],
+      "w": 127,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0319.png",
+      "origin": [
+        73,
+        80
+      ],
+      "w": 124,
+      "h": 81
+    },
+    {
+      "src": "assets/regions/mob-0320.png",
+      "origin": [
+        69,
+        86
+      ],
+      "w": 126,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0321.png",
+      "origin": [
+        62,
+        96
+      ],
+      "w": 124,
+      "h": 97
+    },
+    {
+      "src": "assets/regions/mob-0322.png",
+      "origin": [
+        77,
+        80
+      ],
+      "w": 155,
+      "h": 81
+    },
+    {
+      "src": "assets/regions/mob-0323.png",
+      "origin": [
+        104,
+        65
+      ],
+      "w": 169,
+      "h": 69
+    },
+    {
+      "src": "assets/regions/mob-0324.png",
+      "origin": [
+        104,
+        64
+      ],
+      "w": 169,
+      "h": 68
+    },
+    {
+      "src": "assets/regions/mob-0325.png",
+      "origin": [
+        104,
+        63
+      ],
+      "w": 169,
+      "h": 68
+    },
+    {
+      "src": "assets/regions/mob-0326.png",
+      "origin": [
+        105,
+        63
+      ],
+      "w": 170,
+      "h": 68
+    },
+    {
+      "src": "assets/regions/mob-0327.png",
+      "origin": [
+        104,
+        63
+      ],
+      "w": 169,
+      "h": 67
+    },
+    {
+      "src": "assets/regions/mob-0328.png",
+      "origin": [
+        89,
+        125
+      ],
+      "w": 154,
+      "h": 126
+    },
+    {
+      "src": "assets/regions/mob-0329.png",
+      "origin": [
+        87,
+        122
+      ],
+      "w": 153,
+      "h": 124
+    },
+    {
+      "src": "assets/regions/mob-0330.png",
+      "origin": [
+        84,
+        121
+      ],
+      "w": 151,
+      "h": 124
+    },
+    {
+      "src": "assets/regions/mob-0331.png",
+      "origin": [
+        77,
+        119
+      ],
+      "w": 146,
+      "h": 124
+    },
+    {
+      "src": "assets/regions/mob-0332.png",
+      "origin": [
+        79,
+        126
+      ],
+      "w": 150,
+      "h": 133
+    },
+    {
+      "src": "assets/regions/mob-0333.png",
+      "origin": [
+        81,
+        125
+      ],
+      "w": 152,
+      "h": 132
+    },
+    {
+      "src": "assets/regions/mob-0334.png",
+      "origin": [
+        80,
+        125
+      ],
+      "w": 150,
+      "h": 131
+    },
+    {
+      "src": "assets/regions/mob-0335.png",
+      "origin": [
+        81,
+        126
+      ],
+      "w": 149,
+      "h": 130
+    },
+    {
+      "src": "assets/regions/mob-0336.png",
+      "origin": [
+        99,
+        75
+      ],
+      "w": 175,
+      "h": 82
+    },
+    {
+      "src": "assets/regions/mob-0337.png",
+      "origin": [
+        135,
+        75
+      ],
+      "w": 211,
+      "h": 99
+    },
+    {
+      "src": "assets/regions/mob-0338.png",
+      "origin": [
+        139,
+        75
+      ],
+      "w": 215,
+      "h": 101
+    },
+    {
+      "src": "assets/regions/mob-0339.png",
+      "origin": [
+        101,
+        75
+      ],
+      "w": 177,
+      "h": 82
+    },
+    {
+      "src": "assets/regions/mob-0340.png",
+      "origin": [
+        99,
+        75
+      ],
+      "w": 175,
+      "h": 82
+    },
+    {
+      "src": "assets/regions/mob-0341.png",
+      "origin": [
+        64,
+        86
+      ],
+      "w": 129,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0342.png",
+      "origin": [
+        93,
+        86
+      ],
+      "w": 158,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0343.png",
+      "origin": [
+        93,
+        86
+      ],
+      "w": 158,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0344.png",
+      "origin": [
+        96,
+        86
+      ],
+      "w": 161,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0345.png",
+      "origin": [
+        64,
+        86
+      ],
+      "w": 129,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0346.png",
+      "origin": [
+        64,
+        86
+      ],
+      "w": 129,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0347.png",
+      "origin": [
+        93,
+        86
+      ],
+      "w": 158,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0348.png",
+      "origin": [
+        93,
+        86
+      ],
+      "w": 158,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0349.png",
+      "origin": [
+        96,
+        86
+      ],
+      "w": 161,
+      "h": 87
+    },
+    {
+      "src": "assets/regions/mob-0350.png",
+      "origin": [
+        64,
+        86
+      ],
+      "w": 129,
+      "h": 87
+    }
+  ],
+  "mobs": {
+    "3000000": {
+      "name": "\uC2A4\uD1A4\uBCFC",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 30,
+        "maxHP": 900,
+        "maxMP": 50,
+        "speed": -20,
+        "PADamage": 120,
+        "PDDamage": 275,
+        "MADamage": 118,
+        "MDDamage": 85,
+        "acc": 75,
+        "eva": 12,
+        "exp": 55,
+        "undead": 0,
+        "pushed": 10,
+        "mpRecovery": 3,
+        "summonType": 1,
+        "mobType": 8
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 0,
+            "delay": 800
+          },
+          {
+            "img": 1,
+            "delay": 120
+          },
+          {
+            "img": 2,
+            "delay": 120
+          },
+          {
+            "img": 3,
+            "delay": 120
+          },
+          {
+            "img": 4,
+            "delay": 120
+          },
+          {
+            "img": 5,
+            "delay": 120
+          },
+          {
+            "img": 6,
+            "delay": 120
+          },
+          {
+            "img": 7,
+            "delay": 120
+          },
+          {
+            "img": 8,
+            "delay": 120
+          },
+          {
+            "img": 9,
+            "delay": 120
+          },
+          {
+            "img": 10,
+            "delay": 120
+          },
+          {
+            "img": 11,
+            "delay": 120
+          },
+          {
+            "img": 12,
+            "delay": 120
+          },
+          {
+            "img": 13,
+            "delay": 120
+          },
+          {
+            "img": 14,
+            "delay": 120
+          }
+        ],
+        "move": [
+          {
+            "img": 15,
+            "delay": 250
+          },
+          {
+            "img": 16,
+            "delay": 120
+          },
+          {
+            "img": 17,
+            "delay": 250
+          },
+          {
+            "img": 18,
+            "delay": 120
+          }
+        ],
+        "hit1": [
+          {
+            "img": 19,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 20,
+            "delay": 180
+          },
+          {
+            "img": 21,
+            "delay": 180
+          },
+          {
+            "img": 22,
+            "delay": 180
+          },
+          {
+            "img": 23,
+            "delay": 180
+          },
+          {
+            "img": 24,
+            "delay": 100
+          },
+          {
+            "img": 25,
+            "delay": 110
+          },
+          {
+            "img": 26,
+            "delay": 120
+          }
+        ],
+        "attack1": [
+          {
+            "img": 27,
+            "delay": 100
+          },
+          {
+            "img": 28,
+            "delay": 100
+          },
+          {
+            "img": 29,
+            "delay": 100
+          },
+          {
+            "img": 30,
+            "delay": 200
+          },
+          {
+            "img": 31,
+            "delay": 100
+          },
+          {
+            "img": 32,
+            "delay": 100
+          },
+          {
+            "img": 33,
+            "delay": 100
+          },
+          {
+            "img": 34,
+            "delay": 80
+          },
+          {
+            "img": 35,
+            "delay": 80
+          },
+          {
+            "img": 36,
+            "delay": 80
+          },
+          {
+            "img": 37,
+            "delay": 80
+          },
+          {
+            "img": 38,
+            "delay": 480
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-3000000-Damage.mp3",
+        "die": "assets/regions/Mob-3000000-Die.mp3",
+        "attack": "assets/regions/Mob-3000000-Attack1.mp3",
+        "charDam": "assets/regions/Mob-3000000-CharDam1.mp3"
+      }
+    },
+    "3110100": {
+      "name": "\uB9AC\uAC8C\uC774\uD130",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 32,
+        "maxHP": 1200,
+        "maxMP": 40,
+        "speed": -40,
+        "PADamage": 110,
+        "PDDamage": 45,
+        "MADamage": 0,
+        "MDDamage": 40,
+        "acc": 70,
+        "eva": 12,
+        "exp": 60,
+        "undead": 0,
+        "pushed": 1,
+        "summonType": 1,
+        "mobType": 1
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 39,
+            "delay": 500
+          },
+          {
+            "img": 40,
+            "delay": 100
+          },
+          {
+            "img": 41,
+            "delay": 150
+          }
+        ],
+        "move": [
+          {
+            "img": 42,
+            "delay": 200
+          },
+          {
+            "img": 43,
+            "delay": 180
+          }
+        ],
+        "hit1": [
+          {
+            "img": 44,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 45,
+            "delay": 180
+          },
+          {
+            "img": 46,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-3110100-Damage.mp3",
+        "die": "assets/regions/Mob-3110100-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "3210200": {
+      "name": "\uC8FC\uB2C8\uC5B4 \uC0D0\uB9AC\uC628",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 33,
+        "maxHP": 1100,
+        "maxMP": 70,
+        "speed": 0,
+        "PADamage": 105,
+        "PDDamage": 60,
+        "MADamage": 0,
+        "MDDamage": 80,
+        "acc": 95,
+        "eva": 15,
+        "exp": 65,
+        "undead": 0,
+        "pushed": 1,
+        "summonType": 1,
+        "mobType": 0
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 47,
+            "delay": 2000
+          },
+          {
+            "img": 48,
+            "delay": 70
+          },
+          {
+            "img": 49,
+            "delay": 70
+          },
+          {
+            "img": 50,
+            "delay": 120
+          }
+        ],
+        "move": [
+          {
+            "img": 51,
+            "delay": 150
+          },
+          {
+            "img": 52,
+            "delay": 100
+          },
+          {
+            "img": 53,
+            "delay": 150
+          }
+        ],
+        "jump": [
+          {
+            "img": 54,
+            "delay": 100
+          }
+        ],
+        "hit1": [
+          {
+            "img": 55,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 56,
+            "delay": 200
+          },
+          {
+            "img": 57,
+            "delay": 120
+          },
+          {
+            "img": 58,
+            "delay": 120
+          },
+          {
+            "img": 59,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-3210200-Damage.mp3",
+        "die": "assets/regions/Mob-3210200-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "3210201": {
+      "name": "\uC8FC\uB2C8\uC5B4 \uB77C\uC774\uC624\uB108",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 33,
+        "maxHP": 1100,
+        "maxMP": 70,
+        "speed": 0,
+        "PADamage": 105,
+        "PDDamage": 60,
+        "MADamage": 0,
+        "MDDamage": 80,
+        "acc": 95,
+        "eva": 15,
+        "exp": 65,
+        "undead": 0,
+        "pushed": 1,
+        "summonType": 1,
+        "mobType": 0
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 60,
+            "delay": 2000
+          },
+          {
+            "img": 61,
+            "delay": 70
+          },
+          {
+            "img": 62,
+            "delay": 70
+          },
+          {
+            "img": 63,
+            "delay": 120
+          }
+        ],
+        "move": [
+          {
+            "img": 64,
+            "delay": 150
+          },
+          {
+            "img": 65,
+            "delay": 100
+          },
+          {
+            "img": 66,
+            "delay": 150
+          }
+        ],
+        "jump": [
+          {
+            "img": 67,
+            "delay": 100
+          }
+        ],
+        "hit1": [
+          {
+            "img": 68,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 69,
+            "delay": 200
+          },
+          {
+            "img": 70,
+            "delay": 120
+          },
+          {
+            "img": 71,
+            "delay": 120
+          },
+          {
+            "img": 72,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-3210201-Damage.mp3",
+        "die": "assets/regions/Mob-3210201-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "3210202": {
+      "name": "\uC8FC\uB2C8\uC5B4 \uADF8\uB958\uD540",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 33,
+        "maxHP": 1100,
+        "maxMP": 70,
+        "speed": 0,
+        "PADamage": 105,
+        "PDDamage": 60,
+        "MADamage": 0,
+        "MDDamage": 80,
+        "acc": 95,
+        "eva": 15,
+        "exp": 65,
+        "undead": 0,
+        "pushed": 1,
+        "summonType": 1,
+        "mobType": 0
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 73,
+            "delay": 2000
+          },
+          {
+            "img": 74,
+            "delay": 70
+          },
+          {
+            "img": 75,
+            "delay": 70
+          },
+          {
+            "img": 76,
+            "delay": 120
+          }
+        ],
+        "move": [
+          {
+            "img": 77,
+            "delay": 150
+          },
+          {
+            "img": 78,
+            "delay": 100
+          },
+          {
+            "img": 79,
+            "delay": 150
+          }
+        ],
+        "jump": [
+          {
+            "img": 80,
+            "delay": 100
+          }
+        ],
+        "hit1": [
+          {
+            "img": 81,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 82,
+            "delay": 200
+          },
+          {
+            "img": 83,
+            "delay": 120
+          },
+          {
+            "img": 84,
+            "delay": 120
+          },
+          {
+            "img": 85,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-3210202-Damage.mp3",
+        "die": "assets/regions/Mob-3210202-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "3230101": {
+      "name": "\uC8FC\uB2C8\uC5B4 \uB808\uC774\uC2A4",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 35,
+        "maxHP": 1200,
+        "maxMP": 80,
+        "speed": 0,
+        "PADamage": 110,
+        "PDDamage": 90,
+        "MADamage": 0,
+        "MDDamage": 90,
+        "acc": 100,
+        "eva": 17,
+        "exp": 70,
+        "undead": 1,
+        "pushed": 50,
+        "summonType": 1,
+        "mobType": 7
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 86,
+            "delay": 100
+          }
+        ],
+        "move": [
+          {
+            "img": 87,
+            "delay": 150
+          },
+          {
+            "img": 88,
+            "delay": 150
+          },
+          {
+            "img": 89,
+            "delay": 150
+          },
+          {
+            "img": 90,
+            "delay": 150
+          },
+          {
+            "img": 91,
+            "delay": 150
+          }
+        ],
+        "jump": [
+          {
+            "img": 92,
+            "delay": 100
+          }
+        ],
+        "hit1": [
+          {
+            "img": 93,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 94,
+            "delay": 130
+          },
+          {
+            "img": 95,
+            "delay": 130
+          },
+          {
+            "img": 96,
+            "delay": 130
+          },
+          {
+            "img": 97,
+            "delay": 130
+          },
+          {
+            "img": 98,
+            "delay": 130
+          },
+          {
+            "img": 99,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-3230101-Damage.mp3",
+        "die": "assets/regions/Mob-3230101-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "3230200": {
+      "name": "\uC2A4\uD0C0\uD53D\uC2DC",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 35,
+        "maxHP": 1300,
+        "maxMP": 100,
+        "speed": 0,
+        "PADamage": 120,
+        "PDDamage": 100,
+        "MADamage": 130,
+        "MDDamage": 100,
+        "acc": 145,
+        "eva": 21,
+        "exp": 72,
+        "undead": 0,
+        "pushed": 100,
+        "mpRecovery": 5,
+        "summonType": 1,
+        "mobType": 5
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 100,
+            "delay": 130
+          },
+          {
+            "img": 101,
+            "delay": 130
+          },
+          {
+            "img": 102,
+            "delay": 130
+          },
+          {
+            "img": 103,
+            "delay": 130
+          },
+          {
+            "img": 104,
+            "delay": 130
+          },
+          {
+            "img": 105,
+            "delay": 130
+          }
+        ],
+        "move": [
+          {
+            "img": 106,
+            "delay": 120
+          },
+          {
+            "img": 107,
+            "delay": 120
+          },
+          {
+            "img": 108,
+            "delay": 120
+          },
+          {
+            "img": 109,
+            "delay": 120
+          },
+          {
+            "img": 110,
+            "delay": 120
+          },
+          {
+            "img": 111,
+            "delay": 120
+          }
+        ],
+        "jump": [
+          {
+            "img": 112,
+            "delay": 100
+          }
+        ],
+        "hit1": [
+          {
+            "img": 113,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 114,
+            "delay": 130
+          },
+          {
+            "img": 115,
+            "delay": 130
+          },
+          {
+            "img": 116,
+            "delay": 130
+          },
+          {
+            "img": 117,
+            "delay": 130
+          },
+          {
+            "img": 118,
+            "delay": 300
+          }
+        ],
+        "attack1": [
+          {
+            "img": 119,
+            "delay": 120
+          },
+          {
+            "img": 120,
+            "delay": 120
+          },
+          {
+            "img": 121,
+            "delay": 120
+          },
+          {
+            "img": 122,
+            "delay": 120
+          },
+          {
+            "img": 123,
+            "delay": 120
+          },
+          {
+            "img": 124,
+            "delay": 250
+          },
+          {
+            "img": 125,
+            "delay": 130
+          },
+          {
+            "img": 126,
+            "delay": 140
+          },
+          {
+            "img": 127,
+            "delay": 150
+          },
+          {
+            "img": 128,
+            "delay": 150
+          },
+          {
+            "img": 129,
+            "delay": 130
+          },
+          {
+            "img": 130,
+            "delay": 130
+          },
+          {
+            "img": 131,
+            "delay": 130
+          },
+          {
+            "img": 132,
+            "delay": 130
+          },
+          {
+            "img": 133,
+            "delay": 130
+          },
+          {
+            "img": 134,
+            "delay": 130
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-3230200-Damage.mp3",
+        "die": "assets/regions/Mob-3230200-Die.mp3",
+        "attack": "assets/regions/Mob-3230200-Attack1.mp3",
+        "charDam": "assets/regions/Mob-3230200-CharDam1.mp3"
+      }
+    },
+    "4130100": {
+      "name": "\uCE74\uD30C \uB4DC\uB808\uC774\uD06C",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 45,
+        "maxHP": 2700,
+        "maxMP": 150,
+        "speed": 10,
+        "PADamage": 150,
+        "PDDamage": 100,
+        "MADamage": 0,
+        "MDDamage": 100,
+        "acc": 70,
+        "eva": 18,
+        "exp": 105,
+        "undead": 0,
+        "pushed": 200,
+        "summonType": 1,
+        "mobType": 1
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 135,
+            "delay": 100
+          }
+        ],
+        "move": [
+          {
+            "img": 136,
+            "delay": 150
+          },
+          {
+            "img": 137,
+            "delay": 150
+          },
+          {
+            "img": 138,
+            "delay": 150
+          },
+          {
+            "img": 139,
+            "delay": 150
+          }
+        ],
+        "hit1": [
+          {
+            "img": 140,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 141,
+            "delay": 150
+          },
+          {
+            "img": 142,
+            "delay": 150
+          },
+          {
+            "img": 143,
+            "delay": 150
+          },
+          {
+            "img": 144,
+            "delay": 150
+          },
+          {
+            "img": 145,
+            "delay": 150
+          },
+          {
+            "img": 146,
+            "delay": 150
+          },
+          {
+            "img": 147,
+            "delay": 150
+          },
+          {
+            "img": 148,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-4130100-Damage.mp3",
+        "die": "assets/regions/Mob-4130100-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "4230102": {
+      "name": "\uB808\uC774\uC2A4",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 48,
+        "maxHP": 2800,
+        "maxMP": 80,
+        "speed": 15,
+        "PADamage": 155,
+        "PDDamage": 180,
+        "MADamage": 0,
+        "MDDamage": 180,
+        "acc": 130,
+        "eva": 20,
+        "exp": 120,
+        "undead": 1,
+        "pushed": 300,
+        "hpRecovery": 50,
+        "summonType": 1,
+        "mobType": 7
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 149,
+            "delay": 100
+          }
+        ],
+        "move": [
+          {
+            "img": 150,
+            "delay": 150
+          },
+          {
+            "img": 151,
+            "delay": 150
+          },
+          {
+            "img": 152,
+            "delay": 100
+          },
+          {
+            "img": 153,
+            "delay": 150
+          }
+        ],
+        "jump": [
+          {
+            "img": 154,
+            "delay": 100
+          }
+        ],
+        "hit1": [
+          {
+            "img": 155,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 156,
+            "delay": 130
+          },
+          {
+            "img": 157,
+            "delay": 130
+          },
+          {
+            "img": 158,
+            "delay": 130
+          },
+          {
+            "img": 159,
+            "delay": 130
+          },
+          {
+            "img": 160,
+            "delay": 130
+          },
+          {
+            "img": 161,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-4230102-Damage.mp3",
+        "die": "assets/regions/Mob-4230102-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "4230106": {
+      "name": "\uB8E8\uB098\uD53D\uC2DC",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 45,
+        "maxHP": 2500,
+        "maxMP": 115,
+        "speed": 5,
+        "PADamage": 140,
+        "PDDamage": 145,
+        "MADamage": 155,
+        "MDDamage": 160,
+        "acc": 165,
+        "eva": 24,
+        "exp": 105,
+        "undead": 0,
+        "pushed": 200,
+        "mpRecovery": 5,
+        "summonType": 1,
+        "mobType": 5
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 162,
+            "delay": 130
+          },
+          {
+            "img": 163,
+            "delay": 130
+          },
+          {
+            "img": 164,
+            "delay": 130
+          },
+          {
+            "img": 165,
+            "delay": 130
+          },
+          {
+            "img": 166,
+            "delay": 130
+          },
+          {
+            "img": 167,
+            "delay": 130
+          }
+        ],
+        "move": [
+          {
+            "img": 168,
+            "delay": 120
+          },
+          {
+            "img": 169,
+            "delay": 120
+          },
+          {
+            "img": 170,
+            "delay": 120
+          },
+          {
+            "img": 171,
+            "delay": 120
+          },
+          {
+            "img": 172,
+            "delay": 120
+          },
+          {
+            "img": 173,
+            "delay": 120
+          }
+        ],
+        "jump": [
+          {
+            "img": 174,
+            "delay": 100
+          }
+        ],
+        "hit1": [
+          {
+            "img": 175,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 176,
+            "delay": 130
+          },
+          {
+            "img": 177,
+            "delay": 130
+          },
+          {
+            "img": 178,
+            "delay": 130
+          },
+          {
+            "img": 179,
+            "delay": 130
+          },
+          {
+            "img": 180,
+            "delay": 300
+          }
+        ],
+        "attack1": [
+          {
+            "img": 181,
+            "delay": 120
+          },
+          {
+            "img": 182,
+            "delay": 120
+          },
+          {
+            "img": 183,
+            "delay": 120
+          },
+          {
+            "img": 184,
+            "delay": 120
+          },
+          {
+            "img": 185,
+            "delay": 120
+          },
+          {
+            "img": 186,
+            "delay": 250
+          },
+          {
+            "img": 187,
+            "delay": 130
+          },
+          {
+            "img": 188,
+            "delay": 140
+          },
+          {
+            "img": 189,
+            "delay": 150
+          },
+          {
+            "img": 190,
+            "delay": 150
+          },
+          {
+            "img": 191,
+            "delay": 130
+          },
+          {
+            "img": 192,
+            "delay": 130
+          },
+          {
+            "img": 193,
+            "delay": 130
+          },
+          {
+            "img": 194,
+            "delay": 130
+          },
+          {
+            "img": 195,
+            "delay": 130
+          },
+          {
+            "img": 196,
+            "delay": 130
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-4230106-Damage.mp3",
+        "die": "assets/regions/Mob-4230106-Die.mp3",
+        "attack": "assets/regions/Mob-4230106-Attack1.mp3",
+        "charDam": "assets/regions/Mob-4230106-CharDam1.mp3"
+      }
+    },
+    "5120000": {
+      "name": "\uB7EC\uC2A4\uD130\uD53D\uC2DC",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 52,
+        "maxHP": 4000,
+        "maxMP": 200,
+        "speed": -15,
+        "PADamage": 160,
+        "PDDamage": 125,
+        "MADamage": 170,
+        "MDDamage": 265,
+        "acc": 130,
+        "eva": 22,
+        "exp": 155,
+        "undead": 0,
+        "pushed": 500,
+        "mpRecovery": 5,
+        "summonType": 1,
+        "mobType": 5
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 197,
+            "delay": 130
+          },
+          {
+            "img": 198,
+            "delay": 130
+          },
+          {
+            "img": 199,
+            "delay": 130
+          },
+          {
+            "img": 200,
+            "delay": 130
+          },
+          {
+            "img": 201,
+            "delay": 130
+          },
+          {
+            "img": 202,
+            "delay": 130
+          }
+        ],
+        "move": [
+          {
+            "img": 203,
+            "delay": 120
+          },
+          {
+            "img": 204,
+            "delay": 120
+          },
+          {
+            "img": 205,
+            "delay": 120
+          },
+          {
+            "img": 206,
+            "delay": 120
+          },
+          {
+            "img": 207,
+            "delay": 120
+          },
+          {
+            "img": 208,
+            "delay": 120
+          }
+        ],
+        "jump": [
+          {
+            "img": 209,
+            "delay": 100
+          }
+        ],
+        "hit1": [
+          {
+            "img": 210,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 211,
+            "delay": 130
+          },
+          {
+            "img": 212,
+            "delay": 130
+          },
+          {
+            "img": 213,
+            "delay": 130
+          },
+          {
+            "img": 214,
+            "delay": 130
+          },
+          {
+            "img": 215,
+            "delay": 300
+          }
+        ],
+        "attack1": [
+          {
+            "img": 216,
+            "delay": 100
+          },
+          {
+            "img": 217,
+            "delay": 100
+          },
+          {
+            "img": 218,
+            "delay": 100
+          },
+          {
+            "img": 219,
+            "delay": 100
+          },
+          {
+            "img": 220,
+            "delay": 70
+          },
+          {
+            "img": 221,
+            "delay": 70
+          },
+          {
+            "img": 222,
+            "delay": 70
+          },
+          {
+            "img": 223,
+            "delay": 70
+          },
+          {
+            "img": 224,
+            "delay": 70
+          },
+          {
+            "img": 225,
+            "delay": 70
+          },
+          {
+            "img": 226,
+            "delay": 70
+          },
+          {
+            "img": 227,
+            "delay": 70
+          },
+          {
+            "img": 228,
+            "delay": 120
+          },
+          {
+            "img": 229,
+            "delay": 140
+          },
+          {
+            "img": 230,
+            "delay": 160
+          },
+          {
+            "img": 231,
+            "delay": 130
+          },
+          {
+            "img": 232,
+            "delay": 130
+          },
+          {
+            "img": 233,
+            "delay": 130
+          },
+          {
+            "img": 234,
+            "delay": 130
+          },
+          {
+            "img": 235,
+            "delay": 130
+          },
+          {
+            "img": 236,
+            "delay": 130
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-5120000-Damage.mp3",
+        "die": "assets/regions/Mob-5120000-Die.mp3",
+        "attack": "assets/regions/Mob-5120000-Attack1.mp3",
+        "charDam": "assets/regions/Mob-5120000-CharDam1.mp3"
+      }
+    },
+    "5130100": {
+      "name": "\uB4DC\uB808\uC774\uD06C",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 50,
+        "maxHP": 3200,
+        "maxMP": 100,
+        "speed": -10,
+        "PADamage": 165,
+        "PDDamage": 110,
+        "MADamage": 0,
+        "MDDamage": 150,
+        "acc": 75,
+        "eva": 18,
+        "exp": 135,
+        "undead": 0,
+        "pushed": 500,
+        "summonType": 1,
+        "mobType": 1
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 237,
+            "delay": 100
+          }
+        ],
+        "move": [
+          {
+            "img": 238,
+            "delay": 150
+          },
+          {
+            "img": 239,
+            "delay": 150
+          },
+          {
+            "img": 240,
+            "delay": 150
+          },
+          {
+            "img": 241,
+            "delay": 150
+          }
+        ],
+        "hit1": [
+          {
+            "img": 242,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 243,
+            "delay": 150
+          },
+          {
+            "img": 244,
+            "delay": 150
+          },
+          {
+            "img": 245,
+            "delay": 150
+          },
+          {
+            "img": 246,
+            "delay": 150
+          },
+          {
+            "img": 247,
+            "delay": 150
+          },
+          {
+            "img": 248,
+            "delay": 150
+          },
+          {
+            "img": 249,
+            "delay": 150
+          },
+          {
+            "img": 250,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-5130100-Damage.mp3",
+        "die": "assets/regions/Mob-5130100-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "5130101": {
+      "name": "\uC2A4\uD1A4\uACE8\uB818",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 55,
+        "maxHP": 4000,
+        "maxMP": 120,
+        "speed": -70,
+        "PADamage": 180,
+        "PDDamage": 130,
+        "MADamage": 0,
+        "MDDamage": 100,
+        "acc": 80,
+        "eva": 15,
+        "exp": 170,
+        "undead": 0,
+        "pushed": 1000,
+        "summonType": 1,
+        "mobType": 8
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 251,
+            "delay": 300
+          },
+          {
+            "img": 252,
+            "delay": 150
+          },
+          {
+            "img": 253,
+            "delay": 300
+          }
+        ],
+        "move": [
+          {
+            "img": 254,
+            "delay": 350
+          },
+          {
+            "img": 255,
+            "delay": 350
+          },
+          {
+            "img": 256,
+            "delay": 350
+          },
+          {
+            "img": 257,
+            "delay": 350
+          }
+        ],
+        "hit1": [
+          {
+            "img": 258,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 259,
+            "delay": 250
+          },
+          {
+            "img": 260,
+            "delay": 250
+          },
+          {
+            "img": 261,
+            "delay": 250
+          },
+          {
+            "img": 262,
+            "delay": 250
+          },
+          {
+            "img": 263,
+            "delay": 250
+          },
+          {
+            "img": 264,
+            "delay": 250
+          },
+          {
+            "img": 265,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-5130101-Damage.mp3",
+        "die": "assets/regions/Mob-5130101-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "5130102": {
+      "name": "\uB2E4\uD06C \uC2A4\uD1A4\uACE8\uB818",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 58,
+        "maxHP": 4800,
+        "maxMP": 150,
+        "speed": -50,
+        "PADamage": 195,
+        "PDDamage": 150,
+        "MADamage": 0,
+        "MDDamage": 200,
+        "acc": 70,
+        "eva": 18,
+        "exp": 200,
+        "undead": 0,
+        "pushed": 1500,
+        "summonType": 1,
+        "mobType": 8
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 266,
+            "delay": 300
+          },
+          {
+            "img": 267,
+            "delay": 150
+          },
+          {
+            "img": 268,
+            "delay": 300
+          }
+        ],
+        "move": [
+          {
+            "img": 269,
+            "delay": 350
+          },
+          {
+            "img": 270,
+            "delay": 350
+          },
+          {
+            "img": 271,
+            "delay": 350
+          },
+          {
+            "img": 272,
+            "delay": 350
+          }
+        ],
+        "hit1": [
+          {
+            "img": 273,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 274,
+            "delay": 250
+          },
+          {
+            "img": 275,
+            "delay": 250
+          },
+          {
+            "img": 276,
+            "delay": 250
+          },
+          {
+            "img": 277,
+            "delay": 250
+          },
+          {
+            "img": 278,
+            "delay": 250
+          },
+          {
+            "img": 279,
+            "delay": 250
+          },
+          {
+            "img": 280,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-5130102-Damage.mp3",
+        "die": "assets/regions/Mob-5130102-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "5130103": {
+      "name": "\uD06C\uB85C\uCF54",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 52,
+        "maxHP": 3800,
+        "maxMP": 75,
+        "speed": -30,
+        "PADamage": 172,
+        "PDDamage": 120,
+        "MADamage": 0,
+        "MDDamage": 80,
+        "acc": 80,
+        "eva": 20,
+        "exp": 170,
+        "undead": 0,
+        "pushed": 500,
+        "summonType": 1,
+        "mobType": 1
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 281,
+            "delay": 500
+          },
+          {
+            "img": 282,
+            "delay": 100
+          },
+          {
+            "img": 283,
+            "delay": 150
+          }
+        ],
+        "move": [
+          {
+            "img": 284,
+            "delay": 200
+          },
+          {
+            "img": 285,
+            "delay": 180
+          }
+        ],
+        "hit1": [
+          {
+            "img": 286,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 287,
+            "delay": 180
+          },
+          {
+            "img": 288,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-5130103-Damage.mp3",
+        "die": "assets/regions/Mob-5130103-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "5200000": {
+      "name": "\uC8FC\uB2C8\uC5B4 \uC2A4\uD1A4\uBCFC",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 23,
+        "maxHP": 600,
+        "maxMP": 10,
+        "speed": -10,
+        "PADamage": 70,
+        "PDDamage": 30,
+        "MADamage": 0,
+        "MDDamage": 40,
+        "acc": 55,
+        "eva": 8,
+        "exp": 40,
+        "undead": 0,
+        "pushed": 0,
+        "summonType": 1,
+        "mobType": 8
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 289,
+            "delay": 110
+          },
+          {
+            "img": 290,
+            "delay": 110
+          }
+        ],
+        "move": [
+          {
+            "img": 291,
+            "delay": 100
+          },
+          {
+            "img": 292,
+            "delay": 120
+          }
+        ],
+        "hit1": [
+          {
+            "img": 293,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 294,
+            "delay": 120
+          },
+          {
+            "img": 295,
+            "delay": 120
+          },
+          {
+            "img": 296,
+            "delay": 120
+          },
+          {
+            "img": 297,
+            "delay": 120
+          },
+          {
+            "img": 298,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-5200000-Damage.mp3",
+        "die": "assets/regions/Mob-5200000-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "6230100": {
+      "name": "\uC640\uC77C\uB4DC\uCE74\uACE0",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 62,
+        "maxHP": 5500,
+        "maxMP": 100,
+        "speed": 30,
+        "PADamage": 210,
+        "PDDamage": 180,
+        "MADamage": 0,
+        "MDDamage": 130,
+        "acc": 100,
+        "eva": 20,
+        "exp": 240,
+        "undead": 0,
+        "pushed": 1500,
+        "summonType": 1,
+        "mobType": 1
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 299,
+            "delay": 100
+          }
+        ],
+        "move": [
+          {
+            "img": 300,
+            "delay": 150
+          },
+          {
+            "img": 301,
+            "delay": 150
+          },
+          {
+            "img": 302,
+            "delay": 150
+          },
+          {
+            "img": 303,
+            "delay": 150
+          },
+          {
+            "img": 304,
+            "delay": 150
+          }
+        ],
+        "jump": [
+          {
+            "img": 305,
+            "delay": 100
+          }
+        ],
+        "hit1": [
+          {
+            "img": 306,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 307,
+            "delay": 180
+          },
+          {
+            "img": 308,
+            "delay": 180
+          },
+          {
+            "img": 309,
+            "delay": 180
+          },
+          {
+            "img": 310,
+            "delay": 180
+          },
+          {
+            "img": 311,
+            "delay": 300
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-6230100-Damage.mp3",
+        "die": "assets/regions/Mob-6230100-Die.mp3",
+        "attack": null,
+        "charDam": null
+      }
+    },
+    "6230601": {
+      "name": "\uB2E4\uD06C \uB4DC\uB808\uC774\uD06C",
+      "stats": {
+        "bodyAttack": 1,
+        "level": 68,
+        "maxHP": 13000,
+        "maxMP": 140,
+        "speed": 0,
+        "PADamage": 220,
+        "PDDamage": 205,
+        "MADamage": 250,
+        "MDDamage": 250,
+        "acc": 170,
+        "eva": 27,
+        "exp": 265,
+        "undead": 0,
+        "pushed": 2000,
+        "summonType": 1,
+        "mobType": 1
+      },
+      "actions": {
+        "stand": [
+          {
+            "img": 312,
+            "delay": 130
+          },
+          {
+            "img": 313,
+            "delay": 130
+          },
+          {
+            "img": 314,
+            "delay": 130
+          },
+          {
+            "img": 315,
+            "delay": 130
+          },
+          {
+            "img": 316,
+            "delay": 130
+          }
+        ],
+        "move": [
+          {
+            "img": 317,
+            "delay": 150
+          },
+          {
+            "img": 318,
+            "delay": 150
+          },
+          {
+            "img": 319,
+            "delay": 150
+          },
+          {
+            "img": 320,
+            "delay": 150
+          }
+        ],
+        "hit1": [
+          {
+            "img": 321,
+            "delay": 600
+          }
+        ],
+        "die1": [
+          {
+            "img": 322,
+            "delay": 150
+          },
+          {
+            "img": 323,
+            "delay": 150
+          },
+          {
+            "img": 324,
+            "delay": 150
+          },
+          {
+            "img": 325,
+            "delay": 150
+          },
+          {
+            "img": 326,
+            "delay": 150
+          },
+          {
+            "img": 327,
+            "delay": 150
+          }
+        ],
+        "attack1": [
+          {
+            "img": 328,
+            "delay": 110
+          },
+          {
+            "img": 329,
+            "delay": 110
+          },
+          {
+            "img": 330,
+            "delay": 110
+          },
+          {
+            "img": 331,
+            "delay": 110
+          },
+          {
+            "img": 332,
+            "delay": 110
+          },
+          {
+            "img": 333,
+            "delay": 110
+          },
+          {
+            "img": 334,
+            "delay": 110
+          },
+          {
+            "img": 335,
+            "delay": 110
+          },
+          {
+            "img": 336,
+            "delay": 110
+          },
+          {
+            "img": 337,
+            "delay": 110
+          },
+          {
+            "img": 338,
+            "delay": 110
+          },
+          {
+            "img": 339,
+            "delay": 110
+          },
+          {
+            "img": 340,
+            "delay": 110
+          },
+          {
+            "img": 341,
+            "delay": 130
+          },
+          {
+            "img": 342,
+            "delay": 130
+          },
+          {
+            "img": 343,
+            "delay": 130
+          },
+          {
+            "img": 344,
+            "delay": 130
+          },
+          {
+            "img": 345,
+            "delay": 130
+          },
+          {
+            "img": 346,
+            "delay": 130
+          },
+          {
+            "img": 347,
+            "delay": 130
+          },
+          {
+            "img": 348,
+            "delay": 130
+          },
+          {
+            "img": 349,
+            "delay": 130
+          },
+          {
+            "img": 350,
+            "delay": 130
+          }
+        ]
+      },
+      "sounds": {
+        "damage": "assets/regions/Mob-6230601-Damage.mp3",
+        "die": "assets/regions/Mob-6230601-Die.mp3",
+        "attack": "assets/regions/Mob-6230601-Attack1.mp3",
+        "charDam": "assets/regions/Mob-6230601-CharDam1.mp3"
+      }
+    }
+  },
+  "bgm": {
+    "perion": "assets/regions/Bgm00-Nightmare.mp3",
+    "kerning": "assets/regions/Bgm01-BadGuys.mp3",
+    "sleepy": "assets/regions/Bgm00-SleepyWood.mp3",
+    "orbis": "assets/regions/Bgm04-Shinin\u0027Harbor.mp3"
+  }
+}

@@ -1,0 +1,183 @@
+/* KMS 1.2.65 skin. Native UI.wz frames/buttons stay separate from layout and game rules. */
+@font-face{font-family:KMSClassic;src:local('Dotum'),local('돋움'),local('Gulim'),local('굴림');font-display:swap}
+:root{--paper:#edf0f1;--ink:#25394b;--muted:#64788b;--line:#a9b8c4;--orange:#ed922d;--green:#347f9c}
+body,button,input{font-family:KMSClassic,Dotum,"돋움",Gulim,"굴림",sans-serif}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.native-digits{display:inline-flex;align-items:center;gap:1px;--native-scale:1}
+.native-digit{display:inline-block;flex-shrink:0;width:calc(var(--glyph-width)*var(--native-scale)*1px);height:calc(var(--glyph-height)*var(--native-scale)*1px);background-size:100% 100%;image-rendering:pixelated}
+.native-char{display:inline-block;min-width:calc(2px*var(--native-scale));font-size:calc(8px*var(--native-scale));line-height:1;color:inherit}
+.native-char::after{content:attr(data-char)}
+.timer .native-digits{display:inline-flex;flex-wrap:nowrap;align-items:center;--native-scale:3;gap:2px;white-space:nowrap;margin:0}
+.timer .native-digits>span{margin:0;flex-shrink:0}.timer .native-char{font-size:calc(8px*var(--native-scale));color:#fff;text-shadow:1px 1px #253e52}.status-level .native-digits{--native-scale:1}
+.route-card{cursor:default;position:relative}
+body{background:linear-gradient(#9cb8c5,#536d7e);background-attachment:fixed;font-family:KMSClassic,Dotum,"돋움",Gulim,"굴림",sans-serif;color:var(--ink);font-size:12px;cursor:url('assets/ui/cursor.png') 0 0,default}
+.shell{max-width:1500px;padding:16px 24px}
+.masthead{height:46px;margin-bottom:14px;color:#fff;text-shadow:1px 1px #354959}
+.brand{gap:8px;font-family:"Trebuchet MS",Arial,sans-serif;font-size:18px;letter-spacing:.5px}
+.brand small{font-family:Dotum,"돋움",sans-serif;letter-spacing:2px;color:#edf6fd;font-size:10px}
+.maple-mark{color:#ff9a20;text-shadow:1px 1px #7e4a12;font-size:34px}
+.header-actions{gap:14px}.build-tag{color:#f0f7fb;font-size:9px;letter-spacing:1px}
+.header-actions button{border:1px solid #284c6c;border-radius:2px;background:linear-gradient(#f9fcff,#c5d6e0);color:#284a64;box-shadow:inset 0 0 0 1px #fff;padding:7px 12px}
+main{grid-template-columns:minmax(0,1fr) 258px;gap:12px}
+.adventure,.notebook,.loadout,.controls,.equipment-panel,.modal,.dresser-panel{
+  position:relative;border-style:solid;border-width:29px 6px 14px;border-image:url('assets/ui/window-frame.png') 29 6 14 fill stretch;
+  border-radius:0;background:var(--paper);box-shadow:2px 3px 0 #1d354440;
+}
+.adventure{overflow:visible;padding:0}
+.adventure::before{content:'MAPLE SURVIVORS';position:absolute;top:-23px;left:10px;font:bold 10px Arial;color:#40576d;letter-spacing:1px}
+.arena-heading{padding:8px 12px;min-height:52px;background:#e2e8ec;border-bottom:1px solid #aebcc6}
+.eyebrow{color:#6d8193;font-size:9px;letter-spacing:1px}
+h1{font-size:16px;margin:4px 0 0;letter-spacing:0}h1 span{border-radius:1px;border-color:#afbcc5;background:#f3f5f7;color:#53738a;padding:1px 4px}
+.objective{color:#526c7f;font-size:10px}.live-dot,.build-tag i,.under-game i{background:#73b1cb;box-shadow:0 0 0 1px #fff}
+.game-frame{height:min(70vh,660px);min-height:480px;margin:0;border:1px solid #526575;border-radius:0;box-shadow:none}
+.under-game{padding:8px 10px;background:#e6ebef;color:#587084;font-size:9px;border-top:1px solid #fff}
+aside{gap:12px}.notebook,.loadout,.controls{padding:8px 10px 4px;background:#f0f2f4}
+.notebook>.eyebrow{display:none}.notebook>h2,.controls>h2{margin:-31px 0 21px;font-size:11px;color:#40576d;line-height:18px;letter-spacing:0}
+.section-heading{height:18px;margin:-31px 0 21px}.section-heading h2{font-size:11px;color:#40576d;letter-spacing:0}.section-heading>span{color:#557289}
+.portrait{padding:2px 0 14px;gap:8px}#portrait{border-radius:2px;border:1px solid #8da4b5;box-shadow:inset 0 0 0 1px #fff;background:#dce9ef}
+.portrait b{font-size:12px}.portrait small{font-size:9px;color:#5e7588}.class-pill{border-radius:1px;background:#528ca6;font-size:7px;color:#fff}
+.divider{background:#b9c7d1;margin:5px 0 12px;box-shadow:0 1px #fff}
+.mission{gap:8px}.mission>span{border-radius:1px;background:#cadce7;color:#3e6985}.mission b{font-size:11px}.mission p{color:#697e90;font-size:10px;line-height:1.7;margin:6px 0 13px}
+.progress-label{color:#718699}.progress-label b{color:#3977a0}.mission-track{height:7px;border-radius:0;background:#c3cfd9;border:1px solid #9bafbe}.mission-track div{background:linear-gradient(#a3dbf4,#3d9ac9)}
+.record{color:#718699;margin-top:10px}.record b{color:#2b6e9a}
+.skill{border-radius:1px;border:1px solid #bdcad4;background:#fff;box-shadow:inset 0 0 0 1px #f3f6f8;padding:8px 6px;gap:7px}
+.skill img{background:url('assets/ui/slot.png') center/100% 100%;padding:0;border:0;border-radius:0;flex-shrink:0}
+.skill+.skill{margin-top:5px}.skill b{color:#324d62;font-size:11px}.skill small{color:#74899a;font-size:9px}.skill>span{color:#47799b}
+.mini-skill{padding-top:9px;color:#5c7385}.mini-skill b{color:#47799b}.job-tag{border-radius:1px;background:#f8dfa5;color:#7f5514}
+.controls>div{color:#5d7588;font-size:10px}.controls em{color:#4485aa}
+kbd{height:19px;min-width:18px;border-radius:1px;border-color:#9dabb7;background:linear-gradient(#fff,#dce3e8);box-shadow:0 1px #7c91a2;color:#4a6072;font-size:9px}
+footer{margin-top:12px;color:#e8f2f7;letter-spacing:.3px;font-size:9px}
+/* Original white quick-slot cells and compact Maple-style information windows. */
+.stage-hud{inset:9px 10px auto;grid-template-columns:1fr auto 1fr;gap:10px}
+.loadout-hud{width:max-content;gap:3px;padding:5px;border:1px solid #3e566a;background:#607183e6;box-shadow:inset 0 0 0 1px #bdccd7;border-radius:3px}
+.loadout-hud .row{gap:3px}.slot,.slot.passive{width:32px;height:32px;border:0;border-radius:0;background:url('assets/ui/slot.png') center/100% 100%;overflow:hidden}
+.slot.empty{opacity:1}.slot img,.slot.passive img{width:30px;height:30px;margin:1px;object-fit:contain}.slot em{right:2px;bottom:1px;font:9px Arial;color:#ffed93;text-shadow:1px 1px #000,-1px -1px #000}
+.slot.advanced{box-shadow:0 0 0 1px #ffbf35}.timer{min-width:112px;padding:6px 9px 5px;background:#edf3f7ed;border:1px solid #405b73;box-shadow:inset 0 0 0 1px #fff;color:#2a4960;text-shadow:0 1px #fff;border-radius:2px}
+.timer b{display:flex;justify-content:center;align-items:center;min-height:30px;padding:3px 5px;border:1px solid #8299ab;background:#40576b;color:#fff;font:bold 25px Arial;line-height:1.05;letter-spacing:1px}.timer>span{display:block;font-size:10px;color:#627b8f;margin-top:3px}
+.hud-right{padding-top:1px}.stage-pill{border-radius:2px;background:#edf3f7ec;border:1px solid #4d6980;box-shadow:inset 0 0 0 1px #fff;color:#62798d;padding:6px 8px;font-size:10px}.stage-pill b{color:#327099;font:bold 13px Arial}
+/* Native 800x71 status strip; labels/fills are live HTML so they stay sharp and responsive. */
+.status-bar{height:78px;padding:11px 12px 8px;grid-template-columns:145px minmax(120px,1fr) 78px;grid-template-rows:27px 18px;gap:4px 12px;border:0;background:url('assets/ui/status-base.png') center/100% 100%;color:#233e53;box-shadow:0 -1px #fff;font-size:11px}
+.status-level{gap:5px;white-space:nowrap;align-self:center}.status-level small{font:bold 12px Arial;color:#344e64;text-shadow:1px 1px #fff}.status-level b{color:#f59b17;font:bold 23px Arial;text-shadow:1px 1px #87540a}.status-level span{color:#35566c;font-size:11px;margin-left:4px}
+.gauge{position:relative;gap:5px}.gauge>span{width:25px;color:#fff!important;font:bold 10px Arial;text-shadow:1px 1px #263645,-1px -1px #263645}.gauge>div{height:18px;border:1px solid #192e3c;border-radius:1px;background:#737b82;box-shadow:inset 0 1px 1px #263a4b}
+.gauge>div>div{transition:width .12s linear}.gauge.hp>div>div{background:linear-gradient(#ff6e5f 0 24%,#ff2520 25% 85%,#c91816 86%)}
+.gauge b{position:absolute;inset:0 4px 0 30px;text-align:center;display:flex;align-items:center;justify-content:center;min-width:0;color:#fff;font:bold 10px Arial;text-shadow:1px 1px #000,-1px -1px #344759;pointer-events:none}
+.gauge.exp{grid-column:1/3}.gauge.exp>div{height:16px}.gauge.exp>div>div{background:repeating-linear-gradient(112deg,#e5fa25 0 13px,#d0ed08 14px 25px)}.gauge.exp b{min-width:0;font-size:10px}
+.status-actions{grid-column:3;grid-row:1/3;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1px}
+.status-actions #pause{display:block;width:73px;height:44px;border:0;border-radius:0;padding:0;background:url('assets/ui/menu-normal.png') center/73px 34px no-repeat;box-shadow:none;font-size:0;color:transparent}
+.status-actions #pause:hover{background-image:url('assets/ui/menu-mouseOver.png')}.status-actions #pause:active{background-image:url('assets/ui/menu-pressed.png')}.status-actions #pause:disabled{background-image:url('assets/ui/menu-disabled.png');cursor:default}
+.status-actions #pause{height:34px}.status-actions #equipment-open{padding:2px 6px;border:1px solid #7a96ac;border-radius:2px;background:linear-gradient(#fff,#b7ccda);font-size:10px;color:#345870;min-width:73px;white-space:nowrap}.status-actions #equipment-open kbd{display:none}
+.equipment-panel{padding:8px 10px 4px;background:#f0f2f4}.equipment-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.equipment-cell{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:0;min-height:74px;padding:4px 2px;border:1px solid #afc1ce;background:#fff;position:relative;color:#617b8f}
+.equipment-cell>span{font-size:9px}.equipment-cell img{width:32px;height:32px;object-fit:contain;image-rendering:pixelated;margin:4px 0}.equipment-cell b,.equipment-cell i{font-size:9px;font-style:normal}.equipment-cell em{padding-top:14px;color:#a2b4c0;font-style:normal}.equipment-cell.rank-2{border-color:#5d9fc5;background:#edf8ff}.equipment-cell.rank-3{border-color:#aa86be;background:#f8efff}.equipment-cell i{color:#9b6a28}
+.trophy-list{margin-top:8px}.trophy-list>div{display:flex;align-items:center;gap:6px;padding:5px 0;border-top:1px solid #ccd8e0}.trophy-list img{width:28px;height:28px;object-fit:contain;image-rendering:pixelated}.trophy-list b{font-size:10px;color:#715588}.trophy-list small{display:block;font-size:9px;line-height:1.6;margin-top:3px;color:#718697}.trophy-list>p{font-size:10px;line-height:1.7;color:#718697;margin:6px 0}
+.item-choice p{white-space:pre-line}.equipment-details{margin:12px 0;text-align:left}.equipment-details p{display:flex;flex-direction:column;gap:4px;border-bottom:1px solid #cbd7df;padding:7px 0;font-size:11px}.equipment-details span{font-size:10px;color:#627b8f}.modal.inventory .equipment-grid{margin-top:15px}.modal.inventory .trophy-list{text-align:left}
+.boss-bar{top:96px;min-height:28px;width:min(62%,460px);padding:6px 9px;border:1px solid #6d4e4e;background:#f6f0e9e8;box-shadow:inset 0 0 0 1px #fff;border-radius:1px;color:#6e3030;font-size:11px}
+.boss-bar>div{height:12px;border-radius:0;border:1px solid #563333;background:#d9bdba}.boss-bar>div>div{background:linear-gradient(#ff927b,#d52f23)}
+.toast{background:#f2f6faed;color:#2d536e;border:1px solid #51748d;border-radius:1px;box-shadow:inset 0 0 0 1px #fff;font-size:11px}.game-frame .toast{top:132px}
+.joystick,.touch-pad .joystick{bottom:98px;left:15px;background:#dce8f052;border-color:#f4fbffc0}.joystick span{background:#dce8f0b0;box-shadow:0 1px 4px #304b65}
+/* Every dialog uses native KMS window corners; the centre stretches without stretching text. */
+.overlay{padding:15px;background:#263f5b46;backdrop-filter:none}
+.modal{width:min(100%,460px);max-height:100%;overflow:auto;padding:15px 22px 11px;outline:0;text-align:center}
+.modal::before{content:'MAPLE SURVIVORS';position:absolute;top:-23px;left:10px;color:#40576d;font:bold 10px Arial;letter-spacing:1px}
+.modal h2{font-size:23px;margin:10px 0;color:#314e65;letter-spacing:-.7px}.modal .intro{font-size:12px;color:#6e8190;line-height:1.7;margin:0 0 15px}.modal .eyebrow{color:#6b91aa;font:9px Arial;letter-spacing:1px}
+.modal .seal{font-size:28px;color:#e99a2c;margin-bottom:6px}.modal .hint{color:#768c9c;font-size:10px;margin:12px 0 0;line-height:1.6}
+.primary,.secondary,.ghost,.stage-tools button{border:1px solid #3b769d;border-radius:2px;background:linear-gradient(#e9f6ff 0 9%,#86c0e4 10% 44%,#428cb9 45% 90%,#35749f 91%);box-shadow:inset 0 0 0 1px #cee6f5,0 1px #8ca2b3;color:#fff;text-shadow:1px 1px #2e5c7b;font-size:12px;font-weight:bold;padding:10px 15px}
+.primary:hover,.secondary:hover,.ghost:hover{filter:brightness(1.08)}.primary:active,.secondary:active,.ghost:active{filter:brightness(.93)}
+.secondary,.ghost{border-color:#7c93a5;background:linear-gradient(#fff,#d3e0ea 48%,#a7bdce 49%,#b9cad6);box-shadow:inset 0 0 0 1px #f5faff,0 1px #9baebb;color:#3f6077;text-shadow:0 1px #fff}
+.title-menu .secondary{color:#3f6077;border-color:#7c93a5;background:linear-gradient(#fff,#d3e0ea 48%,#a7bdce 49%,#b9cad6)}
+.modal.title{width:min(100%,510px);padding:11px 23px 12px}.modal .logo{font-family:"Trebuchet MS",Arial,sans-serif;font-weight:900;font-size:37px;letter-spacing:-1px;color:#ed9729;text-shadow:0 2px #fff,1px 3px #7e4d1b;margin:7px 0 12px}
+.logo small{color:#6b93aa;letter-spacing:6px;font-size:12px;margin-bottom:4px}.logo span{font-family:Dotum,"돋움",sans-serif;color:#4d718a;font-size:12px;letter-spacing:4px;margin-top:9px;text-shadow:none}
+.creator-credit{display:flex;align-items:center;justify-content:center;gap:13px;margin:0 auto 15px;padding:10px 14px;border:1px solid #9bb6c9;border-radius:2px;background:linear-gradient(#fff,#e0edf6);box-shadow:inset 0 0 0 1px #fff;letter-spacing:0}
+.creator-credit span{font-size:12px;color:#52718b;font-weight:bold;letter-spacing:1px}.creator-credit b{font:bold 26px "Trebuchet MS",Arial,sans-serif;letter-spacing:.3px;color:#246a99;text-shadow:0 1px #fff}
+.modal.title .intro{font-size:11px;margin-bottom:13px}.title-menu .primary{background:linear-gradient(#ffeab9 0 9%,#ffc058 10% 45%,#ed9924 46% 91%,#d48720 92%);border-color:#a96c1b;box-shadow:inset 0 0 0 1px #fff2c7,0 1px #ad7a32;color:#633d10;text-shadow:0 1px #ffe7ac}
+.title-menu .secondary{margin-top:8px}.stage-cards{gap:7px;margin-bottom:14px}
+.stage-card{padding:10px 5px 8px;border:1px solid #aabfcd;border-radius:1px;background:#fff;box-shadow:inset 0 0 0 1px #eff4f8;color:#3c5e78;gap:4px}
+.stage-card img{height:42px;max-width:72px}.stage-card span{color:#6a91aa;font-size:8px;letter-spacing:1px}.stage-card b{font-size:13px;color:#315e7c}.stage-card small{font-size:10px;color:#6c8192;line-height:1.4;word-break:keep-all}
+.stage-card.selected{background:#e5f4ff;border-color:#4386b0;box-shadow:inset 0 0 0 1px #85bee2,0 1px #8aa8bd}.stage-card:hover:not(:disabled){background:#eff8ff}.stage-card:disabled{opacity:.58}
+.modal.upgrade{width:min(100%,680px);padding:13px 16px}.modal.upgrade h2{font-size:23px}.choices{gap:10px;margin-top:15px}
+.choice{min-height:195px;background:#fff;border:1px solid #a1b9ca;border-radius:1px;box-shadow:inset 0 0 0 1px #edf4f8,0 2px #b0c0cc;padding:14px 12px;color:#37566e}
+.choice:hover,.choice:focus-visible{background:#edf7ff;border-color:#5592bb;transform:none}.choice strong{font-size:12px;line-height:1.5;color:#275d80}.choice p{font-size:11px;color:#6c7f8e;line-height:1.6;min-height:55px}.choice .choice-tag{display:inline-block;border-radius:1px;background:#dcebf4;color:#477795;font-size:9px;line-height:1.5}.choice .choice-key{color:#437ea6;font:12px Arial}
+.choice.advance{background:#fff8e5;border-color:#dcaf58;box-shadow:inset 0 0 0 1px #ffebbb,0 2px #c7ae80}.result-stats{padding:14px 0 20px}.result-stats b{font-size:22px;color:#3a7ba3}.result-stats span{color:#6e8799;font-size:10px}
+/* Character studio, tabs and item cells share the same classic window chrome. */
+.dresser{background:#263f5ba8;backdrop-filter:none;padding:20px}.dresser-panel{height:min(100%,760px);overflow:visible;padding:0;background:#edf1f4}
+.dresser-head{position:relative;padding:5px 13px 12px;border-bottom:1px solid #aebfcb;min-height:45px}.dresser-head .eyebrow{display:none}.dresser-head h2{font-size:16px;margin:0;color:#3a5c76}
+.dresser-close{width:28px;height:28px;font-size:0;border:0;border-radius:0;background:url('assets/ui/close-normal.png') center/14px 14px no-repeat}
+.dresser-close:hover{background-image:url('assets/ui/close-mouseOver.png')}.dresser-close:active{background-image:url('assets/ui/close-pressed.png')}
+.dresser-preview{background:#dfe8ef;border-color:#b1c2cf}.stage{border-radius:1px;border-color:#9eb5c7;background:radial-gradient(ellipse at 50% 80%,#c1d6e3,#e5eff5 65%)}
+.stage-tools button{padding:5px 9px;font-size:10px}.field>span,.colors>span{color:#627e94}.segmented{background:#b8cbd9;border-radius:1px}.segmented button{border-radius:0;color:#5b7b92}.segmented button[aria-pressed=true]{background:#f7fcff;color:#2c658c;box-shadow:0 1px #8ca9bd}
+.worn-list{background:#f4f8fb;border:1px solid #b0c2d0;border-radius:1px;padding:8px 10px}.worn-list span{color:#6b8396}.worn-list b{color:#365c76}.worn-list button{color:#597c99}
+.swatches button{border-radius:2px;border-color:#f5fbff;box-shadow:0 0 0 1px #9ab0c0}.swatches button[aria-pressed=true]{box-shadow:0 0 0 2px #3188bf}
+.dresser-tabs{gap:3px}.dresser-tabs button{border-color:#8fa8bb;border-radius:2px 2px 0 0;background:linear-gradient(#fff,#ccdee9);color:#526f84;padding:6px 9px;font-size:11px}.dresser-tabs button[aria-selected=true]{background:linear-gradient(#7fb3d6,#3e80ab);color:#fff;border-color:#37698f}.dresser-tabs button.worn::after{background:#f2b432}
+.shop-tools input{background:#fff;border-color:#9eb4c4;border-radius:1px;color:#36576f;padding:8px;font-size:12px}.shop-tools span{color:#6b8396}
+.dresser-grid{gap:6px}.dresser-grid button{border-color:#b8c9d6;background:#fff;border-radius:1px;color:#4f6c82}.dresser-grid button:hover{border-color:#629fc7;background:#f0f8fd}.dresser-grid button[aria-pressed=true]{background:#e1f1fc;border-color:#4588b4;box-shadow:inset 0 0 0 1px #7ab6dc}.dresser-grid canvas{border-radius:1px;background:#e4eef5}.dresser-grid em{background:#dceaf4;color:#5a7e99;border-radius:1px}.dresser-empty{color:#6b8396}
+.dresser-foot{margin:0;padding:10px 15px;background:#dce6ed;border-color:#aebfcb}.dresser-foot span{color:#6b8396}.dresser-foot .primary{padding:9px 22px;font-size:12px}
+button:focus-visible,a:focus-visible{outline:2px solid #fbba42;outline-offset:2px}
+@media(max-width:1100px){.shell{padding:14px}main{grid-template-columns:minmax(0,1fr) 228px;gap:10px}.objective{display:none}.status-bar{grid-template-columns:125px minmax(100px,1fr) 74px;gap:4px 8px}.status-level span{font-size:10px}}
+@media(max-width:800px){
+  .shell{padding:8px}.masthead{height:43px;margin-bottom:9px}.brand{font-size:15px}.brand small{font-size:9px}.header-actions button{padding:7px 9px}main{grid-template-columns:1fr;gap:12px}.arena-heading{padding:7px 9px;min-height:47px}h1{font-size:15px}.game-frame{height:min(74svh,660px);min-height:500px}
+  aside{display:grid;grid-template-columns:1fr 1fr;gap:10px}.controls{display:block;grid-column:1/-1}.controls>div{display:inline-flex;margin:4px 12px 0 0;gap:5px}.controls>h2{margin-bottom:14px}.notebook,.loadout,.controls{padding:8px 8px 3px}.portrait{gap:4px}.portrait b{font-size:10px}.portrait small{font-size:8px}
+  .stage-hud{inset:8px 7px auto;grid-template-columns:1fr auto;gap:6px}.loadout-hud{padding:4px;gap:2px}.loadout-hud .row{gap:2px}.slot,.slot.passive{width:24px;height:24px}.slot img,.slot.passive img{width:22px;height:22px}.timer{min-width:92px;padding:5px 6px}.timer b{font-size:22px}.timer span{font-size:9px;max-width:110px}.hud-right{display:none}
+  .status-bar{height:87px;padding:8px 9px 7px;grid-template-columns:100px minmax(90px,1fr) 62px;grid-template-rows:32px 23px;gap:5px 6px}.status-level{flex-wrap:wrap;gap:2px 4px}.status-level b{font-size:20px}.status-level span{flex-basis:100%;margin-left:0;font-size:10px}.status-level small{font-size:10px}.gauge>span{width:22px;font-size:9px}.gauge b{left:27px;font-size:9px}.gauge.exp b{font-size:9px}.status-actions #pause{width:62px;background-size:62px auto}
+  .boss-bar{top:79px;width:82%;padding:5px 7px;font-size:10px}.game-frame .toast{top:118px;font-size:10px;max-width:95%;white-space:normal;text-align:center}.under-game{font-size:8px;padding:6px;gap:5px}.under-game>span:last-child{max-width:62%;text-align:right;line-height:1.4}
+  .overlay{padding:8px}.modal{padding:10px 12px 8px;max-height:100%}.modal.title{padding:7px 12px 8px}.modal .logo{font-size:28px;margin:6px 0 10px}.logo small{font-size:10px;margin-bottom:3px}.logo span{font-size:10px;margin-top:6px}.creator-credit{gap:9px;padding:8px;margin-bottom:11px}.creator-credit span{font-size:11px}.creator-credit b{font-size:22px}.modal.title .intro{font-size:10px;line-height:1.6;margin-bottom:11px}.modal .hint{font-size:9px;margin-top:9px}.primary,.secondary{padding:9px 12px;font-size:11px}.stage-cards{gap:5px;margin-bottom:12px}.stage-card{padding:7px 3px 6px;gap:3px}.stage-card img{height:34px;max-width:62px}.stage-card b{font-size:12px}.stage-card small{font-size:9px}.stage-card span{font-size:7px;letter-spacing:.5px}
+  .modal.upgrade{padding:8px}.modal.upgrade h2{font-size:20px}.modal .intro{font-size:11px;margin-bottom:10px}.choices{gap:6px;margin-top:12px}.choice{padding:10px 7px;min-height:200px}.choice strong{font-size:11px}.choice p{font-size:10px;line-height:1.55;min-height:75px}.choice .choice-tag{font-size:8px}
+  .dresser{padding:4px}.dresser-panel{height:100%;width:100%}.dresser-head{padding:3px 9px 8px;min-height:38px}.dresser-head h2{font-size:14px}.dresser-preview{padding:9px;grid-template-columns:110px minmax(0,1fr);gap:7px}.dresser-body{min-height:0}.dresser-shop{padding:9px 8px 0}.dresser-tabs button{font-size:10px;padding:5px 7px}.dresser-grid{grid-template-columns:repeat(auto-fill,minmax(72px,1fr))}.dresser-foot{padding:8px}.dresser-foot .primary{padding:9px;width:100%}
+}
+@media(max-height:700px){.modal.title .intro{display:none}.modal .logo{font-size:27px}.creator-credit{padding:6px;margin-bottom:10px}.stage-card img{height:30px}.game-frame{min-height:440px}}
+@media(prefers-reduced-motion:reduce){.gauge>div>div{transition:none}}
+/* Readability layer (user: "밝은 배경의 글자가 잘 안 보인다", 2026-10-17). Same KMS look, but text on the light
+   windows is dark enough (≥ 4.5:1 measured on real pixels by tests/readability-check.mjs) and never below 11px.
+   The page behind the windows is a deeper Maple blue so the white header/footer text reads too. */
+:root{--ink:#1c2f40;--ink-2:#2f4a60;--ink-3:#3d5468;--ink-link:#1f5f8b}
+body{background:linear-gradient(#4d6b80,#2c4252);background-attachment:fixed}
+.masthead{text-shadow:1px 1px #1d2f3d}.brand small{color:#f2f7fb;font-size:11px;letter-spacing:1.5px}.build-tag{color:#f2f7fb;font-size:11px}
+footer,footer span,footer span:first-child{color:#f2f7fb;font-size:11px}
+.eyebrow,.modal .eyebrow{color:var(--ink-3);font-size:11px;letter-spacing:.5px}
+h1 span{color:#2f5670;font-size:11px}.objective{color:var(--ink-2);font-size:11px}
+.under-game{color:var(--ink-2);font-size:11px}
+.timer>span,.timer span{font-size:11px;color:var(--ink-2)}.stage-pill{color:var(--ink-3);font-size:11px}.stage-pill b{color:var(--ink-link)}
+.status-level span{color:#1f3a50;font-size:12px}.gauge>span,.gauge b,.gauge.exp b{font-size:11px}
+.status-actions #equipment-open{font-size:11px;color:#1f4560}
+.portrait small{font-size:11px;color:var(--ink-3)}.class-pill{font-size:11px;letter-spacing:0;background:#2f6e8c}
+.mission>span{color:#24506d;font-size:11px}.mission b{font-size:12px}.mission p{color:var(--ink-2);font-size:12px;line-height:1.6}
+.progress-label,.record{color:var(--ink-3);font-size:11px}.progress-label b,.record b{color:var(--ink-link)}
+.section-heading>span{color:var(--ink-2);font-size:11px}
+.skill b{color:var(--ink);font-size:12px}.skill small{color:var(--ink-3);font-size:11px}.skill>span{color:var(--ink-link);font-size:11px}.job-tag{font-size:11px;color:#6a430c}
+.mini-skill{color:var(--ink-2)}.mini-skill b{color:var(--ink-link)}
+.equipment-cell{color:var(--ink-3)}.equipment-cell>span,.equipment-cell b,.equipment-cell i{font-size:11px}.equipment-cell em{color:#5b7083}.equipment-cell i{color:#7a4f12}
+.trophy-list b{font-size:12px;color:#5c3f73}.trophy-list small{font-size:11px;color:var(--ink-3)}.trophy-list>p{font-size:12px;color:var(--ink-3)}
+.equipment-details p{font-size:12px}.equipment-details span{font-size:11px;color:var(--ink-3)}
+.controls>div{color:var(--ink-2);font-size:12px}.controls em{color:#1f6a94;font-size:11px}
+kbd{color:#2d4255;font-size:11px}
+.modal .intro{color:var(--ink-2);font-size:12px}.modal .hint{color:var(--ink-3);font-size:11px}
+.choice{color:var(--ink-2)}.choice strong{color:#1c4f72}.choice p{color:var(--ink-2);font-size:12px}
+.choice .choice-tag{font-size:11px;color:#1f5576}.choice .choice-key{color:#2b6a94}
+.result-stats span{color:var(--ink-3);font-size:11px}
+.primary,.stage-tools button{background:linear-gradient(#cfe6f6 0 9%,#2d6a96 10% 44%,#245b86 45% 90%,#1e4d70 91%);text-shadow:1px 1px #173d58}
+.secondary,.ghost,.title-menu .secondary{color:#253f53}.title-menu .primary{color:#4a2a05}
+.modal .logo{color:#d07a12}.logo small{color:#2f6890}.logo span{color:#2f5670}.creator-credit span{color:#2f4f68}
+.stage-card span{color:#2f6890;font-size:11px;letter-spacing:.5px}.stage-card small{color:var(--ink-3);font-size:11px}
+.field>span,.colors>span,.worn-list span,.shop-tools span,.dresser-foot span,.dresser-empty{color:var(--ink-3)}
+.segmented button{color:#36566d}.dresser-grid button{color:var(--ink-2)}.dresser-grid em{color:#2f5670}.worn-list button{color:#2f5a7a}
+.toast{color:#1d4560}.boss-bar{color:#5a2222}
+aside,.modal,.under-game,.stage-hud{word-break:keep-all;overflow-wrap:anywhere}.mission>span,h1 span,kbd,.equipment-cell>span,.progress-label,.record{white-space:nowrap;overflow-wrap:normal}.job-tag{display:inline-block;white-space:nowrap}
+@media(max-width:800px){
+  .brand small{font-size:11px}.portrait b{font-size:12px}.portrait small{font-size:11px}
+  .status-level span{font-size:11px}.status-level small{font-size:11px}.gauge>span,.gauge b,.gauge.exp b{font-size:11px}
+  .under-game{font-size:11px}.timer span{font-size:11px}
+  .modal.title .intro{font-size:11px}.modal .hint{font-size:11px}.stage-card span{font-size:11px;letter-spacing:0}.stage-card small{font-size:11px}
+  .logo small,.logo span{font-size:11px}footer,footer span{font-size:11px}
+  .choice p{font-size:11px}.choice .choice-tag{font-size:11px}.boss-bar{font-size:11px}.game-frame .toast{font-size:11px}
+}
+@media(max-width:480px){aside{grid-template-columns:1fr}} /* phones: one readable panel per row */
+/* Weapon slot spans the equipment grid; buff potions show under the timer; scrolls that can break items warn in red. */
+.equipment-cell.slot-weapon{grid-column:1/-1;flex-direction:row;justify-content:center;gap:8px;min-height:44px}.equipment-cell.slot-weapon img{margin:0}.equipment-cell.slot-weapon em{padding-top:0}
+.buffs{display:flex;justify-content:center;gap:3px;margin-top:3px}.buffs:empty{display:none}.buffs span{position:relative;display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;background:url('assets/ui/slot.png') center/100% 100%}
+.buffs img{width:22px;height:22px;object-fit:contain;image-rendering:pixelated}
+/* Keep countdowns independent of .timer b's large clock panel and no-break digits. */
+.timer .buffs b{position:absolute;display:block;right:-1px;bottom:-2px;min-height:0;min-width:0;width:auto;height:auto;padding:0 1px;border:0;background:#233b50;border-radius:1px;white-space:nowrap;overflow-wrap:normal;font:bold 11px/13px Arial;letter-spacing:0;color:#fff;text-shadow:1px 1px #000,-1px -1px #000}
+.choice.danger{border-color:#c46a5c;box-shadow:inset 0 0 0 1px #ffd9d2,0 2px #d3a59c}.choice.danger .choice-tag{background:#f6d7d1;color:#7a2418}
+/* Seven landmarks fit in two compact rows; the start action remains easy to reach on phones. */
+.modal.title .stage-cards{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;margin-bottom:10px}
+.modal.title .stage-card{padding:5px 2px;gap:3px}.modal.title .stage-card img{height:36px;width:65px;max-width:100%}.modal.title .stage-card b{font-size:12px}
+@media(max-width:800px){.modal.title .stage-card img{height:26px}.modal.title .stage-card b{font-size:11px;white-space:nowrap}}

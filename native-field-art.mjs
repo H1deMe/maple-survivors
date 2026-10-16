@@ -2,7 +2,8 @@
 let nativeArt=null,textures={},manifest=null;
 export async function loadNativeFieldArt(){
   if(nativeArt)return;
-  const response=await fetch('assets/field/field.json');if(!response.ok)throw new Error('원본 맵 리소스 목록을 읽지 못했습니다.');manifest=await response.json();
+  const descriptionsByRegion=await Promise.all(['assets/field/field.json','assets/field-expansion/field.json'].map(async src=>{const response=await fetch(src);if(!response.ok)throw new Error('원본 맵 리소스 목록을 읽지 못했습니다.');return response.json();}));
+  manifest={padding:8,aliases:Object.assign({},...descriptionsByRegion.map(m=>m.aliases)),textures:Object.assign({},...descriptionsByRegion.map(m=>m.textures))};
   const descriptions=[...Object.values(manifest.aliases),...Object.values(manifest.textures).map(p=>({parts:[p]}))];
   const sources=[...new Set(descriptions.flatMap(a=>a.parts.flatMap(p=>p.frames.map(f=>f.src))))];
   const images=Object.fromEntries(await Promise.all(sources.map(src=>new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>resolve([src,image]);image.onerror=()=>reject(new Error(`맵 이미지 로딩 실패: ${src}`));image.src=`assets/field/${src}`;}))));

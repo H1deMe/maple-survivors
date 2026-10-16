@@ -1,5 +1,5 @@
 import {buildHarborArt} from './harbor-art.mjs';
-import {nativeTexture} from './native-field-art.mjs';
+import {paintFloor} from './floor-tiles.mjs';
 import {spaceStructures} from './field-geometry.mjs';
 const CHUNK=512,CELL=820,SCENE=720,TAU=Math.PI*2;
 export const HARBOR_STARTS=['quay','village','shipyard','market','beach'];
@@ -8,9 +8,10 @@ function rng(x,y,seed){let s=(hash(x,y,seed)*2**32)>>>0||1;return ()=>{s^=s<<13;
 function cache(map,key,value,max){map.set(key,value);if(map.size>max)map.delete(map.keys().next().value);return value;}
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 export class HarborField{
-  constructor(seed=1065){this.byId=buildHarborArt();this.reseed(seed);}
-  reseed(seed){this.seed=seed>>>0;this.phase=hash(0,0,this.seed+11)*TAU;this.chunks=new Map();this.sceneCache=new Map();this.dockCache=new Map();this.plazaCache=null;this.seenMobs=new WeakSet();}
-  shoreY(x){return 115+Math.sin(x/590+this.phase)*42+Math.sin(x/217+this.phase*.7)*13;}
+  constructor(seed=1065,art=buildHarborArt()){this.byId=art;this.reseed(seed);}
+  reseed(seed){this.seed=seed>>>0;this.coastOffset=0;this.phase=hash(0,0,this.seed+11)*TAU;this.chunks=new Map();this.sceneCache=new Map();this.dockCache=new Map();this.plazaCache=null;this.seenMobs=new WeakSet();}
+  placeCoastNear(y){if(this.coastOffset===y)return;this.coastOffset=y;this.chunks.clear();this.sceneCache.clear();this.dockCache.clear();this.plazaCache=null;this.seenMobs=new WeakSet();}
+  shoreY(x){return this.coastOffset+115+Math.sin(x/590+this.phase)*42+Math.sin(x/217+this.phase*.7)*13;}
   dock(i){
     if(this.dockCache.has(i))return this.dockCache.get(i);
     const r=rng(i,0,this.seed+23);if(i!==0&&r()<.3)return cache(this.dockCache,i,null,100);
@@ -102,34 +103,25 @@ export class HarborField{
   chunk(ix,iy){
     const key=`${ix},${iy}`;if(this.chunks.has(key))return this.chunks.get(key);
     const c=document.createElement('canvas');c.width=c.height=CHUNK;const g=c.getContext('2d'),x0=ix*CHUNK,y0=iy*CHUNK,r=rng(ix,iy,this.seed+219);
-    const data=g.createImageData(CHUNK,CHUNK),p=data.data;
+    paintFloor(g,'lith',x0,y0);
+    const data=g.getImageData(0,0,CHUNK,CHUNK),p=data.data;
     for(let x=0;x<CHUNK;x++){
       const shore=this.shoreY(x0+x);
-      for(let y=0;y<CHUNK;y++){
-        const depth=y0+y-shore,k=(y*CHUNK+x)*4,grain=(hash(x+x0,y+y0,this.seed+9)-.5)*5;
-        let red,green,blue;
-        if(depth>0){const t=clamp(depth/210,0,1);red=112-t*52;green=190-t*35;blue=189-t*18;if(depth<12){const foam=(1-depth/12)*.6;red+=(232-red)*foam;green+=(238-green)*foam;blue+=(213-blue)*foam;}}
-        else{const wet=clamp(1+depth/32,0,1),n=Math.sin((x+x0)/250+Math.sin((y+y0)/190))*2;red=233-wet*23+n;green=217-wet*21+n;blue=176-wet*11+n;}
+      for(let y=Math.max(0,Math.floor(shore-y0)+1);y<CHUNK;y++){
+        const depth=y0+y-shore,k=(y*CHUNK+x)*4,grain=(hash(x+x0,y+y0,this.seed+9)-.5)*5,t=clamp(depth/210,0,1);
+        let red=112-t*52,green=190-t*35,blue=189-t*18;
+        if(depth<12){const foam=(1-depth/12)*.6;red+=(232-red)*foam;green+=(238-green)*foam;blue+=(213-blue)*foam;}
         p[k]=red+grain;p[k+1]=green+grain;p[k+2]=blue+grain;p[k+3]=255;
       }
     }
     g.putImageData(data,0,0);g.save();g.translate(-x0,-y0);
-    const scenes=this.scenesNear(x0-300,y0-200,x0+CHUNK+300,y0+CHUNK+200);
-    for(const s of scenes)for(const d of s.decals){
-      if(d.x+d.rx<x0||d.x-d.rx>x0+CHUNK||d.y+d.ry<y0||d.y-d.ry>y0+CHUNK)continue;
-      g.save();g.beginPath();g.ellipse(d.x,d.y,d.rx,d.ry,0,0,TAU);g.clip();
-      if(d.kind==='paving'){
-        g.fillStyle=nativeTexture(g,'paving')??'#dcd6b3';g.fillRect(d.x-d.rx,d.y-d.ry,d.rx*2,d.ry*2);
-      }else{g.fillStyle='#b8bf8360';g.fillRect(d.x-d.rx,d.y-d.ry,d.rx*2,d.ry*2);}
-      g.restore();
-    }
     for(const d of this.docksNear(x0-10,x0+CHUNK+10)){
       g.fillStyle='#6d927c66';g.fillRect(d.x+8,d.y+5,d.w,d.h+7);g.fillStyle='#8f805e';g.fillRect(d.x-2,d.y,d.w+4,d.h+3);
       for(let y=d.y;y<d.y+d.h;y+=12){g.fillStyle=(Math.floor(y-d.y)/12)%2?'#c5ad7b':'#d4bd8b';g.fillRect(d.x,y,d.w,10);g.strokeStyle='#a38b60';g.lineWidth=1;g.beginPath();g.moveTo(d.x+10,y+5);g.quadraticCurveTo(d.x+d.w*.5,y+7,d.x+d.w-10,y+4);g.stroke();}
       for(const x of [d.x+6,d.x+d.w-6]){g.fillStyle='#8e7951';g.fillRect(x-2,d.y,4,d.h);}
     }
     g.restore();
-    for(let i=0;i<330;i++){const x=r()*CHUNK,y=r()*CHUNK,depth=y+y0-this.shoreY(x+x0);if(depth>3){g.fillStyle='#d5efda30';g.fillRect(x,y,3+r()*7,1);}else{g.fillStyle=i%3?'#bca97966':'#fff5d3aa';g.fillRect(x,y,1+r()*2,1);}}
+    for(let i=0;i<330;i++){const x=r()*CHUNK,y=r()*CHUNK,depth=y+y0-this.shoreY(x+x0);if(depth>3){g.fillStyle='#d5efda30';g.fillRect(x,y,3+r()*7,1);}}
     return cache(this.chunks,key,c,48);
   }
   drawGround(g,camX,camY,w,h){

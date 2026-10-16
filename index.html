@@ -1,20 +1,21 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#172b25"><title>메이플 서바이버</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ctext y='32' font-size='32'%3E🍁%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"></head>
+<head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#536d7e"><title>메이플 서바이버</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ctext y='32' font-size='32'%3E🍁%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="classic-ui.css"></head>
 <body>
   <div class="shell">
-    <header class="masthead"><a class="brand" href="./"><span class="maple-mark">✳</span><span>MAPLE <b>SURVIVORS</b><small>메이플 서바이버</small></span></a><div class="header-actions"><span class="build-tag"><i></i> KMS 1.2.65 · SURVIVORS</span><button id="sound" aria-label="소리 끄기" title="배경음악·효과음 끄기">♪ <span>소리 켜짐</span></button></div></header>
+    <header class="masthead"><a class="brand" href="./"><span class="maple-mark">✳</span><span>MAPLE <b>SURVIVORS</b><small>메이플 서바이버</small></span></a><div class="header-actions"><span class="build-tag"><i></i> MAPLE WORLD · SURVIVAL</span><button id="sound" aria-label="소리 끄기" title="배경음악·효과음 끄기">♪ <span>소리 켜짐</span></button></div></header>
     <main>
       <section class="adventure" aria-label="게임">
-        <div class="arena-heading"><div><span class="eyebrow" id="stage-eyebrow">STAGE 1 · VICTORIA ISLAND</span><h1><b id="stage-title">리스항구 해안가</b> <span id="stage-num">01</span></h1></div><div class="objective"><span class="live-dot"></span><span id="objective">10분을 버티고 킹크랑을 쓰러뜨리세요</span></div></div>
+        <div class="arena-heading"><div><span class="eyebrow" id="stage-eyebrow">STAGE 1 · MAPLE WORLD</span><h1><b id="stage-title">리스항구 해안가</b> <span id="stage-num">01</span></h1></div><div class="objective"><span class="live-dot"></span><span id="objective">7개 지역을 지나 마지막 보스를 쓰러뜨리세요</span></div></div>
         <div class="game-frame">
           <canvas id="game" aria-label="방향키나 WASD로 움직이면 스킬이 자동으로 나가는 생존 게임"></canvas>
-          <div class="stage-hud"><div class="loadout-hud" id="loadout-hud" aria-label="스킬"></div><div class="timer"><b id="timer">00:00</b><span id="next-event">2:30 마노</span></div><div class="hud-right"><div class="stage-pill"><span>처치</span><b id="kills">0</b></div><button id="pause" aria-label="일시 정지" title="일시 정지 · Esc">Ⅱ</button></div></div>
+          <div class="stage-hud"><div class="loadout-hud" id="loadout-hud" aria-label="스킬"></div><div class="timer"><b id="timer">00:00</b><span id="next-event">2:30 마노</span><div class="buffs" id="buffs" aria-label="버프"></div></div><div class="hud-right"><div class="stage-pill"><span>처치</span><b id="kills">0</b></div></div></div>
           <div class="boss-bar hidden" id="boss-bar"><span id="boss-name">보스</span><div><div id="boss-fill"></div></div></div>
           <div class="status-bar">
             <div class="status-level"><small>LV.</small><b id="level">1</b><span id="char-name">모험가</span></div>
-            <div class="gauge hp"><span>HP</span><div><div id="hp-fill"></div></div><b id="hp-text">100 / 100</b></div>
-            <div class="gauge exp"><span>EXP</span><div><div id="exp-fill"></div></div><b id="exp-text">0 / 14 [0.00%]</b></div>
+            <div class="gauge hp"><span>HP</span><div id="hp-track" role="progressbar" aria-label="체력" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div id="hp-fill"></div></div><b id="hp-text">100 / 100</b></div>
+            <div class="status-actions"><button id="pause" aria-label="일시 정지" title="일시 정지 · Esc">Ⅱ</button><button id="equipment-open" aria-label="장비 확인" title="장비 확인 · I">장비 <kbd>I</kbd></button></div>
+            <div class="gauge exp"><span>EXP</span><div id="exp-track" role="progressbar" aria-label="경험치" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="exp-fill"></div></div><b id="exp-text">0 / 14 [0.00%]</b></div>
           </div>
           <div class="overlay" id="overlay"><div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"></div></div>
           <div class="touch-pad" id="touch-pad"><div class="joystick" id="joystick" aria-label="터치 이동"><span></span></div></div>
@@ -25,10 +26,11 @@
       <aside>
         <section class="notebook"><span class="eyebrow">YOUR ADVENTURE</span><h2>이번 모험</h2><div class="portrait"><canvas id="portrait" width="140" height="120"></canvas><div><b id="portrait-name">초보 모험가</b><small id="portrait-stats">공격력 14 · 이동 100%</small></div><span class="class-pill">BEGINNER</span></div><div class="divider"></div><div class="mission"><span id="mission-num">01</span><div><b id="mission-title">리스항구 해안가에서 버티기</b><p id="mission-text">스킬은 자동으로 나갑니다. 메소를 주워 성장하고 10분에 나타나는 킹크랑을 쓰러뜨리세요.</p></div></div><div class="progress-label"><span>생존 시간</span><b id="progress-label">0%</b></div><div class="mission-track"><div id="progress-fill"></div></div><div class="record"><span>최고 기록</span><b id="best">—</b></div></section>
         <section class="loadout"><div class="section-heading"><h2>나의 스킬</h2><span id="skill-count">1 / 6</span></div><div id="skill-list"></div><div id="passive-list"></div></section>
-        <section class="controls"><h2>조작법</h2><div><span>이동</span><b><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> · <kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd></b></div><div><span>공격</span><em>자동</em></div><div><span>레벨업 선택</span><b><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd></b></div><div><span>일시 정지</span><kbd>ESC</kbd></div><div><span>다시 시작</span><kbd>R</kbd></div></section>
+        <section class="equipment-panel"><div class="section-heading"><h2>장비 · 전리품</h2><span id="equipment-count">0 / 7</span></div><div id="equipment-list"></div></section>
+        <section class="controls"><h2>조작법</h2><div><span>이동</span><b><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> · <kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd></b></div><div><span>공격</span><em>자동</em></div><div><span>보상 선택</span><b><kbd>1</kbd><kbd>2</kbd><kbd>3</kbd></b></div><div><span>장비 확인</span><kbd>I</kbd></div><div><span>일시 정지</span><kbd>ESC</kbd></div><div><span>다시 시작</span><kbd>R</kbd></div></section>
       </aside>
     </main>
-    <footer><span>🍁 MAPLE SURVIVORS</span><span>제작 S0rryMyBad · 로컬 프로토타입</span></footer>
+    <footer><span>🍁 MAPLE SURVIVORS</span><span>제작 S0rryMyBad · MAPLE SURVIVORS</span></footer>
   </div>
   <div class="dresser hidden" id="dresser" role="dialog" aria-modal="true" aria-labelledby="dresser-title">
     <div class="dresser-panel">

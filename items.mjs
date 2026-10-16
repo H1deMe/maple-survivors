@@ -1,0 +1,74 @@
+// KMS icons/names; effects are designed for this survival game, not client equipment stats (scroll success rates,
+// break chances and upgrade slots are the client's own).
+export const EQUIP_SLOTS={weapon:'무기',cap:'모자',coat:'상의',glove:'장갑',shoes:'신발',cape:'망토',accessory:'장신구'};
+export const EQUIPMENT={
+  '1002000':{name:'갈색 항공 모자',slot:'cap',stats:{maxHp:.15},tuc:0},
+  '1002001':{name:'메탈 기어',slot:'cap',stats:{armor:.05},tuc:7},
+  '1040002':{name:'하얀 반팔 면티',slot:'coat',stats:{maxHp:.2},tuc:7},
+  '1040006':{name:'하얀 면 나시',slot:'coat',stats:{regen:.25},tuc:7},
+  '1082002':{name:'노가다 목장갑',slot:'glove',stats:{might:.12},tuc:5},
+  '1082000':{name:'강철 반장갑',slot:'glove',stats:{crit:.08},tuc:5},
+  '1072001':{name:'빨간색 고무 장화',slot:'shoes',stats:{speed:.12},tuc:5},
+  '1072005':{name:'가죽 샌들',slot:'shoes',stats:{dodge:.06},tuc:5},
+  '1102000':{name:'초록색 모험가의 망토',slot:'cape',stats:{area:.12},tuc:5},
+  '1102001':{name:'파란색 모험가의 망토',slot:'cape',stats:{magnet:.25},tuc:5},
+  '1032000':{name:'추 귀고리',slot:'accessory',stats:{haste:.07},tuc:5},
+  '1032001':{name:'한쪽 은 귀고리',slot:'accessory',stats:{growth:.15},tuc:5},
+};
+// Weapons: one original weapon per region rank (common → rare → epic). A weapon raises the damage of the 1st-job
+// skills of its family (and their 2nd~4th job skills) by WEAPON_BONUS × rank multiplier. tuc = original upgrade slots.
+export const WEAPON_BONUS=.2;
+export const WEAPON_FAMILIES={
+  sword:{name:'한손검',skills:['1001004','11001002'],items:['1302000','1302044','1302059']},
+  spear:{name:'창',skills:['1001005'],items:['1432000','1432004','1432038']},
+  polearm:{name:'폴암',skills:['21000002'],items:['1442000','1442005','1442002']},
+  wand:{name:'완드',skills:['2001004','2001005','12001003','22001001'],items:['1372005','1372007','1372032']},
+  bow:{name:'활',skills:['3001004','13001003'],items:['1452002','1452004','1452044']},
+  claw:{name:'아대',skills:['4001344','14001004'],items:['1472000','1472032','1472052']},
+  dagger:{name:'단검',skills:['4001334','4301001'],items:['1332005','1332003','1332074']},
+  knuckle:{name:'너클',skills:['5001002','15001002'],items:['1482000','1482021','1482013']},
+  gun:{name:'총',skills:['5001003'],items:['1492000','1492021','1492013']},
+};
+const WEAPON_NAMES={'1302000':'검','1302044':'쥬얼 쿠아다라','1302059':'드래곤 카라벨라','1432000':'창','1432004':'장팔사모','1432038':'드래곤 팔티잔','1442000':'폴암','1442005':'구룡도','1442002':'커터문',
+  '1372005':'우드 완드','1372007':'크로미','1372032':'드래곤 완드','1452002':'워 보우','1452004':'봉황위궁','1452044':'드래곤 샤인보우','1472000':'가니어','1472032':'메이플 칸데오','1472052':'드래곤 퍼플 슬레브',
+  '1332005':'도루코 대거','1332003':'신기타','1332074':'타임리스 킬릭','1482000':'스틸 너클','1482021':'메이플 스톰 핑거','1482013':'용아주조','1492000':'피스톨','1492021':'메이플 스톰 피스톨','1492013':'드래곤 세인트'};
+const WEAPON_TUC={'1302044':5};
+for(const [family,f] of Object.entries(WEAPON_FAMILIES))f.items.forEach((id,i)=>{EQUIPMENT[id]={name:WEAPON_NAMES[id],slot:'weapon',family,rank:i+1,stats:{},tuc:WEAPON_TUC[id]??7};});
+export const weaponFamilyOf=skill=>Object.keys(WEAPON_FAMILIES).find(k=>WEAPON_FAMILIES[k].skills.includes(skill));
+
+// Original KMS 1.2.65 scrolls (Item.wz/Consume/0204.img): name, success %, cursed % (break chance on failure), inc stats.
+export const SCROLLS={"2040000":{"name":"투구 방어력 주문서 100%","success":100,"cursed":0,"inc":{"PDD":1}},"2040001":{"name":"투구 방어력 주문서 60%","success":60,"cursed":0,"inc":{"PDD":2,"MDD":1}},"2040002":{"name":"투구 방어력 주문서 10%","success":10,"cursed":0,"inc":{"PDD":5,"MDD":3,"ACC":1}},"2040008":{"name":"투구 방어력 주문서 70%","success":70,"cursed":50,"inc":{"PDD":2,"MDD":1}},"2040009":{"name":"투구 방어력 주문서 30%","success":30,"cursed":50,"inc":{"PDD":5,"MDD":3,"ACC":1}},"2040003":{"name":"투구 체력 주문서 100%","success":100,"cursed":0,"inc":{"MHP":5}},"2040004":{"name":"투구 체력 주문서 60%","success":60,"cursed":0,"inc":{"MHP":10}},"2040005":{"name":"투구 체력 주문서 10%","success":10,"cursed":0,"inc":{"MHP":30}},"2040010":{"name":"투구 체력 주문서 70%","success":70,"cursed":50,"inc":{"MHP":10}},"2040011":{"name":"투구 체력 주문서 30%","success":30,"cursed":50,"inc":{"MHP":30}},"2040400":{"name":"상의 방어력 주문서 100%","success":100,"cursed":0,"inc":{"PDD":1}},"2040401":{"name":"상의 방어력 주문서 60%","success":60,"cursed":0,"inc":{"PDD":2,"MDD":1}},"2040402":{"name":"상의 방어력 주문서 10%","success":10,"cursed":0,"inc":{"PDD":5,"MDD":3,"MHP":10}},"2040404":{"name":"상의 방어력 주문서 70%","success":70,"cursed":50,"inc":{"PDD":2,"MDD":1}},"2040405":{"name":"상의 방어력 주문서 30%","success":30,"cursed":50,"inc":{"PDD":5,"MDD":3,"MHP":10}},"2040803":{"name":"장갑 공격력 주문서 100%","success":100,"cursed":0,"inc":{"PAD":1}},"2040804":{"name":"장갑 공격력 주문서 60%","success":60,"cursed":0,"inc":{"PAD":2}},"2040805":{"name":"장갑 공격력 주문서 10%","success":10,"cursed":0,"inc":{"PAD":3}},"2040810":{"name":"장갑 공격력 주문서 70%","success":70,"cursed":50,"inc":{"PAD":2}},"2040811":{"name":"장갑 공격력 주문서 30%","success":30,"cursed":50,"inc":{"PAD":3}},"2040800":{"name":"장갑 민첩성 주문서 100%","success":100,"cursed":0,"inc":{"ACC":1}},"2040801":{"name":"장갑 민첩성 주문서 60%","success":60,"cursed":0,"inc":{"ACC":2,"DEX":1}},"2040802":{"name":"장갑 민첩성 주문서 10%","success":10,"cursed":0,"inc":{"ACC":5,"DEX":3,"EVA":1}},"2040808":{"name":"장갑 민첩성 주문서 70%","success":70,"cursed":50,"inc":{"ACC":2,"DEX":1}},"2040809":{"name":"장갑 민첩성 주문서 30%","success":30,"cursed":50,"inc":{"ACC":5,"DEX":3,"EVA":1}},"2040706":{"name":"신발 이동속도 주문서 100%","success":100,"cursed":0,"inc":{"Speed":1}},"2040707":{"name":"신발 이동속도 주문서 60%","success":60,"cursed":0,"inc":{"Speed":2}},"2040708":{"name":"신발 이동속도 주문서 10%","success":10,"cursed":0,"inc":{"Speed":3}},"2040716":{"name":"신발 이동속도 주문서 70%","success":70,"cursed":50,"inc":{"Speed":2}},"2040717":{"name":"신발 이동속도 주문서 30%","success":30,"cursed":50,"inc":{"Speed":3}},"2040700":{"name":"신발 민첩성 주문서 100%","success":100,"cursed":0,"inc":{"EVA":1}},"2040701":{"name":"신발 민첩성 주문서 60%","success":60,"cursed":0,"inc":{"EVA":2,"ACC":1}},"2040702":{"name":"신발 민첩성 주문서 10%","success":10,"cursed":0,"inc":{"EVA":5,"ACC":3,"Speed":1}},"2040712":{"name":"신발 민첩성 주문서 70%","success":70,"cursed":50,"inc":{"EVA":2,"ACC":1}},"2040713":{"name":"신발 민첩성 주문서 30%","success":30,"cursed":50,"inc":{"EVA":5,"ACC":3,"Speed":1}},"2041006":{"name":"망토 체력 주문서 100%","success":100,"cursed":0,"inc":{"MHP":5}},"2041007":{"name":"망토 체력 주문서 60%","success":60,"cursed":0,"inc":{"MHP":10}},"2041008":{"name":"망토 체력 주문서 10%","success":10,"cursed":0,"inc":{"MHP":20}},"2041003":{"name":"망토 물리 방어력 주문서 100%","success":100,"cursed":0,"inc":{"PDD":1}},"2041004":{"name":"망토 물리 방어력 주문서 60%","success":60,"cursed":0,"inc":{"PDD":3,"MDD":1}},"2041005":{"name":"망토 물리 방어력 주문서 10%","success":10,"cursed":0,"inc":{"PDD":5,"MDD":3,"MHP":10}},"2040300":{"name":"귀 장식 지력 주문서 100%","success":100,"cursed":0,"inc":{"MAD":1}},"2040301":{"name":"귀 장식 지력 주문서 60%","success":60,"cursed":0,"inc":{"MAD":2,"INT":1}},"2040302":{"name":"귀 장식 지력 주문서 10%","success":10,"cursed":0,"inc":{"INT":3,"MAD":5,"MDD":1}},"2040304":{"name":"귀 장식 지력 주문서 70%","success":70,"cursed":50,"inc":{"MAD":2,"INT":1}},"2040305":{"name":"귀 장식 지력 주문서 30%","success":30,"cursed":50,"inc":{"MAD":5,"INT":3,"MDD":1}},"2040319":{"name":"귀 장식 행운 주문서 100%","success":100,"cursed":0,"inc":{"LUK":1}},"2040321":{"name":"귀 장식 행운 주문서 60%","success":60,"cursed":0,"inc":{"LUK":2}},"2040323":{"name":"귀 장식 행운 주문서 10%","success":10,"cursed":0,"inc":{"LUK":3}},"2040320":{"name":"귀 장식 행운 주문서 70%","success":70,"cursed":50,"inc":{"LUK":2}},"2040322":{"name":"귀 장식 행운 주문서 30%","success":30,"cursed":50,"inc":{"LUK":3}},"2043000":{"name":"한손검 공격력 주문서 100%","success":100,"cursed":0,"inc":{"PAD":1}},"2043001":{"name":"한손검 공격력 주문서 60%","success":60,"cursed":0,"inc":{"PAD":2,"STR":1}},"2043002":{"name":"한손검 공격력 주문서 10%","success":10,"cursed":0,"inc":{"PAD":5,"STR":3,"PDD":1}},"2043004":{"name":"한손검 공격력 주문서 70%","success":70,"cursed":50,"inc":{"PAD":2,"STR":1}},"2043005":{"name":"한손검 공격력 주문서 30%","success":30,"cursed":50,"inc":{"PAD":5,"STR":3,"PDD":1}},"2044300":{"name":"창 공격력 주문서 100%","success":100,"cursed":0,"inc":{"PAD":1}},"2044301":{"name":"창 공격력 주문서 60%","success":60,"cursed":0,"inc":{"PAD":2,"STR":1}},"2044302":{"name":"창 공격력 주문서 10%","success":10,"cursed":0,"inc":{"PAD":5,"STR":3,"PDD":1}},"2044304":{"name":"창 공격력 주문서 70%","success":70,"cursed":50,"inc":{"PAD":2,"STR":1}},"2044305":{"name":"창 공격력 주문서 30%","success":30,"cursed":50,"inc":{"PAD":5,"STR":3,"PDD":1}},"2044400":{"name":"폴암 공격력 주문서 100%","success":100,"cursed":0,"inc":{"PAD":1}},"2044401":{"name":"폴암 공격력 주문서 60%","success":60,"cursed":0,"inc":{"PAD":2,"STR":1}},"2044402":{"name":"폴암 공격력 주문서 10%","success":10,"cursed":0,"inc":{"PAD":5,"STR":3,"PDD":1}},"2044404":{"name":"폴암 공격력 주문서 70%","success":70,"cursed":50,"inc":{"PAD":2,"STR":1}},"2044405":{"name":"폴암 공격력 주문서 30%","success":30,"cursed":50,"inc":{"PAD":5,"STR":3,"PDD":1}},"2043700":{"name":"완드 마력 주문서 100%","success":100,"cursed":0,"inc":{"MAD":1}},"2043701":{"name":"완드 마력 주문서 60%","success":60,"cursed":0,"inc":{"MAD":2,"INT":1}},"2043702":{"name":"완드 마력 주문서 10%","success":10,"cursed":0,"inc":{"MAD":5,"INT":3,"MDD":1}},"2043704":{"name":"완드 마력 주문서 70%","success":70,"cursed":50,"inc":{"MAD":2,"INT":1}},"2043705":{"name":"완드 마력 주문서 30%","success":30,"cursed":50,"inc":{"MAD":5,"INT":3,"MDD":1}},"2044500":{"name":"활 공격력 주문서 100%","success":100,"cursed":0,"inc":{"PAD":1}},"2044501":{"name":"활 공격력 주문서 60%","success":60,"cursed":0,"inc":{"PAD":2,"ACC":1}},"2044502":{"name":"활 공격력 주문서 10%","success":10,"cursed":0,"inc":{"PAD":5,"ACC":3,"DEX":1}},"2044504":{"name":"활 공격력 주문서 70%","success":70,"cursed":50,"inc":{"PAD":2,"ACC":1}},"2044505":{"name":"활 공격력 주문서 30%","success":30,"cursed":50,"inc":{"PAD":5,"ACC":3,"DEX":1}},"2044700":{"name":"아대 공격력 주문서 100%","success":100,"cursed":0,"inc":{"PAD":1}},"2044701":{"name":"아대 공격력 주문서 60%","success":60,"cursed":0,"inc":{"PAD":2,"ACC":1}},"2044702":{"name":"아대 공격력 주문서 10%","success":10,"cursed":0,"inc":{"PAD":5,"ACC":3,"LUK":1}},"2044704":{"name":"아대 공격력 주문서 70%","success":70,"cursed":50,"inc":{"PAD":2,"ACC":1}},"2044705":{"name":"아대 공격력 주문서 30%","success":30,"cursed":50,"inc":{"PAD":5,"ACC":3,"LUK":1}},"2043300":{"name":"단검 공격력 주문서 100%","success":100,"cursed":0,"inc":{"PAD":1}},"2043301":{"name":"단검 공격력 주문서 60%","success":60,"cursed":0,"inc":{"PAD":2,"LUK":1}},"2043302":{"name":"단검 공격력 주문서 10%","success":10,"cursed":0,"inc":{"PAD":5,"LUK":3,"PDD":1}},"2043304":{"name":"단검 공격력 주문서 70%","success":70,"cursed":50,"inc":{"PAD":2,"LUK":1}},"2043305":{"name":"단검 공격력 주문서 30%","success":30,"cursed":50,"inc":{"PAD":5,"LUK":3,"PDD":1}},"2044800":{"name":"너클 공격력 주문서 100%","success":100,"cursed":0,"inc":{"PAD":1}},"2044801":{"name":"너클 공격력 주문서 60%","success":60,"cursed":0,"inc":{"PAD":2,"STR":1}},"2044802":{"name":"너클 공격력 주문서 10%","success":10,"cursed":0,"inc":{"PAD":5,"STR":3,"PDD":1}},"2044803":{"name":"너클 공격력 주문서 70%","success":70,"cursed":50,"inc":{"PAD":2,"STR":1}},"2044804":{"name":"너클 공격력 주문서 30%","success":30,"cursed":50,"inc":{"PAD":5,"STR":3,"PDD":1}},"2044900":{"name":"건 공격력 주문서 100%","success":100,"cursed":0,"inc":{"PAD":1}},"2044901":{"name":"건 공격력 주문서 60%","success":60,"cursed":0,"inc":{"PAD":2,"ACC":1}},"2044902":{"name":"건 공격력 주문서 10%","success":10,"cursed":0,"inc":{"PAD":5,"ACC":3,"DEX":1}},"2044903":{"name":"건 공격력 주문서 70%","success":70,"cursed":50,"inc":{"PAD":2,"ACC":1}},"2044904":{"name":"건 공격력 주문서 30%","success":30,"cursed":50,"inc":{"PAD":5,"ACC":3,"DEX":1}}};
+// Scroll families per armour slot, and per weapon family (100% / 60% / 10% / 70% / 30% where the client has them).
+export const SCROLL_SETS={"cap":[["2040000","2040001","2040002","2040008","2040009"],["2040003","2040004","2040005","2040010","2040011"]],"coat":[["2040400","2040401","2040402","2040404","2040405"]],"glove":[["2040803","2040804","2040805","2040810","2040811"],["2040800","2040801","2040802","2040808","2040809"]],"shoes":[["2040706","2040707","2040708","2040716","2040717"],["2040700","2040701","2040702","2040712","2040713"]],"cape":[["2041006","2041007","2041008"],["2041003","2041004","2041005"]],"accessory":[["2040300","2040301","2040302","2040304","2040305"],["2040319","2040321","2040323","2040320","2040322"]]};
+export const WEAPON_SCROLLS={"sword":["2043000","2043001","2043002","2043004","2043005"],"spear":["2044300","2044301","2044302","2044304","2044305"],"polearm":["2044400","2044401","2044402","2044404","2044405"],"wand":["2043700","2043701","2043702","2043704","2043705"],"bow":["2044500","2044501","2044502","2044504","2044505"],"claw":["2044700","2044701","2044702","2044704","2044705"],"dagger":["2043300","2043301","2043302","2043304","2043305"],"knuckle":["2044800","2044801","2044802","2044803","2044804"],"gun":["2044900","2044901","2044902","2044903","2044904"]};
+// How original scroll stats translate into this game's stats (per point).
+export const SCROLL_STAT={PAD:['might',.025],MAD:['might',.025],STR:['might',.01],DEX:['might',.01],INT:['might',.01],LUK:['might',.01],
+  MHP:['maxHp',.01],PDD:['armor',.008],MDD:['armor',.004],Speed:['speed',.02],EVA:['dodge',.008],ACC:['crit',.006],Jump:['magnet',.04],MMP:['haste',.002]};
+export const scrollStats=id=>{const out={};for(const [k,v] of Object.entries(SCROLLS[id].inc)){const m=SCROLL_STAT[k];if(m)out[m[0]]=(out[m[0]]??0)+m[1]*v;}return out;};
+// How often each success rate is offered (100% and 60% common, 10% and the 70%/30% that can break the item rarer).
+export const SCROLL_RATE_WEIGHT={100:3,60:3,10:1.5,70:1.5,30:1};
+export const RARITIES=['','일반','희귀','영웅'];
+export const rankMultiplier=rank=>1+(rank-1)*.4;
+export const ENCHANTS={
+  pierce:{name:'관통 각인',icon:'2043000',text:'투사체 관통 +1 · 최대 대상 수가 있는 스킬은 대상 +1',stats:{pierce:1}},
+  push:{name:'넉백 각인',icon:'2040700',text:'일반 몬스터를 공격할 때 추가로 밀어냅니다.',stats:{push:35}},
+  recovery:{name:'회복 각인',icon:'2040000',text:'초당 HP 0.2 회복',stats:{regen:.2}},
+};
+export const CONSUMABLES={
+  '2002004':{name:'전사의 물약',effect:'buff',stat:'might',value:.15,time:30,text:'30초 동안 공격력 +15%'},
+  '2002002':{name:'마법사의 물약',effect:'buff',stat:'haste',value:.1,time:30,text:'30초 동안 쿨타임 -10%'},
+  '2002001':{name:'속도향상의 물약',effect:'buff',stat:'speed',value:.2,time:30,text:'30초 동안 이동 속도 +20%'},
+  '2002000':{name:'민첩함의 물약',effect:'buff',stat:'dodge',value:.1,time:30,text:'30초 동안 회피 확률 +10%'},
+  '2002005':{name:'명사수의 물약',effect:'buff',stat:'crit',value:.1,time:30,text:'30초 동안 치명타 확률 +10%'},
+  '2000000':{name:'빨간 포션',effect:'heal',value:30,text:'HP 30 회복'},
+  '2020002':{name:'케이크',effect:'heal',value:50,text:'HP 50 회복'},
+  '2050004':{name:'만병통치약',effect:'cleanse',text:'주변 적탄 제거 · 3초 무적'},
+  '2030000':{name:'마을 귀환 주문서',effect:'magnet',text:'필드의 모든 경험치 수집'},
+};
+export const TROPHIES={
+  shell:{name:'마노의 수호',icon:'4000019',boss:'2220000',text:'12초마다 피격 1회 방어'},
+  spore:{name:'머쉬맘의 포자',icon:'4000001',boss:'6130101',text:'8초마다 주변에 충격파 · 피해 25 + 레벨 ×2'},
+  courage:{name:'발록의 투지',icon:'4000021',boss:'8130100',text:'HP 40% 이하에서 공격력 +18%'},
+};
+export const ITEM_DROP_CHANCE=.01;
+export const itemIcon=id=>`assets/items/${id}.png`;

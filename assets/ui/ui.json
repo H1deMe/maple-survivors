@@ -1,0 +1,445 @@
+{
+  "source": "UI.wz",
+  "sha256": "9c275bdbdd45ea137d31ee2022c09451279078fcd92eb802da4c4a24e220929a",
+  "version": 65,
+  "encryption": "EMS",
+  "entries": {
+    "status-base": {
+      "source": "UI.wz/StatusBar.img/base/backgrnd",
+      "src": "status-base.png",
+      "w": 800,
+      "h": 71,
+      "ox": 0,
+      "oy": 0
+    },
+    "quickslot": {
+      "source": "UI.wz/StatusBar.img/base/quickSlot",
+      "src": "quickslot.png",
+      "w": 151,
+      "h": 80,
+      "ox": 0,
+      "oy": 0
+    },
+    "gauge": {
+      "source": "UI.wz/StatusBar.img/gauge/bar",
+      "src": "gauge.png",
+      "w": 340,
+      "h": 31,
+      "ox": 0,
+      "oy": 0
+    },
+    "slot": {
+      "source": "UI.wz/UIWindow.img/IconBase/0",
+      "src": "slot.png",
+      "w": 32,
+      "h": 32,
+      "ox": 0,
+      "oy": 0
+    },
+    "cursor": {
+      "source": "UI.wz/Basic.img/Cursor/0/0",
+      "src": "cursor.png",
+      "w": 24,
+      "h": 28,
+      "ox": 0,
+      "oy": 3
+    },
+    "notice": {
+      "source": "UI.wz/Basic.img/Notice/backgrnd",
+      "src": "notice.png",
+      "w": 264,
+      "h": 132,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-0": {
+      "source": "UI.wz/StatusBar.img/number/0",
+      "src": "number-0.png",
+      "w": 5,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "level-0": {
+      "source": "UI.wz/Basic.img/LevelNo/0",
+      "src": "level-0.png",
+      "w": 11,
+      "h": 13,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-1": {
+      "source": "UI.wz/StatusBar.img/number/1",
+      "src": "number-1.png",
+      "w": 5,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "level-1": {
+      "source": "UI.wz/Basic.img/LevelNo/1",
+      "src": "level-1.png",
+      "w": 11,
+      "h": 13,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-2": {
+      "source": "UI.wz/StatusBar.img/number/2",
+      "src": "number-2.png",
+      "w": 5,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "level-2": {
+      "source": "UI.wz/Basic.img/LevelNo/2",
+      "src": "level-2.png",
+      "w": 11,
+      "h": 13,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-3": {
+      "source": "UI.wz/StatusBar.img/number/3",
+      "src": "number-3.png",
+      "w": 5,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "level-3": {
+      "source": "UI.wz/Basic.img/LevelNo/3",
+      "src": "level-3.png",
+      "w": 11,
+      "h": 13,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-4": {
+      "source": "UI.wz/StatusBar.img/number/4",
+      "src": "number-4.png",
+      "w": 5,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "level-4": {
+      "source": "UI.wz/Basic.img/LevelNo/4",
+      "src": "level-4.png",
+      "w": 11,
+      "h": 13,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-5": {
+      "source": "UI.wz/StatusBar.img/number/5",
+      "src": "number-5.png",
+      "w": 5,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "level-5": {
+      "source": "UI.wz/Basic.img/LevelNo/5",
+      "src": "level-5.png",
+      "w": 11,
+      "h": 13,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-6": {
+      "source": "UI.wz/StatusBar.img/number/6",
+      "src": "number-6.png",
+      "w": 5,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "level-6": {
+      "source": "UI.wz/Basic.img/LevelNo/6",
+      "src": "level-6.png",
+      "w": 11,
+      "h": 13,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-7": {
+      "source": "UI.wz/StatusBar.img/number/7",
+      "src": "number-7.png",
+      "w": 5,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "level-7": {
+      "source": "UI.wz/Basic.img/LevelNo/7",
+      "src": "level-7.png",
+      "w": 11,
+      "h": 13,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-8": {
+      "source": "UI.wz/StatusBar.img/number/8",
+      "src": "number-8.png",
+      "w": 5,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "level-8": {
+      "source": "UI.wz/Basic.img/LevelNo/8",
+      "src": "level-8.png",
+      "w": 11,
+      "h": 13,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-9": {
+      "source": "UI.wz/StatusBar.img/number/9",
+      "src": "number-9.png",
+      "w": 5,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "level-9": {
+      "source": "UI.wz/Basic.img/LevelNo/9",
+      "src": "level-9.png",
+      "w": 11,
+      "h": 13,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-slash": {
+      "source": "UI.wz/StatusBar.img/number/slash",
+      "src": "number-slash.png",
+      "w": 7,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-percent": {
+      "source": "UI.wz/StatusBar.img/number/percent",
+      "src": "number-percent.png",
+      "w": 7,
+      "h": 7,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-Lbracket": {
+      "source": "UI.wz/StatusBar.img/number/Lbracket",
+      "src": "number-Lbracket.png",
+      "w": 2,
+      "h": 9,
+      "ox": 0,
+      "oy": 0
+    },
+    "number-Rbracket": {
+      "source": "UI.wz/StatusBar.img/number/Rbracket",
+      "src": "number-Rbracket.png",
+      "w": 2,
+      "h": 9,
+      "ox": 0,
+      "oy": 0
+    },
+    "dialog-t": {
+      "source": "UI.wz/UIWindow.img/UtilDlgEx/t",
+      "src": "dialog-t.png",
+      "w": 529,
+      "h": 28,
+      "ox": 0,
+      "oy": 0
+    },
+    "dialog-c": {
+      "source": "UI.wz/UIWindow.img/UtilDlgEx/c",
+      "src": "dialog-c.png",
+      "w": 529,
+      "h": 20,
+      "ox": 0,
+      "oy": 0
+    },
+    "dialog-s": {
+      "source": "UI.wz/UIWindow.img/UtilDlgEx/s",
+      "src": "dialog-s.png",
+      "w": 529,
+      "h": 58,
+      "ox": 0,
+      "oy": 0
+    },
+    "menu-normal": {
+      "source": "UI.wz/StatusBar.img/BtMenu/normal/0",
+      "src": "menu-normal.png",
+      "w": 73,
+      "h": 34,
+      "ox": 0,
+      "oy": 0
+    },
+    "close-normal": {
+      "source": "UI.wz/Basic.img/BtClose2/normal/0",
+      "src": "close-normal.png",
+      "w": 14,
+      "h": 14,
+      "ox": 0,
+      "oy": 0
+    },
+    "ok-normal": {
+      "source": "UI.wz/Basic.img/BtOK/normal/0",
+      "src": "ok-normal.png",
+      "w": 65,
+      "h": 24,
+      "ox": 0,
+      "oy": 0
+    },
+    "menu-mouseOver": {
+      "source": "UI.wz/StatusBar.img/BtMenu/mouseOver/0",
+      "src": "menu-mouseOver.png",
+      "w": 73,
+      "h": 34,
+      "ox": 0,
+      "oy": 0
+    },
+    "close-mouseOver": {
+      "source": "UI.wz/Basic.img/BtClose2/mouseOver/0",
+      "src": "close-mouseOver.png",
+      "w": 14,
+      "h": 14,
+      "ox": 0,
+      "oy": 0
+    },
+    "ok-mouseOver": {
+      "source": "UI.wz/Basic.img/BtOK/mouseOver/0",
+      "src": "ok-mouseOver.png",
+      "w": 65,
+      "h": 24,
+      "ox": 0,
+      "oy": 0
+    },
+    "menu-pressed": {
+      "source": "UI.wz/StatusBar.img/BtMenu/pressed/0",
+      "src": "menu-pressed.png",
+      "w": 73,
+      "h": 34,
+      "ox": 0,
+      "oy": 0
+    },
+    "close-pressed": {
+      "source": "UI.wz/Basic.img/BtClose2/pressed/0",
+      "src": "close-pressed.png",
+      "w": 14,
+      "h": 14,
+      "ox": 0,
+      "oy": 0
+    },
+    "ok-pressed": {
+      "source": "UI.wz/Basic.img/BtOK/pressed/0",
+      "src": "ok-pressed.png",
+      "w": 65,
+      "h": 24,
+      "ox": 0,
+      "oy": 0
+    },
+    "menu-disabled": {
+      "source": "UI.wz/StatusBar.img/BtMenu/disabled/0",
+      "src": "menu-disabled.png",
+      "w": 73,
+      "h": 34,
+      "ox": 0,
+      "oy": 0
+    },
+    "close-disabled": {
+      "source": "UI.wz/Basic.img/BtClose2/disabled/0",
+      "src": "close-disabled.png",
+      "w": 14,
+      "h": 14,
+      "ox": 0,
+      "oy": 0
+    },
+    "ok-disabled": {
+      "source": "UI.wz/Basic.img/BtOK/disabled/0",
+      "src": "ok-disabled.png",
+      "w": 65,
+      "h": 24,
+      "ox": 0,
+      "oy": 0
+    },
+    "window-c": {
+      "source": "UI.wz/UIWindow.img/MiniMap/MinMap/c",
+      "src": "window-c.png",
+      "w": 1,
+      "h": 1,
+      "ox": 0,
+      "oy": 0
+    },
+    "window-e": {
+      "source": "UI.wz/UIWindow.img/MiniMap/MinMap/e",
+      "src": "window-e.png",
+      "w": 6,
+      "h": 1,
+      "ox": 0,
+      "oy": 0
+    },
+    "window-n": {
+      "source": "UI.wz/UIWindow.img/MiniMap/MinMap/n",
+      "src": "window-n.png",
+      "w": 1,
+      "h": 29,
+      "ox": 0,
+      "oy": 0
+    },
+    "window-ne": {
+      "source": "UI.wz/UIWindow.img/MiniMap/MinMap/ne",
+      "src": "window-ne.png",
+      "w": 6,
+      "h": 29,
+      "ox": 0,
+      "oy": 0
+    },
+    "window-nw": {
+      "source": "UI.wz/UIWindow.img/MiniMap/MinMap/nw",
+      "src": "window-nw.png",
+      "w": 6,
+      "h": 29,
+      "ox": 0,
+      "oy": 0
+    },
+    "window-s": {
+      "source": "UI.wz/UIWindow.img/MiniMap/MinMap/s",
+      "src": "window-s.png",
+      "w": 1,
+      "h": 14,
+      "ox": 0,
+      "oy": 0
+    },
+    "window-se": {
+      "source": "UI.wz/UIWindow.img/MiniMap/MinMap/se",
+      "src": "window-se.png",
+      "w": 6,
+      "h": 14,
+      "ox": 0,
+      "oy": 0
+    },
+    "window-sw": {
+      "source": "UI.wz/UIWindow.img/MiniMap/MinMap/sw",
+      "src": "window-sw.png",
+      "w": 6,
+      "h": 14,
+      "ox": 0,
+      "oy": 0
+    },
+    "window-w": {
+      "source": "UI.wz/UIWindow.img/MiniMap/MinMap/w",
+      "src": "window-w.png",
+      "w": 6,
+      "h": 1,
+      "ox": 0,
+      "oy": 0
+    }
+  },
+  "menuMusic": {
+    "source": "Sound.wz/BgmUI.img/Title",
+    "src": "menu.mp3",
+    "sha256": "14ab36cf903d67eb342615d2ac81218f3607d71b2148a8c4e88802586a3b0262"
+  }
+}

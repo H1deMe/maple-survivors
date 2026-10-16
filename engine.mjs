@@ -1,6 +1,5 @@
-// Maple survivors rules: a Vampire Survivors-style top-down run. 8-way movement, client skills that fire
-// on their own as weapons, client passives, meso drops that give EXP, minute-by-minute waves and four
-// bosses ending with Jr. Balrog at 10:00. DOM-free so it runs in Node tests. Distances px, speeds px/s.
+// DOM-free survival rules. Default runs travel across three regions and end on Faust's defeat.
+import {EQUIPMENT,EQUIP_SLOTS,ENCHANTS,CONSUMABLES,TROPHIES,ITEM_DROP_CHANCE,rankMultiplier,WEAPON_FAMILIES,WEAPON_BONUS,weaponFamilyOf,SCROLLS,SCROLL_SETS,WEAPON_SCROLLS,SCROLL_RATE_WEIGHT,scrollStats} from './items.mjs';
 
 export const RUN_TIME=600;                 // the final boss arrives at 10:00; beating it clears the run
 export const MAX_WEAPONS=6,MAX_PASSIVES=6,WEAPON_MAX=8,PASSIVE_MAX=5;
@@ -79,18 +78,20 @@ export const WEAPONS={
 };
 export const START_WEAPON='0001000';
 // Passives are client skills too (names as in String.wz). Each level adds `per`.
+export const formatNumber=(value,places=2)=>String(Number(value.toFixed(places)));
+export const formatPercent=value=>`${formatNumber(value*100)}%`;
 export const PASSIVES={
-  '1101006':{name:'분노',stat:'might',per:.1,text:v=>`공격력 +${v*100}%`},
-  '1101004':{name:'소드 부스터',stat:'haste',per:.08,text:v=>`쿨타임 -${v*100}%`},
-  '4101004':{name:'헤이스트',stat:'speed',per:.1,text:v=>`이동 속도 +${v*100}%`},
-  '1301007':{name:'하이퍼 바디',stat:'maxHp',per:.2,text:v=>`최대 HP +${v*100}%`},
+  '1101006':{name:'분노',stat:'might',per:.1,text:v=>`공격력 +${formatPercent(v)}`},
+  '1101004':{name:'소드 부스터',stat:'haste',per:.08,text:v=>`쿨타임 -${formatPercent(v)}`},
+  '4101004':{name:'헤이스트',stat:'speed',per:.1,text:v=>`이동 속도 +${formatPercent(v)}`},
+  '1301007':{name:'하이퍼 바디',stat:'maxHp',per:.2,text:v=>`최대 HP +${formatPercent(v)}`},
   '1000000':{name:'HP 회복력 향상',stat:'regen',per:.3,text:v=>`초당 HP ${v.toFixed(1)} 회복`},
-  '2001002':{name:'매직 가드',stat:'armor',per:.07,text:v=>`받는 피해 -${Math.round(v*100)}%`},
-  '3000001':{name:'크리티컬 샷',stat:'crit',per:.07,text:v=>`치명타 확률 +${Math.round(v*100)}%`},
-  '4000001':{name:'킨 아이즈',stat:'magnet',per:.3,text:v=>`메소 줍는 범위 +${Math.round(v*100)}%`},
-  '1100000':{name:'소드 마스터리',stat:'area',per:.1,text:v=>`공격 범위 +${Math.round(v*100)}%`},
-  '4000000':{name:'님블 바디',stat:'dodge',per:.05,text:v=>`회피 확률 +${Math.round(v*100)}%`},
-  '3000000':{name:'아마존의 축복',stat:'growth',per:.1,text:v=>`획득 경험치 +${Math.round(v*100)}%`},
+  '2001002':{name:'매직 가드',stat:'armor',per:.07,text:v=>`받는 피해 -${formatPercent(v)}`},
+  '3000001':{name:'크리티컬 샷',stat:'crit',per:.07,text:v=>`치명타 확률 +${formatPercent(v)}`},
+  '4000001':{name:'킨 아이즈',stat:'magnet',per:.3,text:v=>`메소 줍는 범위 +${formatPercent(v)}`},
+  '1100000':{name:'소드 마스터리',stat:'area',per:.1,text:v=>`공격 범위 +${formatPercent(v)}`},
+  '4000000':{name:'님블 바디',stat:'dodge',per:.05,text:v=>`회피 확률 +${formatPercent(v)}`},
+  '3000000':{name:'아마존의 축복',stat:'growth',per:.1,text:v=>`획득 경험치 +${formatPercent(v)}`},
 };
 // Job advancement: a boss reward (not the final boss) can advance a 1st-job skill that is high enough into its
 // 2nd, 3rd and 4th-job client skills. tiers[i] is the (i+2)th job: mult multiplies the skill's damage, set
@@ -160,7 +161,7 @@ export const JOBS={
   ],
   '14001004':[
     {id:'nightwalker',job:'나이트워커',names:['나이트워커','나이트워커'],tiers:[
-      {skill:'14101006',kind:'nova',mult:1.7,set:{targets:6,radius:210,hits:3,heal:1},desc:'어둠의 기운으로 주변 적들을 세 번씩 공격하고 HP를 1 흡수합니다.'},
+      {skill:'14101006',kind:'nova',mult:1.7,set:{targets:6,radius:210,hits:3,heal:.5},desc:'어둠의 기운으로 주변 적들을 세 번씩 공격하고 HP를 흡수합니다(초당 0.5).'},
       {skill:'14111006',kind:'arrow',mult:4.4,set:{count:1,splash:100,targets:6,speed:420,pierce:1},desc:'독 폭탄을 던져 맞은 자리 주변의 적 최대 6마리에게 피해를 줍니다.'},
     ]},
   ],
@@ -215,9 +216,9 @@ export const JOBS={
       {skill:'2221007',kind:'meteor',mult:11.44,set:{targets:12,cooldown:3,freeze:2},desc:'넓은 범위의 적 최대 12마리에게 눈보라를 내려 2초 동안 얼립니다.'},
     ]},
     {id:'cleric',job:'클레릭',names:['클레릭','프리스트','비숍'],tiers:[
-      {skill:'2301005',kind:'bolt',mult:1.82,set:{speed:420,pierce:1,heal:1,cooldown:.9},desc:'적을 쫓아가는 성스러운 화살을 쏘고 HP를 1 회복합니다.'},
-      {skill:'2311004',kind:'nova',mult:3.81,set:{targets:6,radius:220,heal:2,cooldown:.9},desc:'주변의 적 최대 6마리에게 빛을 내리고 HP를 2 회복합니다.'},
-      {skill:'2321008',kind:'meteor',mult:12.23,set:{targets:12,cooldown:3,heal:5},desc:'넓은 범위의 적 최대 12마리에게 성스러운 빛을 내리고 HP를 5 회복합니다.'},
+      {skill:'2301005',kind:'bolt',mult:1.82,set:{speed:420,pierce:1,heal:.4,cooldown:.9},desc:'적을 쫓아가는 성스러운 화살을 쏘고 HP를 회복합니다(초당 0.4).'},
+      {skill:'2311004',kind:'nova',mult:3.81,set:{targets:6,radius:220,heal:.6,cooldown:.9},desc:'주변의 적 최대 6마리에게 빛을 내리고 HP를 회복합니다(초당 0.6).'},
+      {skill:'2321008',kind:'meteor',mult:12.23,set:{targets:12,cooldown:3,heal:.8},desc:'넓은 범위의 적 최대 12마리에게 성스러운 빛을 내리고 HP를 회복합니다(초당 0.8).'},
     ]},
   ],
   // Arrow Blow. Hunter blows up crowds (splash, area rain, a stream of arrows); Crossbowman shoots farther and
@@ -237,7 +238,7 @@ export const JOBS={
   // Lucky Seven → Assassin: critical hits (bigger numbers more often) and Drain heals. One line, as in the client.
   '4001344':[
     {id:'assassin',job:'어쌔신',names:['어쌔신','허밋','나이트로드'],tiers:[
-      {skill:'4101005',kind:'star',mult:1.55,set:{crit:.2,heal:1},desc:'표창으로 HP를 흡수합니다(시전마다 HP 1). 치명타 확률 +20%.'},
+      {skill:'4101005',kind:'star',mult:1.55,set:{crit:.2,heal:.4},desc:'표창으로 HP를 흡수합니다(초당 0.4). 치명타 확률 +20%.'},
       {skill:'4111005',kind:'arrow',mult:2.45,set:{crit:.3,spin:true,spread:.18,speed:620},desc:'거대한 표창이 회전하며 적을 꿰뚫습니다. 치명타 확률 +30%.'},
       {skill:'4121007',kind:'star',mult:3.5,set:{crit:.4,count:b=>b.count+3,cooldown:b=>b.cooldown*1.5},desc:'표창을 세 갈래로 연달아 던집니다. 치명타 확률 +40%.'},
     ]},
@@ -321,13 +322,73 @@ const ELLINIA_BOSSES=[
   {at:450,id:'3230100',hp:11000,damage:36,speed:66,scale:2,patterns:['burst','volley','summon'],summon:'2230100',bullet:'#c58cff'},
   {at:RUN_TIME,id:'5220002',hp:26000,damage:50,speed:76,final:true,patterns:['dash','volley','slam','summon','burst'],summon:'3210800',bullet:'#7a5cff'},
 ];
-// bgm/bossBgm are keys of combat.json bgm, maxJob the highest job advancement allowed. Clearing a stage unlocks the next one.
+const regionWaves=pools=>Array.from({length:10},(_,i)=>({pool:pools[Math.min(pools.length-1,Math.floor(i*pools.length/10))],rate:1.2+i*.45,max:30+i*22}));
+const PERION_WAVES=regionWaves([['0130100','1110101'],['1110101','1130100','1210101'],['1130100','1210101','4130100'],['5130101','5130102','4130100'],['5130100','5130101','6230601']]);
+const KERNING_WAVES=regionWaves([['0130101','1210103'],['1210103','1120100','3230101'],['3110100','3230101','4230102'],['4230102','3110100','5130103'],['5130103','4230102','3230101']]);
+const SLEEPY_WAVES=regionWaves([['0130101','1110100'],['1110100','2230101','2230100'],['2230101','4130100','5130101'],['5130100','5130102','6230100'],['6230601','6230100','5130102']]);
+const ORBIS_WAVES=regionWaves([['5200000','3230200'],['3210200','3210201','3210202'],['3230200','4230106','3000000'],['4230106','5120000','3000000'],['5120000','4230106','3210202']]);
+// bgm/bossBgm are combat.json keys. Explicit single-region previews retain their legacy boss rules.
 export const STAGES=[
   {id:'lith',num:1,name:'리스항구',title:'리스항구 해안가',waves:LITH_WAVES,bosses:LITH_BOSSES,swarms:SWARMS,bgm:'harbor',bossBgm:'boss',maxJob:2},
   {id:'henesys',num:2,name:'헤네시스',title:'헤네시스 들판',waves:WAVES,bosses:BOSSES,swarms:SWARMS,bgm:'field',bossBgm:'boss',maxJob:3},
   {id:'ellinia',num:3,name:'엘리니아',title:'엘리니아 숲',waves:ELLINIA_WAVES,bosses:ELLINIA_BOSSES,swarms:SWARMS,bgm:'ellinia',bossBgm:'boss',maxJob:4},
+  {id:'perion',num:4,name:'페리온',title:'페리온 황야',waves:PERION_WAVES,bosses:BOSSES,swarms:SWARMS,bgm:'perion',bossBgm:'boss',maxJob:4},
+  {id:'kerning',num:5,name:'커닝시티',title:'커닝시티 공업지대',waves:KERNING_WAVES,bosses:BOSSES,swarms:SWARMS,bgm:'kerning',bossBgm:'boss',maxJob:4},
+  {id:'sleepywood',num:6,name:'슬리피우드',title:'슬리피우드 깊은 숲',waves:SLEEPY_WAVES,bosses:ELLINIA_BOSSES,swarms:SWARMS,bgm:'sleepy',bossBgm:'boss',maxJob:4},
+  {id:'orbis',num:7,name:'오르비스',title:'오르비스 하늘 정원',waves:ORBIS_WAVES,bosses:ELLINIA_BOSSES,swarms:SWARMS,bgm:'orbis',bossBgm:'boss',maxJob:4},
 ];
 export const stageById=id=>STAGES.find(s=>s.id===id)??STAGES[0];
+// One continuous adventure. These are progression cues, never a time-limit victory condition.
+export const JOURNEY=STAGES.map((stage,i)=>({id:stage.id,at:i*180,firstWave:Math.min(4,i)}));
+export function shuffledJourney(random=Math.random){
+  const ids=STAGES.map(s=>s.id);for(let i=ids.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[ids[i],ids[j]]=[ids[j],ids[i]];}
+  return JOURNEY.map((phase,i)=>({...phase,id:ids[i]}));
+}
+// All regions share this time-based challenge curve. Native species keep their relative differences,
+// but a late harbor is stronger than an early forest, and region transitions never reset the pressure.
+export const DIFFICULTY_CURVE=[
+  {at:0,power:6,damage:6,exp:3,rate:1.1,max:28},
+  {at:60,power:10,damage:7,exp:5,rate:1.5,max:45},
+  {at:120,power:20,damage:9,exp:11,rate:2.4,max:80},
+  {at:180,power:40,damage:13,exp:18,rate:3.2,max:120},
+  {at:300,power:55,damage:15,exp:25,rate:4.4,max:190},
+  {at:360,power:60,damage:16,exp:30,rate:4.6,max:195},
+  {at:600,power:75,damage:17.5,exp:37,rate:5.15,max:215},
+  {at:720,power:85,damage:18,exp:48,rate:5.3,max:230},
+  {at:900,power:105,damage:19,exp:68,rate:5.5,max:240},
+  {at:1080,power:160,damage:21,exp:72,rate:5.7,max:250},
+  {at:1200,power:195,damage:22,exp:80,rate:5.83,max:258},
+];
+export function difficultyAt(time){
+  const end=DIFFICULTY_CURVE.at(-1);if(time>=end.at){const pressure=1+Math.min(.25,(time-end.at)/2400);return {...end,power:end.power*pressure,damage:end.damage*pressure};}
+  const index=DIFFICULTY_CURVE.findIndex(p=>p.at>time),a=DIFFICULTY_CURVE[Math.max(0,index-1)],b=DIFFICULTY_CURVE[Math.max(0,index)],t=Math.max(0,(time-a.at)/(b.at-a.at||1));
+  return Object.fromEntries(Object.keys(a).map(k=>[k,a[k]+(b[k]-a[k])*t]));
+}
+export const FINAL_BOSS_AT=1200,REGION_BLEND_SECONDS=12;
+// Boss rewards open the next job tier as the adventure advances (2nd / 3rd / 4th job).
+export const JOURNEY_JOB_AT=[150,600,1020];
+export const JOURNEY_BOSSES=[
+  {...LITH_BOSSES[0],at:150,hp:900,damage:14,speed:55,region:'lith'},
+  {...LITH_BOSSES[1],at:300,hp:3600,damage:18,speed:60,region:'lith'},
+  {...BOSSES[1],at:450,hp:7500,damage:24,speed:64,region:'henesys'},
+  {...BOSSES[3],at:600,hp:19000,damage:30,speed:68,final:false,region:'henesys'},
+  {...ELLINIA_BOSSES[0],at:840,hp:22000,damage:36,speed:70,region:'ellinia'},
+  {...ELLINIA_BOSSES[2],at:1020,hp:42000,damage:42,speed:74,region:'ellinia'},
+  {...ELLINIA_BOSSES[3],at:FINAL_BOSS_AT,hp:80000,damage:50,speed:76,final:true,region:'ellinia'},
+];
+const BOSS_REWARD_EXP=[80,120,200,300,440,600,800];
+JOURNEY_BOSSES.forEach((b,i)=>{b.rewardExp=BOSS_REWARD_EXP[i];});
+// Shuffle boss identities separately from regions. Challenge belongs to the slot, identity keeps its own patterns.
+// The final Faust preserves the established clear condition; all six middle encounters change order every run.
+export function shuffledBosses(random=Math.random){
+  const bodies=JOURNEY_BOSSES.slice(0,-1);for(let i=bodies.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[bodies[i],bodies[j]]=[bodies[j],bodies[i]];}
+  return JOURNEY_BOSSES.map((slot,i)=>i===JOURNEY_BOSSES.length-1?{...slot}:{...bodies[i],at:slot.at,hp:slot.hp,damage:slot.damage,speed:slot.speed,rewardExp:slot.rewardExp,final:false});
+}
+const JOURNEY_SWARMS=[90,240,420,570,780,930,1110];
+// XP per visit phase (early / middle / late), independent of the shuffled region name.
+export const SKILL_HEAL_CAP=1;   // HP per second from all absorbing skills together
+export const JOURNEY_BALANCE={xp:[.35,.35,.3,.3,.25,.25,.25],hpGrowth:1.25};
+export function journeyExpNeed(level){return Math.round(8+(level-1)*9+Math.max(0,level-20)*30+Math.max(0,level-40)*50);}
 export const POTION_CHANCE=.004;
 // EXP needed to leave level n (Vampire Survivors' curve scaled to Maple EXP values).
 export function expNeed(level){return Math.round(10+(level-1)*12+Math.max(0,level-20)*10+Math.max(0,level-40)*16);}
@@ -355,43 +416,74 @@ export function weaponStats(id,level,job=null){
   if(t){const b={...s};s.damage=Math.round(s.damage*t.mult);for(const [k,v]of Object.entries(t.set))s[k]=typeof v==='function'?v(b):v;s.kind=t.kind;s.skill=t.skill;}
   return s;
 }
-const UP_TEXT={targets:v=>`최대 대상 +${v}`,damage:v=>`피해 +${v}`,count:v=>`투사체 +${v}`,pierce:v=>v>=50?'모든 적 관통':`관통 +${v}`,cooldown:v=>`쿨타임 ${v}초`,area:v=>`범위 +${Math.round(v*100)}%`};
+const UP_TEXT={targets:v=>`최대 대상 +${v}`,damage:v=>`피해 +${v}`,count:v=>`투사체 +${v}`,pierce:v=>v>=50?'모든 적 관통':`관통 +${v}`,cooldown:v=>`쿨타임 ${v}초`,area:v=>`범위 +${formatPercent(v)}`};
 export function upgradeText(id,nextLevel){const up=WEAPONS[id].ups[nextLevel-2];return up?Object.entries(up).map(([k,v])=>UP_TEXT[k](v)).join(', '):'';}
 
 export class Game{
-  constructor(rules,random=Math.random,stage=STAGES[0].id){this.rules=rules;this.random=random;this.stage=stageById(stage);this.mode='menu';this.view={w:900,h:600};this.reset();}
+  constructor(rules,random=Math.random,stage=STAGES[0].id){this.rules=rules;this.random=random;this.stage=stageById(stage);this.continuous=false;this.mode='menu';this.view={w:900,h:600};this.mobProfiles=new Map();this.reset();}
   reset(){
     this.player={x:0,y:0,face:-1,dir:{x:-1,y:0},moving:false,level:1,exp:0,hp:PLAYER.hp,invincible:0,regenAcc:0};
     this.weapons={[START_WEAPON]:1};this.passives={};this.cooldowns={[START_WEAPON]:.4};
     this.mobs=[];this.projectiles=[];this.hazards=[];this.drops=[];this.effects=[];this.numbers=[];this.events=[];
-    this.time=0;this.kills=0;this.serial=0;this.spawnAcc=0;this.boss=null;this.bossIndex=0;this.swarmIndex=0;
+    this.time=0;this.kills=0;this.serial=0;this.spawnAcc=0;this.boss=null;this.bossIndex=0;this.swarmIndex=0;this.regionIndex=0;
     this.choices=[];this.pendingLevels=0;this.choiceKind='upgrade';this.won=false;this.jobs={};
+    this.equipment={};this.trophies=[];this.itemTimers={guard:0,spore:0};this.lootQueue=[];this.buffs={};
+    this.route=JOURNEY.map(p=>({...p}));this.bossRoute=JOURNEY_BOSSES.map(b=>({...b}));
   }
-  start(stage){if(stage)this.stage=stageById(stage);this.reset();this.mode='playing';for(let i=0;i<6;i++)this.spawn();}
+  // An explicit region is retained only for isolated asset/skill test scenes; the actual menu calls start().
+  start(stage){this.continuous=!stage;this.reset();if(this.continuous){this.route=shuffledJourney(this.random);this.bossRoute=shuffledBosses(this.random);}this.stage=stageById(stage??this.route[0].id);this.mode='playing';for(let i=0;i<6;i++)this.spawn();}
   emit(type,data={}){this.events.push({type,...data});}
-  get expNeed(){return expNeed(this.player.level);}
-  stat(name){let v=0;for(const [id,lv]of Object.entries(this.passives))if(PASSIVES[id].stat===name)v+=PASSIVES[id].per*lv;return v;}
+  get expNeed(){return this.continuous?journeyExpNeed(this.player.level):expNeed(this.player.level);}
+  itemStat(name){let v=0;for(const e of Object.values(this.equipment)){v+=(EQUIPMENT[e.id].stats[name]??0)*rankMultiplier(e.rank);v+=ENCHANTS[e.enchant]?.stats[name]??0;v+=e.bonus?.[name]??0;}
+    for(const b of Object.values(this.buffs))if(b.stat===name)v+=b.value;return v;}
+  // Weapon in hand: its family's skills (1st job and every job tier of them) hit harder.
+  weaponBonus(id){const w=this.equipment.weapon;return w&&weaponFamilyOf(id)===EQUIPMENT[w.id].family?WEAPON_BONUS*rankMultiplier(w.rank):0;}
+  stat(name){let v=this.itemStat(name);for(const [id,lv]of Object.entries(this.passives))if(PASSIVES[id].stat===name)v+=PASSIVES[id].per*lv;
+    if(name==='might'&&this.trophies.includes('courage')&&this.player.hp<=this.maxHp*.4)v+=.18;return v;}
   get maxHp(){return Math.round(PLAYER.hp*(1+this.stat('maxHp')));}
   get moveSpeed(){return PLAYER.speed*(1+this.stat('speed'));}
   get pickupRadius(){return PLAYER.pickup*(1+this.stat('magnet'));}
-  get wave(){const w=this.stage.waves;return w[Math.min(w.length-1,Math.floor(this.time/60))];}
-  get bosses(){return this.stage.bosses;}
-  stats(id){return weaponStats(id,this.weapons[id]??1,this.jobs[id]);}
+  get wave(){
+    const w=this.stage.waves;if(!this.continuous)return w[Math.min(w.length-1,Math.floor(this.time/60))];
+    const region=this.route[this.regionIndex],end=this.route[this.regionIndex+1]?.at??FINAL_BOSS_AT;
+    const progress=Math.max(0,Math.min(1,(this.time-region.at)/(end-region.at)));
+    const i=Math.min(w.length-1,region.firstWave+Math.floor(progress*(w.length-region.firstWave)));
+    const d=difficultyAt(this.time);return {...w[i],rate:d.rate,max:Math.round(d.max)};
+  }
+  get mobProfile(){
+    const pool=this.wave.pool;if(!this.mobProfiles.has(pool)){const mobs=pool.map(id=>this.rules.mobs[id]),avg=f=>mobs.reduce((s,m)=>s+f(m),0)/mobs.length;this.mobProfiles.set(pool,{power:avg(m=>m.hp**.72),damage:avg(m=>4+m.pad*.15),exp:avg(m=>m.exp)});}
+    return this.mobProfiles.get(pool);
+  }
+  get bosses(){return this.continuous?this.bossRoute:this.stage.bosses;}
+  get runTime(){return this.continuous?FINAL_BOSS_AT:RUN_TIME;}
+  stats(id){const s=weaponStats(id,this.weapons[id]??1,this.jobs[id]),pierce=this.itemStat('pierce'),wb=this.weaponBonus(id);if(wb)s.damage=Math.round(s.damage*(1+wb));if(pierce){if(s.pierce!=null)s.pierce+=pierce;else if(s.targets!=null)s.targets+=pierce;}return s;}
   skillOf(id){return this.stats(id).skill;}   // the client skill a weapon slot currently shows
   // Monsters toughen a little within the run on top of the stronger species that join each minute.
-  get hpScale(){return TUNING.mobHp*(1+TUNING.hpGrowth*Math.min(this.time,RUN_TIME)/RUN_TIME);}
+  // EXP per kill in the adventure: a number, or one value per region (Lith, Henesys, Ellinia).
+  get xpScale(){if(!this.continuous)return 1;const x=JOURNEY_BALANCE.xp;return Array.isArray(x)?x[this.regionIndex]:x;}
+  get hpScale(){return TUNING.mobHp*(1+(this.continuous?JOURNEY_BALANCE.hpGrowth:TUNING.hpGrowth)*Math.min(this.time,this.runTime)/this.runTime);}
+
+  updateRegion(){
+    if(!this.continuous)return;
+    let index=0;for(let i=1;i<this.route.length;i++)if(this.time>=this.route[i].at)index=i;
+    if(index===this.regionIndex)return;
+    const from=this.stage.id;this.regionIndex=index;this.stage=stageById(this.route[index].id);
+    this.emit('region',{from,to:this.stage.id,at:this.time});
+  }
 
   // ---------- update ----------
   update(delta,input={}){
     if(this.mode!=='playing')return;
-    const dt=Math.max(0,Math.min(delta,.05));this.time+=dt;
+    const dt=Math.max(0,Math.min(delta,.05));this.time+=dt;this.updateRegion();
     this.updatePlayer(dt,input);
+    this.updateItems(dt);if(this.mode!=='playing')return;
     this.updateWeapons(dt);
     this.updateProjectiles(dt);
     this.updateMobs(dt);
     if(this.mode==='playing')this.updateHazards(dt);
     if(this.mode!=='playing')return;
     this.updateDrops(dt);
+    if(this.mode!=='playing')return;
     this.updateSpawns(dt);
     for(const e of this.effects)e.t+=dt;this.effects=this.effects.filter(e=>e.t<e.life);
     for(const n of this.numbers)n.t+=dt;this.numbers=this.numbers.filter(n=>n.t<1);
@@ -403,6 +495,7 @@ export class Game{
     p.moving=len>.1;
     if(p.moving){p.x+=x*this.moveSpeed*dt;p.y+=y*this.moveSpeed*dt;const l=Math.hypot(x,y);p.dir={x:x/l,y:y/l};if(Math.abs(x)>.15)p.face=x>0?1:-1;}
     p.invincible=Math.max(0,p.invincible-dt);
+    p.healBudget=Math.min(SKILL_HEAL_CAP*3,(p.healBudget??0)+SKILL_HEAL_CAP*dt);
     p.regenAcc+=this.stat('regen')*dt;if(p.regenAcc>=1){const n=Math.floor(p.regenAcc);p.regenAcc-=n;p.hp=Math.min(this.maxHp,p.hp+n);}
   }
 
@@ -412,11 +505,16 @@ export class Game{
     for(const [id,level]of Object.entries(this.weapons)){
       this.cooldowns[id]=(this.cooldowns[id]??0)-dt;
       if(this.cooldowns[id]>0)continue;
-      const s=weaponStats(id,level,this.jobs[id]);
-      if(this.fire(id,level,s)){this.cooldowns[id]=s.cooldown*haste;this.emit('fire',{weapon:id,skill:s.skill});if(s.heal)this.heal(s.heal);}
+      const s=this.stats(id);
+      if(this.fire(id,level,s)){this.cooldowns[id]=s.cooldown*haste;this.emit('fire',{weapon:id,skill:s.skill});if(s.heal)this.absorb(s.heal*this.cooldowns[id]);}
       else this.cooldowns[id]=.1; // nothing to aim at yet
     }
   }
+  // Skill HP absorption. `heal` on a skill is HP per second while it keeps hitting: each cast gives heal × its actual
+  // cooldown, so cooldown reduction does not multiply it, and all absorbing skills together give at most
+  // SKILL_HEAL_CAP per second ("HP를 흡수하는 스킬들이 너무 좋다", 2026-10-17: up to 6 HP/s before).
+  absorb(n){const p=this.player;p.healAcc=(p.healAcc??0)+Math.min(n,p.healBudget??0);p.healBudget=Math.max(0,(p.healBudget??0)-n);
+    if(p.healAcc>=1){const k=Math.floor(p.healAcc);p.healAcc-=k;this.heal(k);}}
   heal(n){const p=this.player,before=p.hp;p.hp=Math.min(this.maxHp,p.hp+n);if(p.hp>before)this.numbers.push({x:p.x,y:p.y-70,value:Math.round(p.hp-before),kind:'heal',t:0});}
   alive(){return this.mobs.filter(m=>!m.dying);}
   nearest(count,range=Infinity,from=this.player){
@@ -424,7 +522,7 @@ export class Game{
   }
   fire(id,level,s){
     const p=this.player,kind=s.kind,fx=s.skill,area=(s.area??1)*(1+this.stat('area')),freeze=s.freeze??0;
-    const on={freeze,crit:s.crit??0,steal:s.steal??0,stun:s.stun??0,weaken:s.weaken??0,push:s.push??0};   // carried by every hit of this cast
+    const on={freeze,crit:s.crit??0,steal:s.steal??0,stun:s.stun??0,weaken:s.weaken??0,push:(s.push??0)+this.itemStat('push')};   // carried by every hit of this cast
     const look=s.look??fx;   // the cast animation (Final Attack / Threaten have none of their own: Power Strike's is shown)
     // Final Attack: each monster hit may be struck once more right after.
     const follow=(mobs,delay)=>{if(s.follow)for(const m of mobs)if(this.random()<s.follow)this.damageMob(m,s.damage,fx,{delay:delay+.28,hitIndex:1,...on});};
@@ -572,7 +670,11 @@ export class Game{
       this.emit('bossDown',{mob:m.type,final:!!m.final});
       if(m.final){this.won=true;this.mode='won';this.emit('end',{won:true});return;}
       this.pendingLevels++;this.choiceKind='reward';
-    }else if(this.random()<POTION_CHANCE)this.drops.push({kind:'potion',item:'02000000',x:m.x,y:m.y,id:++this.serial});
+      if(this.continuous)this.lootQueue.push(m.type);
+    }else if(this.continuous){
+      if(this.kills%450===0)this.drops.push({kind:'loot',x:m.x-18,y:m.y,id:++this.serial});
+      if(this.random()<ITEM_DROP_CHANCE){const ids=Object.keys(CONSUMABLES),item=ids[Math.floor(this.random()*ids.length)];this.drops.push({kind:'item',item,x:m.x,y:m.y,id:++this.serial});}}
+    else if(this.random()<POTION_CHANCE)this.drops.push({kind:'potion',item:'02000000',x:m.x,y:m.y,id:++this.serial});
   }
 
   // ---------- projectiles ----------
@@ -610,16 +712,17 @@ export class Game{
   spawnDistance(){return Math.hypot(this.view.w/2,this.view.h/2)+60;}
   addMob(type,angle,distance,extra={}){
     const r=this.rules.mobs[type];if(!r)return null;const p=this.player;
-    const hp=Math.max(1,Math.round(r.hp**.72*this.hpScale));
-    const m={id:++this.serial,type,x:p.x+Math.cos(angle)*distance,y:p.y+Math.sin(angle)*distance,hp,maxHp:hp,exp:r.exp,
-      damage:Math.round((4+r.pad*.15)*TUNING.mobDamage),speed:Math.max(28,60*(1+r.speedStat/150)),radius:r.radius,height:r.height,flying:r.flying,
+    const d=this.continuous?difficultyAt(this.time):null,profile=d?this.mobProfile:null;
+    const hp=Math.max(1,Math.round(r.hp**.72*this.hpScale*(d?d.power/profile.power:1)));
+    const m={id:++this.serial,type,x:p.x+Math.cos(angle)*distance,y:p.y+Math.sin(angle)*distance,hp,maxHp:hp,exp:Math.max(1,Math.round(r.exp*this.xpScale*(d?d.exp/profile.exp:1))),
+      damage:Math.round((4+r.pad*.15)*TUNING.mobDamage*(d?d.damage/profile.damage:1)),speed:Math.max(28,60*(1+r.speedStat/150)),radius:r.radius,height:r.height,flying:r.flying,
       face:-1,anim:this.random()*1000,flash:0,dying:0,boss:false,...extra};
     this.mobs.push(m);return m;
   }
   spawnBoss(def){
     const r=this.rules.mobs[def.id],scale=def.scale??1;
     const hp=Math.round(def.hp*TUNING.bossHp);
-    const m=this.addMob(def.id,this.random()*Math.PI*2,this.spawnDistance(),{boss:true,final:!!def.final,hp,maxHp:hp,damage:Math.round(def.damage*TUNING.mobDamage),speed:def.speed,exp:Math.round(r.exp*.5),
+    const m=this.addMob(def.id,this.random()*Math.PI*2,this.spawnDistance(),{boss:true,final:!!def.final,hp,maxHp:hp,damage:Math.round(def.damage*TUNING.mobDamage),speed:def.speed,exp:Math.max(1,Math.round((def.rewardExp??r.exp*.5)*this.xpScale)),
       scale,radius:Math.round(r.radius*scale),height:Math.round(r.height*scale),patterns:def.patterns??[],summon:def.summon,bullet:def.bullet??'#ff6a5a',patCd:2.5});
     if(m){this.boss=m;this.emit('boss',{mob:def.id,final:!!def.final});}
     return m;
@@ -630,9 +733,9 @@ export class Game{
     this.emit('swarm',{count:n});
   }
   updateSpawns(dt){
-    const b=this.stage.bosses[this.bossIndex];
-    if(b&&this.time>=b.at){this.bossIndex++;this.spawnBoss(b);}
-    const sw=this.stage.swarms;
+    const b=this.bosses[this.bossIndex];
+    if(b&&!this.boss&&this.time>=b.at){this.bossIndex++;this.spawnBoss(b);}
+    const sw=this.continuous?JOURNEY_SWARMS:this.stage.swarms;
     if(sw[this.swarmIndex]!=null&&this.time>=sw[this.swarmIndex]){this.swarm();this.swarmIndex++;}
     this.spawnAcc+=dt*this.wave.rate*TUNING.spawnRate;
     while(this.spawnAcc>=1){this.spawnAcc--;this.spawn();}
@@ -728,6 +831,7 @@ export class Game{
   }
   hurt(m){
     const p=this.player;p.invincible=PLAYER.invincible;
+    if(this.trophies.includes('shell')&&this.itemTimers.guard<=0){this.itemTimers.guard=12;this.effects.push({kind:'shock',x:p.x,y:p.y,r:45,t:0,life:.4,color:'#93dbff'});this.emit('guard');return;}
     if(this.random()<this.stat('dodge')){this.numbers.push({x:p.x,y:p.y-70,value:'MISS',kind:'miss',t:0});return;}
     const dmg=Math.max(1,Math.round(m.damage*(1-Math.min(.6,this.stat('armor')))*(.9+this.random()*.2)));
     p.hp=Math.max(0,p.hp-dmg);
@@ -751,12 +855,81 @@ export class Game{
       this.drops=this.drops.filter(d=>!old.includes(d));if(sum)this.drops.push({kind:'meso',x:old[0].x,y:old[0].y,value:sum,id:++this.serial});}
   }
   collect(d){
+    if(d.kind==='loot'){this.lootQueue.push('field');if(this.mode==='playing'&&!this.pendingLevels)this.openLoot();return;}
+    if(d.kind==='item'){this.useConsumable(d.item);return;}
     if(d.kind==='potion'){const p=this.player,heal=d.item==='02000005'?this.maxHp:30;p.hp=Math.min(this.maxHp,p.hp+heal);this.emit('potion',{item:d.item,heal});return;}
     this.emit('pickup',{value:d.value});this.gainExp(d.value*(1+this.stat('growth')));
   }
   gainExp(v){
     const p=this.player;p.exp+=v;
     while(p.exp>=this.expNeed){p.exp-=this.expNeed;p.level++;this.pendingLevels++;this.emit('level',{level:p.level});}
+  }
+
+  // ---------- equipment and boss loot (run-local, independent of cosmetic avatar) ----------
+  useConsumable(id){
+    const c=CONSUMABLES[id];if(!c)return false;
+    if(c.effect==='heal')this.heal(c.value);
+    if(c.effect==='cleanse'){const p=this.player;this.hazards=this.hazards.filter(h=>(h.x-p.x)**2+(h.y-p.y)**2>340**2);p.invincible=Math.max(p.invincible,3);this.effects.push({kind:'shock',x:p.x,y:p.y,r:340,t:0,life:.6,color:'#c5f7ff'});}
+    if(c.effect==='magnet')for(const d of this.drops)if(d.kind==='meso')d.pull=900;
+    if(c.effect==='buff')this.buffs[id]={stat:c.stat,value:c.value,time:c.time,max:c.time}; // drinking again refreshes it
+    this.emit('consume',{item:id});return true;
+  }
+  updateItems(dt){
+    for(const [id,b] of Object.entries(this.buffs)){b.time-=dt;if(b.time<=0)delete this.buffs[id];}
+    this.itemTimers.guard=Math.max(0,this.itemTimers.guard-dt);this.itemTimers.spore=Math.max(0,this.itemTimers.spore-dt);
+    if(this.trophies.includes('spore')&&this.itemTimers.spore<=0&&this.nearest(1,180).length){
+      this.itemTimers.spore=8;const p=this.player;this.effects.push({kind:'shock',x:p.x,y:p.y,r:180,t:0,life:.6,color:'#e6b0ff'});
+      this.hitArea(m=>dist2(m,p)<=180**2,25+p.level*2,'trophy-spore',{quiet:true});
+    }
+  }
+  openLoot(){
+    const boss=this.lootQueue.shift();if(!boss)return;
+    const rank=this.continuous?(this.time>=720?3:this.time>=360?2:1):Math.min(3,this.regionIndex+1),fresh=id=>{const e=this.equipment[EQUIPMENT[id].slot];return e?.id!==id||e.rank<rank;};
+    // Armour of this region's rank, plus the weapon of each family the hero has a skill for (that region's weapon).
+    const owned=new Set(Object.keys(this.weapons).map(weaponFamilyOf).filter(Boolean));
+    const pool=Object.keys(EQUIPMENT).filter(id=>EQUIPMENT[id].slot!=='weapon'&&fresh(id))
+      .concat([...owned].map(f=>WEAPON_FAMILIES[f].items[rank-1]).filter(fresh));
+    this.choices=[];for(let i=0;i<2&&pool.length;i++){const id=pool.splice(Math.floor(this.random()*pool.length),1)[0];this.choices.push({type:'equip',id,rank:EQUIPMENT[id].slot==='weapon'?EQUIPMENT[id].rank:rank});}
+    const trophy=Object.keys(TROPHIES).find(id=>TROPHIES[id].boss===boss&&!this.trophies.includes(id));
+    if(trophy)this.choices.push({type:'trophy',id:trophy});
+    else{
+      const scroll=this.scrollOffer(),slots=Object.keys(this.equipment),enchants=slots.flatMap(slot=>Object.keys(ENCHANTS).filter(id=>this.equipment[slot].enchant!==id).map(id=>({type:'enchant',id,slot})));
+      if(scroll&&(!enchants.length||this.random()<.65))this.choices.push(scroll);
+      else if(enchants.length)this.choices.push(enchants[Math.floor(this.random()*enchants.length)]);
+      else if(pool.length){const id=pool[Math.floor(this.random()*pool.length)];this.choices.push({type:'equip',id,rank:EQUIPMENT[id].slot==='weapon'?EQUIPMENT[id].rank:rank});}
+    }
+    this.mode='loot';this.emit('loot',{boss});
+  }
+  // An original scroll for a worn item that still has upgrade slots (tuc), its success rate drawn by SCROLL_RATE_WEIGHT.
+  scrollOffer(){
+    const slots=Object.keys(this.equipment).filter(slot=>{const e=this.equipment[slot];return (e.used??0)<EQUIPMENT[e.id].tuc;});
+    if(!slots.length)return null;
+    const slot=slots[Math.floor(this.random()*slots.length)],e=this.equipment[slot];
+    const sets=slot==='weapon'?[WEAPON_SCROLLS[EQUIPMENT[e.id].family]]:SCROLL_SETS[slot],set=sets[Math.floor(this.random()*sets.length)];
+    const total=set.reduce((t,id)=>t+SCROLL_RATE_WEIGHT[SCROLLS[id].success],0);let roll=this.random()*total;
+    const id=set.find(id=>(roll-=SCROLL_RATE_WEIGHT[SCROLLS[id].success])<0)??set[0];
+    return {type:'scroll',id,slot};
+  }
+  // Reads a scroll like the client: one upgrade slot is used either way; success adds its stats; a failed scroll that
+  // can curse (70% / 30%) breaks the item with that chance.
+  applyScroll(slot,id){
+    const e=this.equipment[slot],sc=SCROLLS[id];if(!e||!sc||(e.used??0)>=EQUIPMENT[e.id].tuc)return null;
+    const allowed=slot==='weapon'?WEAPON_SCROLLS[EQUIPMENT[e.id].family]:SCROLL_SETS[slot]?.flat();
+    if(!allowed?.includes(id))return null;
+    e.used=(e.used??0)+1;const success=this.random()*100<sc.success;let destroyed=false;
+    if(success){e.upgrades=(e.upgrades??0)+1;e.bonus??={};for(const [k,v] of Object.entries(scrollStats(id)))e.bonus[k]=(e.bonus[k]??0)+v;}
+    else if(sc.cursed&&this.random()*100<sc.cursed){destroyed=true;delete this.equipment[slot];}
+    const result={slot,id,success,destroyed,item:e.id};this.emit('scroll',result);return result;
+  }
+  chooseLoot(index){
+    const c=this.choices[index];if(!c)return false;const before=this.maxHp;
+    if(c.type==='equip'){const slot=EQUIPMENT[c.id].slot;this.equipment[slot]={id:c.id,rank:c.rank,enchant:this.equipment[slot]?.enchant??null,used:0,upgrades:0,bonus:{}};}
+    else if(c.type==='scroll'){if(!this.applyScroll(c.slot,c.id))return false;}
+    else if(c.type==='enchant'){if(!this.equipment[c.slot])return false;this.equipment[c.slot].enchant=c.id;}
+    else if(c.type==='trophy'&&!this.trophies.includes(c.id))this.trophies.push(c.id);
+    else return false;
+    this.player.hp=Math.min(this.maxHp,this.player.hp+Math.max(0,this.maxHp-before));this.emit('itemChoice',{choice:c});
+    this.choices=[];this.mode='playing';if(this.pendingLevels)this.openChoices();else if(this.lootQueue.length)this.openLoot();return true;
   }
 
   // ---------- level-up choices ----------
@@ -771,18 +944,26 @@ export class Game{
   // Job advancements a boss reward can offer: skills with a job line, high enough, below the stage's limit.
   // A skill not yet advanced offers every branch (as Maple's 2nd-job choice).
   advanceChoices(){
-    const out=[],limit=(this.stage.maxJob??4)-1;
+    const out=[],limit=this.continuous?3:(this.stage.maxJob??4)-1;
     for(const [id,lv]of Object.entries(this.weapons)){
       const lines=JOBS[id],job=this.jobs[id],tier=job?.tier??0;
       if(!lines||tier>=limit||lv<ADV_LEVEL[tier])continue;
+      if(this.continuous&&this.time<JOURNEY_JOB_AT[tier])continue;
       if(job){if(tier<lines[job.branch].tiers.length)out.push({type:'advance',id,branch:job.branch,tier:tier+1});}
       else lines.forEach((l,b)=>out.push({type:'advance',id,branch:b,tier:1}));
     }
-    return out;
+    // Keep an invested job line visible even when other equipped skills can also advance.
+    return this.continuous?out.sort((a,b)=>b.tier-a.tier||this.weapons[b.id]-this.weapons[a.id]):out;
   }
   openChoices(){
     const pool=this.choicePool();this.choices=[];
     if(this.choiceKind==='reward')this.choices.push(...this.advanceChoices().slice(0,3));
+    // A continuous run always offers a way to strengthen an equipped skill, instead of diluting progress
+    // among the many class lines. Players can still pick new skills/passives in the other slots.
+    if(this.continuous&&this.choices.length<3){
+      const owned=pool.filter(c=>c.type==='weapon'&&this.weapons[c.id]);
+      if(owned.length)this.choices.push(owned[Math.floor(this.random()*owned.length)]);
+    }
     // Early on, always offer a new weapon so the build grows.
     const fresh=pool.filter(c=>c.type==='weapon'&&c.level===1);
     if(fresh.length&&Object.keys(this.weapons).length<3&&this.choices.length<3)this.choices.push(fresh[Math.floor(this.random()*fresh.length)]);
@@ -792,6 +973,7 @@ export class Game{
     this.mode=this.choiceKind==='reward'?'reward':'upgrade';
   }
   choose(index){
+    if(this.mode==='loot')return this.chooseLoot(index);
     if(!['upgrade','reward'].includes(this.mode)||!this.choices[index])return false;
     const c=this.choices[index],p=this.player;
     if(c.type==='weapon'){this.weapons[c.id]=c.level;this.cooldowns[c.id]??=.3;}
@@ -802,14 +984,14 @@ export class Game{
     if(this.mode==='reward')p.hp=this.maxHp;
     this.emit('choose',{choice:c});this.choices=[];this.choiceKind='upgrade';
     this.pendingLevels=Math.max(0,this.pendingLevels-1);
-    this.mode='playing';if(this.pendingLevels)this.openChoices();
+    this.mode='playing';if(this.pendingLevels)this.openChoices();else if(this.lootQueue.length)this.openLoot();
     return true;
   }
   pause(){if(this.mode==='playing')this.mode='paused';else if(this.mode==='paused')this.mode='playing';}
   snapshot(){
     const p=this.player;
-    return {stage:this.stage.id,mode:this.mode,time:this.time,kills:this.kills,level:p.level,exp:p.exp,expNeed:this.expNeed,hp:p.hp,maxHp:this.maxHp,x:p.x,y:p.y,
+    return {stage:this.stage.id,route:this.route.map(p=>p.id),bossRoute:this.bosses.map(b=>b.id),continuous:this.continuous,regionIndex:this.regionIndex,mode:this.mode,time:this.time,kills:this.kills,level:p.level,exp:p.exp,expNeed:this.expNeed,hp:p.hp,maxHp:this.maxHp,x:p.x,y:p.y,
       mobs:this.alive().length,drops:this.drops.length,projectiles:this.projectiles.length,hazards:this.hazards.length,boss:this.boss?{id:this.boss.type,hp:this.boss.hp,maxHp:this.boss.maxHp}:null,
-      weapons:{...this.weapons},passives:{...this.passives},jobs:structuredClone(this.jobs)};
+      weapons:{...this.weapons},passives:{...this.passives},jobs:structuredClone(this.jobs),equipment:structuredClone(this.equipment),trophies:[...this.trophies]};
   }
 }

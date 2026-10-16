@@ -1,0 +1,1448 @@
+{
+  "source": "Map.wz",
+  "sha256": "2181d3de07442a669b10fa34bf7c15f73a6e24abfb1ed0470941905d60e3c39d",
+  "padding": 8,
+  "maps": [
+    "102000000",
+    "103000000",
+    "105040300",
+    "200000000"
+  ],
+  "mapInfo": [
+    {
+      "id": "102000000",
+      "bgm": "Bgm00/Nightmare"
+    },
+    {
+      "id": "103000000",
+      "bgm": "Bgm01/BadGuys"
+    },
+    {
+      "id": "105040300",
+      "bgm": "Bgm00/SleepyWood"
+    },
+    {
+      "id": "200000000",
+      "bgm": "Bgm04/Shinin'Harbor"
+    }
+  ],
+  "aliases": {
+    "perion-chief-hut": {
+      "group": "perion",
+      "maxWidth": 290,
+      "maxHeight": 205,
+      "parts": [
+        {
+          "source": "Obj/houseDR.img/house3/basic/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0100.png",
+              "w": 448,
+              "h": 288,
+              "ox": 219,
+              "oy": 108,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "perion-temple": {
+      "group": "perion",
+      "maxWidth": 310,
+      "maxHeight": 180,
+      "parts": [
+        {
+          "source": "Obj/houseDR.img/house5/basic/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0098.png",
+              "w": 743,
+              "h": 333,
+              "ox": 336,
+              "oy": 164,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "perion-tent": {
+      "group": "perion",
+      "maxWidth": 230,
+      "maxHeight": 215,
+      "parts": [
+        {
+          "source": "Obj/houseDR.img/house2/basic/2",
+          "x": 1980,
+          "y": 584,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0056.png",
+              "w": 220,
+              "h": 157,
+              "ox": 110,
+              "oy": 78,
+              "delay": 100
+            }
+          ],
+          "z": 204
+        },
+        {
+          "source": "Obj/houseDR.img/house2/deco/5",
+          "x": 1980,
+          "y": 609,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0057.png",
+              "w": 167,
+              "h": 40,
+              "ox": 83,
+              "oy": 20,
+              "delay": 100
+            }
+          ],
+          "z": 205
+        },
+        {
+          "source": "Obj/houseDR.img/house2/deco/9",
+          "x": 1989,
+          "y": 477,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0058.png",
+              "w": 42,
+              "h": 72,
+              "ox": 21,
+              "oy": 36,
+              "delay": 100
+            }
+          ],
+          "z": 205
+        },
+        {
+          "source": "Obj/houseDR.img/house2/deco/2",
+          "x": 2024,
+          "y": 635,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0059.png",
+              "w": 125,
+              "h": 99,
+              "ox": 62,
+              "oy": 49,
+              "delay": 100
+            }
+          ],
+          "z": 206
+        },
+        {
+          "source": "Obj/houseDR.img/house2/deco/7",
+          "x": 1992,
+          "y": 570,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0067.png",
+              "w": 28,
+              "h": 31,
+              "ox": 14,
+              "oy": 15,
+              "delay": 100
+            }
+          ],
+          "z": 206
+        }
+      ]
+    },
+    "perion-forge": {
+      "group": "perion",
+      "maxWidth": 310,
+      "maxHeight": 240,
+      "parts": [
+        {
+          "source": "Obj/houseDR.img/house1/basic/1",
+          "x": 632,
+          "y": 536,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0041.png",
+              "w": 172,
+              "h": 125,
+              "ox": 86,
+              "oy": 62,
+              "delay": 100
+            }
+          ],
+          "z": 201
+        },
+        {
+          "source": "Obj/houseDR.img/house1/basic/0",
+          "x": 800,
+          "y": 482,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0040.png",
+              "w": 276,
+              "h": 224,
+              "ox": 138,
+              "oy": 112,
+              "delay": 100
+            }
+          ],
+          "z": 202
+        },
+        {
+          "source": "Obj/houseDR.img/house1/deco/1",
+          "x": 885,
+          "y": 418,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0043.png",
+              "w": 96,
+              "h": 202,
+              "ox": 48,
+              "oy": 101,
+              "delay": 100
+            }
+          ],
+          "z": 203
+        },
+        {
+          "source": "Obj/houseDR.img/house1/deco/0",
+          "x": 771,
+          "y": 441,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0042.png",
+              "w": 151,
+              "h": 109,
+              "ox": 75,
+              "oy": 54,
+              "delay": 100
+            }
+          ],
+          "z": 204
+        },
+        {
+          "source": "Obj/houseDR.img/house1/deco/2",
+          "x": 908,
+          "y": 568,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0044.png",
+              "w": 179,
+              "h": 57,
+              "ox": 89,
+              "oy": 28,
+              "delay": 100
+            }
+          ],
+          "z": 204
+        },
+        {
+          "source": "Obj/houseDR.img/house1/deco/4",
+          "x": 740,
+          "y": 567,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0045.png",
+              "w": 77,
+              "h": 51,
+              "ox": 38,
+              "oy": 25,
+              "delay": 100
+            }
+          ],
+          "z": 204
+        },
+        {
+          "source": "Obj/houseDR.img/house1/deco/5",
+          "x": 805,
+          "y": 575,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0046.png",
+              "w": 50,
+              "h": 29,
+              "ox": 25,
+              "oy": 14,
+              "delay": 100
+            }
+          ],
+          "z": 205
+        }
+      ]
+    },
+    "perion-tree": {
+      "group": "perion",
+      "maxWidth": 190,
+      "maxHeight": 170,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/dryRock/nature/23",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0047.png",
+              "w": 291,
+              "h": 236,
+              "ox": 145,
+              "oy": 118,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "perion-thorns": {
+      "group": "perion",
+      "maxWidth": 125,
+      "maxHeight": 105,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/dryRock/nature/1",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0093.png",
+              "w": 194,
+              "h": 146,
+              "ox": 97,
+              "oy": 66,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "perion-dry-bush": {
+      "group": "perion",
+      "maxWidth": 100,
+      "maxHeight": 60,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/dryRock/nature/13",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0018.png",
+              "w": 176,
+              "h": 86,
+              "ox": 88,
+              "oy": 43,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "perion-stones": {
+      "group": "perion",
+      "maxWidth": 110,
+      "maxHeight": 50,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/dryRock/nature/18",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0048.png",
+              "w": 153,
+              "h": 63,
+              "ox": 76,
+              "oy": 31,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "perion-twig": {
+      "group": "perion",
+      "maxWidth": 66,
+      "maxHeight": 45,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/dryRock/nature/14",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0052.png",
+              "w": 102,
+              "h": 60,
+              "ox": 51,
+              "oy": 30,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "perion-grass": {
+      "group": "perion",
+      "maxWidth": 42,
+      "maxHeight": 50,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/dryRock/nature/11",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0054.png",
+              "w": 67,
+              "h": 72,
+              "ox": 33,
+              "oy": 36,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "perion-totem": {
+      "group": "perion",
+      "maxWidth": 58,
+      "maxHeight": 130,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/dryRock/artificiality/25",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0017.png",
+              "w": 75,
+              "h": 172,
+              "ox": 37,
+              "oy": 86,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "perion-skull": {
+      "group": "perion",
+      "maxWidth": 42,
+      "maxHeight": 60,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/dryRock/artificiality/5",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0099.png",
+              "w": 49,
+              "h": 66,
+              "ox": 24,
+              "oy": 33,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "kerning-factory": {
+      "group": "kerning",
+      "maxWidth": 325,
+      "maxHeight": 270,
+      "parts": [
+        {
+          "source": "Obj/houseMC.img/house6/basic/0",
+          "x": -705,
+          "y": -67,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0136.png",
+              "w": 680,
+              "h": 447,
+              "ox": 340,
+              "oy": 223,
+              "delay": 100
+            }
+          ],
+          "z": 303
+        },
+        {
+          "source": "Obj/houseMC.img/house6/basic/1",
+          "x": -705,
+          "y": -67,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0183.png",
+              "w": 353,
+              "h": 175,
+              "ox": 330,
+              "oy": 278,
+              "delay": 100
+            }
+          ],
+          "z": 403
+        },
+        {
+          "source": "Obj/houseMC.img/house6/basic/2",
+          "x": -705,
+          "y": -68,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0226.png",
+              "w": 368,
+              "h": 171,
+              "ox": 107,
+              "oy": -53,
+              "delay": 100
+            }
+          ],
+          "z": 603
+        },
+        {
+          "source": "Obj/houseMC.img/house6/basic/3",
+          "x": -1012,
+          "y": -87,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0227.png",
+              "w": 43,
+              "h": 228,
+              "ox": 19,
+              "oy": 104,
+              "delay": 100
+            }
+          ],
+          "z": 603
+        },
+        {
+          "source": "Obj/houseMC.img/house6/basic/4",
+          "x": -501,
+          "y": 34,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0228.png",
+              "w": 43,
+              "h": 109,
+              "ox": 23,
+              "oy": 56,
+              "delay": 100
+            }
+          ],
+          "z": 603
+        }
+      ]
+    },
+    "kerning-apartments": {
+      "group": "kerning",
+      "maxWidth": 260,
+      "maxHeight": 340,
+      "parts": [
+        {
+          "source": "Obj/houseMC.img/house5/basic/0",
+          "x": 1167,
+          "y": -217,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0137.png",
+              "w": 561,
+              "h": 749,
+              "ox": 280,
+              "oy": 374,
+              "delay": 100
+            }
+          ],
+          "z": 305
+        },
+        {
+          "source": "Obj/houseMC.img/house5/basic/1",
+          "x": 1167,
+          "y": -217,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0184.png",
+              "w": 451,
+              "h": 512,
+              "ox": 237,
+              "oy": 288,
+              "delay": 100
+            }
+          ],
+          "z": 403
+        },
+        {
+          "source": "Obj/houseMC.img/house5/basic/2",
+          "x": 963,
+          "y": -295,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0188.png",
+              "w": 43,
+              "h": 143,
+              "ox": 19,
+              "oy": 72,
+              "delay": 100
+            }
+          ],
+          "z": 603
+        },
+        {
+          "source": "Obj/houseMC.img/house5/basic/3",
+          "x": 1340,
+          "y": -227,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0229.png",
+              "w": 43,
+              "h": 143,
+              "ox": 23,
+              "oy": 72,
+              "delay": 100
+            }
+          ],
+          "z": 603
+        },
+        {
+          "source": "Obj/houseMC.img/house5/basic/4",
+          "x": 1166,
+          "y": -530,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0230.png",
+              "w": 33,
+              "h": 68,
+              "ox": 16,
+              "oy": 39,
+              "delay": 100
+            }
+          ],
+          "z": 603
+        }
+      ]
+    },
+    "kerning-shop": {
+      "group": "kerning",
+      "maxWidth": 280,
+      "maxHeight": 225,
+      "parts": [
+        {
+          "source": "Obj/houseMC.img/house8/basic/0",
+          "x": 1185,
+          "y": 285,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0255.png",
+              "w": 473,
+              "h": 291,
+              "ox": 236,
+              "oy": 145,
+              "delay": 100
+            }
+          ],
+          "z": 603
+        },
+        {
+          "source": "Obj/houseMC.img/house8/basic/1",
+          "x": 1111,
+          "y": 414,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0256.png",
+              "w": 69,
+              "h": 28,
+              "ox": 34,
+              "oy": 14,
+              "delay": 100
+            }
+          ],
+          "z": 604
+        },
+        {
+          "source": "Obj/houseMC.img/house8/basic/2",
+          "x": 1252,
+          "y": 390,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0266.png",
+              "w": 97,
+              "h": 72,
+              "ox": 48,
+              "oy": 36,
+              "delay": 100
+            }
+          ],
+          "z": 703
+        }
+      ]
+    },
+    "kerning-lamp": {
+      "group": "kerning",
+      "maxWidth": 85,
+      "maxHeight": 270,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/metroCity/artificiality/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0132.png",
+              "w": 183,
+              "h": 538,
+              "ox": 91,
+              "oy": 269,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "kerning-phone": {
+      "group": "kerning",
+      "maxWidth": 95,
+      "maxHeight": 155,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/metroCity/artificiality/1",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0219.png",
+              "w": 145,
+              "h": 201,
+              "ox": 317,
+              "oy": 66,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "kerning-pipes": {
+      "group": "kerning",
+      "maxWidth": 200,
+      "maxHeight": 100,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/metroCity/artificiality/2",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0240.png",
+              "w": 266,
+              "h": 130,
+              "ox": 133,
+              "oy": 65,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "kerning-hydrant": {
+      "group": "kerning",
+      "maxWidth": 35,
+      "maxHeight": 52,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/metroCity/artificiality/22",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0145.png",
+              "w": 48,
+              "h": 64,
+              "ox": 24,
+              "oy": 32,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "kerning-barrier": {
+      "group": "kerning",
+      "maxWidth": 125,
+      "maxHeight": 60,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/metroCity/artificiality/17",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0190.png",
+              "w": 143,
+              "h": 62,
+              "ox": 71,
+              "oy": 31,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "kerning-trash": {
+      "group": "kerning",
+      "maxWidth": 45,
+      "maxHeight": 50,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/metroCity/artificiality/10",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0160.png",
+              "w": 50,
+              "h": 52,
+              "ox": 25,
+              "oy": 26,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "kerning-planks": {
+      "group": "kerning",
+      "maxWidth": 60,
+      "maxHeight": 115,
+      "parts": [
+        {
+          "source": "Obj/acc2.img/metroCity/artificiality/9",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0238.png",
+              "w": 75,
+              "h": 143,
+              "ox": 37,
+              "oy": 71,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "sleepy-lodge": {
+      "group": "sleepy",
+      "maxWidth": 260,
+      "maxHeight": 300,
+      "parts": [
+        {
+          "source": "Obj/houseDW.img/house1/basic/4",
+          "x": 729,
+          "y": -57,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0321.png",
+              "w": 189,
+              "h": 100,
+              "ox": 94,
+              "oy": 50,
+              "delay": 100
+            }
+          ],
+          "z": 302
+        },
+        {
+          "source": "Obj/houseDW.img/house1/deco/1",
+          "x": 792,
+          "y": -80,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0322.png",
+              "w": 159,
+              "h": 61,
+              "ox": 79,
+              "oy": 30,
+              "delay": 100
+            }
+          ],
+          "z": 303
+        },
+        {
+          "source": "Obj/houseDW.img/house1/basic/0",
+          "x": 790,
+          "y": 129,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0277.png",
+              "w": 270,
+              "h": 244,
+              "ox": 161,
+              "oy": 99,
+              "delay": 100
+            }
+          ],
+          "z": 304
+        },
+        {
+          "source": "Obj/houseDW.img/house1/basic/3",
+          "x": 760,
+          "y": 64,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0320.png",
+              "w": 322,
+              "h": 210,
+              "ox": 161,
+              "oy": 105,
+              "delay": 100
+            }
+          ],
+          "z": 305
+        },
+        {
+          "source": "Obj/door.img/darkWood/door/3",
+          "x": 808,
+          "y": 202,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0324.png",
+              "w": 78,
+              "h": 100,
+              "ox": 39,
+              "oy": 50,
+              "delay": 100
+            }
+          ],
+          "z": 305
+        },
+        {
+          "source": "Obj/door.img/darkWood/window/2",
+          "x": 799,
+          "y": 99,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0323.png",
+              "w": 95,
+              "h": 53,
+              "ox": 47,
+              "oy": 26,
+              "delay": 100
+            }
+          ],
+          "z": 306
+        },
+        {
+          "source": "Obj/door.img/darkWood/doorpull/2",
+          "x": 834,
+          "y": 183,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0325.png",
+              "w": 14,
+              "h": 39,
+              "ox": 7,
+              "oy": 19,
+              "delay": 100
+            }
+          ],
+          "z": 306
+        },
+        {
+          "source": "Obj/door.img/darkWood/doorpull/0",
+          "x": 805,
+          "y": 212,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0326.png",
+              "w": 46,
+              "h": 60,
+              "ox": 23,
+              "oy": 30,
+              "delay": 100
+            }
+          ],
+          "z": 306
+        },
+        {
+          "source": "Obj/door.img/darkWood/door/2",
+          "x": 818,
+          "y": 196,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0327.png",
+              "w": 104,
+              "h": 117,
+              "ox": 52,
+              "oy": 58,
+              "delay": 100
+            }
+          ],
+          "z": 307
+        }
+      ]
+    },
+    "sleepy-stump": {
+      "group": "sleepy",
+      "maxWidth": 290,
+      "maxHeight": 180,
+      "parts": [
+        {
+          "source": "Obj/houseDW.img/house3/basic/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0328.png",
+              "w": 460,
+              "h": 244,
+              "ox": 230,
+              "oy": 122,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "sleepy-mushrooms": {
+      "group": "sleepy",
+      "maxWidth": 95,
+      "maxHeight": 130,
+      "parts": [
+        {
+          "source": "Obj/houseDW.img/house4/deco/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0286.png",
+              "w": 150,
+              "h": 101,
+              "ox": 75,
+              "oy": 50,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "sleepy-arch": {
+      "group": "sleepy",
+      "maxWidth": 190,
+      "maxHeight": 175,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/darkWood/artificiality/6",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0289.png",
+              "w": 280,
+              "h": 322,
+              "ox": 197,
+              "oy": 322,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "sleepy-root": {
+      "group": "sleepy",
+      "maxWidth": 155,
+      "maxHeight": 170,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/darkWood/artificiality/8",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0291.png",
+              "w": 286,
+              "h": 230,
+              "ox": 143,
+              "oy": 115,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "sleepy-moss": {
+      "group": "sleepy",
+      "maxWidth": 110,
+      "maxHeight": 90,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/darkWood/nature/9",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0287.png",
+              "w": 138,
+              "h": 97,
+              "ox": 69,
+              "oy": 48,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "sleepy-bush": {
+      "group": "sleepy",
+      "maxWidth": 105,
+      "maxHeight": 60,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/darkWood/nature/20",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0288.png",
+              "w": 149,
+              "h": 67,
+              "ox": 32,
+              "oy": 52,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "sleepy-vine": {
+      "group": "sleepy",
+      "maxWidth": 38,
+      "maxHeight": 78,
+      "parts": [
+        {
+          "source": "Obj/acc1.img/darkWood/nature/23",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0303.png",
+              "w": 44,
+              "h": 88,
+              "ox": 22,
+              "oy": 44,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "orbis-house-blue": {
+      "group": "orbis",
+      "maxWidth": 235,
+      "maxHeight": 300,
+      "parts": [
+        {
+          "source": "Obj/houseSS.img/house2/basic/0",
+          "x": 153,
+          "y": -285,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0353.png",
+              "w": 277,
+              "h": 404,
+              "ox": 138,
+              "oy": 202,
+              "delay": 100
+            }
+          ],
+          "z": 3
+        },
+        {
+          "source": "Obj/houseSS.img/house2/basic/1",
+          "x": 178,
+          "y": -137,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0444.png",
+              "w": 57,
+              "h": 32,
+              "ox": 28,
+              "oy": 16,
+              "delay": 100
+            }
+          ],
+          "z": 103
+        }
+      ]
+    },
+    "orbis-house-wing": {
+      "group": "orbis",
+      "maxWidth": 235,
+      "maxHeight": 300,
+      "parts": [
+        {
+          "source": "Obj/houseSS.img/house8/basic/0",
+          "x": -664,
+          "y": -204,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0367.png",
+              "w": 290,
+              "h": 337,
+              "ox": 145,
+              "oy": 168,
+              "delay": 100
+            }
+          ],
+          "z": 103
+        },
+        {
+          "source": "Obj/houseSS.img/house8/basic/1",
+          "x": -653,
+          "y": -428,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0368.png",
+              "w": 44,
+              "h": 104,
+              "ox": 22,
+              "oy": 52,
+              "delay": 100
+            }
+          ],
+          "z": 103
+        }
+      ]
+    },
+    "orbis-house-rose": {
+      "group": "orbis",
+      "maxWidth": 235,
+      "maxHeight": 300,
+      "parts": [
+        {
+          "source": "Obj/houseSS.img/house9/basic/1",
+          "x": 1662,
+          "y": -410,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0390.png",
+              "w": 38,
+              "h": 38,
+              "ox": 19,
+              "oy": 19,
+              "delay": 100
+            }
+          ],
+          "z": 103
+        },
+        {
+          "source": "Obj/houseSS.img/house9/basic/0",
+          "x": 1652,
+          "y": -188,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0389.png",
+              "w": 297,
+              "h": 389,
+              "ox": 125,
+              "oy": 237,
+              "delay": 100
+            }
+          ],
+          "z": 104
+        }
+      ]
+    },
+    "orbis-statue": {
+      "group": "orbis",
+      "maxWidth": 80,
+      "maxHeight": 175,
+      "parts": [
+        {
+          "source": "Obj/acc3.img/skyStation/set1/18",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0404.png",
+              "w": 90,
+              "h": 192,
+              "ox": 45,
+              "oy": 96,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "orbis-column": {
+      "group": "orbis",
+      "maxWidth": 72,
+      "maxHeight": 125,
+      "parts": [
+        {
+          "source": "Obj/acc3.img/skyStation/set1/10",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0370.png",
+              "w": 65,
+              "h": 109,
+              "ox": 32,
+              "oy": 54,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "orbis-ruin": {
+      "group": "orbis",
+      "maxWidth": 72,
+      "maxHeight": 105,
+      "parts": [
+        {
+          "source": "Obj/acc3.img/skyStation/ivy/0",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0413.png",
+              "w": 69,
+              "h": 108,
+              "ox": 34,
+              "oy": 54,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "orbis-ivy": {
+      "group": "orbis",
+      "maxWidth": 88,
+      "maxHeight": 64,
+      "parts": [
+        {
+          "source": "Obj/acc3.img/skyStation/ivy/6",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0420.png",
+              "w": 106,
+              "h": 76,
+              "ox": 53,
+              "oy": 38,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "orbis-topiary": {
+      "group": "orbis",
+      "maxWidth": 86,
+      "maxHeight": 185,
+      "parts": [
+        {
+          "source": "Obj/acc3.img/skyStation/nature/1",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0425.png",
+              "w": 115,
+              "h": 238,
+              "ox": 57,
+              "oy": 119,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "orbis-topiary-round": {
+      "group": "orbis",
+      "maxWidth": 86,
+      "maxHeight": 185,
+      "parts": [
+        {
+          "source": "Obj/acc3.img/skyStation/nature/3",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0426.png",
+              "w": 114,
+              "h": 234,
+              "ox": 57,
+              "oy": 117,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    },
+    "orbis-bench": {
+      "group": "orbis",
+      "maxWidth": 135,
+      "maxHeight": 47,
+      "parts": [
+        {
+          "source": "Obj/acc3.img/skyStation/artificiality/9",
+          "x": 0,
+          "y": 0,
+          "frames": [
+            {
+              "src": "../field-expansion/raw-0447.png",
+              "w": 174,
+              "h": 47,
+              "ox": 87,
+              "oy": 23,
+              "delay": 100
+            }
+          ],
+          "z": 0
+        }
+      ]
+    }
+  },
+  "textures": {}
+}

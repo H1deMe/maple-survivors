@@ -1,32 +1,14 @@
 // Seeded top-view layouts with full original KMS map objects and preassembled mushroom buildings.
-// Ground-plane geometry is adapted for free movement; native tile textures dress the village squares.
+// Floor tiles repeat uniformly; the seeded scene layout stays independent of the floor.
 import {buildArt} from './field-art.mjs';
 import {HarborField} from './harbor-field.mjs';
 import {ElliniaField} from './ellinia-field.mjs';
-import {nativeTexture} from './native-field-art.mjs';
+import {paintFloor} from './floor-tiles.mjs';
 import {spaceStructures,artExtents} from './field-geometry.mjs';
-const CHUNK=512,GRID=8,SCENE=680,SINGLE=155,PLAZA=200,ROAD_CELL=960;
+const CHUNK=512,SCENE=680,SINGLE=155,PLAZA=200,ROAD_CELL=960;
 
 function hash(x,y,seed){let h=Math.imul(x|0,374761393)^Math.imul(y|0,668265263)^Math.imul(seed,2246822519);h=Math.imul(h^h>>>13,1274126177);return ((h^h>>>16)>>>0)/4294967296;}
 function rng(x,y,seed){let s=Math.floor(hash(x,y,seed)*4294967296)||1;return ()=>{s^=s<<13;s^=s>>>17;s^=s<<5;return (s>>>0)/4294967296;};}
-const smooth=t=>t*t*(3-2*t);
-function noise(x,y,seed){
-  const xi=Math.floor(x),yi=Math.floor(y),xf=smooth(x-xi),yf=smooth(y-yi);
-  const a=hash(xi,yi,seed),b=hash(xi+1,yi,seed),c=hash(xi,yi+1,seed),d=hash(xi+1,yi+1,seed);
-  return a+(b-a)*xf+(c-a)*yf+(a-b-c+d)*xf*yf;
-}
-function fbm(x,y,seed,octaves){let v=0,amp=.5,f=1,sum=0;for(let i=0;i<octaves;i++){v+=noise(x*f,y*f,seed+i*101)*amp;sum+=amp;f*=2.07;amp*=.45;}return v/sum;}
-const clamp01=v=>v<0?0:v>1?1:v;
-const lerp=(a,b,t)=>a+(b-a)*t;
-const mix=(a,b,t)=>[lerp(a[0],b[0],t),lerp(a[1],b[1],t),lerp(a[2],b[2],t)];
-const hex=h=>[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
-
-// Henesys palette: fresh yellow-greens, creamy sand, warm brown soil.
-const C={
-  grassDark:hex('#84b151'),grass:hex('#99bf61'),grassLight:hex('#afcf77'),shade:hex('#6d9849'),
-  sand:hex('#e6cc91'),sandLight:hex('#f0dca8'),rim:hex('#baa16b'),rimShadow:hex('#78964a'),
-  soil:hex('#b98a55'),soilDark:hex('#9a6f40'),bed:hex('#7cbf4a'),stone:hex('#e3d6b8'),
-};
 const SMALL=/^(flower|sunflower|clover|carrots|mush-tiny|mush-small|mush-yellow|mush-white)/;
 export const START_THEMES=['village','farm','orchard','mushrooms','rest'];
 
@@ -37,7 +19,6 @@ export class Field{
   // Every layout cache, including the village, belongs to a run's seed.
   reseed(seed){this.seed=seed>>>0;this.harbor.reseed(seed);this.ellinia.reseed(seed);this.chunks=this.stage==='lith'?this.harbor.chunks:this.stage==='ellinia'?this.ellinia.chunks:new Map();this.sceneCache=new Map();this.singleCache=new Map();this.roadCache=new Map();this.plazaCache=null;}
   // ---------- fields ----------
-  band(x,y){return fbm(x/420,y/420,this.seed,2)*.8+fbm(x/90,y/90,this.seed+50,1)*.2;}
   roadNode(ix,iy){const r=rng(ix,iy,this.seed+701);return ix===0&&iy===0?{x:0,y:0}:{x:ix*ROAD_CELL+(r()-.5)*360,y:iy*ROAD_CELL+(r()-.5)*360};}
   road(ix,iy,vertical){
     const key=`${ix},${iy},${vertical}`;if(this.roadCache.has(key))return this.roadCache.get(key);
@@ -215,85 +196,15 @@ export class Field{
     for(let sy=Math.floor(top/SINGLE)-1;sy<=Math.floor(bottom/SINGLE)+1;sy++)for(let sx=Math.floor(left/SINGLE)-1;sx<=Math.floor(right/SINGLE)+1;sx++){const p=this.single(sx,sy);if(p)wrap(p);}
     return out;
   }
-  // ---------- ground ----------
+  // ---------- uniform floor ----------
   chunk(cx,cy){
     if(this.stage==='lith')return this.harbor.chunk(cx,cy);
     if(this.stage==='ellinia')return this.ellinia.chunk(cx,cy);
-    const key=`${cx},${cy}`;let c=this.chunks.get(key);if(c)return c;
-    const x0=cx*CHUNK,y0=cy*CHUNK,n=CHUNK/GRID+1,bandG=new Float32Array(n*n),pathG=new Float32Array(n*n);
-    const roads=this.roadsNear(x0+CHUNK/2,y0+CHUNK/2);
-    for(let j=0;j<n;j++)for(let i=0;i<n;i++){const wx=x0+i*GRID,wy=y0+j*GRID;bandG[j*n+i]=this.band(wx,wy);pathG[j*n+i]=this.pathValue(wx,wy,roads);}
-    const decals=this.scenesNear(x0,y0,x0+CHUNK,y0+CHUNK).flatMap(s=>s.decals).filter(d=>d.x+d.rx>x0-20&&d.x-d.rx<x0+CHUNK+20&&d.y+d.ry>y0-20&&d.y-d.ry<y0+CHUNK+20);
-    c=document.createElement('canvas');c.width=c.height=CHUNK;const ctx=c.getContext('2d'),img=ctx.createImageData(CHUNK,CHUNK),px=img.data;
-    const P=Field.PATH,R=Field.RIM;
-    for(let y=0;y<CHUNK;y++){
-      const gy=y/GRID,j=Math.floor(gy),fy=gy-j;
-      for(let x=0;x<CHUNK;x++){
-        const gx=x/GRID,i=Math.floor(gx),fx=gx-i,k=j*n+i;
-        const b=lerp(lerp(bandG[k],bandG[k+1],fx),lerp(bandG[k+n],bandG[k+n+1],fx),fy);
-        const pv=lerp(lerp(pathG[k],pathG[k+1],fx),lerp(pathG[k+n],pathG[k+n+1],fx),fy);
-        // Cel-shaded grass: three bands with narrow soft edges.
-        let col=mix(C.grassDark,C.grass,clamp01((b-.4)/.07));col=mix(col,C.grassLight,clamp01((b-.6)/.07));
-        const wx=x0+x,wy=y0+y;
-        // A single signed-distance union for road and village sand avoids rims across a plaza.
-        let sandDistance=pv-P;
-        for(const d of decals){
-          const dx=(wx-d.x)/d.rx,dy=(wy-d.y)/d.ry,e=dx*dx+dy*dy;if(e>1.15)continue;
-          const edge=1-clamp01((Math.sqrt(e)-.9)/.1);
-          if(d.kind==='shade')col=mix(col,C.shade,.45*smooth(clamp01((1-Math.sqrt(e))*1.6)));
-          else if(d.kind==='bed'){if(e<1)col=mix(col,C.bed,edge);}
-          else if(d.kind==='tilled'){if(e<1){const furrow=.5+.5*Math.sin((wy-d.y)/6);col=mix(mix(C.soil,C.soilDark,furrow*.7),C.rim,e>.8?(e-.8)*3:0);}}
-          else if(d.kind==='sand'||d.kind==='plaza')sandDistance=Math.min(sandDistance,(Math.sqrt(e)-1)*Math.min(d.rx,d.ry));
-        }
-        if(sandDistance<R)col=sandDistance<0?mix(C.sand,C.sandLight,.28*clamp01(-sandDistance/25)):C.rim;
-        else if(sandDistance<R+2)col=mix(col,C.rimShadow,.35);
-        const o=(y*CHUNK+x)*4,grain=(hash(wx,wy,this.seed+3)-.5)*5;
-        px[o]=col[0]+grain;px[o+1]=col[1]+grain;px[o+2]=col[2]+grain*.5;px[o+3]=255;
-      }
-    }
-    ctx.putImageData(img,0,0);
-    ctx.save();ctx.translate(-x0,-y0);ctx.globalAlpha=.36;ctx.fillStyle=nativeTexture(ctx,'henesys')??'#e6d8b6';
-    for(const d of decals)if(d.kind==='plaza'){ctx.beginPath();ctx.ellipse(d.x,d.y,d.rx-7,d.ry-7,0,0,Math.PI*2);ctx.fill();}
-    ctx.restore();
-    this.paintDetails(ctx,x0,y0,decals);
+    const key=`${cx},${cy}`;if(this.chunks.has(key))return this.chunks.get(key);
+    const c=document.createElement('canvas');c.width=c.height=CHUNK;
+    paintFloor(c.getContext('2d'),'henesys',cx*CHUNK,cy*CHUNK);
     this.chunks.set(key,c);if(this.chunks.size>48)this.chunks.delete(this.chunks.keys().next().value);
     return c;
-  }
-  insideDecal(decals,wx,wy,kinds){return decals.some(d=>kinds.includes(d.kind)&&((wx-d.x)/d.rx)**2+((wy-d.y)/d.ry)**2<1);}
-  // Crisp cartoon details: grass tufts, clovers, daisies; pebbles on sand; flowers packed into beds.
-  paintDetails(ctx,x0,y0,decals){
-    const r=rng(x0,y0,this.seed+5),roads=this.roadsNear(x0+CHUNK/2,y0+CHUNK/2);
-    const tuft=(x,y,s=1)=>{
-      ctx.fillStyle='#6b9645';
-      for(const [dx,h,lean]of [[-3.2,7,-2.2],[0,10,0],[3.2,7.5,2.4]]){ctx.beginPath();ctx.moveTo(x+dx*s-2*s,y);ctx.quadraticCurveTo(x+(dx+lean*.4)*s,y-h*.55*s,x+(dx+lean)*s,y-h*s);ctx.quadraticCurveTo(x+(dx+lean*.2)*s+1*s,y-h*.45*s,x+dx*s+2*s,y);ctx.fill();}
-      ctx.fillStyle='#c3d987';ctx.fillRect(Math.round(x-.5),Math.round(y-9*s),1,2);
-    };
-    const flower=(x,y,petal,center='#ffd84a',size=2)=>{
-      ctx.fillStyle='rgba(60,110,40,.35)';ctx.beginPath();ctx.arc(x,y+1,size*1.9,0,Math.PI*2);ctx.fill();
-      ctx.fillStyle=petal;for(let i=0;i<5;i++){const a=i*1.2566-1.57;ctx.beginPath();ctx.arc(x+Math.cos(a)*size,y+Math.sin(a)*size,size*.85,0,Math.PI*2);ctx.fill();}
-      ctx.fillStyle=center;ctx.beginPath();ctx.arc(x,y,size*.7,0,Math.PI*2);ctx.fill();
-    };
-    const clover=(x,y)=>{ctx.fillStyle='#5fae3b';for(let i=0;i<3;i++){const a=i*2.094-1.57;ctx.beginPath();ctx.arc(x+Math.cos(a)*2.6,y+Math.sin(a)*2.6,2.4,0,Math.PI*2);ctx.fill();}ctx.fillStyle='#9ddc63';ctx.fillRect(x-1,y-3,1,1);};
-    const pebble=(x,y)=>{ctx.fillStyle='#c9a46c';ctx.beginPath();ctx.ellipse(x,y+1,3.4,2.2,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#fff6dc';ctx.beginPath();ctx.ellipse(x,y,3,1.9,0,0,Math.PI*2);ctx.fill();};
-    const PETALS=['#ffffff','#ffffff','#ffb3d1','#fff27a','#d4b8ff','#ffc078'];
-    for(let k=0;k<230;k++){
-      const x=r()*CHUNK,y=r()*CHUNK,wx=x0+x,wy=y0+y,roll=r();
-      if(this.pathValue(wx,wy,roads)<Field.PATH+Field.RIM+2||this.insideDecal(decals,wx,wy,['sand','plaza','tilled'])){
-        if(roll<.12)pebble(x,y);
-        continue;
-      }
-      if(this.insideDecal(decals,wx,wy,['bed'])){flower(x,y,PETALS[Math.floor(r()*PETALS.length)],'#ffd84a',2.3);flower(x+6,y+4,PETALS[Math.floor(r()*PETALS.length)],'#ffd84a',2);continue;}
-      if(roll<.45)tuft(x,y,.45+r()*.35);
-      else if(roll<.6)clover(x,y);
-      else if(roll<.72)flower(x,y,PETALS[Math.floor(r()*PETALS.length)]);
-    }
-    // Grass leaning over the path edges.
-    for(let k=0;k<160;k++){const x=r()*CHUNK,y=r()*CHUNK,pv=this.pathValue(x0+x,y0+y,roads);if(pv>Field.PATH+Field.RIM&&pv<Field.PATH+Field.RIM+6)tuft(x,y+2,.7);}
-    // Loose stepping stones lead from cottage doors. World positions remain stable across chunks.
-    for(const s of this.scenesNear(x0-100,y0-100,x0+CHUNK+100,y0+CHUNK+100))for(const p of s.props)if(p.id.startsWith('house')){
-      for(let i=0;i<4;i++){const x=p.x+Math.sin(i*2)*4-x0,y=p.y+14+i*13-y0;if(x<-12||y<-8||x>CHUNK+12||y>CHUNK+8)continue;
-        ctx.fillStyle='#a89974';ctx.beginPath();ctx.ellipse(x,y+1,8-i*.7,3.8,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#e8ddbe';ctx.beginPath();ctx.ellipse(x,y,7-i*.7,3.2,0,0,Math.PI*2);ctx.fill();}
-    }
   }
   drawGround(ctx,camX,camY,w,h){
     if(this.stage==='lith'){this.harbor.drawGround(ctx,camX,camY,w,h);return;}
