@@ -9,6 +9,7 @@ import {Wardrobe,DEFAULT_LOOK,FOOT_X,FOOT_Y} from './avatar.mjs';
 import {Dresser} from './dresser.mjs';
 import {beginRankedRun,saveRecord,scoreOf,loadLeaderboard} from './leaderboard-client.mjs';
 import {RankingUI,drawRankingAvatar} from './ranking-ui.mjs';
+import {cameraView,FullscreenToggle} from './display.mjs';
 const $=id=>document.getElementById(id);
 const canvas=$('game'),ctx=canvas.getContext('2d'),portrait=$('portrait'),pctx=portrait.getContext('2d');
 const damageNumber=new Intl.NumberFormat('ko-KR',{maximumFractionDigits:0});
@@ -19,6 +20,9 @@ const LOOK_KEY='maple-survivors-look',BEST_KEY='maple-survivors-best',SOUND_KEY=
 let combat,field,wardrobe,dresser,look,game,rules;
 let combatImages=[],hero={},width=900,height=600,lastTime=0,clock=0,lastMode='',toastUntil=0,hudKey='';
 let camera={x:0,y:0},levelFx=null,bgm={},music=null,audio=null,sound=true,lastPickup=0;
+let viewZoom=1,viewStatusHeight=78,screenMode;
+const mobileControls=()=>matchMedia('(pointer:coarse)').matches||navigator.maxTouchPoints>0;
+const currentArena=()=>arenaLayout(width,height,viewStatusHeight);
 let regionBlend=null,musicFade=null,musicKey='menu',audioActivated=false,itemImages={},inventoryReturn='playing';
 let ranking,rankedSession=Promise.resolve(null),endRecord=null;
 const keys=new Set(),touch={x:0,y:0};
@@ -259,13 +263,13 @@ function drawEffects(ox,oy){
 }
 // An arrow on the screen edge points at a boss that is out of view.
 function drawBossPointer(ox,oy){
-  const b=game.boss;if(!b||b.dying)return;const x=b.x+ox,y=b.y-40+oy,s=arenaLayout(width,height);if(x>0&&x<width&&y>s.top&&y<s.bottom)return;
+  const b=game.boss;if(!b||b.dying)return;const x=b.x+ox,y=b.y-40+oy,s=currentArena();if(x>0&&x<width&&y>s.top&&y<s.bottom)return;
   const cx=width/2,cy=(s.top+s.bottom)/2,a=Math.atan2(y-cy,x-cx),r=Math.max(20,Math.min(width/2-30,s.playHeight/2-20));
-  ctx.save();ctx.translate(cx+Math.cos(a)*r,cy+Math.sin(a)*r);ctx.rotate(a);ctx.fillStyle='#ff5a3c';ctx.strokeStyle='#fff';ctx.lineWidth=2;
+  ctx.save();ctx.translate(cx+Math.cos(a)*r,cy+Math.sin(a)*r);ctx.scale(1/viewZoom,1/viewZoom);ctx.rotate(a);ctx.fillStyle='#ff5a3c';ctx.strokeStyle='#fff';ctx.lineWidth=2;
   ctx.beginPath();ctx.moveTo(14,0);ctx.lineTo(-8,-10);ctx.lineTo(-8,10);ctx.closePath();ctx.fill();ctx.stroke();ctx.restore();
 }
 function draw(){
-  const p=game.player,arena=arenaLayout(width,height);camera.x=Math.round(p.x);camera.y=Math.round(p.y+height/2-arena.heroY);
+  const p=game.player,arena=currentArena();camera.x=Math.round(p.x);camera.y=Math.round(p.y+height/2-arena.heroY);
   const ox=Math.round(width/2-camera.x),oy=Math.round(height/2-camera.y);
   ctx.imageSmoothingEnabled=false;
   let blend=1;
@@ -324,7 +328,7 @@ const iconOf=id=>{
 const passiveName=id=>PASSIVES[id].name;
 function ui(){
   document.body.classList.toggle('on-title',game.mode==='menu');
-  document.body.classList.toggle('mobile-play',(matchMedia('(pointer:coarse)').matches||navigator.maxTouchPoints>0)&&!dresser?.open);
+  document.body.classList.toggle('mobile-play',mobileControls()&&!dresser?.open);
   if(game.mode!=='playing')releaseStick();
   const p=game.player,maxHp=game.maxHp;
   uiNumber($('level'),p.level,'level');
@@ -494,6 +498,8 @@ const MOVE={arrowleft:[-1,0],a:[-1,0],arrowright:[1,0],d:[1,0],arrowup:[0,-1],w:
 window.addEventListener('keydown',e=>{
   if(dresser?.open||ranking?.open||e.target.closest?.('input,textarea,select,[contenteditable="true"]'))return;
   const k=e.key.toLowerCase();
+  if(e.target.closest?.('#fullscreen-toggle')&&['enter',' '].includes(k))return;
+  if(k==='escape'&&screenMode?.active)return; // Browser owns native fullscreen exit.
   if(['arrowup','arrowdown','arrowleft','arrowright',' ','escape'].includes(k))e.preventDefault();
   if(e.repeat)return;
   if(k==='c'&&['menu','playing','paused'].includes(game?.mode)){e.preventDefault();openDresser();return;}
@@ -547,8 +553,14 @@ function readInput(){
 function openDresser(){if(!['menu','playing','paused'].includes(game.mode))return;if(game.mode==='playing')game.pause();keys.clear();releaseStick();dresser.show(look);ui();}
 
 // ---------- loop ----------
-function resize(){const rect=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);width=Math.round(rect.width);height=Math.round(rect.height);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.imageSmoothingEnabled=false;if(game)game.view={w:width,h:arenaLayout(width,height).playHeight};}
+function resize(){
+  const rect=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2),view=cameraView(rect.width,rect.height,mobileControls());
+  width=view.width;height=view.height;viewZoom=view.zoom;viewStatusHeight=view.statusHeight;
+  canvas.width=Math.round(rect.width*dpr);canvas.height=Math.round(rect.height*dpr);ctx.setTransform(dpr*viewZoom,0,0,dpr*viewZoom,0,0);ctx.imageSmoothingEnabled=false;
+  if(game)game.view={w:width,h:currentArena().playHeight};
+}
 new ResizeObserver(resize).observe(canvas);
+screenMode=new FullscreenToggle($('fullscreen-toggle'),()=>{keys.clear();releaseStick();requestAnimationFrame(resize);});
 function drawPortrait(){pctx.clearRect(0,0,140,120);pctx.imageSmoothingEnabled=false;const f=frameAt(hero.stand,clock);if(!f)return;pctx.save();pctx.translate(70,112);pctx.scale(1.2,1.2);pctx.drawImage(f.canvas,-FOOT_X,-FOOT_Y);pctx.restore();}
 function loop(now){
   const dt=Math.min((now-lastTime)/1000,.05);lastTime=now;
@@ -570,6 +582,6 @@ try{
   ranking=new RankingUI(wardrobe,{onOpen:()=>{if(game.mode==='playing')game.pause();keys.clear();releaseStick();},onClose:()=>{lastMode='';ui();}});await loadLeaderboard();
   resize();ui();lastTime=performance.now();requestAnimationFrame(loop);
   if(new URLSearchParams(location.search).has('test'))window.gameDebug={get game(){return game;},snapshot:()=>game.snapshot(),start:(id,starter=START_WEAPON)=>start(id,starter),selectStarter,choose,pickStage,stages:()=>({stageId,cleared:[...cleared]}),render:()=>{ui();draw();},dresser,wardrobe,look:()=>look,openDresser,field,
-    bgm:()=>music&&{src:music.src,paused:music.paused,volume:music.volume,activated:audioActivated,fade:musicFade&&{src:musicFade.from.src,paused:musicFade.from.paused,volume:musicFade.from.volume}},camera:()=>({...camera}),arena:()=>arenaLayout(width,height),scenery:()=>field.propsIn(camera.x-width/2,camera.y-height/2,camera.x+width/2,camera.y+height/2).map(p=>({id:p.id,key:p.key,x:p.x,y:p.y,foot:p.foot,bounds:sceneryBounds(p),faded:obscuresHero(p,game.player)})),transition:()=>regionBlend?{from:regionBlend.field.stage,to:field.stage,progress:Math.max(0,Math.min(1,(game.time-regionBlend.at)/REGION_BLEND_SECONDS))}:null,assets:{combat:combatImages.length,field:Object.keys(field.byId).length,actions:Object.keys(hero)}};
+    bgm:()=>music&&{src:music.src,paused:music.paused,volume:music.volume,activated:audioActivated,fade:musicFade&&{src:musicFade.from.src,paused:musicFade.from.paused,volume:musicFade.from.volume}},camera:()=>({...camera}),arena:currentArena,viewport:()=>({zoom:viewZoom,width,height,statusHeight:viewStatusHeight}),scenery:()=>field.propsIn(camera.x-width/2,camera.y-height/2,camera.x+width/2,camera.y+height/2).map(p=>({id:p.id,key:p.key,x:p.x,y:p.y,foot:p.foot,bounds:sceneryBounds(p),faded:obscuresHero(p,game.player)})),transition:()=>regionBlend?{from:regionBlend.field.stage,to:field.stage,progress:Math.max(0,Math.min(1,(game.time-regionBlend.at)/REGION_BLEND_SECONDS))}:null,assets:{combat:combatImages.length,field:Object.keys(field.byId).length,actions:Object.keys(hero)}};
   if(params.has('test')&&params.get('region')==='henesys'){start('henesys');if(params.has('seed'))field.reseed(Number(params.get('seed')));field.enterAt(0,0);const plan=townPlan(field.seed,field.arrival),view=params.get('view');if(view==='village'){game.player.x=plan.landmark.x+170;game.player.y=plan.landmark.y+80;}else if(view==='bridge'){game.player.x=plan.bridge.x-220;game.player.y=plan.bridge.y;}else if(view==='boss'){game.player.x=plan.boss.x;game.player.y=plan.boss.y;}field.constrain(game);ui();draw();}
 }catch(error){$('modal').innerHTML=`<div class="seal">!</div><h2 id="modal-title">준비를 마치지 못했어요</h2><p class="loading-error"></p><button class="primary" id="reload">다시 불러오기</button>`;$('modal').querySelector('p').textContent=`${error.message} 실행하기.cmd로 로컬 서버를 먼저 켜 주세요.`;$('reload').onclick=()=>location.reload();console.error(error);}

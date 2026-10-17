@@ -9,6 +9,7 @@
         <div class="arena-heading"><div><span class="eyebrow" id="stage-eyebrow">STAGE 1 · MAPLE WORLD</span><h1><b id="stage-title">리스항구 해안가</b> <span id="stage-num">01</span></h1></div><div class="objective"><span class="live-dot"></span><span id="objective">7개 지역을 지나 마지막 보스를 쓰러뜨리세요</span></div></div>
         <div class="game-frame">
           <canvas id="game" aria-label="방향키나 WASD로 움직이면 스킬이 자동으로 나가는 생존 게임"></canvas>
+          <button type="button" id="fullscreen-toggle" class="fullscreen-toggle" aria-label="전체화면 켜기" aria-pressed="false"><span>전체화면</span> <b>OFF</b></button>
           <div class="stage-hud"><div class="loadout-hud" id="loadout-hud" aria-label="스킬"></div><div class="timer"><b id="timer">00:00</b><span id="next-event">2:30 마노</span><div class="buffs" id="buffs" aria-label="버프"></div></div><div class="hud-right"><div class="stage-pill"><span>처치</span><b id="kills">0</b></div></div></div>
           <div class="boss-bar hidden" id="boss-bar"><span id="boss-name">보스</span><div><div id="boss-fill"></div></div></div>
           <section class="damage-panel hidden" id="damage-panel" aria-label="스킬별 피해량"><div class="section-heading"><h2>스킬별 피해량</h2><button id="damage-toggle" aria-label="피해량 목록 접기" aria-expanded="true">−</button></div><div class="damage-summary"><span>누적 피해</span><b id="damage-total">0</b></div><ol id="damage-list" aria-label="누적 피해량 순위"></ol><p class="damage-note">실제 피해 · 전투 시간 평균 DPS</p></section>

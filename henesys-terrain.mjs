@@ -7,9 +7,10 @@ export class HenesysTerrain{
   constructor(){this.tiles=new Map();this.key='';}
   draw(g,seed,arrival,left,top,width,height){
     const p=townPlan(seed,arrival);if(this.key!==p.key){this.key=p.key;this.tiles.clear();}
+    const m=g.getTransform(),sx=v=>(Math.round(v*m.a+m.e)-m.e)/m.a,sy=v=>(Math.round(v*m.d+m.f)-m.f)/m.d;
     for(let y=Math.floor(top/SIZE);y<=Math.floor((top+height)/SIZE);y++)for(let x=Math.floor(left/SIZE);x<=Math.floor((left+width)/SIZE);x++){
       const key=`${x},${y}`;let tile=this.tiles.get(key);if(!tile){tile=this.make(p,x*SIZE,y*SIZE);this.tiles.set(key,tile);if(this.tiles.size>LIMIT)this.tiles.delete(this.tiles.keys().next().value);}
-      g.drawImage(tile,Math.round(x*SIZE-left),Math.round(y*SIZE-top),SIZE,SIZE);
+      const dx=sx(x*SIZE-left),dy=sy(y*SIZE-top);g.drawImage(tile,dx,dy,sx((x+1)*SIZE-left)-dx,sy((y+1)*SIZE-top)-dy);
     }
   }
   make(p,left,top){
