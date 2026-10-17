@@ -1,6 +1,7 @@
 // A fixed, seamless floor per region. Run seeds change scenery, never floor colour or tile phase.
 export const FLOOR_TILE_SIZE=64;
 const tiles=new Map();
+export function registerFloorTile(stage,tile){tiles.set(stage,tile);}
 const palettes={
   lith:{base:'#e6d3a6',shade:'#d2be91',light:'#efdfb9',detail:'#c9b58c'},
   henesys:{base:'#95b960',shade:'#83a952',light:'#a6c772',detail:'#789f4c'},

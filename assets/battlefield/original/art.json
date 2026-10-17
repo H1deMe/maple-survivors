@@ -1,0 +1,26 @@
+{
+  "version":1,"sourceKind":"generated-original","pixelSize":2,
+  "sources":{"main":"village-main-v1.png","kit":"meadow-kit-v1.png","grass":"grass-v1.png","terrain":"terrain-atlas-v2.png","scenery":"village-scenery-v2.png"},
+  "sprites":{
+    "hn-house":{"source":"main","rect":[0,0,0.54,0.49],"width":224},
+    "hn-cottage":{"source":"main","rect":[0.54,0,0.46,0.49],"width":184},
+    "hn-apple":{"source":"main","rect":[0,0.49,0.5,0.51],"width":124},
+    "hn-oak":{"source":"main","rect":[0.5,0.49,0.5,0.51],"width":180},
+    "hn-bench":{"source":"kit","rect":[0,0.335,0.25,0.215],"width":76},
+    "hn-mailbox":{"source":"kit","rect":[0.25,0.335,0.25,0.215],"width":30},
+    "hn-pot":{"source":"kit","rect":[0.5,0.335,0.25,0.235],"width":32},
+    "hn-sunflower":{"source":"kit","rect":[0.75,0.335,0.25,0.235],"width":30},
+    "hn-sunflowers":{"source":"kit","rect":[0,0.55,0.28,0.23],"width":54},
+    "hn-purple":{"source":"kit","rect":[0.25,0.60,0.25,0.18],"width":32},
+    "hn-orange":{"source":"kit","rect":[0.5,0.60,0.25,0.18],"width":32},
+    "hn-clover":{"source":"kit","rect":[0.75,0.60,0.25,0.18],"width":26},
+    "hn-mushroom":{"source":"kit","rect":[0,0.78,0.25,0.22],"width":34},
+    "hn-bush":{"source":"kit","rect":[0.25,0.78,0.25,0.22],"width":64},
+    "hn-grass":{"source":"kit","rect":[0.5,0.78,0.25,0.22],"width":24},
+    "hn-rock":{"source":"kit","rect":[0.75,0.78,0.25,0.22],"width":42},
+    "hn-terrace":{"source":"scenery","rect":[0,0,0.65,0.5],"width":420},
+    "hn-waterfall":{"source":"scenery","rect":[0.65,0,0.35,0.5],"width":208},
+    "hn-well":{"source":"scenery","rect":[0,0.5,0.5,0.5],"width":104},
+    "hn-stall":{"source":"scenery","rect":[0.5,0.5,0.5,0.5],"width":148}
+  }
+}

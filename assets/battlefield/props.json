@@ -1,0 +1,307 @@
+{
+  "version": 2,
+  "profile": "generated-original",
+  "props": {
+    "house": {
+      "asset": "hn-house",
+      "kind": "big",
+      "scale": 1,
+      "footprint": {
+        "type": "box",
+        "x": 0,
+        "y": -10,
+        "rx": 87,
+        "ry": 26
+      },
+      "sortOffsetY": 12,
+      "shadow": "house",
+      "fade": 0.3,
+      "occlusion": {
+        "cutY": -108,
+        "feather": 12
+      }
+    },
+    "cottage": {
+      "asset": "hn-cottage",
+      "kind": "big",
+      "scale": 1,
+      "footprint": {
+        "type": "box",
+        "x": 0,
+        "y": -7,
+        "rx": 64,
+        "ry": 24
+      },
+      "sortOffsetY": 12,
+      "shadow": "house",
+      "fade": 0.3,
+      "occlusion": {
+        "cutY": -82,
+        "feather": 10
+      }
+    },
+    "apple": {
+      "asset": "hn-apple",
+      "kind": "big",
+      "scale": 1,
+      "footprint": {
+        "type": "circle",
+        "x": 0,
+        "y": -4,
+        "radius": 11
+      },
+      "sortOffsetY": 0,
+      "shadow": "tree",
+      "fade": 0.3,
+      "occlusion": {
+        "cutY": -30,
+        "feather": 10
+      }
+    },
+    "oak": {
+      "asset": "hn-oak",
+      "kind": "big",
+      "scale": 1,
+      "footprint": {
+        "type": "circle",
+        "x": 0,
+        "y": -5,
+        "radius": 18
+      },
+      "sortOffsetY": 0,
+      "shadow": "tree",
+      "fade": 0.27,
+      "occlusion": {
+        "cutY": -43,
+        "feather": 12
+      }
+    },
+    "bench": {
+      "asset": "hn-bench",
+      "kind": "big",
+      "scale": 1,
+      "footprint": {
+        "type": "box",
+        "x": 0,
+        "y": -4,
+        "rx": 30,
+        "ry": 9
+      },
+      "sortOffsetY": 2,
+      "shadow": "small",
+      "fade": 0.5
+    },
+    "mailbox": {
+      "asset": "hn-mailbox",
+      "kind": "big",
+      "scale": 1,
+      "footprint": null,
+      "sortOffsetY": 0,
+      "shadow": "small",
+      "fade": 0.5
+    },
+    "pot": {
+      "asset": "hn-pot",
+      "kind": "big",
+      "scale": 1,
+      "footprint": null,
+      "sortOffsetY": 0,
+      "shadow": "small",
+      "fade": 0.5
+    },
+    "sunflower": {
+      "asset": "hn-sunflower",
+      "kind": "big",
+      "scale": 1,
+      "footprint": null,
+      "sortOffsetY": 0,
+      "shadow": null,
+      "fade": 0.45
+    },
+    "sunflowerTall": {
+      "asset": "hn-sunflowers",
+      "kind": "big",
+      "scale": 1,
+      "footprint": null,
+      "sortOffsetY": 0,
+      "shadow": null,
+      "fade": 0.45
+    },
+    "purple": {
+      "asset": "hn-purple",
+      "kind": "small",
+      "scale": 1,
+      "footprint": null,
+      "sortOffsetY": 0,
+      "shadow": null,
+      "fade": 1
+    },
+    "orange": {
+      "asset": "hn-orange",
+      "kind": "small",
+      "scale": 1,
+      "footprint": null,
+      "sortOffsetY": 0,
+      "shadow": null,
+      "fade": 1
+    },
+    "clover": {
+      "asset": "hn-clover",
+      "kind": "small",
+      "scale": 1,
+      "footprint": null,
+      "sortOffsetY": 0,
+      "shadow": null,
+      "fade": 1
+    },
+    "mushroom": {
+      "asset": "hn-mushroom",
+      "kind": "small",
+      "scale": 1,
+      "footprint": null,
+      "sortOffsetY": 0,
+      "shadow": null,
+      "fade": 1
+    },
+    "bush": {
+      "asset": "hn-bush",
+      "kind": "big",
+      "scale": 1,
+      "footprint": null,
+      "sortOffsetY": 0,
+      "shadow": "small",
+      "fade": 0.4
+    },
+    "rock": {
+      "asset": "hn-rock",
+      "scale": 1,
+      "fade": 0.5,
+      "shadow": "small",
+      "footprint": {
+        "x": 0,
+        "type": "circle",
+        "radius": 16,
+        "y": -4
+      },
+      "kind": "big",
+      "sortOffsetY": 0
+    },
+    "fence": {
+      "asset": "hn-fence",
+      "scale": 1,
+      "fade": 0.5,
+      "shadow": "small",
+      "footprint": {
+        "x": 0,
+        "rx": 42,
+        "ry": 6,
+        "type": "box",
+        "y": -5
+      },
+      "kind": "big",
+      "sortOffsetY": 0
+    },
+    "sign": {
+      "asset": "hn-sign",
+      "scale": 1,
+      "fade": 0.4,
+      "shadow": "small",
+      "footprint": {
+        "x": 2,
+        "type": "circle",
+        "radius": 6,
+        "y": -3
+      },
+      "kind": "big",
+      "sortOffsetY": 0
+    },
+    "well": {
+      "asset": "hn-well",
+      "sortOffsetY": 0,
+      "footprint": {
+        "radius": 27,
+        "y": -8,
+        "type": "circle",
+        "x": 0
+      },
+      "shadow": "house",
+      "occlusion": {
+        "feather": 10,
+        "cutY": -42
+      },
+      "fade": 0.3,
+      "kind": "big",
+      "scale": 1
+    },
+    "waterfall": {
+      "asset": "hn-waterfall",
+      "kind": "big",
+      "sortOffsetY": 0,
+      "fade": 0.3,
+      "scale": 1,
+      "footprint": {
+        "y": -18,
+        "type": "box",
+        "ry": 38,
+        "x": 0,
+        "rx": 62
+      },
+      "waterFeature": true
+    },
+    "terrace": {
+      "asset": "hn-terrace",
+      "kind": "big",
+      "sortOffsetY": 0,
+      "occlusion": {
+        "feather": 12,
+        "cutY": -65
+      },
+      "fade": 0.3,
+      "scale": 1,
+      "footprint": {
+        "y": -20,
+        "type": "box",
+        "ry": 34,
+        "x": 0,
+        "rx": 150
+      }
+    },
+    "stall": {
+      "asset": "hn-stall",
+      "sortOffsetY": 8,
+      "footprint": {
+        "y": -6,
+        "type": "box",
+        "ry": 21,
+        "x": 0,
+        "rx": 52
+      },
+      "shadow": "house",
+      "occlusion": {
+        "feather": 10,
+        "cutY": -52
+      },
+      "fade": 0.3,
+      "kind": "big",
+      "scale": 1
+    },
+    "greatOak": {
+      "asset": "hn-oak",
+      "sortOffsetY": 0,
+      "footprint": {
+        "radius": 18,
+        "y": -5,
+        "type": "circle",
+        "x": 0
+      },
+      "shadow": "tree",
+      "occlusion": {
+        "feather": 12,
+        "cutY": -43
+      },
+      "fade": 0.27,
+      "kind": "big",
+      "scale": 1.55
+    }
+  }
+}

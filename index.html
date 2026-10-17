@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#536d7e"><title>메이플 서바이버</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ctext y='32' font-size='32'%3E🍁%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="classic-ui.css"></head>
+<head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#536d7e"><title>메이플 서바이버</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ctext y='32' font-size='32'%3E🍁%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="classic-ui.css"></head>
 <body>
   <div class="shell">
     <header class="masthead"><a class="brand" href="./"><span class="maple-mark">✳</span><span>MAPLE <b>SURVIVORS</b><small>메이플 서바이버</small></span></a><div class="header-actions"><span class="build-tag"><i></i> MAPLE WORLD · SURVIVAL</span><button id="sound" aria-label="소리 끄기" title="배경음악·효과음 끄기">♪ <span>소리 켜짐</span></button></div></header>
@@ -11,10 +11,11 @@
           <canvas id="game" aria-label="방향키나 WASD로 움직이면 스킬이 자동으로 나가는 생존 게임"></canvas>
           <div class="stage-hud"><div class="loadout-hud" id="loadout-hud" aria-label="스킬"></div><div class="timer"><b id="timer">00:00</b><span id="next-event">2:30 마노</span><div class="buffs" id="buffs" aria-label="버프"></div></div><div class="hud-right"><div class="stage-pill"><span>처치</span><b id="kills">0</b></div></div></div>
           <div class="boss-bar hidden" id="boss-bar"><span id="boss-name">보스</span><div><div id="boss-fill"></div></div></div>
+          <section class="damage-panel hidden" id="damage-panel" aria-label="스킬별 피해량"><div class="section-heading"><h2>스킬별 피해량</h2><button id="damage-toggle" aria-label="피해량 목록 접기" aria-expanded="true">−</button></div><div class="damage-summary"><span>누적 피해</span><b id="damage-total">0</b></div><ol id="damage-list" aria-label="누적 피해량 순위"></ol><p class="damage-note">실제 피해 · 전투 시간 평균 DPS</p></section>
           <div class="status-bar">
             <div class="status-level"><small>LV.</small><b id="level">1</b><span id="char-name">모험가</span></div>
             <div class="gauge hp"><span>HP</span><div id="hp-track" role="progressbar" aria-label="체력" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div id="hp-fill"></div></div><b id="hp-text">100 / 100</b></div>
-            <div class="status-actions"><button id="pause" aria-label="일시 정지" title="일시 정지 · Esc">Ⅱ</button><button id="equipment-open" aria-label="장비 확인" title="장비 확인 · I">장비 <kbd>I</kbd></button></div>
+            <div class="status-actions"><button id="pause" aria-label="일시 정지" title="일시 정지 · Esc">Ⅱ</button><button id="equipment-open" aria-label="장비 확인" title="장비 확인 · I">장비 <kbd>I</kbd></button><button id="mobile-sound" aria-label="소리 끄기">♪</button></div>
             <div class="gauge exp"><span>EXP</span><div id="exp-track" role="progressbar" aria-label="경험치" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="exp-fill"></div></div><b id="exp-text">0 / 14 [0.00%]</b></div>
           </div>
           <div class="overlay" id="overlay"><div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"></div></div>

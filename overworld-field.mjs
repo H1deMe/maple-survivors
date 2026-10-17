@@ -2,22 +2,36 @@
 // Original side-view art is reused as billboards; the map layout and collision footprints are new.
 import {nativeGroup,loadNativeFieldArt} from './native-field-art.mjs';
 import {paintFloor} from './floor-tiles.mjs';
+import {regionDefinition,propDefinitions,loadBattlefield} from './field-regions.mjs';
+import {generateDistrict} from './field-layout.mjs';
+import {resolveCircle,steerAround,penetration} from './field-collision.mjs';
+import {drawFieldContact} from './field-render.mjs';
+import {originalFieldArt} from './original-field-art.mjs';
+import {townPlan,waterNear,riverDirection,leaveWater} from './henesys-map.mjs';
+import {HenesysTerrain} from './henesys-terrain.mjs';
+import {regionalArt} from './regional-art.mjs';
+import {REGIONAL_FIELDS,regionalPlan,regionalScene} from './regional-layout.mjs';
+import {RegionalTerrain} from './regional-terrain.mjs';
 export {loadNativeFieldArt};
+export {loadBattlefield};
 const CW=1080,CH=820,MAX_CACHE=96;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function random(ix,iy,seed){let n=(Math.imul(ix,374761393)^Math.imul(iy,668265263)^Math.imul(seed,2246822519))>>>0||1;return ()=>{n^=n<<13;n^=n>>>17;n^=n<<5;return (n>>>0)/4294967296;};}
 const structural=id=>/^(house-|tree-|fountain$|statue-|hay-stack|cart$|harbor-(house|cottage|palm|crane|stall|crates|barrels|rock)|ellinia-(house-|tree|mill)|perion-(chief-hut|temple|tent|forge|tree|totem)|kerning-(factory|apartments|shop|lamp|phone|pipes|barrier)|sleepy-(lodge|stump|arch|root)|orbis-(house-|statue|column|ruin|topiary))/.test(id);
 const REGIONS=['lith','henesys','ellinia','perion','kerning','sleepywood','orbis'];
 export function arenaLayout(width,height,statusHeight=78){const bottom=Math.max(180,height-statusHeight);return {width,height,top:0,bottom,playHeight:bottom,heroX:width/2,heroY:Math.round(bottom*.56)};}
-export function sceneryBounds(p){const b=p.prop.bounds,s=p.scale;return {left:p.x+(p.flip?-b.right:b.left)*s,right:p.x+(p.flip?-b.left:b.right)*s,top:p.y+b.top*s,bottom:p.y+b.bottom*s};}
+export function sceneryBounds(p){if(p.bounds)return p.bounds;const b=p.prop.bounds,s=p.scale;return {left:p.x+(p.flip?-b.right:b.left)*s,right:p.x+(p.flip?-b.left:b.right)*s,top:p.y+b.top*s,bottom:p.y+b.bottom*s};}
 export function obscuresHero(p,hero){const b=sceneryBounds(p);return p.y>hero.y-4&&hero.x+23>b.left&&hero.x-23<b.right&&hero.y>b.top&&hero.y-67<b.bottom;}
 export class OverworldField{
-  constructor(seed=1065){this.byId=Object.assign({},...['henesys','lith','ellinia','perion','kerning','sleepy','orbis'].map(nativeGroup));this.stage='lith';this.reseed(seed);}
-  reseed(seed){this.seed=seed>>>0;this.chunks=new Map();this.arrival={x:0,y:0};}
-  setStage(id){this.stage=REGIONS.includes(id)?id:'lith';this.chunks.clear();}
+  constructor(seed=1065,options={}){this.byId={...originalFieldArt(),...Object.fromEntries(Object.keys(REGIONAL_FIELDS).flatMap(id=>(regionalArt(id)??[]).map(p=>[p.id,p])))};this.options={henesysV2:true,mode:'seeded',...options};this.terrain=new HenesysTerrain();this.regionalTerrain=new RegionalTerrain();this.stage='lith';this.reseed(seed);}
+  get v2(){return this.stage==='henesys'||!!regionalArt(this.stage);}
+  reseed(seed){this.seed=seed>>>0;this.chunks=new Map();this.arrival={x:0,y:0};this.collisionReadyAt=0;this.transitionPass=null;}
+  setStage(id){this.stage=REGIONS.includes(id)?id:'lith';this.chunks.clear();this.collisionReadyAt=0;this.transitionPass=null;}
+  beginTransition(at,seconds){this.collisionReadyAt=at+seconds*.5;this.transitionPass=new WeakMap();}
   enterAt(x,y){this.arrival={x,y};this.chunks.clear();}
   scene(ix,iy){
     const key=`${ix},${iy}`;if(this.chunks.has(key))return this.chunks.get(key);
+    if(this.v2){const scene=this.stage==='henesys'?generateDistrict(regionDefinition('henesys'),propDefinitions(),originalFieldArt(),this.seed,ix,iy,this.arrival,this.options.mode):regionalScene(this.stage,this.seed,ix,iy,this.arrival,regionalArt(this.stage));this.chunks.set(key,scene);if(this.chunks.size>MAX_CACHE)this.chunks.delete(this.chunks.keys().next().value);return scene;}
     const r=random(ix,iy,this.seed+({lith:29,henesys:61,ellinia:97,perion:147,kerning:199,sleepywood:241,orbis:283}[this.stage])),pick=a=>a[Math.floor(r()*a.length)],side=r()<.5?-1:1;
     const cx=ix*CW,cy=iy*CH,props=[];let n=0;
     const add=(id,dx,dy,scale=1)=>{
@@ -86,8 +100,28 @@ export class OverworldField{
     return out;
   }
   solidsNear(x,y,radius=160){const out=[];for(let iy=Math.round((y-radius)/CH);iy<=Math.round((y+radius)/CH);iy++)for(let ix=Math.round((x-radius)/CW);ix<=Math.round((x+radius)/CW);ix++)for(const p of this.scene(ix,iy).props)if(p.solid)out.push(p);return out;}
+  obstaclesNear(x,y,radius=150){const obstacles=this.solidsNear(x,y,radius).map(p=>p.foot);if(this.stage==='henesys')obstacles.push(...waterNear(townPlan(this.seed,this.arrival),x,y,radius));else if(this.v2)obstacles.push(...regionalPlan(this.stage,this.seed,this.arrival).barriers);return obstacles;}
+  resolveActor(actor,from,radius,ignored){const distance=Math.hypot(actor.x-from.x,actor.y-from.y),obstacles=this.obstaclesNear((actor.x+from.x)/2,(actor.y+from.y)/2,distance/2+radius+115).filter(o=>!ignored?.has(o.key));resolveCircle(actor,from,radius,obstacles);if(this.stage==='henesys')leaveWater(actor,radius,townPlan(this.seed,this.arrival),ignored);return actor;}
+  worldAdapter(game){
+    const active=()=>this.v2&&game.stage.id===this.stage&&game.time>=this.collisionReadyAt;
+    return {
+      move:(actor,from,radius)=>{if(!active()||actor.flying)return;let ignored;
+        // A newly visible foundation must not push an actor already standing inside it.
+        // That actor may leave once; the same wall blocks subsequent approaches normally.
+        if(this.transitionPass){ignored=this.transitionPass.get(actor);const nearby=this.obstaclesNear(from.x,from.y,radius+115);
+          if(!ignored){ignored=new Set(nearby.filter(o=>penetration(from,radius,o)).map(o=>o.key));this.transitionPass.set(actor,ignored);}
+          else for(const key of ignored)if(!nearby.some(o=>o.key===key&&penetration(from,radius,o)))ignored.delete(key);
+        }
+        this.resolveActor(actor,from,radius,ignored);
+      },
+      steer:(actor,target,direction)=>active()&&!actor.flying?steerAround(actor,target,this.stage==='henesys'?riverDirection(actor,target,direction,townPlan(this.seed,this.arrival)):direction,this.obstaclesNear(actor.x,actor.y,150)):direction,
+      place:(actor,radius)=>{if(active()&&!actor.flying){this.resolveActor(actor,{x:actor.x,y:actor.y},radius);this.transitionPass?.set(actor,new Set());}},
+      drop:d=>{if(!active()||d.pull)return;const key=`${this.seed}/h2/${this.arrival.x}/${this.arrival.y}`;if(d.fieldStamp===key)return;this.resolveActor(d,{x:d.x,y:d.y},8);d.fieldStamp=key;}
+    };
+  }
   constrain(game){
     if(game.mode!=='playing')return;
+    if(this.v2){for(const p of [game.player,...game.mobs.filter(m=>!m.dying&&!m.flying)])this.resolveActor(p,{x:p.x,y:p.y},p===game.player?14:clamp(p.radius*.6,10,28));return;}
     const actors=[{actor:game.player,radius:13},...game.mobs.filter(m=>!m.dying&&!m.flying).map(m=>({actor:m,radius:clamp(m.radius*.6,10,28)}))];
     // Solve feet against small ground footprints; roofs and foliage never form invisible walls.
     for(const {actor:p,radius}of actors)for(let pass=0;pass<2;pass++)for(const o of this.solidsNear(p.x,p.y,radius+110)){
@@ -97,11 +131,13 @@ export class OverworldField{
       p.x=f.x+dx/n;p.y=f.y+dy/n;
     }
   }
-  drawGround(g,camX,camY,width,height){
-    const left=camX-width/2,top=camY-height/2;paintFloor(g,this.stage,left,top,width,height);
+  drawGround(g,camX,camY,width,height,frame){
+    const left=camX-width/2,top=camY-height/2;
+    if(this.v2){if(this.stage==='henesys')this.terrain.draw(g,this.seed,this.arrival,left,top,width,height);else this.regionalTerrain.draw(g,this.stage,this.seed,this.arrival,left,top,width,height);drawFieldContact(g,frame?.props??this.propsIn(left,top,left+width,top+height),left,top);return;}
+    paintFloor(g,this.stage,left,top,width,height);
     // Shared ground-contact shadows give upright sprites a footprint on the same plane as the hero.
     g.save();g.translate(-left,-top);
-    for(const p of this.propsIn(left-10,top-10,left+width+10,top+height+350)){
+    for(const p of frame?.props??this.propsIn(left-10,top-10,left+width+10,top+height+350)){
       if(!p.solid)continue;const f=p.foot;
       g.fillStyle=this.stage==='lith'?'#735c3528':'#183b272c';g.beginPath();g.ellipse(f.x+8,f.y+4,f.rx+12,f.ry+5,-.12,0,Math.PI*2);g.fill();
       g.fillStyle='#18322124';g.beginPath();g.ellipse(f.x,f.y,f.rx,f.ry,0,0,Math.PI*2);g.fill();

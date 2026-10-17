@@ -1,0 +1,16 @@
+{
+  "id":"henesys","version":2,"battlefield":true,"artProfile":"generated-original","cell":[1080,820],"corridorWidth":240,"clearingRadius":235,"cacheLimit":96,
+  "town":{"radius":2,"center":"plaza","inner":["market","village","garden","farm","orchard","park","village","garden"],"outer":["village","orchard","farm","garden","park"],"wild":["meadow","park","orchard"]},
+  "templates":[
+    {"id":"plaza","name":"버섯 마을 광장","weight":1,"terrain":"plaza","flowerBeds":[[-245,290,4],[265,-240,4]],"props":[["house",-325,225],["cottage",340,-200],["mailbox",-455,270],["pot",-190,255],["pot",440,-185],["oak",-405,-215],["bench",-275,-250],["bench",280,260],["apple",435,220],["sunflowerTall",-190,280],["purple",180,-155]]},
+    {"id":"market","name":"해바라기 상점가","weight":1,"terrain":"market","flowerBeds":[[-315,280,5],[315,280,5]],"props":[["cottage",-345,-190],["house",325,230],["mailbox",-450,-180],["pot",-240,-170],["pot",440,240],["bench",-320,250],["bench",350,-235],["sunflowerTall",235,275],["sunflowerTall",290,285],["apple",-435,225],["bush",435,-180]]},
+    {"id":"village","name":"버섯집 주거지","weight":2,"terrain":"village","flowerBeds":[[-240,285,4],[340,-220,4]],"props":[["house",-325,225],["cottage",335,-200],["mailbox",-458,270],["pot",-190,246],["apple",420,-180],["bench",256,-255],["bush",433,235],["purple",-185,162],["orange",-150,179],["mushroom",179,-141]]},
+    {"id":"farm","name":"햇살 농장","weight":2,"terrain":"farm","flowerBeds":[[-370,-255,4],[-360,270,4]],"props":[["cottage",340,225],["mailbox",455,245],["sunflowerTall",-400,-190],["sunflowerTall",-340,-190],["sunflowerTall",-280,-190],["sunflowerTall",-400,250],["sunflowerTall",-340,250],["sunflowerTall",-280,250],["apple",340,-215],["bench",215,270],["clover",-320,-230],["clover",-320,210]]},
+    {"id":"orchard","name":"사과 과수원","weight":3,"terrain":"orchard","flowerBeds":[[-400,285,4],[365,285,3]],"props":[["apple",-325,-208],["apple",-444,180],["apple",-278,250],["apple",335,220],["apple",438,-188],["apple",275,-260],["bench",-400,270],["bush",390,280],["mushroom",-293,-150],["clover",-153,-41],["orange",146,95]]},
+    {"id":"garden","name":"꽃밭 쉼터","weight":2,"terrain":"garden","flowerBeds":[[-325,-185,6],[-300,275,5],[350,280,4]],"props":[["cottage",339,220],["bench",-339,235],["apple",-412,-215],["bush",-420,280],["sunflower",-329,-127],["sunflowerTall",-287,-139],["sunflower",-245,-130],["purple",-174,89],["orange",-147,104],["clover",161,-88]]},
+    {"id":"park","name":"큰 나무 공원","weight":2,"terrain":"park","flowerBeds":[[-350,285,3],[350,-260,3]],"props":[["oak",-365,225],["oak",380,-200],["apple",-375,-235],["apple",355,250],["bench",-240,-260],["bench",240,285],["bush",-440,285],["mushroom",275,-160],["clover",-156,120],["mushroom",150,135]]},
+    {"id":"meadow","name":"열린 초원","weight":3,"terrain":"meadow","flowerBeds":[[-310,280,3],[330,-230,3]],"props":[["oak",-375,220],["apple",358,-215],["bush",428,-150],["mushroom",-278,233],["mushroom",-315,261],["orange",-209,-152],["purple",219,156],["clover",-148,75],["clover",153,-79]]}
+  ],
+  "fixedPatch":[["orchard","market","garden"],["farm","plaza","village"],["park","garden","meadow"]],
+  "flowerBeds":[[-350,285,5],[340,-220,4]],"accentCount":6,"accents":["clover","purple","orange","mushroom"]
+}

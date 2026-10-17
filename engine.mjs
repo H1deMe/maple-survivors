@@ -1,4 +1,4 @@
-// DOM-free survival rules. Default runs travel across three regions and end on Faust's defeat.
+// DOM-free survival rules. Default runs travel across seven regions and end on Junior Balrog's defeat.
 import {EQUIPMENT,EQUIP_SLOTS,ENCHANTS,CONSUMABLES,TROPHIES,ITEM_DROP_CHANCE,rankMultiplier,WEAPON_FAMILIES,WEAPON_BONUS,weaponFamilyOf,SCROLLS,SCROLL_SETS,WEAPON_SCROLLS,SCROLL_RATE_WEIGHT,scrollStats} from './items.mjs';
 
 export const RUN_TIME=600;                 // the final boss arrives at 10:00; beating it clears the run
@@ -18,32 +18,32 @@ export const WEAPONS={
   '0001000':{name:'달팽이 세마리',cls:'초보자',kind:'shell',desc:'가장 가까운 적에게 달팽이 껍질을 던집니다.',
     base:{damage:10,cooldown:1,count:1,pierce:1,speed:420,range:220},
     ups:[{count:1},{damage:6},{damage:4},{count:1},{damage:6,cooldown:-.15},{count:1},{damage:6,pierce:1}]},
-  '2001004':{name:'에너지 볼트',cls:'마법사',kind:'bolt',desc:'적을 끝까지 쫓아가는 마법 구체를 쏩니다.',
+  '2001004':{name:'모험가 에너지 볼트',cls:'마법사',kind:'bolt',desc:'적을 끝까지 쫓아가는 마법 구체를 쏩니다.',
     base:{damage:16,cooldown:1.2,count:1,pierce:1,speed:360,range:260},
     ups:[{damage:6},{count:1},{cooldown:-.2},{damage:8},{count:1},{damage:10},{count:1,cooldown:-.15}]},
-  '4001344':{name:'럭키 세븐',cls:'도적',kind:'star',desc:'가까운 적들에게 표창을 날립니다.',
+  '4001344':{name:'모험가 럭키 세븐',cls:'도적',kind:'star',desc:'가까운 적들에게 표창을 날립니다.',
     base:{damage:12,cooldown:1.1,count:2,pierce:1,speed:560,range:240},
     ups:[{damage:5},{count:1},{pierce:1},{damage:6},{count:1},{cooldown:-.25},{damage:6,count:1}]},
-  '3001004':{name:'에로우 블로우',cls:'궁수',kind:'arrow',desc:'가까운 적 쪽으로 적을 꿰뚫는 화살을 쏩니다.',
+  '3001004':{name:'모험가 에로우 블로우',cls:'궁수',kind:'arrow',desc:'가까운 적 쪽으로 적을 꿰뚫는 화살을 쏩니다.',
     base:{damage:16,cooldown:1.5,count:1,pierce:2,speed:650,range:280},
     ups:[{pierce:1},{damage:6},{count:1},{cooldown:-.1},{damage:6},{count:1},{pierce:1,damage:4}]},
-  '1001004':{name:'파워 스트라이크',cls:'전사',kind:'strike',desc:'바라보는 방향의 적들을 크게 벱니다.',
+  '1001004':{name:'모험가 파워 스트라이크',cls:'전사',kind:'strike',desc:'바라보는 방향의 적들을 크게 벱니다.',
     base:{damage:26,cooldown:1.4,count:1,area:1},
     ups:[{damage:16},{count:1},{area:.15},{damage:18},{cooldown:-.25},{area:.15},{damage:35}]},
-  '1001005':{name:'슬래시 블러스트',cls:'전사',kind:'blast',desc:'주변의 모든 적을 베어 냅니다.',
+  '1001005':{name:'모험가 슬래시 블러스트',cls:'전사',kind:'blast',desc:'주변의 모든 적을 베어 냅니다.',
     base:{damage:18,cooldown:2.2,area:1,radius:120},
     ups:[{area:.15},{damage:8},{cooldown:-.3},{area:.15},{damage:10},{cooldown:-.3},{area:.2,damage:14}]},
-  '2001005':{name:'매직 클로',cls:'마법사',kind:'claw',desc:'주변의 무작위 적을 마법 발톱으로 두 번 할큅니다.',
+  '2001005':{name:'모험가 매직 클로',cls:'마법사',kind:'claw',desc:'주변의 무작위 적을 마법 발톱으로 두 번 할큅니다.',
     base:{damage:14,cooldown:1.8,count:1,range:250},
     ups:[{count:1},{damage:6},{count:1},{cooldown:-.3},{damage:8},{count:1},{damage:12,count:1}]},
-  '4001334':{name:'더블 스탭',cls:'도적',kind:'stab',desc:'가장 가까운 적을 재빠르게 두 번 찌릅니다.',
+  '4001334':{name:'모험가 더블 스탭',cls:'도적',kind:'stab',desc:'가장 가까운 적을 재빠르게 두 번 찌릅니다.',
     base:{damage:15,cooldown:.9,count:1,area:1,range:150},
     ups:[{damage:12},{area:.2},{count:1},{cooldown:-.2},{damage:14},{count:1},{damage:25,cooldown:-.15}]},
   // Pirate 1st job: Double Fire (gun) and Somersault Kick (knuckle).
-  '5001003':{name:'더블 파이어',cls:'해적',kind:'arrow',desc:'가까운 적 쪽으로 총알을 두 발씩 쏩니다.',
+  '5001003':{name:'모험가 더블 파이어',cls:'해적',kind:'arrow',desc:'가까운 적 쪽으로 총알을 두 발씩 쏩니다.',
     base:{damage:11,cooldown:1,count:2,pierce:1,speed:700,range:260,spread:.05,interval:.08},
     ups:[{damage:5},{count:1},{cooldown:-.15},{damage:6},{pierce:1},{count:1},{damage:8}]},
-  '5001002':{name:'써머솔트 킥',cls:'해적',kind:'blast',desc:'공중제비를 돌며 주변의 적 여러 마리를 걷어찹니다.',
+  '5001002':{name:'모험가 써머솔트 킥',cls:'해적',kind:'blast',desc:'공중제비를 돌며 주변의 적 여러 마리를 걷어찹니다.',
     base:{damage:24,cooldown:1.4,area:1,radius:130,targets:6},
     ups:[{damage:9},{targets:2},{cooldown:-.2},{area:.15},{damage:11},{targets:3},{damage:16,cooldown:-.15}]},
   // Aran 1st job (KMS 1.2.95): Double Swing, a polearm swing that hits twice.
@@ -54,29 +54,36 @@ export const WEAPONS={
   '22001001':{name:'매직 미사일',cls:'에반',kind:'nova',desc:'미르가 가까운 적들에게 마법 탄을 두 번씩 쏩니다.',
     base:{damage:10,cooldown:1.1,count:1,targets:6,radius:230,hits:2},
     ups:[{damage:4},{count:1},{cooldown:-.15},{damage:4},{count:1},{damage:5},{count:1,damage:4}]},
-  // Cygnus Knights' own 1st-job skills (same rules as the Explorer skills they mirror, their own visuals).
-  '11001002':{name:'파워 스트라이크',cls:'소울마스터',kind:'strike',desc:'바라보는 방향의 적들을 크게 벱니다.',
+  // Unique Cygnus skills, rebalanced as starters. Root keys retain job/equipment compatibility.
+  '11001002':{name:'시그너스 파워 스트라이크',cls:'소울마스터',kind:'strike',desc:'바라보는 방향의 적들을 크게 벱니다.',
     base:{damage:26,cooldown:1.4,count:1,area:1},
     ups:[{damage:16},{count:1},{area:.15},{damage:18},{cooldown:-.25},{area:.15},{damage:35}]},
-  '12001003':{name:'매직 클로',cls:'플레임위자드',kind:'claw',desc:'주변의 무작위 적을 마법 발톱으로 두 번 할큅니다.',
+  '12001003':{name:'시그너스 매직 클로',cls:'플레임위자드',kind:'claw',desc:'주변의 무작위 적을 마법 발톱으로 두 번 할큅니다.',
     base:{damage:14,cooldown:1.8,count:1,range:250},
     ups:[{count:1},{damage:6},{count:1},{cooldown:-.3},{damage:8},{count:1},{damage:12,count:1}]},
-  '14001004':{name:'럭키 세븐',cls:'나이트워커',kind:'star',desc:'가까운 적들에게 표창을 날립니다.',
+  '14001004':{name:'시그너스 럭키 세븐',cls:'나이트워커',kind:'star',desc:'가까운 적들에게 표창을 날립니다.',
     base:{damage:12,cooldown:1.1,count:2,pierce:1,speed:560,range:240},
     ups:[{damage:5},{count:1},{pierce:1},{damage:6},{count:1},{cooldown:-.25},{damage:6,count:1}]},
-  '15001002':{name:'써머솔트 킥',cls:'스트라이커',kind:'blast',desc:'공중제비를 돌며 주변의 적 여러 마리를 걷어찹니다.',
+  '15001002':{name:'시그너스 써머솔트 킥',cls:'스트라이커',kind:'blast',desc:'공중제비를 돌며 주변의 적 여러 마리를 걷어찹니다.',
     base:{damage:24,cooldown:1.4,area:1,radius:130,targets:6},
     ups:[{damage:9},{targets:2},{cooldown:-.2},{area:.15},{damage:11},{targets:3},{damage:16,cooldown:-.15}]},
   // Dual Blade 1st job (KMS 1.2.95): Triple Stab with both blades.
   '4301001':{name:'트리플 스탭',cls:'듀얼블레이드',kind:'stab',desc:'가장 가까운 적을 양손의 칼로 세 번 찌릅니다.',
     base:{damage:11,cooldown:1,count:1,area:1,range:150,hits:3},
     ups:[{damage:8},{area:.2},{count:1},{cooldown:-.2},{damage:9},{count:1},{damage:16,cooldown:-.15}]},
-  // Wind Archer 1st job (Cygnus Knights): Double Shot.
-  '13001003':{name:'더블 샷',cls:'윈드브레이커',kind:'arrow',desc:'가까운 적 쪽으로 적을 꿰뚫는 화살을 두 발씩 쏩니다.',
+  '13001003':{name:'시그너스 더블 샷',cls:'윈드브레이커',kind:'arrow',desc:'가까운 적 쪽으로 적을 꿰뚫는 화살을 두 발씩 쏩니다.',
     base:{damage:11,cooldown:1.3,count:2,pierce:2,speed:750,range:280,spread:.06,interval:.07},
-    ups:[{damage:4},{pierce:1},{cooldown:-.15},{damage:4},{count:1},{pierce:1},{damage:5}]},
+    ups:[{pierce:1},{damage:4},{count:1},{cooldown:-.1},{damage:4},{count:1},{pierce:1,damage:3}]},
 };
 export const START_WEAPON='0001000';
+export const CYGNUS_VARIANTS={
+  '11001002':{kind:'solar',color:'#d49518',damageScale:[.92,.96,.96,.96,.96,.96,.96,.96],text:'소울마스터: 3회 시전마다 빛의 충격파가 추가로 터집니다.'},
+  '12001003':{kind:'flame',color:'#c54e20',damageScale:[.88,.88,.88,.88,.88,.88,.88,.88],text:'플레임위자드: 화상을 남기고 직접 처치하면 작은 불꽃 폭발이 일어납니다.'},
+  '13001003':{kind:'wind',color:'#28886d',damageScale:[.65,.65,.65,.9,.9,.9,1,1],text:'윈드브레이커: 적을 밀쳐내고 시전 후 잠시 이동 속도가 12% 증가합니다.'},
+  '14001004':{kind:'shadow',color:'#8953c3',damageScale:[.95,.95,.95,.95,.95,.95,.95,.95],text:'나이트워커: 표창이 가까운 다른 적에게 한 번 튕깁니다(피해 10%). HP 30% 이하인 적에게 피해가 10% 증가합니다.'},
+  '15001002':{kind:'lightning',color:'#247da9',damageScale:[.97,.97,.97,.97,.97,.97,.97,.97],text:'스트라이커: 시전마다 한 번, 가까운 적 둘에게 번개가 튀고 잠시 기절시킵니다.'},
+};
+for(const [id,v]of Object.entries(CYGNUS_VARIANTS))WEAPONS[id].desc+=` ${v.text}`;
 // Passives are client skills too (names as in String.wz). Each level adds `per`.
 export const formatNumber=(value,places=2)=>String(Number(value.toFixed(places)));
 export const formatPercent=value=>`${formatNumber(value*100)}%`;
@@ -143,32 +150,32 @@ export const JOBS={
   // (their 4th-job images are empty), so their lines have two tiers.
   '11001002':[
     {id:'soulmaster',job:'소울마스터',names:['소울마스터','소울마스터'],tiers:[
-      {skill:'11101004',kind:'arrow',mult:1.66,set:{count:1,pierce:b=>b.count+1,speed:600,range:260},desc:'검기를 날려 한 줄의 적들을 꿰뚫습니다.'},
-      {skill:'11111006',kind:'blast',mult:1.33,set:{radius:170,targets:8},desc:'빛의 기운을 담은 일격으로 주변의 적 최대 8마리를 공격합니다.'},
+      {skill:'11101004',kind:'arrow',mult:1.7,set:{count:1,pierce:b=>b.count+1,speed:600,range:260},desc:'검기를 날려 한 줄의 적들을 꿰뚫습니다.'},
+      {skill:'11111006',kind:'blast',mult:1.39,set:{radius:170,targets:8},desc:'빛의 기운을 담은 일격으로 주변의 적 최대 8마리를 공격합니다.'},
     ]},
   ],
   '12001003':[
     {id:'blazewizard',job:'플레임위자드',names:['플레임위자드','플레임위자드'],tiers:[
-      {skill:'12101002',kind:'bolt',mult:2.54,set:{count:b=>b.count+1,speed:420,pierce:1},desc:'적을 끝까지 쫓아가는 불화살을 쏩니다.'},
-      {skill:'12111003',kind:'meteor',mult:8.78,set:{targets:b=>b.count*2,cooldown:3},desc:'넓은 범위의 적들에게 운석을 떨어뜨립니다.'},
+      {skill:'12101002',kind:'bolt',mult:2.49,set:{count:b=>b.count+1,speed:420,pierce:1},desc:'적을 끝까지 쫓아가는 불화살을 쏩니다.'},
+      {skill:'12111003',kind:'meteor',mult:7.49,set:{targets:b=>b.count*2,cooldown:3},desc:'넓은 범위의 적들에게 운석을 떨어뜨립니다.'},
     ]},
   ],
   '13001003':[
     {id:'windarcher',job:'윈드브레이커',names:['윈드브레이커','윈드브레이커'],tiers:[
-      {skill:'13101005',kind:'nova',mult:2.26,set:{targets:b=>b.count*b.pierce,count:b=>b.count*b.pierce,radius:210,hits:2},desc:'폭풍의 기운으로 주변의 적들을 두 번씩 공격합니다.'},
-      {skill:'13111000',kind:'rain',mult:2.28,set:{count:1,radius:120,waves:2,targets:b=>b.pierce+3},desc:'가까운 적이 있는 곳에 화살비를 두 번 쏟아붓습니다.'},
+      {skill:'13101005',kind:'nova',mult:2.75,set:{targets:b=>b.count*b.pierce,count:b=>b.count*b.pierce,radius:210,hits:2},desc:'폭풍의 기운으로 주변의 적들을 두 번씩 공격합니다.'},
+      {skill:'13111000',kind:'rain',mult:3.1,set:{count:1,radius:120,waves:2,targets:b=>b.pierce+3},desc:'가까운 적이 있는 곳에 화살비를 두 번 쏟아붓습니다.'},
     ]},
   ],
   '14001004':[
     {id:'nightwalker',job:'나이트워커',names:['나이트워커','나이트워커'],tiers:[
-      {skill:'14101006',kind:'nova',mult:1.7,set:{targets:6,radius:210,hits:3,heal:.5},desc:'어둠의 기운으로 주변 적들을 세 번씩 공격하고 HP를 흡수합니다(초당 0.5).'},
-      {skill:'14111006',kind:'arrow',mult:4.4,set:{count:1,splash:100,targets:6,speed:420,pierce:1},desc:'독 폭탄을 던져 맞은 자리 주변의 적 최대 6마리에게 피해를 줍니다.'},
+      {skill:'14101006',kind:'nova',mult:1.77,set:{targets:6,radius:210,hits:3,heal:.5},desc:'어둠의 기운으로 주변 적들을 세 번씩 공격하고 HP를 흡수합니다(초당 0.5).'},
+      {skill:'14111006',kind:'arrow',mult:4.59,set:{count:1,splash:100,targets:6,speed:420,pierce:1},desc:'독 폭탄을 던져 맞은 자리 주변의 적 최대 6마리에게 피해를 줍니다.'},
     ]},
   ],
   '15001002':[
     {id:'thunderbreaker',job:'스트라이커',names:['스트라이커','스트라이커'],tiers:[
-      {skill:'15101005',kind:'blast',mult:2.82,set:{targets:6},desc:'번개의 기운을 모아 주변의 적 최대 6마리를 강하게 칩니다.'},
-      {skill:'15111007',kind:'arrow',mult:1.52,set:{count:1,pierce:5,speed:560,range:280},desc:'상어 모양의 번개를 날려 한 줄의 적 최대 5마리를 꿰뚫습니다.'},
+      {skill:'15101005',kind:'blast',mult:2.6,set:{targets:6},desc:'번개의 기운을 모아 주변의 적 최대 6마리를 강하게 칩니다.'},
+      {skill:'15111007',kind:'arrow',mult:1.48,set:{count:1,pierce:5,speed:560,range:280},desc:'상어 모양의 번개를 날려 한 줄의 적 최대 5마리를 꿰뚫습니다.'},
     ]},
   ],
   // Dual Blade (KMS 1.2.95): Semi-Dualer's Triple Stab is its 1st job; Dualer → Slasher → Dual Blader.
@@ -277,7 +284,8 @@ export const BOSSES=[
 // bullets twice, summon = call minions (summon id). bullet = bullet colour.
 // The warning always shows exactly where the attack lands (charge path, slam circle, bullet lanes); aim is locked
 // when the warning starts, so stepping out of the red area dodges it ("플레이어가 반응하고 피할 수 있게").
-export const BOSS_PATTERNS={dash:{warn:1,act:.6},slam:{warn:1.1,act:.25},burst:{warn:1,act:.5},volley:{warn:.9,act:.6},summon:{warn:.8,act:.2}};
+export const BOSS_PATTERNS={dash:{warn:1,act:.6},slam:{warn:1.1,act:.25},burst:{warn:1,act:.5},volley:{warn:.9,act:.6},summon:{warn:.8,act:.2},eruption:{warn:1.3,act:.5}};
+export function bossAttackProfile(rank){const n=Math.max(1,Math.min(7,rank));return {rank:n,burst:7+n,lanes:3+2*Math.floor((n-1)/3),waves:2+Math.floor((n-1)/3),burstSpeed:165+(n-1)*7,volleySpeed:240+(n-1)*8,damage:.4+(n-1)*.02,cooldown:3.6-n*.2,eruption:n>=4,spots:Math.min(5,n-1)};}
 const BURST_SPEED=165,VOLLEY_SPEED=240,VOLLEY_SPREAD=.22,BULLET_DAMAGE=.4;
 const DASH_SPEED=420,SLAM_RADIUS=150;
 export const SWARMS=[90,240,390,540];      // a ring of monsters closes in
@@ -371,15 +379,15 @@ export const JOURNEY_BOSSES=[
   {...LITH_BOSSES[0],at:150,hp:900,damage:14,speed:55,region:'lith'},
   {...LITH_BOSSES[1],at:300,hp:3600,damage:18,speed:60,region:'lith'},
   {...BOSSES[1],at:450,hp:7500,damage:24,speed:64,region:'henesys'},
-  {...BOSSES[3],at:600,hp:19000,damage:30,speed:68,final:false,region:'henesys'},
+  {...ELLINIA_BOSSES[3],at:600,hp:19000,damage:30,speed:68,final:false,region:'ellinia'},
   {...ELLINIA_BOSSES[0],at:840,hp:22000,damage:36,speed:70,region:'ellinia'},
   {...ELLINIA_BOSSES[2],at:1020,hp:42000,damage:42,speed:74,region:'ellinia'},
-  {...ELLINIA_BOSSES[3],at:FINAL_BOSS_AT,hp:80000,damage:50,speed:76,final:true,region:'ellinia'},
+  {...BOSSES[3],at:FINAL_BOSS_AT,hp:80000,damage:50,speed:76,final:true,region:'henesys'},
 ];
 const BOSS_REWARD_EXP=[80,120,200,300,440,600,800];
 JOURNEY_BOSSES.forEach((b,i)=>{b.rewardExp=BOSS_REWARD_EXP[i];});
 // Shuffle boss identities separately from regions. Challenge belongs to the slot, identity keeps its own patterns.
-// The final Faust preserves the established clear condition; all six middle encounters change order every run.
+// Junior Balrog is fixed last; all six middle encounters, including Faust, shuffle each run.
 export function shuffledBosses(random=Math.random){
   const bodies=JOURNEY_BOSSES.slice(0,-1);for(let i=bodies.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[bodies[i],bodies[j]]=[bodies[j],bodies[i]];}
   return JOURNEY_BOSSES.map((slot,i)=>i===JOURNEY_BOSSES.length-1?{...slot}:{...bodies[i],at:slot.at,hp:slot.hp,damage:slot.damage,speed:slot.speed,rewardExp:slot.rewardExp,final:false});
@@ -409,14 +417,15 @@ const dist2=(a,b)=>(a.x-b.x)**2+(a.y-b.y)**2;
 
 // job = {branch, tier} once the skill has advanced (tier 1 = 2nd job). kind/skill say how it fires and looks.
 export function weaponStats(id,level,job=null){
-  const w=WEAPONS[id],s={...w.base,kind:w.kind,skill:id};
+  const w=WEAPONS[id],s={...w.base,kind:w.kind,skill:w.visual??id,variant:CYGNUS_VARIANTS[id]?.kind};
   for(let i=0;i<Math.min(level,WEAPON_MAX)-1;i++)for(const [k,v]of Object.entries(w.ups[i]))s[k]=(s[k]??0)+v;
+  const scale=CYGNUS_VARIANTS[id]?.damageScale?.[Math.max(0,Math.min(7,level-1))];if(scale)s.damage=Math.round(s.damage*scale);
   const t=job&&JOBS[id]?.[job.branch]?.tiers[job.tier-1];
   // A set value can be a function of the 1st-job stats at this level, so a tier keeps the skill's volume as it levels.
   if(t){const b={...s};s.damage=Math.round(s.damage*t.mult);for(const [k,v]of Object.entries(t.set))s[k]=typeof v==='function'?v(b):v;s.kind=t.kind;s.skill=t.skill;}
   return s;
 }
-const UP_TEXT={targets:v=>`최대 대상 +${v}`,damage:v=>`피해 +${v}`,count:v=>`투사체 +${v}`,pierce:v=>v>=50?'모든 적 관통':`관통 +${v}`,cooldown:v=>`쿨타임 ${v}초`,area:v=>`범위 +${formatPercent(v)}`};
+const UP_TEXT={targets:v=>`최대 대상 +${v}`,damage:v=>`피해 +${v}`,count:v=>`투사체 +${v}`,pierce:v=>v>=50?'모든 적 관통':`관통 +${v}`,cooldown:v=>`쿨타임 ${v}초`,area:v=>`범위 +${formatPercent(v)}`,splash:v=>`폭발 반경 +${v}`,width:v=>`충격파 폭 +${v}`,hits:v=>`연타 +${v}`};
 export function upgradeText(id,nextLevel){const up=WEAPONS[id].ups[nextLevel-2];return up?Object.entries(up).map(([k,v])=>UP_TEXT[k](v)).join(', '):'';}
 
 export class Game{
@@ -425,20 +434,33 @@ export class Game{
     this.player={x:0,y:0,face:-1,dir:{x:-1,y:0},moving:false,level:1,exp:0,hp:PLAYER.hp,invincible:0,regenAcc:0};
     this.weapons={[START_WEAPON]:1};this.passives={};this.cooldowns={[START_WEAPON]:.4};
     this.mobs=[];this.projectiles=[];this.hazards=[];this.drops=[];this.effects=[];this.numbers=[];this.events=[];
-    this.time=0;this.kills=0;this.serial=0;this.spawnAcc=0;this.boss=null;this.bossIndex=0;this.swarmIndex=0;this.regionIndex=0;
+    this.time=0;this.kills=0;this.bossKills=0;this.serial=0;this.spawnAcc=0;this.boss=null;this.bossIndex=0;this.swarmIndex=0;this.regionIndex=0;
     this.choices=[];this.pendingLevels=0;this.choiceKind='upgrade';this.won=false;this.jobs={};
     this.equipment={};this.trophies=[];this.itemTimers={guard:0,spore:0};this.lootQueue=[];this.buffs={};
+    this.damageBySkill={};this.totalDamage=0;
+    this.skillCasts={};
     this.route=JOURNEY.map(p=>({...p}));this.bossRoute=JOURNEY_BOSSES.map(b=>({...b}));
   }
   // An explicit region is retained only for isolated asset/skill test scenes; the actual menu calls start().
-  start(stage){this.continuous=!stage;this.reset();if(this.continuous){this.route=shuffledJourney(this.random);this.bossRoute=shuffledBosses(this.random);}this.stage=stageById(stage??this.route[0].id);this.mode='playing';for(let i=0;i<6;i++)this.spawn();}
+  // Passing null opens the live game's starter picker. The default is retained for offline simulations.
+  start(stage,starter=START_WEAPON){
+    this.continuous=!stage;this.reset();if(this.continuous){this.route=shuffledJourney(this.random);this.bossRoute=shuffledBosses(this.random);}
+    this.stage=stageById(stage??this.route[0].id);this.weapons={};this.cooldowns={};this.mode='starter';
+    if(starter!=null){this.choices=[{type:'weapon',id:starter,level:1}];this.selectStarter(starter);}
+    else{const pool=Object.keys(WEAPONS);for(let i=0;i<3;i++){const index=Math.min(pool.length-1,Math.floor(this.random()*pool.length));this.choices.push({type:'weapon',id:pool.splice(index,1)[0],level:1});}}
+  }
+  selectStarter(id){
+    if(this.mode!=='starter'||!Object.hasOwn(WEAPONS,id)||!this.choices.some(c=>c.id===id))return false;
+    this.weapons={[id]:1};this.cooldowns={[id]:.4};this.mode='playing';
+    this.choices=[];for(let i=0;i<6;i++)this.spawn();return true;
+  }
   emit(type,data={}){this.events.push({type,...data});}
   get expNeed(){return this.continuous?journeyExpNeed(this.player.level):expNeed(this.player.level);}
   itemStat(name){let v=0;for(const e of Object.values(this.equipment)){v+=(EQUIPMENT[e.id].stats[name]??0)*rankMultiplier(e.rank);v+=ENCHANTS[e.enchant]?.stats[name]??0;v+=e.bonus?.[name]??0;}
     for(const b of Object.values(this.buffs))if(b.stat===name)v+=b.value;return v;}
   // Weapon in hand: its family's skills (1st job and every job tier of them) hit harder.
   weaponBonus(id){const w=this.equipment.weapon;return w&&weaponFamilyOf(id)===EQUIPMENT[w.id].family?WEAPON_BONUS*rankMultiplier(w.rank):0;}
-  stat(name){let v=this.itemStat(name);for(const [id,lv]of Object.entries(this.passives))if(PASSIVES[id].stat===name)v+=PASSIVES[id].per*lv;
+  stat(name){let v=this.itemStat(name);if(name==='speed'&&this.player.gale>0)v+=.12;for(const [id,lv]of Object.entries(this.passives))if(PASSIVES[id].stat===name)v+=PASSIVES[id].per*lv;
     if(name==='might'&&this.trophies.includes('courage')&&this.player.hp<=this.maxHp*.4)v+=.18;return v;}
   get maxHp(){return Math.round(PLAYER.hp*(1+this.stat('maxHp')));}
   get moveSpeed(){return PLAYER.speed*(1+this.stat('speed'));}
@@ -490,10 +512,12 @@ export class Game{
     if(this.pendingLevels&&this.mode==='playing')this.openChoices();
   }
   updatePlayer(dt,input){
-    const p=this.player;let x=input.x??0,y=input.y??0;const len=Math.hypot(x,y);
+    const p=this.player,from={x:p.x,y:p.y};let x=input.x??0,y=input.y??0;const len=Math.hypot(x,y);
+    p.gale=Math.max(0,(p.gale??0)-dt);
     if(len>1){x/=len;y/=len;}
     p.moving=len>.1;
     if(p.moving){p.x+=x*this.moveSpeed*dt;p.y+=y*this.moveSpeed*dt;const l=Math.hypot(x,y);p.dir={x:x/l,y:y/l};if(Math.abs(x)>.15)p.face=x>0?1:-1;}
+    this.world?.move?.(p,from,PLAYER.radius);
     p.invincible=Math.max(0,p.invincible-dt);
     p.healBudget=Math.min(SKILL_HEAL_CAP*3,(p.healBudget??0)+SKILL_HEAL_CAP*dt);
     p.regenAcc+=this.stat('regen')*dt;if(p.regenAcc>=1){const n=Math.floor(p.regenAcc);p.regenAcc-=n;p.hp=Math.min(this.maxHp,p.hp+n);}
@@ -506,7 +530,12 @@ export class Game{
       this.cooldowns[id]=(this.cooldowns[id]??0)-dt;
       if(this.cooldowns[id]>0)continue;
       const s=this.stats(id);
-      if(this.fire(id,level,s)){this.cooldowns[id]=s.cooldown*haste;this.emit('fire',{weapon:id,skill:s.skill});if(s.heal)this.absorb(s.heal*this.cooldowns[id]);}
+      if(this.fire(id,level,s)){
+        this.cooldowns[id]=s.cooldown*haste;this.emit('fire',{weapon:id,skill:s.skill});if(s.heal)this.absorb(s.heal*this.cooldowns[id]);
+        this.skillCasts[id]=(this.skillCasts[id]??0)+1;
+        if(s.variant==='wind')this.player.gale=.8;
+        if(s.variant==='solar'&&this.skillCasts[id]%3===0){const p=this.player;this.hitArea(m=>dist2(m,p)<=(150+m.radius)**2,s.damage*.1,s.skill,{quiet:true});this.effects.push({kind:'shock',x:p.x,y:p.y,r:150,t:0,life:.4,color:'#ffe787'});}
+      }
       else this.cooldowns[id]=.1; // nothing to aim at yet
     }
   }
@@ -522,12 +551,14 @@ export class Game{
   }
   fire(id,level,s){
     const p=this.player,kind=s.kind,fx=s.skill,area=(s.area??1)*(1+this.stat('area')),freeze=s.freeze??0;
-    const on={freeze,crit:s.crit??0,steal:s.steal??0,stun:s.stun??0,weaken:s.weaken??0,push:(s.push??0)+this.itemStat('push')};   // carried by every hit of this cast
+    const on={freeze,crit:s.crit??0,steal:s.steal??0,stun:s.stun??(s.variant==='lightning'?.18:0),weaken:s.weaken??0,push:(s.push??0)+(s.variant==='wind'?20:0)+this.itemStat('push'),variant:s.variant,proc:{used:false}};
     const look=s.look??fx;   // the cast animation (Final Attack / Threaten have none of their own: Power Strike's is shown)
     // Final Attack: each monster hit may be struck once more right after.
     const follow=(mobs,delay)=>{if(s.follow)for(const m of mobs)if(this.random()<s.follow)this.damageMob(m,s.damage,fx,{delay:delay+.28,hitIndex:1,...on});};
-    const shot=(angle,extra={})=>this.projectiles.push({weapon:id,skill:fx,kind,on,spin:!!s.spin,splash:s.splash??0,splashTargets:(s.targets??1)-1,x:p.x,y:p.y-28,vx:Math.cos(angle)*s.speed,vy:Math.sin(angle)*s.speed,speed:s.speed,angle,
-      life:(s.range+SHOT_EXTRA)/s.speed,damage:s.damage,pierce:s.pierce,hit:new Set(),tier:level>=6?2:level>=3?1:0,...extra});
+    const shot=(angle,extra={})=>{
+      const b={weapon:id,skill:fx,kind,on,variant:s.variant,bounces:s.variant==='shadow'?1:0,spin:!!s.spin,splash:s.splash??0,splashTargets:(s.targets??1)-1,x:p.x,y:p.y-28,vx:Math.cos(angle)*s.speed,vy:Math.sin(angle)*s.speed,speed:s.speed,angle,
+        life:(s.range+SHOT_EXTRA)/s.speed,damage:s.damage,pierce:s.pierce,hit:new Set(),tier:level>=6?2:level>=3?1:0,...extra};this.projectiles.push(b);
+    };
     if(kind==='shell'){
       const [t]=this.nearest(1,s.range);if(!t)return false;
       const a=Math.atan2(t.y-t.height/2-(p.y-28),t.x-p.x);
@@ -641,15 +672,24 @@ export class Game{
     const {hitIndex=0,delay=0,freeze=0,quiet=false,crit:critBonus=0,steal=0,stun=0,weaken=0,push=0}=opts;
     if(delay>0){(m.queued??=[]).push({base,weapon,opts:{...opts,delay:0},t:delay});return;}
     if(m.dying)return;
+    if(opts.variant==='shadow'&&m.hp<=m.maxHp*.3)base*=1.1;
     let {value,crit}=this.rollDamage(base,critBonus);
     if(m.weak>0)value=Math.round(value*WEAK.taken);   // Threaten
+    // Count real HP removed, once when a hit lands (not when a delayed attack is queued).
+    const dealt=Math.max(0,Math.min(value,m.hp));
+    this.damageBySkill[weapon]=(this.damageBySkill[weapon]??0)+dealt;this.totalDamage+=dealt;
     m.hp-=value;
+    if(opts.variant==='lightning'&&!opts.proc?.used){if(opts.proc)opts.proc.used=true;const chained=this.nearest(3,140,m).filter(o=>o!==m).slice(0,2);
+      if(chained.length){this.effects.push({kind:'chain',points:[m,...chained].map(o=>({x:o.x,y:o.y-o.height/2})),t:0,life:.3,width:8});for(const o of chained)this.damageMob(o,base*.35,weapon,{quiet:true,stun:.18});}}
     this.numbers.push({x:m.x,y:m.y-m.height-hitIndex*22,value,crit,kind:'dealt',t:0});
     if(!quiet)this.effects.push({kind:'hit',skill:weapon,x:m.x,y:m.y-m.height/2,face:this.player.face,t:0,life:3}); // app stops at the last frame
     if(m.hp<=0){
       // Steal (Bandit line): a kill may drop a second meso.
       if(steal&&!m.boss&&this.random()<steal){this.drops.push({kind:'meso',x:m.x+14,y:m.y+4,value:m.exp,id:++this.serial});this.emit('steal');}
-      this.kill(m);return;}
+      this.kill(m);
+      if(opts.variant==='flame'){this.effects.push({kind:'shock',x:m.x,y:m.y,r:72,t:0,life:.3,color:'#ff9c47'});for(const o of this.nearest(3,72,m))this.damageMob(o,base*.2,weapon,{quiet:true});}
+      return;}
+    if(opts.variant==='flame')m.burn={damage:base*.12,skill:weapon,tick:m.burn?.tick??.6,remaining:1.8};
     m.flash=.15;
     if(!m.boss){
       if(freeze){m.frozen=Math.max(m.frozen??0,freeze);m.stun=false;}
@@ -665,6 +705,7 @@ export class Game{
     this.emit('kill',{mob:m.type,boss:!!m.boss});
     this.drops.push({kind:'meso',x:m.x,y:m.y,value:m.exp,id:++this.serial});
     if(m.boss){
+      this.bossKills++;
       this.drops.push({kind:'potion',item:'02000005',x:m.x+24,y:m.y,id:++this.serial});
       if(this.boss===m)this.boss=null;
       this.emit('bossDown',{mob:m.type,final:!!m.final});
@@ -696,7 +737,12 @@ export class Game{
           this.alive().filter(o=>!b.hit.has(o.id)&&(o.x-m.x)**2+(o.y-m.y)**2<=(b.splash+o.radius)**2).sort((a,c)=>dist2(a,m)-dist2(c,m))
             .slice(0,b.splashTargets).forEach(o=>{b.hit.add(o.id);this.damageMob(o,b.damage,b.skill,{...b.on,quiet:true});});
           b.life=0;break;}
-        if(b.hit.size>=b.pierce){b.life=0;break;}
+        if(b.hit.size>=b.pierce){
+          const next=b.bounces>0?this.nearest(20,120,m).find(o=>!b.hit.has(o.id)&&dist2(o,p)<=300**2):null;
+          if(next){b.bounces--;b.damage*=.1;b.pierce++;b.target=next.id;b.shadow=true;b.life=Math.max(b.life,.25);}
+          else b.life=0;
+          break;
+        }
       }
     }
     this.projectiles=this.projectiles.filter(b=>b.life>0);
@@ -717,13 +763,14 @@ export class Game{
     const m={id:++this.serial,type,x:p.x+Math.cos(angle)*distance,y:p.y+Math.sin(angle)*distance,hp,maxHp:hp,exp:Math.max(1,Math.round(r.exp*this.xpScale*(d?d.exp/profile.exp:1))),
       damage:Math.round((4+r.pad*.15)*TUNING.mobDamage*(d?d.damage/profile.damage:1)),speed:Math.max(28,60*(1+r.speedStat/150)),radius:r.radius,height:r.height,flying:r.flying,
       face:-1,anim:this.random()*1000,flash:0,dying:0,boss:false,...extra};
-    this.mobs.push(m);return m;
+    this.world?.place?.(m,Math.max(10,Math.min(28,m.radius*.6)));this.mobs.push(m);return m;
   }
   spawnBoss(def){
     const r=this.rules.mobs[def.id],scale=def.scale??1;
     const hp=Math.round(def.hp*TUNING.bossHp);
     const m=this.addMob(def.id,this.random()*Math.PI*2,this.spawnDistance(),{boss:true,final:!!def.final,hp,maxHp:hp,damage:Math.round(def.damage*TUNING.mobDamage),speed:def.speed,exp:Math.max(1,Math.round((def.rewardExp??r.exp*.5)*this.xpScale)),
-      scale,radius:Math.round(r.radius*scale),height:Math.round(r.height*scale),patterns:def.patterns??[],summon:def.summon,bullet:def.bullet??'#ff6a5a',patCd:2.5});
+      scale,radius:Math.round(r.radius*scale),height:Math.round(r.height*scale),patterns:[...(def.patterns??[])],summon:def.summon,bullet:def.bullet??'#ff6a5a',patCd:2.5,attackRank:this.continuous?Math.max(1,this.bosses.findIndex(b=>b.at===def.at)+1):0});
+    if(m&&m.attackRank>=4&&!m.patterns.includes('eruption'))m.patterns.push('eruption');
     if(m){this.boss=m;this.emit('boss',{mob:def.id,final:!!def.final});}
     return m;
   }
@@ -746,19 +793,22 @@ export class Game{
     for(const m of this.mobs){
       m.anim+=dt*1000;
       if(m.dying){m.dying+=dt;continue;}
+      if(m.burn){const burn=m.burn;burn.remaining-=dt;burn.tick-=dt;if(burn.tick<=0){burn.tick+=.6;this.damageMob(m,burn.damage,burn.skill,{quiet:true});}if(m.dying)continue;if(burn.remaining<=0)m.burn=null;}
+      const from={x:m.x,y:m.y},groundRadius=Math.max(10,Math.min(28,m.radius*.6));
       if(m.queued?.length){for(const q of m.queued)q.t-=dt;const due=m.queued.filter(q=>q.t<=0);m.queued=m.queued.filter(q=>q.t>0);
         for(const q of due){this.damageMob(m,q.base,q.weapon,q.opts);if(m.dying)break;}if(m.dying)continue;}
       m.flash=Math.max(0,m.flash-dt);
       if(m.weak>0)m.weak-=dt;
-      if(m.kb){m.x+=m.kb.x*dt;m.y+=m.kb.y*dt;if((m.kb.t-=dt)<=0)m.kb=null;continue;}   // shoved back (Rush)
+      if(m.kb){m.x+=m.kb.x*dt;m.y+=m.kb.y*dt;this.world?.move?.(m,from,groundRadius);if((m.kb.t-=dt)<=0)m.kb=null;continue;}   // shoved back (Rush)
       // A frozen monster neither moves nor hurts the player.
       if(m.frozen>0){m.frozen-=dt;continue;}
       const dx=p.x-m.x,dy=p.y-m.y,d=Math.hypot(dx,dy)||1;
       // Far behind the player: move ahead of them instead (no EXP), like the original game.
-      if(d>DESPAWN&&!m.boss){const a=Math.atan2(p.dir.y,p.dir.x)+(this.random()-.5)*1.6,r=this.spawnDistance();m.x=p.x+Math.cos(a)*r;m.y=p.y+Math.sin(a)*r;continue;}
+      if(d>DESPAWN&&!m.boss){const a=Math.atan2(p.dir.y,p.dir.x)+(this.random()-.5)*1.6,r=this.spawnDistance();m.x=p.x+Math.cos(a)*r;m.y=p.y+Math.sin(a)*r;this.world?.place?.(m,groundRadius);continue;}
       if(!(m.boss&&this.updateBoss(m,dt))){   // a boss pattern holds or moves the boss itself
         const speed=m.speed*(m.flash>0?.3:1);
-        m.x+=dx/d*speed*dt;m.y+=dy/d*speed*dt;if(Math.abs(dx)>4)m.face=dx>0?1:-1;
+        const direction=this.world?.steer?.(m,p,{x:dx/d,y:dy/d})??{x:dx/d,y:dy/d};
+        m.x+=direction.x*speed*dt;m.y+=direction.y*speed*dt;if(Math.abs(dx)>4)m.face=dx>0?1:-1;
       }
       // Monsters push each other apart so crowds spread out.
       const cx=Math.floor(m.x/cell),cy=Math.floor(m.y/cell);
@@ -767,7 +817,8 @@ export class Game{
         if(dd>=min*min||dd===0)continue;const l=Math.sqrt(dd),push=(min-l)/2;
         const wm=m.boss?.1:o.boss?.9:.5;m.x+=ox/l*push*2*wm;m.y+=oy/l*push*2*wm;
       }
-      // Contact damage with a short invincibility after each hit.
+      this.world?.move?.(m,from,groundRadius);
+      // Contact damage uses the position after ground collision, matching the displayed feet.
       if(p.invincible===0&&(m.x-p.x)**2+(m.y-p.y)**2<=(m.radius*.8+PLAYER.radius)**2){this.hurt(m.weak>0?{damage:m.damage*WEAK.dealt,type:m.type}:m);if(this.mode!=='playing')return;}
     }
     this.mobs=this.mobs.filter(m=>!(m.dying&&m.dying>1.2));
@@ -781,16 +832,20 @@ export class Game{
       m.patIndex=((m.patIndex??-1)+1)%m.patterns.length;
       const kind=m.patterns[m.patIndex],a=Math.atan2(p.y-m.y,p.x-m.x);
       m.pat={kind,t:0,fired:false,dir:{x:Math.cos(a),y:Math.sin(a)}};
-      const P=BOSS_PATTERNS[kind],life=P.warn;
+      const P=BOSS_PATTERNS[kind],life=P.warn,profile=bossAttackProfile(m.attackRank);
       if(kind==='dash')this.effects.push({kind:'warn',shape:'line',x:m.x,y:m.y,x2:m.x+m.pat.dir.x*DASH_SPEED*P.act,y2:m.y+m.pat.dir.y*DASH_SPEED*P.act,width:m.radius*1.6,t:0,life});
       else if(kind==='slam')this.effects.push({kind:'warn',shape:'ring',x:m.x,y:m.y,r:SLAM_RADIUS+m.radius,t:0,life});
+      else if(kind==='eruption'){
+        const off=this.random()*Math.PI*2;m.pat.spots=Array.from({length:profile.spots},(_,i)=>({x:p.x+(i?Math.cos(off+(i-1)*Math.PI/2)*150:0),y:p.y+(i?Math.sin(off+(i-1)*Math.PI/2)*150:0)}));
+        m.pat.spots.forEach((s,i)=>this.effects.push({kind:'warn',shape:'ring',...s,r:55,t:0,life:life+i*.18,ground:true,color:m.bullet}));
+      }
       else{
         const mid={x:m.x,y:m.y-m.height/2};
         this.effects.push({kind:'warn',shape:'glow',x:mid.x,y:mid.y,r:m.radius+20,color:m.bullet,t:0,life});
         // bullet lanes, fixed now: burst = a ring (final bosses add a second ring in the gaps), volley = 3 aimed lanes
-        if(kind==='burst'){const n=m.final?14:10,off=this.random()*Math.PI;
-          m.pat.angles=[...Array(n)].map((_,i)=>off+i/n*Math.PI*2);m.pat.angles2=m.final?m.pat.angles.map(a=>a+Math.PI/n):[];}
-        if(kind==='volley'){const a=Math.atan2(p.y-28-mid.y,p.x-mid.x);m.pat.angles=[-1,0,1].map(i=>a+i*VOLLEY_SPREAD);m.pat.angles2=[];}
+        if(kind==='burst'){const n=m.attackRank?profile.burst:m.final?14:10,off=this.random()*Math.PI;
+          m.pat.angles=[...Array(n)].map((_,i)=>off+i/n*Math.PI*2);m.pat.angles2=(m.attackRank?m.attackRank>=4:m.final)?m.pat.angles.map(a=>a+Math.PI/n):[];}
+        if(kind==='volley'){const a=Math.atan2(p.y-28-mid.y,p.x-mid.x),n=m.attackRank?profile.lanes:3;m.pat.angles=Array.from({length:n},(_,i)=>a+(i-(n-1)/2)*VOLLEY_SPREAD);m.pat.angles2=[];}
         if(m.pat.angles)this.effects.push({kind:'warn',shape:'lanes',x:mid.x,y:mid.y,angles:[...m.pat.angles,...m.pat.angles2],len:kind==='burst'?380:620,width:22,t:0,life});
       }
       this.emit('bossSkill',{mob:m.type,kind});
@@ -798,22 +853,25 @@ export class Game{
     const pt=m.pat,P=BOSS_PATTERNS[pt.kind];pt.t+=dt;
     if(pt.t<P.warn)return true;                          // winding up in place
     if(!pt.fired){pt.fired=true;this.bossAct(m);}
-    if(pt.kind==='dash'&&pt.t<P.warn+P.act){m.x+=pt.dir.x*DASH_SPEED*dt;m.y+=pt.dir.y*DASH_SPEED*dt;m.face=pt.dir.x>0?1:-1;}
-    if(pt.t>=P.warn+P.act){m.pat=null;m.patCd=m.final?2.4:3.2;}
+    if(pt.kind==='dash'&&pt.t<P.warn+P.act){m.x+=pt.dir.x*DASH_SPEED*dt;m.y+=pt.dir.y*DASH_SPEED*dt;m.face=pt.dir.x>0?1:-1;pt.trail=(pt.trail??0)+dt;if(pt.trail>.07){pt.trail=0;this.effects.push({kind:'bossTrail',x:m.x,y:m.y,r:m.radius,t:0,life:.35,color:m.bullet});}}
+    if(pt.t>=P.warn+P.act){m.pat=null;m.patCd=m.attackRank?bossAttackProfile(m.attackRank).cooldown:m.final?2.4:3.2;}
     return true;
   }
   bossAct(m){
-    const p=this.player,kind=m.pat.kind,mid={x:m.x,y:m.y-m.height/2};
+    const p=this.player,kind=m.pat.kind,mid={x:m.x,y:m.y-m.height/2},profile=bossAttackProfile(m.attackRank);
+    this.effects.push({kind:'bossCast',...mid,rank:m.attackRank??1,t:0,life:.55,color:m.bullet});
     const bullet=(angle,speed,delay=0)=>this.hazards.push({x:mid.x,y:mid.y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,r:10,delay,life:4,
-      damage:Math.round(m.damage*BULLET_DAMAGE),type:m.type,color:m.bullet});
+      damage:Math.round(m.damage*(m.attackRank?profile.damage:BULLET_DAMAGE)),type:m.type,color:m.bullet,rank:m.attackRank});
     if(kind==='slam'){
       const r=SLAM_RADIUS+m.radius;this.effects.push({kind:'shock',x:m.x,y:m.y,r,t:0,life:.45});
       if(p.invincible===0&&dist2(m,p)<=(r+PLAYER.radius)**2)this.hurt({damage:Math.round(m.damage*1.3),type:m.type});
     }else if(kind==='burst'){
-      for(const a of m.pat.angles)bullet(a,BURST_SPEED);
-      for(const a of m.pat.angles2)bullet(a,BURST_SPEED,.45);
+      for(const a of m.pat.angles)bullet(a,m.attackRank?profile.burstSpeed:BURST_SPEED);
+      for(const a of m.pat.angles2)bullet(a,m.attackRank?profile.burstSpeed:BURST_SPEED,.45);
     }else if(kind==='volley'){
-      for(let w=0;w<2;w++)for(const a of m.pat.angles)bullet(a,VOLLEY_SPEED,w*.3);   // two waves down the warned lanes
+      for(let w=0;w<(m.attackRank?profile.waves:2);w++)for(const a of m.pat.angles)bullet(a,m.attackRank?profile.volleySpeed:VOLLEY_SPEED,w*.3);
+    }else if(kind==='eruption'){
+      m.pat.spots.forEach((s,i)=>this.hazards.push({...s,vx:0,vy:0,r:55,ground:true,delay:i*.18,life:.3,damage:Math.round(m.damage*.85),type:m.type,color:m.bullet,rank:m.attackRank}));
     }else if(kind==='summon'&&m.summon&&this.rules.mobs[m.summon]){
       const n=m.final?6:4;
       for(let i=0;i<n;i++){const a=i/n*Math.PI*2,c=this.addMob(m.summon,0,0);if(c){c.x=m.x+Math.cos(a)*(m.radius+50);c.y=m.y+Math.sin(a)*(m.radius+30);}}
@@ -824,8 +882,9 @@ export class Game{
     const p=this.player;
     for(const h of this.hazards){
       if(h.delay>0){h.delay-=dt;continue;}
+      if(h.ground&&!h.started){h.started=true;this.effects.push({kind:'bossImpact',x:h.x,y:h.y,r:h.r,rank:h.rank,t:0,life:.55,color:h.color});}
       h.life-=dt;h.x+=h.vx*dt;h.y+=h.vy*dt;
-      if(p.invincible===0&&(h.x-p.x)**2+(h.y-(p.y-28))**2<=(h.r+PLAYER.radius)**2){h.life=0;this.hurt(h);if(this.mode!=='playing')return;}
+      if(p.invincible===0&&(h.x-p.x)**2+(h.y-(h.ground?p.y:p.y-28))**2<=(h.r+PLAYER.radius)**2){h.life=0;this.hurt(h);if(this.mode!=='playing')return;}
     }
     this.hazards=this.hazards.filter(h=>h.life>0);
   }
@@ -843,6 +902,7 @@ export class Game{
   updateDrops(dt){
     const p=this.player,r2=this.pickupRadius**2;
     for(const d of this.drops){
+      this.world?.drop?.(d);
       d.t=(d.t??0)+dt;
       const dd=(d.x-p.x)**2+(d.y-p.y)**2;
       if(!d.pull&&dd<=r2)d.pull=120;
@@ -868,7 +928,7 @@ export class Game{
   // ---------- equipment and boss loot (run-local, independent of cosmetic avatar) ----------
   useConsumable(id){
     const c=CONSUMABLES[id];if(!c)return false;
-    if(c.effect==='heal')this.heal(c.value);
+    if(c.effect==='heal')this.heal(c.ratio?this.maxHp*c.ratio:c.value);
     if(c.effect==='cleanse'){const p=this.player;this.hazards=this.hazards.filter(h=>(h.x-p.x)**2+(h.y-p.y)**2>340**2);p.invincible=Math.max(p.invincible,3);this.effects.push({kind:'shock',x:p.x,y:p.y,r:340,t:0,life:.6,color:'#c5f7ff'});}
     if(c.effect==='magnet')for(const d of this.drops)if(d.kind==='meso')d.pull=900;
     if(c.effect==='buff')this.buffs[id]={stat:c.stat,value:c.value,time:c.time,max:c.time}; // drinking again refreshes it
@@ -973,6 +1033,7 @@ export class Game{
     this.mode=this.choiceKind==='reward'?'reward':'upgrade';
   }
   choose(index){
+    if(this.mode==='starter')return this.selectStarter(this.choices[index]?.id);
     if(this.mode==='loot')return this.chooseLoot(index);
     if(!['upgrade','reward'].includes(this.mode)||!this.choices[index])return false;
     const c=this.choices[index],p=this.player;
@@ -992,6 +1053,6 @@ export class Game{
     const p=this.player;
     return {stage:this.stage.id,route:this.route.map(p=>p.id),bossRoute:this.bosses.map(b=>b.id),continuous:this.continuous,regionIndex:this.regionIndex,mode:this.mode,time:this.time,kills:this.kills,level:p.level,exp:p.exp,expNeed:this.expNeed,hp:p.hp,maxHp:this.maxHp,x:p.x,y:p.y,
       mobs:this.alive().length,drops:this.drops.length,projectiles:this.projectiles.length,hazards:this.hazards.length,boss:this.boss?{id:this.boss.type,hp:this.boss.hp,maxHp:this.boss.maxHp}:null,
-      weapons:{...this.weapons},passives:{...this.passives},jobs:structuredClone(this.jobs),equipment:structuredClone(this.equipment),trophies:[...this.trophies]};
+      weapons:{...this.weapons},passives:{...this.passives},jobs:structuredClone(this.jobs),equipment:structuredClone(this.equipment),trophies:[...this.trophies],damageBySkill:{...this.damageBySkill},totalDamage:this.totalDamage};
   }
 }

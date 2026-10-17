@@ -20,1029 +20,1416 @@
       "source": "Character.wz/Cap/01002000.img/info/icon",
       "src": "1002000.png",
       "w": 32,
-      "h": 32
+      "h": 32,
+      "tuc": 0
     },
     "1002001": {
       "name": "\uBA54\uD0C8 \uAE30\uC5B4",
       "source": "Character.wz/Cap/01002001.img/info/icon",
       "src": "1002001.png",
       "w": 31,
-      "h": 20
+      "h": 20,
+      "tuc": 7
+    },
+    "1002002": {
+      "name": "\uBA54\uD0C8 \uCF54\uC774\uD504",
+      "source": "Character.wz/Cap/01002002.img/info/icon",
+      "src": "1002002.png",
+      "w": 31,
+      "h": 31,
+      "tuc": 7
+    },
+    "1002003": {
+      "name": "\uC2A4\uD2F8 \uCEA1",
+      "source": "Character.wz/Cap/01002003.img/info/icon",
+      "src": "1002003.png",
+      "w": 31,
+      "h": 29,
+      "tuc": 7
+    },
+    "1002004": {
+      "name": "\uBE0C\uB77C\uC6B4 \uADF8\uB808\uC774\uD2B8 \uD5EC\uBA67",
+      "source": "Character.wz/Cap/01002004.img/info/icon",
+      "src": "1002004.png",
+      "w": 27,
+      "h": 33,
+      "tuc": 7
+    },
+    "1002005": {
+      "name": "\uC544\uC774\uC5B8 \uBC84\uAC70\uB137 \uD5EC\uB984",
+      "source": "Character.wz/Cap/01002005.img/info/icon",
+      "src": "1002005.png",
+      "w": 31,
+      "h": 31,
+      "tuc": 7
     },
     "1040002": {
       "name": "\uD558\uC580 \uBC18\uD314 \uBA74\uD2F0",
       "source": "Character.wz/Coat/01040002.img/info/icon",
       "src": "1040002.png",
       "w": 30,
-      "h": 28
+      "h": 28,
+      "tuc": 7
     },
     "1040006": {
       "name": "\uD558\uC580 \uBA74 \uB098\uC2DC",
       "source": "Character.wz/Coat/01040006.img/info/icon",
       "src": "1040006.png",
       "w": 26,
-      "h": 28
+      "h": 28,
+      "tuc": 7
+    },
+    "1040000": {
+      "name": "\uD669\uC9C4\uC77C\uAC11\uC8FC",
+      "source": "Character.wz/Coat/01040000.img/info/icon",
+      "src": "1040000.png",
+      "w": 29,
+      "h": 30,
+      "tuc": 7
+    },
+    "1040001": {
+      "name": "\uAC80\uC740 \uC815\uC7A5",
+      "source": "Character.wz/Coat/01040001.img/info/icon",
+      "src": "1040001.png",
+      "w": 31,
+      "h": 30,
+      "tuc": 0
+    },
+    "1040003": {
+      "name": "\uAC08\uC0C9 \uD558\uB4DC\uB798\uB354",
+      "source": "Character.wz/Coat/01040003.img/info/icon",
+      "src": "1040003.png",
+      "w": 32,
+      "h": 29,
+      "tuc": 7
+    },
+    "1040004": {
+      "name": "\uD30C\uB780\uC0C9 \uC218\uB828\uBCF5",
+      "source": "Character.wz/Coat/01040004.img/info/icon",
+      "src": "1040004.png",
+      "w": 28,
+      "h": 28,
+      "tuc": 7
     },
     "1082002": {
       "name": "\uB178\uAC00\uB2E4 \uBAA9\uC7A5\uAC11",
       "source": "Character.wz/Glove/01082002.img/info/icon",
       "src": "1082002.png",
       "w": 28,
-      "h": 28
+      "h": 28,
+      "tuc": 5
     },
     "1082000": {
       "name": "\uAC15\uCCA0 \uBC18\uC7A5\uAC11",
       "source": "Character.wz/Glove/01082000.img/info/icon",
       "src": "1082000.png",
       "w": 27,
-      "h": 22
+      "h": 22,
+      "tuc": 5
+    },
+    "1082001": {
+      "name": "\uD770 \uBB34\uB2AC \uBC18\uC7A5\uAC11",
+      "source": "Character.wz/Glove/01082001.img/info/icon",
+      "src": "1082001.png",
+      "w": 27,
+      "h": 22,
+      "tuc": 5
+    },
+    "1082003": {
+      "name": "\uC8FC\uB178",
+      "source": "Character.wz/Glove/01082003.img/info/icon",
+      "src": "1082003.png",
+      "w": 26,
+      "h": 24,
+      "tuc": 5
+    },
+    "1082004": {
+      "name": "\uBCA0\uB17C",
+      "source": "Character.wz/Glove/01082004.img/info/icon",
+      "src": "1082004.png",
+      "w": 28,
+      "h": 30,
+      "tuc": 5
+    },
+    "1082005": {
+      "name": "\uC2A4\uD2F8 \uBBF8\uC140",
+      "source": "Character.wz/Glove/01082005.img/info/icon",
+      "src": "1082005.png",
+      "w": 26,
+      "h": 26,
+      "tuc": 5
     },
     "1072001": {
       "name": "\uBE68\uAC04\uC0C9 \uACE0\uBB34 \uC7A5\uD654",
       "source": "Character.wz/Shoes/01072001.img/info/icon",
       "src": "1072001.png",
       "w": 26,
-      "h": 30
+      "h": 30,
+      "tuc": 5
     },
     "1072005": {
       "name": "\uAC00\uC8FD \uC0CC\uB4E4",
       "source": "Character.wz/Shoes/01072005.img/info/icon",
       "src": "1072005.png",
       "w": 26,
-      "h": 27
+      "h": 27,
+      "tuc": 5
+    },
+    "1072000": {
+      "name": "\uD669 \uC9C4\uC6D4\uC7A5\uD654",
+      "source": "Character.wz/Shoes/01072000.img/info/icon",
+      "src": "1072000.png",
+      "w": 27,
+      "h": 31,
+      "tuc": 5
+    },
+    "1072002": {
+      "name": "\uC2A4\uD2F8 \uD2F0\uAC70",
+      "source": "Character.wz/Shoes/01072002.img/info/icon",
+      "src": "1072002.png",
+      "w": 28,
+      "h": 30,
+      "tuc": 5
+    },
+    "1072003": {
+      "name": "\uC5D0\uBA54\uB784\uB4DC \uBC30\uD2C0 \uADF8\uB9AC\uBE0C",
+      "source": "Character.wz/Shoes/01072003.img/info/icon",
+      "src": "1072003.png",
+      "w": 26,
+      "h": 31,
+      "tuc": 5
+    },
+    "1072004": {
+      "name": "\uD770\uC0C9 \uACE0\uBB34\uC2E0",
+      "source": "Character.wz/Shoes/01072004.img/info/icon",
+      "src": "1072004.png",
+      "w": 28,
+      "h": 22,
+      "tuc": 5
     },
     "1102000": {
       "name": "\uCD08\uB85D\uC0C9 \uBAA8\uD5D8\uAC00\uC758 \uB9DD\uD1A0",
       "source": "Character.wz/Cape/01102000.img/info/icon",
       "src": "1102000.png",
       "w": 30,
-      "h": 32
+      "h": 32,
+      "tuc": 5
     },
     "1102001": {
       "name": "\uD30C\uB780\uC0C9 \uBAA8\uD5D8\uAC00\uC758 \uB9DD\uD1A0",
       "source": "Character.wz/Cape/01102001.img/info/icon",
       "src": "1102001.png",
       "w": 30,
-      "h": 32
+      "h": 32,
+      "tuc": 5
+    },
+    "1102002": {
+      "name": "\uBE68\uAC04\uC0C9 \uBAA8\uD5D8\uAC00\uC758 \uB9DD\uD1A0",
+      "source": "Character.wz/Cape/01102002.img/info/icon",
+      "src": "1102002.png",
+      "w": 30,
+      "h": 32,
+      "tuc": 5
+    },
+    "1102003": {
+      "name": "\uD770\uC0C9 \uBAA8\uD5D8\uAC00\uC758 \uB9DD\uD1A0",
+      "source": "Character.wz/Cape/01102003.img/info/icon",
+      "src": "1102003.png",
+      "w": 30,
+      "h": 32,
+      "tuc": 5
+    },
+    "1102004": {
+      "name": "\uAC80\uC740\uC0C9 \uBAA8\uD5D8\uAC00\uC758 \uB9DD\uD1A0",
+      "source": "Character.wz/Cape/01102004.img/info/icon",
+      "src": "1102004.png",
+      "w": 30,
+      "h": 32,
+      "tuc": 5
+    },
+    "1102005": {
+      "name": "\uC544\uAE30\uCC9C\uC0AC \uB0A0\uAC1C",
+      "source": "Character.wz/Cape/01102005.img/info/icon",
+      "src": "1102005.png",
+      "w": 27,
+      "h": 27,
+      "tuc": 0
     },
     "1032000": {
       "name": "\uCD94 \uADC0\uACE0\uB9AC",
       "source": "Character.wz/Accessory/01032000.img/info/icon",
       "src": "1032000.png",
       "w": 27,
-      "h": 30
+      "h": 30,
+      "tuc": 5
     },
     "1032001": {
       "name": "\uD55C\uCABD \uC740 \uADC0\uACE0\uB9AC",
       "source": "Character.wz/Accessory/01032001.img/info/icon",
       "src": "1032001.png",
       "w": 26,
-      "h": 28
+      "h": 28,
+      "tuc": 5
+    },
+    "1032002": {
+      "name": "\uC0AC\uD30C\uC774\uC5B4 \uADC0\uACE0\uB9AC",
+      "source": "Character.wz/Accessory/01032002.img/info/icon",
+      "src": "1032002.png",
+      "w": 27,
+      "h": 29,
+      "tuc": 5
+    },
+    "1032003": {
+      "name": "\uC790\uC218\uC815 \uADC0\uACE0\uB9AC",
+      "source": "Character.wz/Accessory/01032003.img/info/icon",
+      "src": "1032003.png",
+      "w": 29,
+      "h": 26,
+      "tuc": 5
+    },
+    "1032004": {
+      "name": "\uAE08 \uB9C1 \uADC0\uACE0\uB9AC",
+      "source": "Character.wz/Accessory/01032004.img/info/icon",
+      "src": "1032004.png",
+      "w": 30,
+      "h": 29,
+      "tuc": 5
+    },
+    "1032005": {
+      "name": "\uB808\uB4DC \uD06C\uB85C\uC2A4\uB9C1",
+      "source": "Character.wz/Accessory/01032005.img/info/icon",
+      "src": "1032005.png",
+      "w": 31,
+      "h": 30,
+      "tuc": 5
     },
     "1302000": {
       "name": "\uAC80",
       "source": "Character.wz/Weapon/01302000.img/info/icon",
       "src": "1302000.png",
       "w": 31,
-      "h": 30
+      "h": 30,
+      "tuc": 7
     },
     "1302044": {
       "name": "\uC96C\uC5BC \uCFE0\uC544\uB2E4\uB77C",
       "source": "Character.wz/Weapon/01302044.img/info/icon",
       "src": "1302044.png",
       "w": 29,
-      "h": 30
+      "h": 30,
+      "tuc": 5
     },
     "1302059": {
       "name": "\uB4DC\uB798\uACE4 \uCE74\uB77C\uBCA8\uB77C",
       "source": "Character.wz/Weapon/01302059.img/info/icon",
       "src": "1302059.png",
       "w": 32,
-      "h": 32
+      "h": 32,
+      "tuc": 7
     },
     "1432000": {
       "name": "\uCC3D",
       "source": "Character.wz/Weapon/01432000.img/info/icon",
       "src": "1432000.png",
       "w": 33,
-      "h": 35
+      "h": 35,
+      "tuc": 7
     },
     "1432004": {
       "name": "\uC7A5\uD314\uC0AC\uBAA8",
       "source": "Character.wz/Weapon/01432004.img/info/icon",
       "src": "1432004.png",
       "w": 36,
-      "h": 35
+      "h": 35,
+      "tuc": 7
     },
     "1432038": {
       "name": "\uB4DC\uB798\uACE4 \uD314\uD2F0\uC794",
       "source": "Character.wz/Weapon/01432038.img/info/icon",
       "src": "1432038.png",
       "w": 33,
-      "h": 33
+      "h": 33,
+      "tuc": 7
     },
     "1442000": {
       "name": "\uD3F4\uC554",
       "source": "Character.wz/Weapon/01442000.img/info/icon",
       "src": "1442000.png",
       "w": 31,
-      "h": 32
+      "h": 32,
+      "tuc": 7
     },
     "1442005": {
       "name": "\uAD6C\uB8E1\uB3C4",
       "source": "Character.wz/Weapon/01442005.img/info/icon",
       "src": "1442005.png",
       "w": 34,
-      "h": 33
+      "h": 33,
+      "tuc": 7
     },
     "1442002": {
       "name": "\uCEE4\uD130\uBB38",
       "source": "Character.wz/Weapon/01442002.img/info/icon",
       "src": "1442002.png",
       "w": 35,
-      "h": 36
+      "h": 36,
+      "tuc": 7
     },
     "1372005": {
       "name": "\uC6B0\uB4DC \uC644\uB4DC",
       "source": "Character.wz/Weapon/01372005.img/info/icon",
       "src": "1372005.png",
       "w": 27,
-      "h": 29
+      "h": 29,
+      "tuc": 7
     },
     "1372007": {
       "name": "\uD06C\uB85C\uBBF8",
       "source": "Character.wz/Weapon/01372007.img/info/icon",
       "src": "1372007.png",
       "w": 27,
-      "h": 30
+      "h": 30,
+      "tuc": 7
     },
     "1372032": {
       "name": "\uB4DC\uB798\uACE4 \uC644\uB4DC",
       "source": "Character.wz/Weapon/01372032.img/info/icon",
       "src": "1372032.png",
       "w": 31,
-      "h": 34
+      "h": 34,
+      "tuc": 7
     },
     "1452002": {
       "name": "\uC6CC \uBCF4\uC6B0",
       "source": "Character.wz/Weapon/01452002.img/info/icon",
       "src": "1452002.png",
       "w": 30,
-      "h": 31
+      "h": 31,
+      "tuc": 7
     },
     "1452004": {
       "name": "\uBD09\uD669\uC704\uAD81",
       "source": "Character.wz/Weapon/01452004.img/info/icon",
       "src": "1452004.png",
       "w": 34,
-      "h": 34
+      "h": 34,
+      "tuc": 7
     },
     "1452044": {
       "name": "\uB4DC\uB798\uACE4 \uC0E4\uC778\uBCF4\uC6B0",
       "source": "Character.wz/Weapon/01452044.img/info/icon",
       "src": "1452044.png",
       "w": 35,
-      "h": 34
+      "h": 34,
+      "tuc": 7
     },
     "1472000": {
       "name": "\uAC00\uB2C8\uC5B4",
       "source": "Character.wz/Weapon/01472000.img/info/icon",
       "src": "1472000.png",
       "w": 27,
-      "h": 26
+      "h": 26,
+      "tuc": 7
     },
     "1472032": {
       "name": "\uBA54\uC774\uD50C \uCE78\uB370\uC624",
       "source": "Character.wz/Weapon/01472032.img/info/icon",
       "src": "1472032.png",
       "w": 31,
-      "h": 31
+      "h": 31,
+      "tuc": 7
     },
     "1472052": {
       "name": "\uB4DC\uB798\uACE4 \uD37C\uD50C \uC2AC\uB808\uBE0C",
       "source": "Character.wz/Weapon/01472052.img/info/icon",
       "src": "1472052.png",
       "w": 33,
-      "h": 32
+      "h": 32,
+      "tuc": 7
     },
     "1332005": {
       "name": "\uB3C4\uB8E8\uCF54 \uB300\uAC70",
       "source": "Character.wz/Weapon/01332005.img/info/icon",
       "src": "1332005.png",
       "w": 28,
-      "h": 26
+      "h": 26,
+      "tuc": 7
     },
     "1332003": {
       "name": "\uC2E0\uAE30\uD0C0",
       "source": "Character.wz/Weapon/01332003.img/info/icon",
       "src": "1332003.png",
       "w": 35,
-      "h": 35
+      "h": 35,
+      "tuc": 7
     },
     "1332074": {
       "name": "\uD0C0\uC784\uB9AC\uC2A4 \uD0AC\uB9AD",
       "source": "Character.wz/Weapon/01332074.img/info/icon",
       "src": "1332074.png",
       "w": 30,
-      "h": 31
+      "h": 31,
+      "tuc": 7
     },
     "1482000": {
       "name": "\uC2A4\uD2F8 \uB108\uD074",
       "source": "Character.wz/Weapon/01482000.img/info/icon",
       "src": "1482000.png",
       "w": 26,
-      "h": 29
+      "h": 29,
+      "tuc": 7
     },
     "1482021": {
       "name": "\uBA54\uC774\uD50C \uC2A4\uD1B0 \uD551\uAC70",
       "source": "Character.wz/Weapon/01482021.img/info/icon",
       "src": "1482021.png",
       "w": 32,
-      "h": 32
+      "h": 32,
+      "tuc": 7
     },
     "1482013": {
       "name": "\uC6A9\uC544\uC8FC\uC870",
       "source": "Character.wz/Weapon/01482013.img/info/icon",
       "src": "1482013.png",
       "w": 32,
-      "h": 33
+      "h": 33,
+      "tuc": 7
     },
     "1492000": {
       "name": "\uD53C\uC2A4\uD1A8",
       "source": "Character.wz/Weapon/01492000.img/info/icon",
       "src": "1492000.png",
       "w": 32,
-      "h": 28
+      "h": 28,
+      "tuc": 7
     },
     "1492021": {
       "name": "\uBA54\uC774\uD50C \uC2A4\uD1B0 \uD53C\uC2A4\uD1A8",
       "source": "Character.wz/Weapon/01492021.img/info/icon",
       "src": "1492021.png",
       "w": 31,
-      "h": 29
+      "h": 29,
+      "tuc": 7
     },
     "1492013": {
       "name": "\uB4DC\uB798\uACE4 \uC138\uC778\uD2B8",
       "source": "Character.wz/Weapon/01492013.img/info/icon",
       "src": "1492013.png",
       "w": 34,
-      "h": 30
+      "h": 30,
+      "tuc": 7
     },
     "2000000": {
       "name": "\uBE68\uAC04 \uD3EC\uC158",
       "source": "Item.wz/Consume/0200.img/02000000/info/iconRaw",
       "src": "2000000.png",
       "w": 27,
-      "h": 27
+      "h": 27,
+      "tuc": null
     },
     "2020002": {
       "name": "\uCF00\uC774\uD06C",
       "source": "Item.wz/Consume/0202.img/02020002/info/iconRaw",
       "src": "2020002.png",
       "w": 20,
-      "h": 22
+      "h": 22,
+      "tuc": null
     },
     "2050004": {
       "name": "\uB9CC\uBCD1\uD1B5\uCE58\uC57D",
       "source": "Item.wz/Consume/0205.img/02050004/info/iconRaw",
       "src": "2050004.png",
       "w": 20,
-      "h": 31
+      "h": 31,
+      "tuc": null
     },
     "2030000": {
       "name": "\uB9C8\uC744 \uADC0\uD658 \uC8FC\uBB38\uC11C",
       "source": "Item.wz/Consume/0203.img/02030000/info/iconRaw",
       "src": "2030000.png",
       "w": 32,
-      "h": 28
+      "h": 28,
+      "tuc": null
     },
     "2002000": {
       "name": "\uBBFC\uCCA9\uD568\uC758 \uBB3C\uC57D",
       "source": "Item.wz/Consume/0200.img/02002000/info/iconRaw",
       "src": "2002000.png",
       "w": 25,
-      "h": 25
+      "h": 25,
+      "tuc": null
     },
     "2002001": {
       "name": "\uC18D\uB3C4\uD5A5\uC0C1\uC758 \uBB3C\uC57D",
       "source": "Item.wz/Consume/0200.img/02002001/info/iconRaw",
       "src": "2002001.png",
       "w": 25,
-      "h": 25
+      "h": 25,
+      "tuc": null
     },
     "2002002": {
       "name": "\uB9C8\uBC95\uC0AC\uC758 \uBB3C\uC57D",
       "source": "Item.wz/Consume/0200.img/02002002/info/iconRaw",
       "src": "2002002.png",
       "w": 25,
-      "h": 25
+      "h": 25,
+      "tuc": null
     },
     "2002004": {
       "name": "\uC804\uC0AC\uC758 \uBB3C\uC57D",
       "source": "Item.wz/Consume/0200.img/02002004/info/iconRaw",
       "src": "2002004.png",
       "w": 25,
-      "h": 25
+      "h": 25,
+      "tuc": null
     },
     "2002005": {
       "name": "\uBA85\uC0AC\uC218\uC758 \uBB3C\uC57D",
       "source": "Item.wz/Consume/0200.img/02002005/info/iconRaw",
       "src": "2002005.png",
       "w": 25,
-      "h": 25
+      "h": 25,
+      "tuc": null
+    },
+    "2000001": {
+      "name": "\uC8FC\uD669 \uD3EC\uC158",
+      "source": "Item.wz/Consume/0200.img/02000001/info/iconRaw",
+      "src": "2000001.png",
+      "w": 27,
+      "h": 27,
+      "tuc": null
+    },
+    "2000002": {
+      "name": "\uD558\uC580 \uD3EC\uC158",
+      "source": "Item.wz/Consume/0200.img/02000002/info/iconRaw",
+      "src": "2000002.png",
+      "w": 27,
+      "h": 27,
+      "tuc": null
+    },
+    "2000005": {
+      "name": "\uD30C\uC6CC \uC5D8\uB9AD\uC11C",
+      "source": "Item.wz/Consume/0200.img/02000005/info/iconRaw",
+      "src": "2000005.png",
+      "w": 32,
+      "h": 31,
+      "tuc": null
+    },
+    "2020000": {
+      "name": "\uC0D0\uB7EC\uB4DC",
+      "source": "Item.wz/Consume/0202.img/02020000/info/iconRaw",
+      "src": "2020000.png",
+      "w": 30,
+      "h": 19,
+      "tuc": null
+    },
+    "2020001": {
+      "name": "\uD1B5\uB2ED",
+      "source": "Item.wz/Consume/0202.img/02020001/info/iconRaw",
+      "src": "2020001.png",
+      "w": 25,
+      "h": 19,
+      "tuc": null
+    },
+    "2020003": {
+      "name": "\uD53C\uC790",
+      "source": "Item.wz/Consume/0202.img/02020003/info/iconRaw",
+      "src": "2020003.png",
+      "w": 25,
+      "h": 17,
+      "tuc": null
     },
     "2040000": {
       "name": "\uD22C\uAD6C \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02040000/info/iconRaw",
       "src": "2040000.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040001": {
       "name": "\uD22C\uAD6C \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02040001/info/iconRaw",
       "src": "2040001.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040002": {
       "name": "\uD22C\uAD6C \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02040002/info/iconRaw",
       "src": "2040002.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040003": {
       "name": "\uD22C\uAD6C \uCCB4\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02040003/info/iconRaw",
       "src": "2040003.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040004": {
       "name": "\uD22C\uAD6C \uCCB4\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02040004/info/iconRaw",
       "src": "2040004.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040005": {
       "name": "\uD22C\uAD6C \uCCB4\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02040005/info/iconRaw",
       "src": "2040005.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040008": {
       "name": "\uD22C\uAD6C \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02040008/info/iconRaw",
       "src": "2040008.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040009": {
       "name": "\uD22C\uAD6C \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02040009/info/iconRaw",
       "src": "2040009.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040010": {
       "name": "\uD22C\uAD6C \uCCB4\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02040010/info/iconRaw",
       "src": "2040010.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040011": {
       "name": "\uD22C\uAD6C \uCCB4\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02040011/info/iconRaw",
       "src": "2040011.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040300": {
       "name": "\uADC0 \uC7A5\uC2DD \uC9C0\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02040300/info/iconRaw",
       "src": "2040300.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040301": {
       "name": "\uADC0 \uC7A5\uC2DD \uC9C0\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02040301/info/iconRaw",
       "src": "2040301.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040302": {
       "name": "\uADC0 \uC7A5\uC2DD \uC9C0\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02040302/info/iconRaw",
       "src": "2040302.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040304": {
       "name": "\uADC0 \uC7A5\uC2DD \uC9C0\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02040304/info/iconRaw",
       "src": "2040304.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040305": {
       "name": "\uADC0 \uC7A5\uC2DD \uC9C0\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02040305/info/iconRaw",
       "src": "2040305.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040319": {
       "name": "\uADC0 \uC7A5\uC2DD \uD589\uC6B4 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02040319/info/iconRaw",
       "src": "2040319.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040320": {
       "name": "\uADC0 \uC7A5\uC2DD \uD589\uC6B4 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02040320/info/iconRaw",
       "src": "2040320.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040321": {
       "name": "\uADC0 \uC7A5\uC2DD \uD589\uC6B4 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02040321/info/iconRaw",
       "src": "2040321.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040322": {
       "name": "\uADC0 \uC7A5\uC2DD \uD589\uC6B4 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02040322/info/iconRaw",
       "src": "2040322.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040323": {
       "name": "\uADC0 \uC7A5\uC2DD \uD589\uC6B4 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02040323/info/iconRaw",
       "src": "2040323.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040400": {
       "name": "\uC0C1\uC758 \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02040400/info/iconRaw",
       "src": "2040400.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040401": {
       "name": "\uC0C1\uC758 \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02040401/info/iconRaw",
       "src": "2040401.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040402": {
       "name": "\uC0C1\uC758 \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02040402/info/iconRaw",
       "src": "2040402.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040404": {
       "name": "\uC0C1\uC758 \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02040404/info/iconRaw",
       "src": "2040404.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040405": {
       "name": "\uC0C1\uC758 \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02040405/info/iconRaw",
       "src": "2040405.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040700": {
       "name": "\uC2E0\uBC1C \uBBFC\uCCA9\uC131 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02040700/info/iconRaw",
       "src": "2040700.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040701": {
       "name": "\uC2E0\uBC1C \uBBFC\uCCA9\uC131 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02040701/info/iconRaw",
       "src": "2040701.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040702": {
       "name": "\uC2E0\uBC1C \uBBFC\uCCA9\uC131 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02040702/info/iconRaw",
       "src": "2040702.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040706": {
       "name": "\uC2E0\uBC1C \uC774\uB3D9\uC18D\uB3C4 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02040706/info/iconRaw",
       "src": "2040706.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040707": {
       "name": "\uC2E0\uBC1C \uC774\uB3D9\uC18D\uB3C4 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02040707/info/iconRaw",
       "src": "2040707.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040708": {
       "name": "\uC2E0\uBC1C \uC774\uB3D9\uC18D\uB3C4 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02040708/info/iconRaw",
       "src": "2040708.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040712": {
       "name": "\uC2E0\uBC1C \uBBFC\uCCA9\uC131 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02040712/info/iconRaw",
       "src": "2040712.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040713": {
       "name": "\uC2E0\uBC1C \uBBFC\uCCA9\uC131 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02040713/info/iconRaw",
       "src": "2040713.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040716": {
       "name": "\uC2E0\uBC1C \uC774\uB3D9\uC18D\uB3C4 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02040716/info/iconRaw",
       "src": "2040716.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040717": {
       "name": "\uC2E0\uBC1C \uC774\uB3D9\uC18D\uB3C4 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02040717/info/iconRaw",
       "src": "2040717.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040800": {
       "name": "\uC7A5\uAC11 \uBBFC\uCCA9\uC131 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02040800/info/iconRaw",
       "src": "2040800.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040801": {
       "name": "\uC7A5\uAC11 \uBBFC\uCCA9\uC131 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02040801/info/iconRaw",
       "src": "2040801.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040802": {
       "name": "\uC7A5\uAC11 \uBBFC\uCCA9\uC131 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02040802/info/iconRaw",
       "src": "2040802.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040803": {
       "name": "\uC7A5\uAC11 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02040803/info/iconRaw",
       "src": "2040803.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040804": {
       "name": "\uC7A5\uAC11 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02040804/info/iconRaw",
       "src": "2040804.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040805": {
       "name": "\uC7A5\uAC11 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02040805/info/iconRaw",
       "src": "2040805.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040808": {
       "name": "\uC7A5\uAC11 \uBBFC\uCCA9\uC131 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02040808/info/iconRaw",
       "src": "2040808.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040809": {
       "name": "\uC7A5\uAC11 \uBBFC\uCCA9\uC131 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02040809/info/iconRaw",
       "src": "2040809.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040810": {
       "name": "\uC7A5\uAC11 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02040810/info/iconRaw",
       "src": "2040810.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2040811": {
       "name": "\uC7A5\uAC11 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02040811/info/iconRaw",
       "src": "2040811.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2041003": {
       "name": "\uB9DD\uD1A0 \uBB3C\uB9AC \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02041003/info/iconRaw",
       "src": "2041003.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2041004": {
       "name": "\uB9DD\uD1A0 \uBB3C\uB9AC \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02041004/info/iconRaw",
       "src": "2041004.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2041005": {
       "name": "\uB9DD\uD1A0 \uBB3C\uB9AC \uBC29\uC5B4\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02041005/info/iconRaw",
       "src": "2041005.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2041006": {
       "name": "\uB9DD\uD1A0 \uCCB4\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02041006/info/iconRaw",
       "src": "2041006.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2041007": {
       "name": "\uB9DD\uD1A0 \uCCB4\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02041007/info/iconRaw",
       "src": "2041007.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2041008": {
       "name": "\uB9DD\uD1A0 \uCCB4\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02041008/info/iconRaw",
       "src": "2041008.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043000": {
       "name": "\uD55C\uC190\uAC80 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02043000/info/iconRaw",
       "src": "2043000.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043001": {
       "name": "\uD55C\uC190\uAC80 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02043001/info/iconRaw",
       "src": "2043001.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043002": {
       "name": "\uD55C\uC190\uAC80 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02043002/info/iconRaw",
       "src": "2043002.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043004": {
       "name": "\uD55C\uC190\uAC80 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02043004/info/iconRaw",
       "src": "2043004.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043005": {
       "name": "\uD55C\uC190\uAC80 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02043005/info/iconRaw",
       "src": "2043005.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043300": {
       "name": "\uB2E8\uAC80 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02043300/info/iconRaw",
       "src": "2043300.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043301": {
       "name": "\uB2E8\uAC80 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02043301/info/iconRaw",
       "src": "2043301.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043302": {
       "name": "\uB2E8\uAC80 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02043302/info/iconRaw",
       "src": "2043302.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043304": {
       "name": "\uB2E8\uAC80 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02043304/info/iconRaw",
       "src": "2043304.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043305": {
       "name": "\uB2E8\uAC80 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02043305/info/iconRaw",
       "src": "2043305.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043700": {
       "name": "\uC644\uB4DC \uB9C8\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02043700/info/iconRaw",
       "src": "2043700.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043701": {
       "name": "\uC644\uB4DC \uB9C8\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02043701/info/iconRaw",
       "src": "2043701.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043702": {
       "name": "\uC644\uB4DC \uB9C8\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02043702/info/iconRaw",
       "src": "2043702.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043704": {
       "name": "\uC644\uB4DC \uB9C8\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02043704/info/iconRaw",
       "src": "2043704.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2043705": {
       "name": "\uC644\uB4DC \uB9C8\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02043705/info/iconRaw",
       "src": "2043705.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044300": {
       "name": "\uCC3D \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02044300/info/iconRaw",
       "src": "2044300.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044301": {
       "name": "\uCC3D \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02044301/info/iconRaw",
       "src": "2044301.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044302": {
       "name": "\uCC3D \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02044302/info/iconRaw",
       "src": "2044302.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044304": {
       "name": "\uCC3D \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02044304/info/iconRaw",
       "src": "2044304.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044305": {
       "name": "\uCC3D \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02044305/info/iconRaw",
       "src": "2044305.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044400": {
       "name": "\uD3F4\uC554 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02044400/info/iconRaw",
       "src": "2044400.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044401": {
       "name": "\uD3F4\uC554 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02044401/info/iconRaw",
       "src": "2044401.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044402": {
       "name": "\uD3F4\uC554 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02044402/info/iconRaw",
       "src": "2044402.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044404": {
       "name": "\uD3F4\uC554 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02044404/info/iconRaw",
       "src": "2044404.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044405": {
       "name": "\uD3F4\uC554 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02044405/info/iconRaw",
       "src": "2044405.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044500": {
       "name": "\uD65C \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02044500/info/iconRaw",
       "src": "2044500.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044501": {
       "name": "\uD65C \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02044501/info/iconRaw",
       "src": "2044501.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044502": {
       "name": "\uD65C \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02044502/info/iconRaw",
       "src": "2044502.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044504": {
       "name": "\uD65C \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02044504/info/iconRaw",
       "src": "2044504.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044505": {
       "name": "\uD65C \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02044505/info/iconRaw",
       "src": "2044505.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044700": {
       "name": "\uC544\uB300 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02044700/info/iconRaw",
       "src": "2044700.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044701": {
       "name": "\uC544\uB300 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02044701/info/iconRaw",
       "src": "2044701.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044702": {
       "name": "\uC544\uB300 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02044702/info/iconRaw",
       "src": "2044702.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044704": {
       "name": "\uC544\uB300 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02044704/info/iconRaw",
       "src": "2044704.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044705": {
       "name": "\uC544\uB300 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02044705/info/iconRaw",
       "src": "2044705.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044800": {
       "name": "\uB108\uD074 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02044800/info/iconRaw",
       "src": "2044800.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044801": {
       "name": "\uB108\uD074 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02044801/info/iconRaw",
       "src": "2044801.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044802": {
       "name": "\uB108\uD074 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02044802/info/iconRaw",
       "src": "2044802.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044803": {
       "name": "\uB108\uD074 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02044803/info/iconRaw",
       "src": "2044803.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044804": {
       "name": "\uB108\uD074 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02044804/info/iconRaw",
       "src": "2044804.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044900": {
       "name": "\uAC74 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 100%",
       "source": "Item.wz/Consume/0204.img/02044900/info/iconRaw",
       "src": "2044900.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044901": {
       "name": "\uAC74 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 60%",
       "source": "Item.wz/Consume/0204.img/02044901/info/iconRaw",
       "src": "2044901.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044902": {
       "name": "\uAC74 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 10%",
       "source": "Item.wz/Consume/0204.img/02044902/info/iconRaw",
       "src": "2044902.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044903": {
       "name": "\uAC74 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 70%",
       "source": "Item.wz/Consume/0204.img/02044903/info/iconRaw",
       "src": "2044903.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "2044904": {
       "name": "\uAC74 \uACF5\uACA9\uB825 \uC8FC\uBB38\uC11C 30%",
       "source": "Item.wz/Consume/0204.img/02044904/info/iconRaw",
       "src": "2044904.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "4000019": {
       "name": "\uB2EC\uD33D\uC774\uC758 \uAECD\uC9C8",
       "source": "Item.wz/Etc/0400.img/04000019/info/iconRaw",
       "src": "4000019.png",
       "w": 25,
-      "h": 25
+      "h": 25,
+      "tuc": null
     },
     "4000001": {
       "name": "\uC8FC\uD669\uBC84\uC12F\uC758 \uAC13",
       "source": "Item.wz/Etc/0400.img/04000001/info/iconRaw",
       "src": "4000001.png",
       "w": 30,
-      "h": 26
+      "h": 26,
+      "tuc": null
     },
     "4000021": {
       "name": "\uB3D9\uBB3C\uC758 \uAC00\uC8FD",
       "source": "Item.wz/Etc/0400.img/04000021/info/iconRaw",
       "src": "4000021.png",
       "w": 31,
-      "h": 30
+      "h": 30,
+      "tuc": null
     }
   }
 }
